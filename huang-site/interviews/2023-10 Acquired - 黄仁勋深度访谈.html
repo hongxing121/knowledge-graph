@@ -1,0 +1,1725 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Acquired — 黄仁勋深度访谈 - 黄仁勋知识图谱</title>
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon-180.png">
+<link rel="shortcut icon" href="/assets/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700;900&family=Crimson+Pro:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-WLE88B2LL3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-WLE88B2LL3');
+</script>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+
+:root{
+  --bg:#FAF7F2;
+  --bg2:#F3EDE4;
+  --text:#1B1B18;
+  --text2:#6B6560;
+  --gold:#B8860B;
+  --gold-light:#D4A843;
+  --gold-glow:rgba(184,134,11,.12);
+  --navy:#1A2332;
+  --navy-light:#2C3E50;
+  --cream:#FFF8EE;
+  --border:#E0D6C8;
+  --card:#FFFFFF;
+  --link:#8B5E0B;
+  --serif:'Noto Serif SC','Crimson Pro',Georgia,'Times New Roman',serif;
+  --sans:'DM Sans',-apple-system,BlinkMacSystemFont,'PingFang SC','Microsoft YaHei',sans-serif;
+  --sidebar-w:260px;
+}
+
+html{font-size:15px;scroll-behavior:smooth}
+body{
+  font-family:var(--sans);
+  color:var(--text);
+  background:var(--bg);
+  display:flex;
+  min-height:100vh;
+  line-height:1.8;
+  -webkit-font-smoothing:antialiased;
+}
+
+/* ===== SIDEBAR ===== */
+.sidebar{
+  width:var(--sidebar-w);
+  background:var(--navy);
+  position:fixed;top:0;left:0;bottom:0;
+  overflow-y:auto;
+  z-index:100;
+  display:flex;
+  flex-direction:column;
+}
+.sidebar-header{padding:20px 16px 16px;border-bottom:1px solid rgba(255,255,255,.08)}
+.logo{
+  color:#fff;
+  font-size:17px;
+  font-weight:700;
+  text-decoration:none;
+  letter-spacing:.5px;
+  font-family:var(--serif);
+  display:block;
+}
+.logo:hover{color:var(--gold-light)}
+
+.sidebar-nav{flex:1;padding:8px 0;overflow-y:auto}
+.sidebar-nav::-webkit-scrollbar{width:4px}
+.sidebar-nav::-webkit-scrollbar-thumb{background:rgba(255,255,255,.15);border-radius:2px}
+
+.nav-link{
+  display:block;
+  padding:6px 16px;
+  color:#cbd5e1;
+  text-decoration:none;
+  font-size:13px;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  border-left:3px solid transparent;
+  transition:all .15s;
+}
+.nav-link:hover{background:rgba(255,255,255,.06);color:#fff}
+.nav-link.active{
+  color:#fff;
+  background:rgba(184,134,11,.15);
+  border-left-color:var(--gold);
+  font-weight:600;
+}
+.nav-home{font-size:14px;padding:10px 16px;font-weight:500;margin-bottom:4px}
+.nav-changelog{
+  margin-top:auto;
+  padding:14px 16px;
+  font-size:12px;
+  color:rgba(255,255,255,.4);
+  border-top:1px solid rgba(255,255,255,.08);
+}
+.nav-changelog:hover{color:rgba(255,255,255,.7)}
+.nav-changelog.active{color:var(--gold-light)}
+.sidebar-nav{display:flex;flex-direction:column;height:100%}
+
+.nav-group{margin-bottom:2px}
+.nav-group-title{
+  padding:8px 16px;
+  color:#cbd5e1;
+  font-size:12px;
+  font-weight:600;
+  text-transform:uppercase;
+  letter-spacing:.5px;
+  cursor:pointer;
+  display:flex;
+  align-items:center;
+  gap:6px;
+  user-select:none;
+  transition:color .15s;
+}
+.nav-group-title:hover{color:#fff}
+.caret{
+  display:inline-block;
+  width:0;height:0;
+  border-left:5px solid #cbd5e1;
+  border-top:4px solid transparent;
+  border-bottom:4px solid transparent;
+  transition:transform .2s;
+}
+.nav-group.open .nav-group-title .caret{transform:rotate(90deg);border-left-color:#fff}
+.nav-group-title .badge{
+  margin-left:auto;
+  background:rgba(255,255,255,.1);
+  color:#cbd5e1;
+  font-size:11px;
+  padding:1px 6px;
+  border-radius:8px;
+  font-weight:400;
+}
+.nav-group-items{display:none;padding-left:8px}
+.nav-group.open .nav-group-items{display:block}
+
+.hamburger{
+  display:none;
+  position:fixed;
+  top:12px;left:12px;
+  z-index:200;
+  background:var(--navy);
+  color:#fff;
+  border:none;
+  font-size:20px;
+  padding:6px 10px;
+  border-radius:6px;
+  cursor:pointer;
+}
+
+/* ===== MAIN ===== */
+.main{
+  margin-left:max(var(--sidebar-w), calc((100vw - 1160px) / 2));
+  flex:1;
+  position:relative;
+  max-width:1160px;
+  padding:0;
+}
+
+/* grain overlay */
+.main::after{
+  content:'';
+  position:fixed;
+  top:0;left:var(--sidebar-w);right:0;bottom:0;
+  pointer-events:none;
+  opacity:.03;
+  z-index:999;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* ===== FAV / BOOKMARK BUTTON ===== */
+.fav-wrap{
+  position:absolute;
+  top:24px;right:48px;
+  z-index:50;
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+.sister-link{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  padding:8px 16px;
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:24px;
+  color:var(--navy);
+  font-size:13px;
+  font-weight:600;
+  font-family:var(--sans);
+  text-decoration:none;
+  box-shadow:0 2px 8px rgba(0,0,0,.04);
+  transition:all .25s;
+  white-space:nowrap;
+}
+.sister-link:hover{
+  border-color:var(--gold);
+  color:var(--gold);
+  box-shadow:0 4px 16px var(--gold-glow);
+  transform:translateY(-1px);
+}
+.sister-link .arrow{
+  color:var(--gold);
+  font-weight:700;
+}
+.fav-btn{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  padding:8px 18px;
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:24px;
+  color:var(--gold);
+  font-size:16px;
+  cursor:pointer;
+  transition:all .25s;
+  font-family:var(--sans);
+  box-shadow:0 2px 8px rgba(0,0,0,.04);
+}
+.fav-btn:hover{
+  border-color:var(--gold);
+  box-shadow:0 4px 16px var(--gold-glow);
+  transform:translateY(-1px);
+}
+.fav-label{
+  font-size:13px;
+  color:var(--text2);
+  font-weight:500;
+}
+.fav-btn:hover .fav-label{color:var(--gold)}
+.fav-pop{
+  display:none;
+  position:absolute;
+  right:0;top:48px;
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:10px;
+  padding:14px 16px;
+  box-shadow:0 8px 32px rgba(0,0,0,.12);
+  font-size:13px;
+  min-width:240px;
+  z-index:51;
+  color:var(--text);
+  line-height:1.6;
+}
+.fav-pop.show{display:block}
+.fav-pop kbd{
+  background:var(--bg2);
+  padding:2px 7px;
+  border-radius:4px;
+  font-size:12px;
+  border:1px solid var(--border);
+  font-family:var(--sans);
+  color:var(--navy);
+  font-weight:600;
+}
+.fav-pop-copy{
+  display:block;
+  width:100%;
+  margin-top:10px;
+  padding:8px 0;
+  background:var(--bg);
+  border:1px solid var(--border);
+  border-radius:6px;
+  color:var(--text2);
+  font-size:12px;
+  cursor:pointer;
+  text-align:center;
+  transition:all .15s;
+  font-family:var(--sans);
+}
+.fav-pop-copy:hover{
+  border-color:var(--gold);
+  color:var(--gold);
+}
+.fav-pop-copy.copied{
+  background:#ecfdf5;
+  border-color:#6ee7b7;
+  color:#059669;
+}
+
+@media(max-width:768px){
+  .fav-wrap{right:16px;top:12px;gap:6px}
+  .sister-link{padding:6px 12px;font-size:11px}
+  .fav-btn{padding:6px 14px}
+  .fav-label{font-size:12px}
+}
+
+/* ===== CHANGELOG ===== */
+.article.changelog h2{
+  border-bottom-color:var(--gold);
+  display:flex;
+  align-items:center;
+  gap:10px;
+  flex-wrap:wrap;
+}
+.version{
+  display:inline-flex;
+  align-items:center;
+  background:var(--gold);
+  color:#fff;
+  font-size:13px;
+  font-weight:700;
+  padding:3px 11px;
+  border-radius:6px;
+  font-family:var(--sans);
+  letter-spacing:.3px;
+}
+.changelog-date{
+  font-size:14px;
+  color:var(--text2);
+  font-weight:500;
+  font-family:var(--sans);
+}
+.change-list{
+  list-style:none;
+  padding:0;
+  margin:16px 0;
+}
+.change-list li{
+  padding:10px 0 10px 18px;
+  position:relative;
+  border-bottom:1px solid var(--border);
+  font-size:14px;
+  line-height:1.75;
+}
+.change-list li:last-child{border-bottom:none}
+.change-list li::before{
+  content:"";
+  position:absolute;
+  left:0;
+  top:20px;
+  width:6px;
+  height:6px;
+  border-radius:50%;
+  background:var(--gold);
+}
+.change-type{
+  display:inline-block;
+  font-size:11px;
+  padding:2px 8px;
+  border-radius:4px;
+  color:#fff;
+  font-weight:600;
+  margin-right:8px;
+  font-family:var(--sans);
+  vertical-align:1px;
+  letter-spacing:.2px;
+}
+.change-type.feat{background:#059669}
+.change-type.fix{background:#dc2626}
+.change-type.plan{background:#3b82f6}
+.change-list li strong{color:var(--navy);font-weight:700}
+
+/* ===== ARTICLE (content pages) ===== */
+.article{max-width:820px;padding:48px 48px 80px}
+.meta{
+  font-size:13px;
+  color:var(--text2);
+  margin-bottom:16px;
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+.type-badge{
+  font-size:11px;
+  padding:2px 8px;
+  border-radius:4px;
+  color:#fff;
+  font-weight:600;
+}
+.type-概念{background:#7C5E2A}
+.type-方法{background:#5E4A8B}
+.type-产品{background:#1A6B7C}
+.type-人物{background:#8B2F2F}
+.type-演讲{background:#2A6B4F}
+.type-毕业演讲{background:#7E6B30}
+.type-访谈{background:#3A5E8B}
+.type-财报会议{background:#4A6E2A}
+.type-索引{background:#6B6560}
+
+.article h1{
+  font-family:var(--serif);
+  font-size:28px;
+  line-height:1.3;
+  margin-bottom:24px;
+  font-weight:900;
+  color:var(--navy);
+  letter-spacing:-.5px;
+}
+.article h2{
+  font-family:var(--serif);
+  font-size:21px;
+  margin:36px 0 14px;
+  padding-bottom:8px;
+  border-bottom:2px solid var(--border);
+  font-weight:700;
+  color:var(--navy);
+}
+.article h3{
+  font-family:var(--serif);
+  font-size:17px;
+  margin:24px 0 10px;
+  font-weight:600;
+  color:var(--navy-light);
+}
+.article p{margin:10px 0}
+.article ul,.article ol{padding-left:24px;margin:10px 0}
+.article li{margin:4px 0}
+
+.article a{
+  color:var(--link);
+  text-decoration:none;
+  background:linear-gradient(to bottom,transparent 60%,var(--gold-glow) 60%);
+  transition:background .2s;
+}
+.article a:hover{background:linear-gradient(to bottom,transparent 40%,rgba(184,134,11,.2) 40%)}
+
+.article blockquote{
+  background:var(--cream);
+  border-left:4px solid var(--gold);
+  padding:14px 20px;
+  margin:16px 0;
+  border-radius:0 8px 8px 0;
+  font-style:italic;
+  color:#5C4813;
+  font-family:var(--serif);
+}
+.article blockquote p{margin:0}
+.article blockquote a{background:none;color:var(--gold)}
+.article blockquote a:hover{text-decoration:underline}
+
+.article table{border-collapse:collapse;width:100%;margin:16px 0;font-size:14px}
+.article th,.article td{border:1px solid var(--border);padding:8px 12px;text-align:left}
+.article th{background:var(--bg2);font-weight:600;color:var(--navy)}
+.article strong{font-weight:700}
+.article hr{border:none;border-top:1px solid var(--border);margin:32px 0}
+.article code{
+  background:var(--bg2);
+  padding:2px 6px;
+  border-radius:3px;
+  font-size:13px;
+  font-family:'SF Mono',Menlo,Consolas,monospace;
+  color:#5C4813;
+}
+
+/* ===== KNOWLEDGE GRAPH PAGE ===== */
+.main.full-bleed{max-width:none;padding:0;margin-left:var(--sidebar-w)}
+.main.full-bleed::after{display:none}
+.graph-wrap{position:relative;width:100%;height:100vh;overflow:hidden;background:var(--bg)}
+.graph-wrap svg{width:100%;height:100%;display:block}
+.graph-toolbar{position:absolute;top:16px;right:16px;display:flex;gap:8px;z-index:10}
+.graph-toolbar button{
+  padding:6px 14px;background:var(--card);border:1px solid var(--border);
+  border-radius:8px;font-size:12px;color:var(--text);cursor:pointer;
+  font-family:var(--sans);transition:all .15s;font-weight:500;
+}
+.graph-toolbar button:hover{border-color:var(--gold);color:var(--gold)}
+.graph-title{position:absolute;top:16px;left:16px;z-index:10}
+.graph-title h1{font-family:var(--serif);font-size:20px;color:var(--navy);margin:0}
+.graph-title p{font-size:12px;color:var(--text2);margin:4px 0 0;font-family:var(--sans)}
+.graph-tooltip{
+  position:absolute;padding:8px 14px;background:var(--navy);color:#fff;
+  border-radius:8px;font-size:12px;pointer-events:none;opacity:0;transition:opacity .15s;
+  box-shadow:0 4px 16px rgba(0,0,0,.2);z-index:20;white-space:nowrap;font-family:var(--sans);
+}
+.graph-tooltip strong{display:block;font-size:13px;margin-bottom:2px}
+.graph-tooltip span{color:rgba(255,255,255,.6)}
+.graph-legend{
+  position:absolute;bottom:16px;left:16px;display:flex;gap:12px;z-index:10;
+  flex-wrap:wrap;max-width:calc(100% - 32px);
+  background:rgba(255,255,255,.92);padding:8px 14px;border-radius:8px;
+  border:1px solid var(--border);font-family:var(--sans);
+}
+.legend-item{display:flex;align-items:center;gap:5px;font-size:11px;color:var(--text2);cursor:pointer;user-select:none}
+.legend-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0}
+.legend-item.dimmed{opacity:.3}
+.nav-graph{
+  padding:14px 16px 6px;
+  font-size:12px;
+  color:rgba(255,255,255,.4);
+  border-top:1px solid rgba(255,255,255,.08);
+  margin-top:auto;
+}
+.nav-graph:hover{color:rgba(255,255,255,.7)}
+.nav-graph.active{color:var(--gold-light)}
+/* When graph link present, changelog should not push it to bottom */
+.nav-graph + .nav-changelog{margin-top:0;border-top:none;padding-top:6px;padding-bottom:14px}
+
+/* ===== BACKLINKS PANEL (right sidebar) ===== */
+.main.has-backlinks{
+  display:grid;
+  grid-template-columns:minmax(0,820px) 280px;
+  gap:0 24px;
+  max-width:1160px;
+}
+.main-content{min-width:0}
+
+.backlinks-panel{
+  grid-column:2;
+  grid-row:1/-1;
+  position:sticky;
+  top:24px;
+  max-height:calc(100vh - 48px);
+  overflow-y:auto;
+  padding:24px 0 24px 20px;
+  border-left:1px solid var(--border);
+  font-size:13px;
+  align-self:start;
+}
+.backlinks-panel::-webkit-scrollbar{width:3px}
+.backlinks-panel::-webkit-scrollbar-thumb{background:var(--border);border-radius:2px}
+
+.bl-panel-header{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  margin-bottom:12px;
+}
+.bl-panel-title{
+  font-family:var(--serif);
+  font-size:14px;
+  font-weight:700;
+  color:var(--navy);
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+.bl-count{
+  font-size:11px;
+  background:var(--bg2);
+  padding:1px 7px;
+  border-radius:10px;
+  color:var(--text2);
+  font-weight:600;
+}
+.bl-panel-actions{display:flex;gap:4px}
+.bl-action{
+  background:none;
+  border:1px solid var(--border);
+  border-radius:4px;
+  padding:2px 8px;
+  font-size:11px;
+  color:var(--text2);
+  cursor:pointer;
+  font-family:var(--sans);
+  transition:all .15s;
+}
+.bl-action:hover{border-color:var(--gold);color:var(--gold)}
+
+.bl-group{margin-bottom:4px}
+.bl-group-header{
+  display:flex;
+  align-items:center;
+  gap:6px;
+  background:none;
+  border:none;
+  cursor:pointer;
+  padding:5px 0;
+  width:100%;
+  text-align:left;
+  font-size:13px;
+  font-family:var(--sans);
+}
+.bl-group-header:hover{background:rgba(0,0,0,.02);border-radius:4px}
+
+.bl-caret{
+  display:inline-block;
+  width:0;height:0;
+  border:4px solid transparent;
+  border-left:5px solid var(--text2);
+  transition:transform .15s;
+  flex-shrink:0;
+}
+.bl-group.open .bl-caret{transform:rotate(90deg)}
+
+.bl-source-name{
+  color:var(--navy);
+  font-weight:600;
+  flex:1;
+  min-width:0;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
+.bl-mention-cat{
+  font-size:10px;
+  color:var(--text2);
+  background:var(--bg2);
+  padding:0 5px;
+  border-radius:8px;
+  flex-shrink:0;
+  margin-left:4px;
+}
+
+.bl-snippets{display:none;padding:4px 0 4px 14px}
+.bl-group.open .bl-snippets{display:block}
+
+.bl-snippet{
+  padding:6px 0;
+  border-bottom:1px solid var(--border);
+  line-height:1.6;
+  color:var(--text2);
+  font-size:12px;
+}
+.bl-snippet:last-child{border-bottom:none}
+.bl-go-link{
+  display:inline-block;
+  font-size:11px;
+  color:var(--link);
+  text-decoration:none;
+  padding:4px 0 2px;
+  font-weight:600;
+  transition:color .15s;
+}
+.bl-go-link:hover{color:var(--gold);text-decoration:underline}
+
+/* ===== HOMEPAGE ===== */
+.hero-section{
+  position:relative;
+  padding:72px 48px 56px;
+  max-width:900px;
+  margin:0 auto;
+}
+.hero-eyebrow{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  font-size:12px;
+  font-weight:600;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  color:var(--gold);
+  margin-bottom:20px;
+  opacity:0;
+  animation:fadeUp .6s ease forwards;
+}
+.hero-eyebrow::before{content:'';width:24px;height:1px;background:var(--gold)}
+.hero-title{
+  font-family:var(--serif);
+  font-size:clamp(32px,5vw,48px);
+  font-weight:900;
+  line-height:1.25;
+  letter-spacing:-1px;
+  color:var(--navy);
+  margin-bottom:6px;
+  opacity:0;
+  animation:fadeUp .6s ease .1s forwards;
+}
+.hero-title .gold{color:var(--gold)}
+.hero-sub{
+  font-size:17px;
+  color:var(--text2);
+  line-height:1.8;
+  margin-top:16px;
+  max-width:640px;
+  font-family:var(--serif);
+  font-weight:400;
+  opacity:0;
+  animation:fadeUp .6s ease .2s forwards;
+}
+.hero-sub b{color:var(--navy);font-weight:700}
+
+.stats-row{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:0;
+  max-width:900px;
+  margin:0 auto 48px;
+  padding:0 48px;
+  border-top:1px solid var(--border);
+  border-bottom:1px solid var(--border);
+  opacity:0;
+  animation:fadeUp .6s ease .3s forwards;
+}
+.stat-item{
+  text-align:center;
+  padding:28px 12px;
+  position:relative;
+  transition:background .3s;
+  text-decoration:none;
+  color:inherit;
+}
+.stat-item:not(:last-child)::after{
+  content:'';
+  position:absolute;
+  right:0;top:20%;
+  height:60%;
+  width:1px;
+  background:var(--border);
+}
+.stat-item:hover{background:var(--gold-glow)}
+.stat-num{
+  font-family:var(--serif);
+  font-size:42px;
+  font-weight:900;
+  color:var(--navy);
+  line-height:1;
+  margin-bottom:6px;
+  letter-spacing:-2px;
+}
+.stat-label{
+  font-size:13px;
+  color:var(--text2);
+  font-weight:500;
+  letter-spacing:.5px;
+}
+
+.main-inner{max-width:900px;padding:0 48px 80px;margin:0 auto}
+
+.nav-cards{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:16px;
+  margin-bottom:56px;
+  opacity:0;
+  animation:fadeUp .6s ease .4s forwards;
+}
+.nav-card{
+  position:relative;
+  padding:28px 20px 24px;
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:14px;
+  text-decoration:none;
+  transition:all .3s cubic-bezier(.4,0,.2,1);
+  overflow:hidden;
+  display:block;
+  color:inherit;
+}
+.nav-card::before{
+  content:'';
+  position:absolute;
+  top:0;left:0;right:0;
+  height:3px;
+  background:var(--gold);
+  opacity:0;
+  transition:opacity .3s;
+}
+.nav-card:hover{
+  transform:translateY(-4px);
+  box-shadow:0 12px 32px rgba(0,0,0,.08);
+  border-color:var(--gold-light);
+}
+.nav-card:hover::before{opacity:1}
+.nav-card-icon{font-size:32px;margin-bottom:14px;display:block;line-height:1}
+.nav-card-title{
+  font-family:var(--serif);
+  font-size:16px;
+  font-weight:700;
+  color:var(--navy);
+  margin-bottom:4px;
+}
+.nav-card-sub{font-size:13px;color:var(--text2)}
+.nav-card-arrow{
+  position:absolute;
+  bottom:20px;right:20px;
+  font-size:18px;
+  color:var(--border);
+  transition:all .3s;
+}
+.nav-card:hover .nav-card-arrow{color:var(--gold);transform:translateX(4px)}
+
+.section{margin-bottom:48px}
+.section-header{display:flex;align-items:center;gap:12px;margin-bottom:20px}
+.section-line{flex:1;height:1px;background:var(--border)}
+.section-title{
+  font-family:var(--serif);
+  font-size:22px;
+  font-weight:700;
+  color:var(--navy);
+  white-space:nowrap;
+}
+.section-count{
+  font-size:12px;
+  color:var(--gold);
+  font-weight:600;
+  background:var(--gold-glow);
+  padding:3px 10px;
+  border-radius:12px;
+  white-space:nowrap;
+}
+
+.tag-cloud{display:flex;flex-wrap:wrap;gap:10px}
+.tag{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  padding:8px 18px;
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:24px;
+  font-size:14px;
+  color:var(--text);
+  text-decoration:none;
+  transition:all .25s cubic-bezier(.4,0,.2,1);
+  font-weight:500;
+}
+.tag:hover{
+  border-color:var(--gold);
+  color:var(--navy);
+  box-shadow:0 4px 16px var(--gold-glow);
+  transform:translateY(-2px);
+}
+.tag-n{
+  font-size:11px;
+  font-weight:700;
+  color:#fff;
+  background:var(--gold);
+  padding:2px 8px;
+  border-radius:10px;
+  min-width:20px;
+  text-align:center;
+}
+.tag.tier-1{
+  font-size:16px;
+  padding:10px 22px;
+  font-weight:700;
+  border-color:var(--gold-light);
+  background:linear-gradient(135deg,#FFFDF5,#FFF8E7);
+}
+.tag.tier-1 .tag-n{font-size:12px;padding:3px 10px;background:var(--gold)}
+.tag.tier-2{font-size:15px;padding:9px 20px;font-weight:600}
+
+.people-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(180px,1fr));
+  gap:14px;
+}
+.person-card{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  padding:24px 16px 20px;
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:14px;
+  text-decoration:none;
+  transition:all .3s;
+  text-align:center;
+  color:inherit;
+}
+.person-card:hover{
+  transform:translateY(-3px);
+  box-shadow:0 8px 24px rgba(0,0,0,.06);
+  border-color:var(--gold-light);
+}
+.person-avatar{
+  width:56px;height:56px;
+  border-radius:50%;
+  background:linear-gradient(135deg,var(--navy),var(--navy-light));
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:22px;
+  margin-bottom:12px;
+  color:var(--gold-light);
+  font-family:var(--serif);
+  font-weight:700;
+  box-shadow:0 4px 12px rgba(26,35,50,.15);
+}
+.person-name{
+  font-family:var(--serif);
+  font-size:15px;
+  font-weight:700;
+  color:var(--navy);
+  margin-bottom:4px;
+}
+.person-refs{font-size:12px;color:var(--text2)}
+
+.gold-divider{display:flex;align-items:center;gap:16px;margin:56px 0}
+.gold-divider::before,.gold-divider::after{
+  content:'';
+  flex:1;
+  height:1px;
+  background:linear-gradient(to right,transparent,var(--border),transparent);
+}
+.gold-divider-diamond{
+  width:8px;height:8px;
+  background:var(--gold);
+  transform:rotate(45deg);
+  flex-shrink:0;
+}
+
+.footer-promo{
+  position:relative;
+  overflow:hidden;
+  padding:40px;
+  background:var(--navy);
+  border-radius:20px;
+  color:#fff;
+  display:flex;
+  gap:40px;
+  align-items:center;
+}
+.footer-promo::before{
+  content:'';
+  position:absolute;
+  top:-50%;right:-20%;
+  width:400px;height:400px;
+  border-radius:50%;
+  background:radial-gradient(circle,rgba(184,134,11,.15),transparent 70%);
+}
+.promo-story{flex:1;position:relative;z-index:1;min-width:0}
+.promo-story h3{
+  font-family:var(--serif);
+  font-size:20px;
+  font-weight:700;
+  margin-bottom:12px;
+  color:var(--gold-light);
+}
+.promo-story p{font-size:14px;color:rgba(255,255,255,.75);line-height:1.8;margin:8px 0}
+.promo-credit{
+  margin-top:16px !important;
+  padding-top:14px;
+  border-top:1px solid rgba(255,255,255,.12);
+  font-size:13px !important;
+}
+.promo-credit strong{color:var(--gold-light);font-weight:700}
+
+.promo-qr{
+  flex-shrink:0;
+  position:relative;
+  z-index:1;
+  text-align:center;
+}
+.qr-img{
+  display:block;
+  width:140px;
+  height:140px;
+  border-radius:12px;
+  border:3px solid rgba(255,255,255,.15);
+  box-shadow:0 8px 24px rgba(0,0,0,.25);
+  background:#fff;
+  padding:6px;
+}
+.qr-text{
+  font-size:12px;
+  color:rgba(255,255,255,.6);
+  margin-top:10px;
+  letter-spacing:.5px;
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes fadeUp{
+  from{opacity:0;transform:translateY(16px)}
+  to{opacity:1;transform:translateY(0)}
+}
+.section{opacity:0;animation:fadeUp .5s ease forwards}
+.section:nth-child(1){animation-delay:.45s}
+.section:nth-child(2){animation-delay:.55s}
+.section:nth-child(3){animation-delay:.65s}
+.section:nth-child(4){animation-delay:.75s}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:1024px){
+  .main.has-backlinks{display:block}
+  .backlinks-panel{
+    position:static;
+    max-height:none;
+    overflow-y:visible;
+    border-left:none;
+    border-top:1px solid var(--border);
+    padding:24px 16px;
+    margin-top:24px;
+    max-width:820px;
+  }
+}
+
+@media(max-width:768px){
+  .sidebar{transform:translateX(-100%);transition:transform .3s}
+  .sidebar.open{transform:translateX(0)}
+  .hamburger{display:block}
+  .main{margin-left:0;max-width:100%}
+  .main::after{left:0}
+  .main.has-backlinks{display:block}
+  .article{padding:48px 16px 60px}
+  .backlinks-panel{padding:16px 12px;margin-top:16px}
+  .hero-section{padding:44px 20px 20px}
+  .hero-eyebrow{font-size:10px;margin-bottom:12px}
+  .hero-title{font-size:26px}
+  .hero-sub{font-size:14px;line-height:1.6;margin-top:10px}
+  .stats-row{padding:0 16px;margin:0 0 20px}
+  .stat-item{padding:16px 4px}
+  .stat-num{font-size:28px;letter-spacing:-1px}
+  .stat-label{font-size:11px}
+  .main-inner{padding:0 20px 60px}
+  .nav-cards{grid-template-columns:1fr 1fr;gap:10px;margin-bottom:36px}
+  .nav-card{padding:20px 14px 18px}
+  .nav-card-icon{font-size:24px;margin-bottom:8px}
+  .nav-card-title{font-size:14px}
+  .nav-card-sub{font-size:12px}
+  .footer-promo{flex-direction:column;text-align:center;padding:28px 20px;gap:24px}
+  .people-grid{grid-template-columns:repeat(2,1fr)}
+}
+</style>
+</head>
+<body>
+<button class="hamburger" aria-label="菜单" onclick="document.querySelector('.sidebar').classList.toggle('open')">☰</button>
+<aside class="sidebar">
+  <div class="sidebar-header"><a href="/index.html" class="logo">黄仁勋知识图谱</a></div>
+  <div class="sidebar-nav">
+    <a href="/index.html" class="nav-link nav-home">🏛 首页</a>
+<div class="nav-group open">
+  <div class="nav-group-title"><span class="caret"></span>索引<span class="badge">5</span></div>
+  <div class="nav-group-items">
+    <a href="/index-pages/人物索引.html" class="nav-link" title="人物索引">人物索引</a>
+    <a href="/index-pages/公司与产品索引.html" class="nav-link" title="公司与产品索引">公司与产品索引</a>
+    <a href="/index-pages/工作方法索引.html" class="nav-link" title="工作方法索引">工作方法索引</a>
+    <a href="/index-pages/核心思想索引.html" class="nav-link" title="核心思想索引">核心思想索引</a>
+    <a href="/index-pages/素材总览.html" class="nav-link" title="素材总览">素材总览</a>
+  </div>
+</div>
+<div class="nav-group">
+  <div class="nav-group-title"><span class="caret"></span>演讲<span class="badge">10</span></div>
+  <div class="nav-group-items">
+    <a href="/keynotes/2021-04 GTC 2021 春 - AI Factory 概念.html" class="nav-link" title="2021-04 GTC 2021 春 - AI Factory 概念">2021-04 GTC 2021 春 - AI Factory 概念</a>
+    <a href="/keynotes/2021-11 GTC 2021 秋 - Omniverse 与数字孪生.html" class="nav-link" title="2021-11 GTC 2021 秋 - Omniverse 与数字孪生">2021-11 GTC 2021 秋 - Omniverse 与数字孪生</a>
+    <a href="/keynotes/2022-03 GTC 2022 - Hopper H100 与 AI Factories.html" class="nav-link" title="2022-03 GTC 2022 - Hopper H100 与 AI Factories">2022-03 GTC 2022 - Hopper H100 与 AI Factories</a>
+    <a href="/keynotes/2022-09 GTC 2022 秋 - H100 量产.html" class="nav-link" title="2022-09 GTC 2022 秋 - H100 量产">2022-09 GTC 2022 秋 - H100 量产</a>
+    <a href="/keynotes/2023-03 GTC 2023 - AI 的 iPhone 时刻.html" class="nav-link" title="2023-03 GTC 2023 - AI 的 iPhone 时刻">2023-03 GTC 2023 - AI 的 iPhone 时刻</a>
+    <a href="/keynotes/2024-03 GTC 2024 - Blackwell B200 发布.html" class="nav-link" title="2024-03 GTC 2024 - Blackwell B200 发布">2024-03 GTC 2024 - Blackwell B200 发布</a>
+    <a href="/keynotes/2025-01 CES 2025 - Project DIGITS 与 Cosmos.html" class="nav-link" title="2025-01 CES 2025 - Project DIGITS 与 Cosmos">2025-01 CES 2025 - Project DIGITS 与 Cosmos</a>
+    <a href="/keynotes/2025-03 GTC 2025 - Blackwell Ultra 与 Vera Rubin.html" class="nav-link" title="2025-03 GTC 2025 - Blackwell Ultra 与 Vera Rubin">2025-03 GTC 2025 - Blackwell Ultra 与 Vera Rubin</a>
+    <a href="/keynotes/2025-10 GTC 2025 华盛顿.html" class="nav-link" title="2025-10 GTC 2025 华盛顿">2025-10 GTC 2025 华盛顿</a>
+    <a href="/keynotes/2026-01 CES 2026 - 推理时代与 Agentic AI.html" class="nav-link" title="2026-01 CES 2026 - 推理时代与 Agentic AI">2026-01 CES 2026 - 推理时代与 Agentic AI</a>
+  </div>
+</div>
+<div class="nav-group open">
+  <div class="nav-group-title"><span class="caret"></span>访谈<span class="badge">3</span></div>
+  <div class="nav-group-items">
+    <a href="/interviews/2023-10 Acquired - 黄仁勋深度访谈.html" class="nav-link active" title="2023-10 Acquired - 黄仁勋深度访谈">2023-10 Acquired - 黄仁勋深度访谈</a>
+    <a href="/interviews/2025-09 BG2 Pod - OpenAI 与算力未来.html" class="nav-link" title="2025-09 BG2 Pod - OpenAI 与算力未来">2025-09 BG2 Pod - OpenAI 与算力未来</a>
+    <a href="/interviews/2026-03 Lex Fridman 494 - 4 万亿公司与 AGI.html" class="nav-link" title="2026-03 Lex Fridman 494 - 4 万亿公司与 AGI">2026-03 Lex Fridman 494 - 4 万亿公司与 AGI</a>
+  </div>
+</div>
+<div class="nav-group">
+  <div class="nav-group-title"><span class="caret"></span>财报会议<span class="badge">4</span></div>
+  <div class="nav-group-items">
+    <a href="/earnings/2023-Q1 NVIDIA FY24 财报 - iPhone 时刻.html" class="nav-link" title="2023-Q1 NVIDIA FY24 财报 - iPhone 时刻">2023-Q1 NVIDIA FY24 财报 - iPhone 时刻</a>
+    <a href="/earnings/2023-Q2 NVIDIA FY24 财报 - 历史性爆发.html" class="nav-link" title="2023-Q2 NVIDIA FY24 财报 - 历史性爆发">2023-Q2 NVIDIA FY24 财报 - 历史性爆发</a>
+    <a href="/earnings/2025-Q4 NVIDIA FY25 财报 - Blackwell ramp.html" class="nav-link" title="2025-Q4 NVIDIA FY25 财报 - Blackwell ramp">2025-Q4 NVIDIA FY25 财报 - Blackwell ramp</a>
+    <a href="/earnings/2026-Q4 NVIDIA FY26 财报.html" class="nav-link" title="2026-Q4 NVIDIA FY26 财报">2026-Q4 NVIDIA FY26 财报</a>
+  </div>
+</div>
+<div class="nav-group">
+  <div class="nav-group-title"><span class="caret"></span>毕业演讲<span class="badge">2</span></div>
+  <div class="nav-group-items">
+    <a href="/commencements/2023-05 NTU - Run, dont walk.html" class="nav-link" title="2023-05 NTU - Run, dont walk">2023-05 NTU - Run, dont walk</a>
+    <a href="/commencements/2024-06 Caltech - 相信非常规.html" class="nav-link" title="2024-06 Caltech - 相信非常规">2024-06 Caltech - 相信非常规</a>
+  </div>
+</div>
+<div class="nav-group">
+  <div class="nav-group-title"><span class="caret"></span>方法<span class="badge">8</span></div>
+  <div class="nav-group-items">
+    <a href="/methods/30 年公司.html" class="nav-link" title="30 年公司">30 年公司</a>
+    <a href="/methods/Mission is the Boss.html" class="nav-link" title="Mission is the Boss">Mission is the Boss</a>
+    <a href="/methods/Run, dont walk.html" class="nav-link" title="Run, dont walk">Run, dont walk</a>
+    <a href="/methods/不开 1-on-1.html" class="nav-link" title="不开 1-on-1">不开 1-on-1</a>
+    <a href="/methods/扁平管理.html" class="nav-link" title="扁平管理">扁平管理</a>
+    <a href="/methods/痛苦与磨难.html" class="nav-link" title="痛苦与磨难">痛苦与磨难</a>
+    <a href="/methods/群发邮件.html" class="nav-link" title="群发邮件">群发邮件</a>
+    <a href="/methods/首席解释官.html" class="nav-link" title="首席解释官">首席解释官</a>
+  </div>
+</div>
+<div class="nav-group">
+  <div class="nav-group-title"><span class="caret"></span>概念<span class="badge">18</span></div>
+  <div class="nav-group-items">
+    <a href="/concepts/AGI 已实现.html" class="nav-link" title="AGI 已实现">AGI 已实现</a>
+    <a href="/concepts/AI 工厂.html" class="nav-link" title="AI 工厂">AI 工厂</a>
+    <a href="/concepts/Bet the Company.html" class="nav-link" title="Bet the Company">Bet the Company</a>
+    <a href="/concepts/CUDA 平台.html" class="nav-link" title="CUDA 平台">CUDA 平台</a>
+    <a href="/concepts/Extreme Co-Design.html" class="nav-link" title="Extreme Co-Design">Extreme Co-Design</a>
+    <a href="/concepts/Scale Up 与 Scale Out.html" class="nav-link" title="Scale Up 与 Scale Out">Scale Up 与 Scale Out</a>
+    <a href="/concepts/Speed of Light 工程方法.html" class="nav-link" title="Speed of Light 工程方法">Speed of Light 工程方法</a>
+    <a href="/concepts/Token 经济.html" class="nav-link" title="Token 经济">Token 经济</a>
+    <a href="/concepts/加速计算.html" class="nav-link" title="加速计算">加速计算</a>
+    <a href="/concepts/推理时代.html" class="nav-link" title="推理时代">推理时代</a>
+    <a href="/concepts/摩尔定律已死.html" class="nav-link" title="摩尔定律已死">摩尔定律已死</a>
+    <a href="/concepts/数字孪生.html" class="nav-link" title="数字孪生">数字孪生</a>
+    <a href="/concepts/数据中心即计算机.html" class="nav-link" title="数据中心即计算机">数据中心即计算机</a>
+    <a href="/concepts/物理 AI.html" class="nav-link" title="物理 AI">物理 AI</a>
+    <a href="/concepts/生成式 AI 工业革命.html" class="nav-link" title="生成式 AI 工业革命">生成式 AI 工业革命</a>
+    <a href="/concepts/目的与任务.html" class="nav-link" title="目的与任务">目的与任务</a>
+    <a href="/concepts/装机量定义架构.html" class="nav-link" title="装机量定义架构">装机量定义架构</a>
+    <a href="/concepts/零亿美元市场.html" class="nav-link" title="零亿美元市场">零亿美元市场</a>
+  </div>
+</div>
+<div class="nav-group">
+  <div class="nav-group-title"><span class="caret"></span>产品<span class="badge">18</span></div>
+  <div class="nav-group-items">
+    <a href="/companies/Blackwell.html" class="nav-link" title="Blackwell">Blackwell</a>
+    <a href="/companies/BlueField DPU.html" class="nav-link" title="BlueField DPU">BlueField DPU</a>
+    <a href="/companies/Cosmos.html" class="nav-link" title="Cosmos">Cosmos</a>
+    <a href="/companies/DGX.html" class="nav-link" title="DGX">DGX</a>
+    <a href="/companies/Dynamo.html" class="nav-link" title="Dynamo">Dynamo</a>
+    <a href="/companies/GR00T.html" class="nav-link" title="GR00T">GR00T</a>
+    <a href="/companies/Hopper.html" class="nav-link" title="Hopper">Hopper</a>
+    <a href="/companies/NIM.html" class="nav-link" title="NIM">NIM</a>
+    <a href="/companies/NVIDIA.html" class="nav-link" title="NVIDIA">NVIDIA</a>
+    <a href="/companies/NVIDIA Drive.html" class="nav-link" title="NVIDIA Drive">NVIDIA Drive</a>
+    <a href="/companies/NVIDIA Omniverse.html" class="nav-link" title="NVIDIA Omniverse">NVIDIA Omniverse</a>
+    <a href="/companies/NVLink.html" class="nav-link" title="NVLink">NVLink</a>
+    <a href="/companies/Newton.html" class="nav-link" title="Newton">Newton</a>
+    <a href="/companies/OpenAI.html" class="nav-link" title="OpenAI">OpenAI</a>
+    <a href="/companies/Project DIGITS.html" class="nav-link" title="Project DIGITS">Project DIGITS</a>
+    <a href="/companies/RIVA 128.html" class="nav-link" title="RIVA 128">RIVA 128</a>
+    <a href="/companies/TSMC.html" class="nav-link" title="TSMC">TSMC</a>
+    <a href="/companies/Vera Rubin.html" class="nav-link" title="Vera Rubin">Vera Rubin</a>
+  </div>
+</div>
+<div class="nav-group">
+  <div class="nav-group-title"><span class="caret"></span>人物<span class="badge">14</span></div>
+  <div class="nav-group-items">
+    <a href="/people/Ben Gilbert 与 David Rosenthal.html" class="nav-link" title="Ben Gilbert 与 David Rosenthal">Ben Gilbert 与 David Rosenthal</a>
+    <a href="/people/Bill Dally.html" class="nav-link" title="Bill Dally">Bill Dally</a>
+    <a href="/people/Carver Mead.html" class="nav-link" title="Carver Mead">Carver Mead</a>
+    <a href="/people/Chris Malachowsky.html" class="nav-link" title="Chris Malachowsky">Chris Malachowsky</a>
+    <a href="/people/Curtis Priem.html" class="nav-link" title="Curtis Priem">Curtis Priem</a>
+    <a href="/people/Don Valentine.html" class="nav-link" title="Don Valentine">Don Valentine</a>
+    <a href="/people/Jeff Fisher.html" class="nav-link" title="Jeff Fisher">Jeff Fisher</a>
+    <a href="/people/Lex Fridman.html" class="nav-link" title="Lex Fridman">Lex Fridman</a>
+    <a href="/people/Mark Zuckerberg.html" class="nav-link" title="Mark Zuckerberg">Mark Zuckerberg</a>
+    <a href="/people/Morris Chang.html" class="nav-link" title="Morris Chang">Morris Chang</a>
+    <a href="/people/Sam Altman.html" class="nav-link" title="Sam Altman">Sam Altman</a>
+    <a href="/people/Tench Coxe.html" class="nav-link" title="Tench Coxe">Tench Coxe</a>
+    <a href="/people/Wilf Corrigan.html" class="nav-link" title="Wilf Corrigan">Wilf Corrigan</a>
+    <a href="/people/黄仁勋.html" class="nav-link" title="黄仁勋">黄仁勋</a>
+  </div>
+</div>
+<a href="/graph.html" class="nav-link nav-graph">🕸️ 知识图谱</a>
+
+  </div>
+</aside>
+<main class="main has-backlinks">
+<div class="main-content article"><div class="meta"><span class="type-badge type-访谈">访谈</span></div>
+<h1 id="acquired">Acquired — 黄仁勋深度访谈</h1>
+<blockquote>
+<p>主持人：Ben Gilbert、David Rosenthal<br />
+发布时间：2023-10-15<br />
+时长：约 3 小时<br />
+录制地点：<a href="/companies/NVIDIA.html">NVIDIA</a> 总部<br />
+主题：RIVA 128 的孤注一掷 · <a href="/concepts/CUDA 平台.html">CUDA 平台</a> 的十七年坚持 · 深度学习转向 · <a href="/methods/扁平管理.html">扁平管理</a> · 用 30 年视角建公司</p>
+</blockquote>
+<p>这是 <a href="/people/黄仁勋.html">黄仁勋</a> 迄今为止最坦诚的一次访谈。Acquired 的两位主持人为做 <a href="/companies/NVIDIA.html">NVIDIA</a> 系列足足研究了 500 多个小时，飞到圣克拉拉总部坐下来跟他聊了三个小时。录完之后他们感叹："原来主角确实比我们知道得多。"</p>
+<p>下面不按时间顺序，而是按黄仁勋反复回到的几个主题来整理他的核心论述。</p>
+<hr />
+<h2 id="riva-128-plan-b-tape-out">一、RIVA 128：一次"没有 Plan B"的 tape-out</h2>
+<p>1997 年，<a href="/companies/NVIDIA.html">NVIDIA</a> 的口袋里只剩六个月的现金。前两代芯片 NV1、NV2 走了弯路——押注曲面和 forward texture mapping，没做三角形、也没做 Z-buffer——而 Microsoft 已经推出 DirectX，30 多个竞争对手涌了进来。黄仁勋和团队决定把公司的最后一分钱全部押在 <a href="/companies/RIVA 128.html">RIVA 128</a> 上：<strong>一次 tape-out，必须完美，因为不完美就破产。</strong></p>
+<p>传统做法是先流片、再调软件、再改 bug、再流片——他们没有这个时间。于是他们做了三件事：第一，买下一家正要倒闭的仿真机公司 ICOS 的全部库存，用仿真器完整跑完驱动栈和所有游戏；第二，在硅片还没回来前就把芯片当作"完美"对待，直接下单量产，同时启动市场活动和开发者关系；第三，做到"物理极限"——用最大的芯片、最快的内存、DirectX 全部支持，"世上没有任何东西可以比它更快"。</p>
+<p>黄仁勋在访谈里用一句话总结这种心态：</p>
+<blockquote>
+<p>"We got one shot. I know it's going to be perfect, because if it's not, we'll be out of business. So let's make it perfect."</p>
+<p>"我们只有一发子弹。我知道它必须是完美的，因为如果不完美，我们就破产了。那就让它变完美。"</p>
+</blockquote>
+<p>关键点在于：Ben 把这理解成"赌上整个公司"（<a href="/concepts/Bet the Company.html">Bet the Company</a>），但黄仁勋纠正了——这不是赌博，而是<strong>把未来所有的风险提前做掉</strong>。</p>
+<blockquote>
+<p>"When you push your chips in, what you're really doing is—when you bet the farm, you're saying, I'm going to take everything in the future, all the risky things, and I pull in in advance. To this day, everything that we can prefetch, everything in the future that we can simulate today, we prefetch it."</p>
+</blockquote>
+<p>RIVA 128 的做法——仿真器先跑完整软件栈、一次流片、直接量产——今天已经是全行业的标准。"为什么要做两遍你本来可以一遍做完的事？"这是黄仁勋第一次清晰表达他的<strong>第一性原理工程学</strong>（第一性原理）。</p>
+<hr />
+<h2 id="alexnet">二、AlexNet 的启示：我们发现了一个"通用函数逼近器"</h2>
+<p><a href="/concepts/CUDA 平台.html">CUDA 平台</a> 早在 2006 年前后就存在了，最初是给科学家做分子动力学、CT 重建、地震处理、量子化学的。NVIDIA 一直和研究者泡在一起，是"天生的研究型公司"。</p>
+<p>AlexNet 在 2012 年横空出世的时候，黄仁勋的第一反应不是兴奋，而是<strong>追问"为什么"</strong>。</p>
+<blockquote>
+<p>"When a new software technology or a new algorithm comes along and somehow leapfrogs 30 years of computer vision work, you have to take a step back and ask yourself, but why? Fundamentally, is it scalable? And if it's scalable, what other problems can it solve?"</p>
+<p>"当一个新的算法突然间把过去 30 年的计算机视觉工作甩在身后，你必须退一步问自己：为什么？它本质上是不是可扩展的？如果可扩展，它还能解决什么问题？"</p>
+</blockquote>
+<p>他从第一性原理推演出一条清晰的逻辑链：<br />
+1. 深度学习一层一层训练，没有理由不能训练得很深；<br />
+2. 只要有足够多的样本数据，就能学到一个预测函数；<br />
+3. 换句话说，我们"发现了一个通用函数逼近器"（universal function approximator）；<br />
+4. 而世界上有大量问题，<strong>人根本不关心因果性，只关心可预测性</strong>。</p>
+<p>他连续举了几个例子——我不在乎你为什么偏爱这个牌子的牙膏，我只需要预测它；我不关心为什么买热狗的人会同时买番茄酱和芥末，我只需要预测它；预测电影、预测音乐，甚至预测天气，我们并不需要真的理解热力学，只需要知道今天要不要穿毛衣。</p>
+<blockquote>
+<p>"For a lot of problems, we don't care about the causality. We just care about the predictability of it."</p>
+<p>"对大量问题来说，我们不关心因果性，只关心可预测性。"</p>
+</blockquote>
+<p>一旦接受这个结论，剩下的问题就只是：<strong>我们有没有勇气把筹码推上去？</strong> 此后 NVIDIA 开始系统性地拜访全世界的 AI 研究者——Yann LeCun、Andrew Ng、Geoffrey Hinton、Goodfellow、Ilya Sutskever——问每个人："我们怎么帮你把工作推到下一个层次？"第一台 <a href="/companies/DGX.html">DGX</a> 他亲自送到了 <a href="/companies/OpenAI.html">OpenAI</a>。</p>
+<hr />
+<h2 id="cuda-30">三、<a href="/concepts/CUDA 平台.html">CUDA 平台</a> 与 <a href="/methods/30 年公司.html">30 年公司</a> 的赌注</h2>
+<p>黄仁勋纠正了一个常见的误解——很多人以为 NVIDIA 是先做技术再变平台，但他说：<strong>"从第一天起，我们就是一家平台公司。"</strong></p>
+<p>NVIDIA 最早的架构叫 UDA（Unified Device Architecture），CUDA 就是 UDA 的 C。1993 年公司成立时，他们甚至有一个叫做 Direct NV 的 API——1995 年 Microsoft 的 DirectX 出来之前，Direct NV 就已经存在。</p>
+<blockquote>
+<p>"We are the only accelerator on the planet where every single accelerator is architecturally compatible with the others. At 30 years, it's all completely compatible. That's the only unnegotiable rule in our company. Everything else is negotiable."</p>
+<p>"我们是地球上唯一一家所有加速器之间都架构兼容的公司。30 年来，所有芯片都完全兼容。这是公司里唯一不可谈判的铁律，其他的都可以谈。"</p>
+</blockquote>
+<p>这条铁律的代价是巨大的。在 CUDA 早期，市场根本不理解它——股价因此跌到只剩 20 亿美元左右，华尔街持续质疑。</p>
+<blockquote>
+<p>"We traded down at about a couple of 2 to 3 billion in market value for a while because of the decision we made in going into CUDA and all that work. Your belief system has to be really, really strong. You have to really, really believe it and really, really want it. Otherwise, it's just too much to endure."</p>
+<p>"因为 CUDA 这个决定，我们的市值一度跌到两三十亿美元，跌了很久。你的信念系统必须非常、非常强大。你必须真的真的相信它，真的真的想要它。否则这种折磨你根本承受不了。"</p>
+</blockquote>
+<p>这个"信念系统"的本质是——<strong>你在下注未来还不存在的市场</strong>。NVIDIA 称之为 "zero billion dollar market"（零亿美金市场）。</p>
+<blockquote>
+<p>"It's our way of saying there's no market yet, but we believe there will be one. Usually when you're positioned there, everybody's trying to figure out why are you here."</p>
+<p>"这是我们的说法，意思是：这个市场还不存在，但我们相信它会存在。通常当你站在那里的时候，所有人都在问你为什么来这儿。"</p>
+</blockquote>
+<p>当他们进入汽车业务时，有 CTO 对他说"汽车承受不了蓝屏死机"，他回答："没有人承受得了蓝屏死机，但这不改变每辆车终将是软件定义汽车这个事实。"15 年后，他是对的。</p>
+<hr />
+<h2 id="mellanox">四、收购 Mellanox：站到苹果掉落的那棵树下</h2>
+<p>在所有人都把 NVIDIA 看作"芯片公司"的时候，黄仁勋已经意识到数据中心才是未来，而<strong>定义数据中心的不是处理器，而是网络</strong>。</p>
+<blockquote>
+<p>"A data center is distinguished from a desktop computer versus a cell phone, not by the processor in it. It's not the processing chip that describes it, but it's the networking of it."</p>
+<p>"数据中心之所以不同于台式机和手机，不是因为里面那颗处理器，而是因为它的网络架构。"</p>
+</blockquote>
+<p>更重要的观察是：超大规模云（hyperscale）是把很多用户虚拟化到一台计算机上——<strong>而 AI 是反过来的</strong>，它要把一个训练任务分布到数百万个处理器上。商品化的以太网对 Hadoop 和搜索查询足够好，但对分布式训练大模型远远不够。</p>
+<p>所以 Mellanox 对 NVIDIA 来说不是一次战术收购，而是<strong>整个公司身份的迁移</strong>——从芯片公司变成数据中心公司。很多人事后评价这是科技史上最好的收购之一，黄仁勋自己也同意："因为它离我们平常做的事太远了，所以所有人都很意外。"</p>
+<p>关于"看到机会"，他讲了一个他最爱的比喻：</p>
+<blockquote>
+<p>"You want to position yourself near opportunities. You don't have to be that perfect. You want to position yourself near the tree. Even if you don't catch the apple before it hits the ground, so long as you're the first one to pick it up."</p>
+<p>"你要让自己站在机会旁边。你不需要那么完美。你要站在那棵树下面。就算你没接住掉下来的苹果，只要你是第一个捡起它的人就行。"</p>
+</blockquote>
+<p>这是 Ben 补了一句 Buffett 和 Munger 的经典话：<strong>"It's better to be approximately right than exactly wrong."</strong></p>
+<hr />
+<h2 id="_1">五、<a href="/methods/扁平管理.html">扁平管理</a>：公司应该长得像它要造的东西</h2>
+<p>这是整个访谈最有启发性的一段。黄仁勋有 40+ 个直接下属，不做 1-on-1，不做传统层级汇报。他说这不是因为 NVIDIA 特别，而是因为<strong>大部分公司的组织架构是错的</strong>。</p>
+<blockquote>
+<p>"Your organization should be the architecture of the machinery of building the product. That's what a company is. And yet, everybody's company looks exactly the same, but they all build different things. How does that make any sense?"</p>
+<p>"你的组织应该就是你造产品的那台机器的架构。公司的本质就是这个。但每家公司的组织架构看起来都一模一样，而他们造的东西完全不一样。这怎么可能说得通？"</p>
+</blockquote>
+<p>他接着打了一个漂亮的比喻："做炸鸡、翻汉堡、和做扬州炒饭是不一样的——为什么流程要一模一样？"</p>
+<p>在 NVIDIA 里，组织更像<strong>一个计算堆栈</strong>：最底层是架构，然后是芯片、软件、上面是各种模块。每一层的每个模块是人，谁最擅长跑那个模块谁就是"pilot in command"，跟职位高低无关。</p>
+<p>公司内部有一句铁律：<strong>"Mission is the boss."</strong></p>
+<blockquote>
+<p>"We figure out what is the mission, and we go wire up the best skills, the best teams, and the best resources to achieve that mission. It cuts across the entire organization in a way that doesn't make any sense, but it looks a little bit like a neural network."</p>
+<p>"我们搞清楚这个使命是什么，然后把最好的技能、团队和资源接起来去完成它。它穿越整个组织，看起来没道理，但其实长得有点像神经网络。"</p>
+</blockquote>
+<p>关于为什么不开 1-on-1（<a href="/methods/不开 1-on-1.html">不开 1-on-1</a>），他的理由是——<strong>信息的权力</strong>。</p>
+<blockquote>
+<p>"In a command and control system, the person who you report to has more power than you. The reason why they have more power than you is because they're closer to the source of information than you are."</p>
+<p>"在一个命令与控制的系统里，你的上司比你有权力，是因为他们离信息源更近。"</p>
+</blockquote>
+<p>在 NVIDIA 里，信息是在团队层面同时传递给所有人的。他举了当天早上刚开的机器人会议：屋里有刚毕业的大学生，也有三位副总裁和两位 e-staff。当大家推理出一个决定的时候——</p>
+<blockquote>
+<p>"Nobody has more power than anybody else. The new college grad learned at exactly the same time as the e-staff."</p>
+<p>"没有人比任何人拥有更多权力。刚毕业的大学生和 e-staff 学到这个决定的那一刻是同一秒。"</p>
+</blockquote>
+<p>这是他定义领导力的方式——<strong>你能坐那个位置，不是因为你掌握了特权信息，而是因为你能推理问题、能帮别人成功</strong>。</p>
+<hr />
+<h2 id="30">六、做 <a href="/methods/30 年公司.html">30 年公司</a>：面向未来播种</h2>
+<p>Ben 问他：NVIDIA 一年出两代产品的节奏让人想到"Apple 一年发两部 iPhone"一样不可思议——为什么你能做到？</p>
+<p>黄仁勋答的并不是"流程管理"，而是<strong>视野</strong>。他读过很多商业书——最爱的是 Clay Christensen 的系列和 Andy Grove——但他强调：<strong>读书不是为了模仿，而是为了被启发</strong>。</p>
+<blockquote>
+<p>"You're supposed to be inspired and learn from everybody else. The education's free. When somebody talks about a new product, you're supposed to go listen to it. You're not supposed to ignore it."</p>
+</blockquote>
+<p>他说 CEO 最重要的工作就是<strong>站在树下等苹果</strong>：</p>
+<blockquote>
+<p>"Our job as CEO is to look around corners and to anticipate where will opportunities be someday. Even if I'm not exactly sure what and when, how do I position the company to be near it, to be just standing near under the tree, and we can do a diving catch when the apple falls."</p>
+<p>"我们 CEO 的工作就是看向未来的转角，预判机会会在哪里出现。即使我不完全确定是什么、什么时候，我也要把公司放到它附近，站到那棵树下面，当苹果掉下来的时候扑过去接住。"</p>
+</blockquote>
+<p>NVIDIA 进入数据中心的路径其实是从 <strong>GeForce NOW</strong>（云游戏）开始的——17 年前他就意识到"显卡被显示器绑在桌子上"是一个根本性的商业限制。接下来是远程图形工作站，再是 CUDA+GPU 的超级计算机——三个数据中心产品一路铺垫，才有了今天 AI 爆发时 NVIDIA 的"站位"。</p>
+<blockquote>
+<p>"You want to pave the way to future opportunities. You can't wait until the opportunity is sitting in front of you for you to reach out for it, so you have to anticipate."</p>
+</blockquote>
+<hr />
+<h2 id="_2">七、<a href="/methods/痛苦与磨难.html">痛苦与磨难</a>：如果能重来一次我不会创业</h2>
+<p>访谈的最后一段，是我见过最打动人的 CEO 独白之一。David 问：如果你今天 30 岁，带着两个最聪明的朋友去 Denny's 吃饭讨论创业，你会做什么？</p>
+<blockquote>
+<p>"I wouldn't do it. Building a company and building NVIDIA turned out to have been a million times harder than I expected it to be, than any of us expected it to be. If we realized the pain and suffering, just how vulnerable you're going to feel, and the challenges that you're going to endure, the embarrassment and the shame, and the list of all the things that go wrong—I don't think anybody would start a company. Nobody in their right mind would do it."</p>
+<p>"我不会做。造一家公司、造 NVIDIA 比我想象的难一百万倍，比我们所有人想象的都难。如果当年我们真的意识到这些痛苦和折磨、那种脆弱、那些挑战、那些难堪与羞耻、所有会出错的事——我不认为有人会创业。任何脑子正常的人都不会做这件事。"</p>
+</blockquote>
+<p>然后他揭示了企业家的"超能力"：</p>
+<blockquote>
+<p>"I think that's the superpower of an entrepreneur. They don't know how hard it is, and they only ask themselves how hard can it be? To this day, I trick my brain into thinking, how hard can it be? Because you have to."</p>
+<p>"我觉得这就是企业家的超能力——他们不知道这到底有多难，只问自己'能有多难？'。直到今天，我还在骗自己的脑子，告诉它'能有多难？'，因为你必须这样。"</p>
+</blockquote>
+<p>支撑这个"自欺"的是一圈永远不离开的人——Chris Malachowsky 在公司 30 年了，Jeff Fisher 30 年，Dwight 30 年，<a href="/people/Curtis Priem.html">Curtis Priem</a> 30 年，Jonah 和 Brian 25 年以上……还有 Sutter Hill 的 Tench Coxe 和 Sequoia 的 Mark Stevens，两位最早的 VC 直到今天还在董事会上。</p>
+<blockquote>
+<p>"I'm surrounded by these people that never one time gave up, and they never one time gave up on me. That's the entire ball of wax."</p>
+<p>"我被一群从未放弃过、也从未放弃过我的人围绕着。这就是一切的一切。"</p>
+</blockquote>
+<p>对于 NVIDIA 经历过的几次 80% 以上的股价暴跌，他说：</p>
+<blockquote>
+<p>"80% fall, it's an extraordinary thing no matter how you look at it. It's like when your stock price gets hit, it's embarrassing no matter how you think about it. There are no good answers to any of that stuff. The CEOs are humans and companies are built of humans. These challenges are hard to endure."</p>
+<p>"80% 的下跌，不管你怎么看都是一件极端的事。股价被打下来的时候，你会觉得难堪，这件事没法不难堪。对这些东西没有什么好答案。CEO 是人，公司是由人组成的，这些挑战就是难熬。"</p>
+</blockquote>
+<p>他最怕的不是亏钱，而是<strong>让员工失望</strong>：</p>
+<blockquote>
+<p>"The greatest fear is that you let them down. You want them to build a great life as well as help you build a great company, be able to build a great career. You want them to enjoy all of that."</p>
+</blockquote>
+<hr />
+<h2 id="ai">八、AI 的工作观：生产力带来繁荣，繁荣创造新岗位</h2>
+<p>访谈快结束时，Ben 问了一个时代之问：AI 越来越强，会夺走多少工作？</p>
+<p>黄仁勋的回答是一个典型的<strong>乘数逻辑</strong>：</p>
+<blockquote>
+<p>"The first thing that happens with productivity is prosperity. When the companies get more successful, they hire more people because they want to expand into more areas."</p>
+<p>"生产力提升带来的第一件事是繁荣。公司越成功，就越想扩张到新领域，就雇更多人。"</p>
+</blockquote>
+<p>他说，如果你以为生产力提高 = 需要更少人，那是因为"那家公司没有更多的想法了"，但对大部分公司来说根本不是这样——药物研发、交通、零售、娱乐、科技，每一个行业都还有大量想法等着被追。</p>
+<blockquote>
+<p>"As long as we believe that there are more areas to expand into, the prosperity of the industry which comes from improved productivity results in hiring more people, more ideas."</p>
+</blockquote>
+<p>最后他说了一句话，也是这期访谈被引用最多的一句：</p>
+<blockquote>
+<p>"Humans have infinite ambition. If a company is more profitable, they tend to hire more people to do more. Everything we do will be easier, but we'll end up doing more."</p>
+<p>"人有无尽的野心。一家公司越赚钱，就越会雇更多人去做更多事。我们做的每件事都会变容易，但我们最终会做得更多。"</p>
+</blockquote>
+<hr />
+<h2 id="_3">尾声：这是我的最后一份工作</h2>
+<p>David 问他什么时候意识到这是"最后一份工作"时，他笑着说：</p>
+<blockquote>
+<p>"I don't change jobs. Until I'm fired, this is my last job. This is it."</p>
+<p>"我不换工作。除非被开除，这就是我最后一份工作。就这样。"</p>
+</blockquote>
+<p>他接着说，如果当年不是 Chris 和 Curtis 说服他创立 NVIDIA，他今天一定还在 LSI Logic——因为他"从不换公司"。他谈到 LSI Logic 是"把芯片设计抬升到高级语言"这场革命的震中，改变了他对计算的理解；他谈到 LSI 的 CEO Wilf Corrigan 当年给 <a href="/people/Don Valentine.html">Don Valentine</a> 打电话说"投这个孩子"，让他从 0 开始走上创业这条路。</p>
+<p>关于 Don Valentine，他记得最清楚的一句话是："If you lose my money, I'll kill you."（如果你弄丢了我的钱，我就杀了你。）然后每次 NVIDIA 在报纸上被夸，Don 就会用蜡笔在上面写"Good job, Don."，把报纸寄给他。</p>
+<hr />
+<h2 id="_4">金句集</h2>
+<ol>
+<li>"I know it's going to be perfect, because if it's not, we'll be out of business." — 关于 RIVA 128</li>
+<li>"Universal function approximator." — 关于他看懂 AlexNet 的瞬间</li>
+<li>"Mission is the boss." — <a href="/methods/扁平管理.html">扁平管理</a>的核心原则</li>
+<li>"It's better to be approximately right than exactly wrong." — 引自 Buffett，被他当座右铭</li>
+<li>"You want to position yourself near the tree." — 机会论</li>
+<li>"How hard can it be?" — 他每天早上欺骗自己大脑的句子</li>
+<li>"Humans have infinite ambition." — 关于 AI 与工作的终局</li>
+<li>"Until I'm fired, this is my last job." — 关于承诺</li>
+</ol>
+<hr />
+<p><strong>原文出处</strong>：<a href="https://www.acquired.fm/episodes/jensen-huang">Acquired Podcast — NVIDIA CEO Jensen Huang (2023-10-15)</a></p></div><aside class="backlinks-panel">
+  <div class="bl-panel-header">
+    <h3 class="bl-panel-title">链接到本页 <span class="bl-count">28</span></h3>
+    <div class="bl-panel-actions">
+      <button class="bl-action bl-expand-all">展开</button>
+      <button class="bl-action bl-collapse-all">折叠</button>
+    </div>
+  </div>
+  <div class="bl-group">
+  <button class="bl-group-header">
+    <span class="bl-caret"></span>
+    <span class="bl-source-name">欢迎</span>
+    <span class="bl-mention-cat"></span>
+  </button>
+  <div class="bl-snippets">
+    <div class="bl-snippet">…ilbert 与 David Rosenthal]] 等  ## 怎么用这个知识图谱  - 不知从哪开始：先看 2023-10 Acquired - 黄仁勋深度访谈——这是 3 小时的神级深度访谈，把 NVIDIA 32 年的故事讲全了 - 想看最新论断：[[2026…</div>
+    <a href="/index.html" class="bl-go-link">查看原文 →</a>
+  </div>
+</div>
+<div class="bl-group">
+  <button class="bl-group-header">
+    <span class="bl-caret"></span>
+    <span class="bl-source-name">Bet the Company（赌上整个公司）</span>
+    <span class="bl-mention-cat">概念</span>
+  </button>
+  <div class="bl-snippets">
+    <div class="bl-snippet">…键词：当面前的路只有一条、退路被切断的时候，把公司剩下的全部资源、信心和命运压上去。但 黄仁勋 自己在 2023-10 Acquired - 黄仁勋深度访谈 里给了一个反直觉的修正——这不是赌博，而是"把未来所有的风险提前做掉"。  &gt; "When you push your…</div>
+    <a href="/concepts/Bet the Company.html" class="bl-go-link">查看原文 →</a>
+  </div>
+</div>
+<div class="bl-group">
+  <button class="bl-group-header">
+    <span class="bl-caret"></span>
+    <span class="bl-source-name">CUDA 平台（CUDA）</span>
+    <span class="bl-mention-cat">概念</span>
+  </button>
+  <div class="bl-snippets">
+    <div class="bl-snippet">…—没有 CUDA，GPU 只是一颗显卡；有了 CUDA，GPU 才成为通用的并行加速器。  黄仁勋 在 2023-10 Acquired - 黄仁勋深度访谈 里纠正了一个常见误解——很多人以为 NVIDIA 是"先做技术再变平台"，但他说："**从第一天起，我们就是一家平台公…</div>
+    <a href="/concepts/CUDA 平台.html" class="bl-go-link">查看原文 →</a>
+  </div>
+</div>
+<div class="bl-group">
+  <button class="bl-group-header">
+    <span class="bl-caret"></span>
+    <span class="bl-source-name">Speed of Light 工程方法</span>
+    <span class="bl-mention-cat">概念</span>
+  </button>
+  <div class="bl-snippets">
+    <div class="bl-snippet">…。**  虽然 黄仁勋 没在访谈里直接把 RIVA 128 和 Speed of Light 这个术语挂钩，但 2023-10 Acquired - 黄仁勋深度访谈 关于 RIVA 128 的描述完全是 Speed of Light 的最早实践：  &gt; "Make the bigge…</div>
+    <a href="/concepts/Speed of Light 工程方法.html" class="bl-go-link">查看原文 →</a>
+  </div>
+</div>
+<div class="bl-group">
+  <button class="bl-group-header">
+    <span class="bl-caret"></span>
+    <span class="bl-source-name">数据中心即计算机（The Data Center is the Computer）</span>
+    <span class="bl-mention-cat">概念</span>
+  </button>
+  <div class="bl-snippets">
+    <div class="bl-snippet">…Factory 概念]]  ### 核心要义  第一,定义数据中心的不是芯片,是网络。  黄仁勋 在 2023-10 Acquired - 黄仁勋深度访谈 给出了最深的一句:  &gt; "A data center is distinguished from a desktop…</div>
+    <a href="/concepts/数据中心即计算机.html" class="bl-go-link">查看原文 →</a>
+  </div>
+</div>
+<div class="bl-group">
+  <button class="bl-group-header">
+    <span class="bl-caret"></span>
+    <span class="bl-source-name">目的与任务（Purpose vs Tasks）</span>
+    <span class="bl-mention-cat">概念</span>
+  </button>
+  <div class="bl-snippets">
+    <div class="bl-snippet">…万涨到 10 亿——AI 让每个普通人都能成为某种意义上的程序员。  第四,生产力 → 繁荣 → 更多就业。  2023-10 Acquired - 黄仁勋深度访谈 给出了同一逻辑的更早版本：  &gt; "The first thing that happens with product…</div>
+    <a href="/concepts/目的与任务.html" class="bl-go-link">查看原文 →</a>
+  </div>
+</div>
+<div class="bl-group">
+  <button class="bl-group-header">
+    <span class="bl-caret"></span>
+    <span class="bl-source-name">装机量定义架构（Install Base Defines Architecture）</span>
+    <span class="bl-mention-cat">概念</span>
+  </button>
+  <div class="bl-snippets">
+    <div class="bl-snippet">…rule in our company. Everything else is negotiable.**" &gt; ——2023-10 Acquired - 黄仁勋深度访谈  为什么 30 年保持架构兼容是不可谈判的铁律？因为打破兼容 = 装机量清零 = 架构作废。  ### 实践应用  -…</div>
+    <a href="/concepts/装机量定义架构.html" class="bl-go-link">查看原文 →</a>
+  </div>
+</div>
+<div class="bl-group">
+  <button class="bl-group-header">
+    <span class="bl-caret"></span>
+    <span class="bl-source-name">零亿美元市场（Zero-Billion-Dollar Market）</span>
+    <span class="bl-mention-cat">概念</span>
+  </button>
+  <div class="bl-snippets">
+    <div class="bl-snippet">…A 平台]]、物理 AI、Earth-2 这些看似分散的故事背后的统一战略原型。  最完整的命名出现在 2023-10 Acquired - 黄仁勋深度访谈：  &gt; "**It's our way of saying there's no market yet, but we…</div>
+    <a href="/concepts/零亿美元市场.html" class="bl-go-link">查看原文 →</a>
+  </div>
+</div>
+<div class="bl-group">
+  <button class="bl-group-header">
+    <span class="bl-caret"></span>
+    <span class="bl-source-name">30 年公司（30-Year Company）</span>
+    <span class="bl-mention-cat"></span>
+  </button>
+  <div class="bl-snippets">
+    <div class="bl-snippet">…uting." &gt; "如果你只想 5 年，CUDA 是一场灾难。如果你想 30 年，CUDA 是计算的基础。" &gt; ——2023-10 Acquired - 黄仁勋深度访谈  到 2024 年——CUDA 17 岁——CUDA 平台 变成了全世界 AI 计算的事实标准，450 万开发…</div>
+    <a href="/methods/30 年公司.html" class="bl-go-link">查看原文 →</a>
+  </div>
+</div>
+<div class="bl-group">
+  <button class="bl-group-header">
+    <span class="bl-caret"></span>
+    <span class="bl-source-name">Mission is the Boss（任务即老板）</span>
+    <span class="bl-mention-cat"></span>
+  </button>
+  <div class="bl-snippets">
+    <div class="bl-snippet">…穿过整个组织接到这条使命上。  ## 核心要义  1. 公司应该长得像它要造的东西。**  黄仁勋 在 2023-10 Acquired - 黄仁勋深度访谈 给出最重要的论述：  &gt; "Your organization should be the architecture…</div>
+    <a href="/methods/Mission is the Boss.html" class="bl-go-link">查看原文 →</a>
+  </div>
+</div>
+<div class="bl-group">
+  <button class="bl-group-header">
+    <span class="bl-caret"></span>
+    <span class="bl-source-name">Run, don't walk（跑，别走）</span>
+    <span class="bl-mention-cat"></span>
+  </button>
+  <div class="bl-snippets">
+    <div class="bl-snippet">…re, is trying to figure out how to make us irrelevant." &gt; ——2023-10 Acquired - 黄仁勋深度访谈  4. 跑出来的代价是 痛苦与磨难。  "Run" 不是一句轻松的话。它的代价就是 痛苦与磨难…</div>
+    <a href="/methods/Run, dont walk.html" class="bl-go-link">查看原文 →</a>
+  </div>
+</div>
+<div class="bl-group">
+  <button class="bl-group-header">
+    <span class="bl-caret"></span>
+    <span class="bl-source-name">不开 1-on-1（No One-on-Ones）</span>
+    <span class="bl-mention-cat"></span>
+  </button>
+  <div class="bl-snippets">
+    <div class="bl-snippet">…听到。  ## 核心要义  1. 1-on-1 制造"信息特权",信息特权制造层级。**  黄仁勋 在 2023-10 Acquired - 黄仁勋深度访谈 给出最深的论证：  &gt; "In a command and control system, the person wh…</div>
+    <a href="/methods/不开 1-on-1.html" class="bl-go-link">查看原文 →</a>
+  </div>
+</div>
+<div class="bl-group">
+  <button class="bl-group-header">
+    <span class="bl-caret"></span>
+    <span class="bl-source-name">扁平管理（Flat Organization）</span>
+    <span class="bl-mention-cat"></span>
+  </button>
+  <div class="bl-snippets">
+    <div class="bl-snippet">…gn，谁想走神就走神。" &gt; ——2026-03 Lex Fridman 494 - 4 万亿公司与 AGI  2023-10 Acquired - 黄仁勋深度访谈 时是 40+，到 2026-03 Lex Fridman 494 - 4 万亿公司与 AGI 已经 60+——…</div>
+    <a href="/methods/扁平管理.html" class="bl-go-link">查看原文 →</a>
+  </div>
+</div>
+<div class="bl-group">
+  <button class="bl-group-header">
+    <span class="bl-caret"></span>
+    <span class="bl-source-name">痛苦与磨难（Pain and Suffering）</span>
+    <span class="bl-mention-cat"></span>
+  </button>
+  <div class="bl-snippets">
+    <div class="bl-snippet">…着一个 17 年没人懂的项目活下来才有用。  3. "痛苦"是创业的必需品而不是副产品。  黄仁勋 在 2023-10 Acquired - 黄仁勋深度访谈 中讲过一个让人难忘的判断：  &gt; "I wish upon you ample doses of **pain and…</div>
+    <a href="/methods/痛苦与磨难.html" class="bl-go-link">查看原文 →</a>
+  </div>
+</div>
+<div class="bl-group">
+  <button class="bl-group-header">
+    <span class="bl-caret"></span>
+    <span class="bl-source-name">群发邮件（Mass Email）</span>
+    <span class="bl-mention-cat"></span>
+  </button>
+  <div class="bl-snippets">
+    <div class="bl-snippet">…议——还有大量异步沟通。群发邮件是 黄仁勋 给异步沟通的答案：任何邮件都不只发给一个人。  这一原则在 2023-10 Acquired - 黄仁勋深度访谈 里被概括为：  &gt; "I make sure that everybody on the team is inform…</div>
+    <a href="/methods/群发邮件.html" class="bl-go-link">查看原文 →</a>
+  </div>
+</div>
+<div class="bl-group">
+  <button class="bl-group-header">
+    <span class="bl-caret"></span>
+    <span class="bl-source-name">BlueField DPU</span>
+    <span class="bl-mention-cat">产品</span>
+  </button>
+  <div class="bl-snippets">
+    <div class="bl-snippet">…得 InfiniBand 和 SmartNIC 技术，BlueField 系列是 Mellanox 的核心产品线之一。（2023-10 Acquired - 黄仁勋深度访谈） - 2021 年 4 月（GTC 2021 春）：黄仁勋正式将 BlueField DPU 定位为 NVID…</div>
+    <a href="/companies/BlueField DPU.html" class="bl-go-link">查看原文 →</a>
+  </div>
+</div>
+<div class="bl-group">
+  <button class="bl-group-header">
+    <span class="bl-caret"></span>
+    <span class="bl-source-name">NVIDIA</span>
+    <span class="bl-mention-cat">产品</span>
+  </button>
+  <div class="bl-snippets">
+    <div class="bl-snippet">…]]、Curtis Priem - 创立地点：加州圣何塞 Denny's - 首次提及：2023-10 Acquired - 黄仁勋深度访谈 - 提及次数：全部 18 篇素材均提及  ## 公司一句话定位  NVIDIA 是一家以 加速计算 为…</div>
+    <a href="/companies/NVIDIA.html" class="bl-go-link">查看原文 →</a>
+  </div>
+</div>
+<div class="bl-group">
+  <button class="bl-group-header">
+    <span class="bl-caret"></span>
+    <span class="bl-source-name">RIVA 128</span>
+    <span class="bl-mention-cat">产品</span>
+  </button>
+  <div class="bl-snippets">
+    <div class="bl-snippet">…做三角形、也没做 Z-buffer——而 Microsoft 已经推出 DirectX，30 多个竞争对手涌了进来。"（2023-10 Acquired - 黄仁勋深度访谈） - 1997 年初：NVIDIA 拿了 Sega 的游戏主机合同——这个合同帮 NVIDIA 续了一年命，但…</div>
+    <a href="/companies/RIVA 128.html" class="bl-go-link">查看原文 →</a>
+  </div>
+</div>
+<div class="bl-group">
+  <button class="bl-group-header">
+    <span class="bl-caret"></span>
+    <span class="bl-source-name">Ben Gilbert 与 David Rosenthal</span>
+    <span class="bl-mention-cat">人物</span>
+  </button>
+  <div class="bl-snippets">
+    <div class="bl-snippet">…主嘉宾访谈的对手方——为做 NVIDIA 系列他们研究了 500 多个小时 - 在素材中出现：1 篇直接涉及（2023-10 Acquired - 黄仁勋深度访谈）  ## 在素材中的出现  - 2023-10 Acquired - 黄仁勋深度访谈：这是两人飞到圣克…</div>
+    <a href="/people/Ben Gilbert 与 David Rosenthal.html" class="bl-go-link">查看原文 →</a>
+  </div>
+</div>
+<div class="bl-group">
+  <button class="bl-group-header">
+    <span class="bl-caret"></span>
+    <span class="bl-source-name">Chris Malachowsky</span>
+    <span class="bl-mention-cat">人物</span>
+  </button>
+  <div class="bl-snippets">
+    <div class="bl-snippet">…与黄仁勋的关系：30 多年的工作搭档，"从未离开"的核心圈成员之一 - 在素材中出现：1 篇直接提及（2023-10 Acquired - 黄仁勋深度访谈）  ## 在素材中的出现  - 2023-10 Acquired - 黄仁勋深度访谈：黄仁勋讲到 NV…</div>
+    <a href="/people/Chris Malachowsky.html" class="bl-go-link">查看原文 →</a>
+  </div>
+</div>
+<div class="bl-group">
+  <button class="bl-group-header">
+    <span class="bl-caret"></span>
+    <span class="bl-source-name">Curtis Priem</span>
+    <span class="bl-mention-cat">人物</span>
+  </button>
+  <div class="bl-snippets">
+    <div class="bl-snippet">…伴，与 Chris 一起说服黄仁勋离开 LSI Logic 创业的人 - 在素材中出现：1 篇直接提及（2023-10 Acquired - 黄仁勋深度访谈）  ## 在素材中的出现  - 2023-10 Acquired - 黄仁勋深度访谈：黄仁勋在结尾的"…</div>
+    <a href="/people/Curtis Priem.html" class="bl-go-link">查看原文 →</a>
+  </div>
+</div>
+<div class="bl-group">
+  <button class="bl-group-header">
+    <span class="bl-caret"></span>
+    <span class="bl-source-name">Don Valentine</span>
+    <span class="bl-mention-cat">人物</span>
+  </button>
+  <div class="bl-snippets">
+    <div class="bl-snippet">…quired 访谈为主要来源，NVIDIA.md 和 TSMC.md 等卡片多次引用）  ## 在素材中的出现 - 2023-10 Acquired - 黄仁勋深度访谈：黄仁勋用两段话讲述 Don Valentine。第一段是创业起源：LSI Logic 的 CEO Wilf Cor…</div>
+    <a href="/people/Don Valentine.html" class="bl-go-link">查看原文 →</a>
+  </div>
+</div>
+<div class="bl-group">
+  <button class="bl-group-header">
+    <span class="bl-caret"></span>
+    <span class="bl-source-name">Jeff Fisher</span>
+    <span class="bl-mention-cat">人物</span>
+  </button>
+  <div class="bl-snippets">
+    <div class="bl-snippet">…，是黄仁勋口中"从未放弃过、也从未放弃过我的人"之一 - 在素材中出现：2 篇  ## 在素材中的出现 - 2023-10 Acquired - 黄仁勋深度访谈：黄仁勋在访谈尾声讲述"企业家的超能力"时，列举身边从未离开的人，Jeff Fisher 被排在第二位（仅次于联合创…</div>
+    <a href="/people/Jeff Fisher.html" class="bl-go-link">查看原文 →</a>
+  </div>
+</div>
+<div class="bl-group">
+  <button class="bl-group-header">
+    <span class="bl-caret"></span>
+    <span class="bl-source-name">Tench Coxe</span>
+    <span class="bl-mention-cat">人物</span>
+  </button>
+  <div class="bl-snippets">
+    <div class="bl-snippet">…事会，是 NVIDIA 历史上任期最长的外部董事之一 - 在素材中出现：1 篇  ## 在素材中的出现 - 2023-10 Acquired - 黄仁勋深度访谈：黄仁勋在讲述"一圈永远不离开的人"时，将 Tench Coxe 和 Sequoia 的 Mark Stevens…</div>
+    <a href="/people/Tench Coxe.html" class="bl-go-link">查看原文 →</a>
+  </div>
+</div>
+<div class="bl-group">
+  <button class="bl-group-header">
+    <span class="bl-caret"></span>
+    <span class="bl-source-name">Wilf Corrigan</span>
+    <span class="bl-mention-cat">人物</span>
+  </button>
+  <div class="bl-snippets">
+    <div class="bl-snippet">…"的人，直接促成了 NVIDIA 获得第一笔机构投资 - 在素材中出现：1 篇  ## 在素材中的出现 - 2023-10 Acquired - 黄仁勋深度访谈：黄仁勋回忆创业前的职业经历时提到，他在 LSI Logic 工作期间深受那场"把芯片设计抬升到高级语言"的革命影响…</div>
+    <a href="/people/Wilf Corrigan.html" class="bl-go-link">查看原文 →</a>
+  </div>
+</div>
+<div class="bl-group">
+  <button class="bl-group-header">
+    <span class="bl-caret"></span>
+    <span class="bl-source-name">黄仁勋</span>
+    <span class="bl-mention-cat">人物</span>
+  </button>
+  <div class="bl-snippets">
+    <div class="bl-snippet">…ission is the boss"——他对公司架构的判断  Mission is the Boss 是他在 2023-10 Acquired - 黄仁勋深度访谈 里第一次系统讲清楚的：  &gt; "Your organization should be the architectur…</div>
+    <a href="/people/黄仁勋.html" class="bl-go-link">查看原文 →</a>
+  </div>
+</div>
+<div class="bl-group">
+  <button class="bl-group-header">
+    <span class="bl-caret"></span>
+    <span class="bl-source-name">人物索引</span>
+    <span class="bl-mention-cat">索引</span>
+  </button>
+  <div class="bl-snippets">
+    <div class="bl-snippet">…Ben Gilbert 与 David Rosenthal —— Acquired Podcast 主持双人组，2023-10 Acquired - 黄仁勋深度访谈 是他们最广为流传的一集  ---  ## 五、NVIDIA 创业早期关键人物  - Don Valentine…</div>
+    <a href="/index-pages/人物索引.html" class="bl-go-link">查看原文 →</a>
+  </div>
+</div>
+<div class="bl-group">
+  <button class="bl-group-header">
+    <span class="bl-caret"></span>
+    <span class="bl-source-name">素材总览</span>
+    <span class="bl-mention-cat">索引</span>
+  </button>
+  <div class="bl-snippets">
+    <div class="bl-snippet">…Extreme Co-Design / 34 年 CEO 心法 / 30 年公司 / 意识与人性 - 2023-10 Acquired - 黄仁勋深度访谈 ⭐ —— Ben Gilbert 与 David Rosenthal 的神级 3 小时长访谈，[[NVIDIA…</div>
+    <a href="/index-pages/素材总览.html" class="bl-go-link">查看原文 →</a>
+  </div>
+</div>
+
+</aside>
+
+</main>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Toggle sidebar nav groups
+  document.querySelectorAll('.nav-group-title').forEach(function(el) {
+    el.addEventListener('click', function() {
+      this.parentElement.classList.toggle('open');
+    });
+  });
+
+  // Backlinks: toggle individual groups
+  document.querySelectorAll('.bl-group-header').forEach(function(header) {
+    header.addEventListener('click', function() {
+      this.closest('.bl-group').classList.toggle('open');
+    });
+  });
+
+  // Favorite / bookmark popup
+  var favBtn = document.getElementById('fav-btn');
+  var favPop = document.getElementById('fav-pop');
+  if (favBtn && favPop) {
+    var isMac = /Mac|iPhone|iPad/.test(navigator.platform);
+    var key = isMac ? '⌘ + D' : 'Ctrl + D';
+    favPop.innerHTML =
+      '按 <kbd>' + key + '</kbd> 收藏本页到浏览器书签' +
+      '<button class="fav-pop-copy" id="fav-pop-copy">复制本页链接</button>';
+
+    favBtn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      favPop.classList.toggle('show');
+    });
+    document.addEventListener('click', function(e) {
+      if (!favPop.contains(e.target) && e.target !== favBtn) {
+        favPop.classList.remove('show');
+      }
+    });
+
+    var copyBtn = document.getElementById('fav-pop-copy');
+    if (copyBtn) {
+      copyBtn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        navigator.clipboard.writeText(window.location.href).then(function() {
+          copyBtn.textContent = '✓ 已复制';
+          copyBtn.classList.add('copied');
+          setTimeout(function() {
+            copyBtn.textContent = '复制本页链接';
+            copyBtn.classList.remove('copied');
+          }, 1500);
+        });
+      });
+    }
+  }
+
+  // Backlinks: expand/collapse all
+  document.querySelectorAll('.bl-expand-all').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      this.closest('.backlinks-panel').querySelectorAll('.bl-group').forEach(function(g) {
+        g.classList.add('open');
+      });
+    });
+  });
+  document.querySelectorAll('.bl-collapse-all').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      this.closest('.backlinks-panel').querySelectorAll('.bl-group').forEach(function(g) {
+        g.classList.remove('open');
+      });
+    });
+  });
+});
+</script>
+</body>
+</html>

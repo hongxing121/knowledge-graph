@@ -1,0 +1,1763 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>客户至上（Customer Obsession） - 贝佐斯致股东信知识图谱</title>
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon-180.png">
+<link rel="shortcut icon" href="/assets/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700;900&family=Crimson+Pro:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-WLE88B2LL3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-WLE88B2LL3');
+</script>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+
+:root{
+  --bg:#FAF7F2;
+  --bg2:#F3EDE4;
+  --text:#1B1B18;
+  --text2:#6B6560;
+  --gold:#B8860B;
+  --gold-light:#D4A843;
+  --gold-glow:rgba(184,134,11,.12);
+  --navy:#1A2332;
+  --navy-light:#2C3E50;
+  --cream:#FFF8EE;
+  --border:#E0D6C8;
+  --card:#FFFFFF;
+  --link:#8B5E0B;
+  --serif:'Noto Serif SC','Crimson Pro',Georgia,'Times New Roman',serif;
+  --sans:'DM Sans',-apple-system,BlinkMacSystemFont,'PingFang SC','Microsoft YaHei',sans-serif;
+  --sidebar-w:260px;
+}
+
+html{font-size:15px;scroll-behavior:smooth}
+body{
+  font-family:var(--sans);
+  color:var(--text);
+  background:var(--bg);
+  display:flex;
+  min-height:100vh;
+  line-height:1.8;
+  -webkit-font-smoothing:antialiased;
+}
+
+/* ===== SIDEBAR ===== */
+.sidebar{
+  width:var(--sidebar-w);
+  background:var(--navy);
+  position:fixed;top:0;left:0;bottom:0;
+  overflow-y:auto;
+  z-index:100;
+  display:flex;
+  flex-direction:column;
+}
+.sidebar-header{padding:20px 16px 16px;border-bottom:1px solid rgba(255,255,255,.08)}
+.logo{
+  color:#fff;
+  font-size:17px;
+  font-weight:700;
+  text-decoration:none;
+  letter-spacing:.5px;
+  font-family:var(--serif);
+  display:block;
+}
+.logo:hover{color:var(--gold-light)}
+
+.sidebar-nav{flex:1;padding:8px 0;overflow-y:auto}
+.sidebar-nav::-webkit-scrollbar{width:4px}
+.sidebar-nav::-webkit-scrollbar-thumb{background:rgba(255,255,255,.15);border-radius:2px}
+
+.nav-link{
+  display:block;
+  padding:6px 16px;
+  color:#cbd5e1;
+  text-decoration:none;
+  font-size:13px;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  border-left:3px solid transparent;
+  transition:all .15s;
+}
+.nav-link:hover{background:rgba(255,255,255,.06);color:#fff}
+.nav-link.active{
+  color:#fff;
+  background:rgba(184,134,11,.15);
+  border-left-color:var(--gold);
+  font-weight:600;
+}
+.nav-home{font-size:14px;padding:10px 16px;font-weight:500;margin-bottom:4px}
+.nav-changelog{
+  margin-top:auto;
+  padding:14px 16px;
+  font-size:12px;
+  color:rgba(255,255,255,.4);
+  border-top:1px solid rgba(255,255,255,.08);
+}
+.nav-changelog:hover{color:rgba(255,255,255,.7)}
+.nav-changelog.active{color:var(--gold-light)}
+.sidebar-nav{display:flex;flex-direction:column;height:100%}
+
+.nav-group{margin-bottom:2px}
+.nav-group-title{
+  padding:8px 16px;
+  color:#cbd5e1;
+  font-size:12px;
+  font-weight:600;
+  text-transform:uppercase;
+  letter-spacing:.5px;
+  cursor:pointer;
+  display:flex;
+  align-items:center;
+  gap:6px;
+  user-select:none;
+  transition:color .15s;
+}
+.nav-group-title:hover{color:#fff}
+.caret{
+  display:inline-block;
+  width:0;height:0;
+  border-left:5px solid #cbd5e1;
+  border-top:4px solid transparent;
+  border-bottom:4px solid transparent;
+  transition:transform .2s;
+}
+.nav-group.open .nav-group-title .caret{transform:rotate(90deg);border-left-color:#fff}
+.nav-group-title .badge{
+  margin-left:auto;
+  background:rgba(255,255,255,.1);
+  color:#cbd5e1;
+  font-size:11px;
+  padding:1px 6px;
+  border-radius:8px;
+  font-weight:400;
+}
+.nav-group-items{display:none;padding-left:8px}
+.nav-group.open .nav-group-items{display:block}
+
+.hamburger{
+  display:none;
+  position:fixed;
+  top:12px;left:12px;
+  z-index:200;
+  background:var(--navy);
+  color:#fff;
+  border:none;
+  font-size:20px;
+  padding:6px 10px;
+  border-radius:6px;
+  cursor:pointer;
+}
+
+/* ===== MAIN ===== */
+.main{
+  margin-left:max(var(--sidebar-w), calc((100vw - 1160px) / 2));
+  flex:1;
+  position:relative;
+  max-width:1160px;
+  padding:0;
+}
+
+/* grain overlay */
+.main::after{
+  content:'';
+  position:fixed;
+  top:0;left:var(--sidebar-w);right:0;bottom:0;
+  pointer-events:none;
+  opacity:.03;
+  z-index:999;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* ===== FAV / BOOKMARK BUTTON ===== */
+.fav-wrap{
+  position:absolute;
+  top:24px;right:48px;
+  z-index:50;
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+.sister-link{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  padding:8px 16px;
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:24px;
+  color:var(--navy);
+  font-size:13px;
+  font-weight:600;
+  font-family:var(--sans);
+  text-decoration:none;
+  box-shadow:0 2px 8px rgba(0,0,0,.04);
+  transition:all .25s;
+  white-space:nowrap;
+}
+.sister-link:hover{
+  border-color:var(--gold);
+  color:var(--gold);
+  box-shadow:0 4px 16px var(--gold-glow);
+  transform:translateY(-1px);
+}
+.sister-link .arrow{
+  color:var(--gold);
+  font-weight:700;
+}
+.fav-btn{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  padding:8px 18px;
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:24px;
+  color:var(--gold);
+  font-size:16px;
+  cursor:pointer;
+  transition:all .25s;
+  font-family:var(--sans);
+  box-shadow:0 2px 8px rgba(0,0,0,.04);
+}
+.fav-btn:hover{
+  border-color:var(--gold);
+  box-shadow:0 4px 16px var(--gold-glow);
+  transform:translateY(-1px);
+}
+.fav-label{
+  font-size:13px;
+  color:var(--text2);
+  font-weight:500;
+}
+.fav-btn:hover .fav-label{color:var(--gold)}
+.fav-pop{
+  display:none;
+  position:absolute;
+  right:0;top:48px;
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:10px;
+  padding:14px 16px;
+  box-shadow:0 8px 32px rgba(0,0,0,.12);
+  font-size:13px;
+  min-width:240px;
+  z-index:51;
+  color:var(--text);
+  line-height:1.6;
+}
+.fav-pop.show{display:block}
+.fav-pop kbd{
+  background:var(--bg2);
+  padding:2px 7px;
+  border-radius:4px;
+  font-size:12px;
+  border:1px solid var(--border);
+  font-family:var(--sans);
+  color:var(--navy);
+  font-weight:600;
+}
+.fav-pop-copy{
+  display:block;
+  width:100%;
+  margin-top:10px;
+  padding:8px 0;
+  background:var(--bg);
+  border:1px solid var(--border);
+  border-radius:6px;
+  color:var(--text2);
+  font-size:12px;
+  cursor:pointer;
+  text-align:center;
+  transition:all .15s;
+  font-family:var(--sans);
+}
+.fav-pop-copy:hover{
+  border-color:var(--gold);
+  color:var(--gold);
+}
+.fav-pop-copy.copied{
+  background:#ecfdf5;
+  border-color:#6ee7b7;
+  color:#059669;
+}
+
+@media(max-width:768px){
+  .fav-wrap{right:16px;top:12px;gap:6px}
+  .sister-link{padding:6px 12px;font-size:11px}
+  .fav-btn{padding:6px 14px}
+  .fav-label{font-size:12px}
+}
+
+/* ===== CHANGELOG ===== */
+.article.changelog h2{
+  border-bottom-color:var(--gold);
+  display:flex;
+  align-items:center;
+  gap:10px;
+  flex-wrap:wrap;
+}
+.version{
+  display:inline-flex;
+  align-items:center;
+  background:var(--gold);
+  color:#fff;
+  font-size:13px;
+  font-weight:700;
+  padding:3px 11px;
+  border-radius:6px;
+  font-family:var(--sans);
+  letter-spacing:.3px;
+}
+.changelog-date{
+  font-size:14px;
+  color:var(--text2);
+  font-weight:500;
+  font-family:var(--sans);
+}
+.change-list{
+  list-style:none;
+  padding:0;
+  margin:16px 0;
+}
+.change-list li{
+  padding:10px 0 10px 18px;
+  position:relative;
+  border-bottom:1px solid var(--border);
+  font-size:14px;
+  line-height:1.75;
+}
+.change-list li:last-child{border-bottom:none}
+.change-list li::before{
+  content:"";
+  position:absolute;
+  left:0;
+  top:20px;
+  width:6px;
+  height:6px;
+  border-radius:50%;
+  background:var(--gold);
+}
+.change-type{
+  display:inline-block;
+  font-size:11px;
+  padding:2px 8px;
+  border-radius:4px;
+  color:#fff;
+  font-weight:600;
+  margin-right:8px;
+  font-family:var(--sans);
+  vertical-align:1px;
+  letter-spacing:.2px;
+}
+.change-type.feat{background:#059669}
+.change-type.fix{background:#dc2626}
+.change-type.plan{background:#3b82f6}
+.change-list li strong{color:var(--navy);font-weight:700}
+
+/* ===== ARTICLE (content pages) ===== */
+.article{max-width:820px;padding:48px 48px 80px}
+.meta{
+  font-size:13px;
+  color:var(--text2);
+  margin-bottom:16px;
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+.type-badge{
+  font-size:11px;
+  padding:2px 8px;
+  border-radius:4px;
+  color:#fff;
+  font-weight:600;
+}
+.type-概念{background:#7C5E2A}
+.type-产品{background:#1A6B7C}
+.type-人物{background:#8B2F2F}
+.type-股东信{background:#2A6B4F}
+.type-索引{background:#6B6560}
+
+.article h1{
+  font-family:var(--serif);
+  font-size:28px;
+  line-height:1.3;
+  margin-bottom:24px;
+  font-weight:900;
+  color:var(--navy);
+  letter-spacing:-.5px;
+}
+.article h2{
+  font-family:var(--serif);
+  font-size:21px;
+  margin:36px 0 14px;
+  padding-bottom:8px;
+  border-bottom:2px solid var(--border);
+  font-weight:700;
+  color:var(--navy);
+}
+.article h3{
+  font-family:var(--serif);
+  font-size:17px;
+  margin:24px 0 10px;
+  font-weight:600;
+  color:var(--navy-light);
+}
+.article p{margin:10px 0}
+.article ul,.article ol{padding-left:24px;margin:10px 0}
+.article li{margin:4px 0}
+
+.article a{
+  color:var(--link);
+  text-decoration:none;
+  background:linear-gradient(to bottom,transparent 60%,var(--gold-glow) 60%);
+  transition:background .2s;
+}
+.article a:hover{background:linear-gradient(to bottom,transparent 40%,rgba(184,134,11,.2) 40%)}
+
+.article blockquote{
+  background:var(--cream);
+  border-left:4px solid var(--gold);
+  padding:14px 20px;
+  margin:16px 0;
+  border-radius:0 8px 8px 0;
+  font-style:italic;
+  color:#5C4813;
+  font-family:var(--serif);
+}
+.article blockquote p{margin:0}
+.article blockquote a{background:none;color:var(--gold)}
+.article blockquote a:hover{text-decoration:underline}
+
+.article table{border-collapse:collapse;width:100%;margin:16px 0;font-size:14px}
+.article th,.article td{border:1px solid var(--border);padding:8px 12px;text-align:left}
+.article th{background:var(--bg2);font-weight:600;color:var(--navy)}
+.article strong{font-weight:700}
+.article hr{border:none;border-top:1px solid var(--border);margin:32px 0}
+.article code{
+  background:var(--bg2);
+  padding:2px 6px;
+  border-radius:3px;
+  font-size:13px;
+  font-family:'SF Mono',Menlo,Consolas,monospace;
+  color:#5C4813;
+}
+
+/* ===== BACKLINKS PANEL (right sidebar) ===== */
+.main.has-backlinks{
+  display:grid;
+  grid-template-columns:minmax(0,820px) 280px;
+  gap:0 24px;
+  max-width:1160px;
+}
+.main-content{min-width:0}
+
+.backlinks-panel{
+  grid-column:2;
+  grid-row:1/-1;
+  position:sticky;
+  top:24px;
+  max-height:calc(100vh - 48px);
+  overflow-y:auto;
+  padding:24px 0 24px 20px;
+  border-left:1px solid var(--border);
+  font-size:13px;
+  align-self:start;
+}
+.backlinks-panel::-webkit-scrollbar{width:3px}
+.backlinks-panel::-webkit-scrollbar-thumb{background:var(--border);border-radius:2px}
+
+.bl-panel-header{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  margin-bottom:12px;
+}
+.bl-panel-title{
+  font-family:var(--serif);
+  font-size:14px;
+  font-weight:700;
+  color:var(--navy);
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+.bl-count{
+  font-size:11px;
+  background:var(--bg2);
+  padding:1px 7px;
+  border-radius:10px;
+  color:var(--text2);
+  font-weight:600;
+}
+.bl-panel-actions{display:flex;gap:4px}
+.bl-action{
+  background:none;
+  border:1px solid var(--border);
+  border-radius:4px;
+  padding:2px 8px;
+  font-size:11px;
+  color:var(--text2);
+  cursor:pointer;
+  font-family:var(--sans);
+  transition:all .15s;
+}
+.bl-action:hover{border-color:var(--gold);color:var(--gold)}
+
+.bl-group{margin-bottom:4px}
+.bl-group-header{
+  display:flex;
+  align-items:center;
+  gap:6px;
+  background:none;
+  border:none;
+  cursor:pointer;
+  padding:5px 0;
+  width:100%;
+  text-align:left;
+  font-size:13px;
+  font-family:var(--sans);
+}
+.bl-group-header:hover{background:rgba(0,0,0,.02);border-radius:4px}
+
+.bl-caret{
+  display:inline-block;
+  width:0;height:0;
+  border:4px solid transparent;
+  border-left:5px solid var(--text2);
+  transition:transform .15s;
+  flex-shrink:0;
+}
+.bl-group.open .bl-caret{transform:rotate(90deg)}
+
+.bl-source-name{
+  color:var(--navy);
+  font-weight:600;
+  flex:1;
+  min-width:0;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
+.bl-mention-cat{
+  font-size:10px;
+  color:var(--text2);
+  background:var(--bg2);
+  padding:0 5px;
+  border-radius:8px;
+  flex-shrink:0;
+  margin-left:4px;
+}
+
+.bl-snippets{display:none;padding:4px 0 4px 14px}
+.bl-group.open .bl-snippets{display:block}
+
+.bl-snippet{
+  padding:6px 0;
+  border-bottom:1px solid var(--border);
+  line-height:1.6;
+  color:var(--text2);
+  font-size:12px;
+}
+.bl-snippet:last-child{border-bottom:none}
+.bl-go-link{
+  display:inline-block;
+  font-size:11px;
+  color:var(--link);
+  text-decoration:none;
+  padding:4px 0 2px;
+  font-weight:600;
+  transition:color .15s;
+}
+.bl-go-link:hover{color:var(--gold);text-decoration:underline}
+
+/* ===== HOMEPAGE ===== */
+.hero-section{
+  position:relative;
+  padding:72px 48px 56px;
+  max-width:900px;
+  margin:0 auto;
+}
+.hero-eyebrow{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  font-size:12px;
+  font-weight:600;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  color:var(--gold);
+  margin-bottom:20px;
+  opacity:0;
+  animation:fadeUp .6s ease forwards;
+}
+.hero-eyebrow::before{content:'';width:24px;height:1px;background:var(--gold)}
+.hero-title{
+  font-family:var(--serif);
+  font-size:clamp(32px,5vw,48px);
+  font-weight:900;
+  line-height:1.25;
+  letter-spacing:-1px;
+  color:var(--navy);
+  margin-bottom:6px;
+  opacity:0;
+  animation:fadeUp .6s ease .1s forwards;
+}
+.hero-title .gold{color:var(--gold)}
+.hero-sub{
+  font-size:17px;
+  color:var(--text2);
+  line-height:1.8;
+  margin-top:16px;
+  max-width:640px;
+  font-family:var(--serif);
+  font-weight:400;
+  opacity:0;
+  animation:fadeUp .6s ease .2s forwards;
+}
+.hero-sub b{color:var(--navy);font-weight:700}
+
+.stats-row{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:0;
+  max-width:900px;
+  margin:0 auto 48px;
+  padding:0 48px;
+  border-top:1px solid var(--border);
+  border-bottom:1px solid var(--border);
+  opacity:0;
+  animation:fadeUp .6s ease .3s forwards;
+}
+.stat-item{
+  text-align:center;
+  padding:28px 12px;
+  position:relative;
+  transition:background .3s;
+  text-decoration:none;
+  color:inherit;
+}
+.stat-item:not(:last-child)::after{
+  content:'';
+  position:absolute;
+  right:0;top:20%;
+  height:60%;
+  width:1px;
+  background:var(--border);
+}
+.stat-item:hover{background:var(--gold-glow)}
+.stat-num{
+  font-family:var(--serif);
+  font-size:42px;
+  font-weight:900;
+  color:var(--navy);
+  line-height:1;
+  margin-bottom:6px;
+  letter-spacing:-2px;
+}
+.stat-label{
+  font-size:13px;
+  color:var(--text2);
+  font-weight:500;
+  letter-spacing:.5px;
+}
+
+.main-inner{max-width:900px;padding:0 48px 80px;margin:0 auto}
+
+.nav-cards{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:16px;
+  margin-bottom:56px;
+  opacity:0;
+  animation:fadeUp .6s ease .4s forwards;
+}
+.nav-card{
+  position:relative;
+  padding:28px 20px 24px;
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:14px;
+  text-decoration:none;
+  transition:all .3s cubic-bezier(.4,0,.2,1);
+  overflow:hidden;
+  display:block;
+  color:inherit;
+}
+.nav-card::before{
+  content:'';
+  position:absolute;
+  top:0;left:0;right:0;
+  height:3px;
+  background:var(--gold);
+  opacity:0;
+  transition:opacity .3s;
+}
+.nav-card:hover{
+  transform:translateY(-4px);
+  box-shadow:0 12px 32px rgba(0,0,0,.08);
+  border-color:var(--gold-light);
+}
+.nav-card:hover::before{opacity:1}
+.nav-card-icon{font-size:32px;margin-bottom:14px;display:block;line-height:1}
+.nav-card-title{
+  font-family:var(--serif);
+  font-size:16px;
+  font-weight:700;
+  color:var(--navy);
+  margin-bottom:4px;
+}
+.nav-card-sub{font-size:13px;color:var(--text2)}
+.nav-card-arrow{
+  position:absolute;
+  bottom:20px;right:20px;
+  font-size:18px;
+  color:var(--border);
+  transition:all .3s;
+}
+.nav-card:hover .nav-card-arrow{color:var(--gold);transform:translateX(4px)}
+
+.section{margin-bottom:48px}
+.section-header{display:flex;align-items:center;gap:12px;margin-bottom:20px}
+.section-line{flex:1;height:1px;background:var(--border)}
+.section-title{
+  font-family:var(--serif);
+  font-size:22px;
+  font-weight:700;
+  color:var(--navy);
+  white-space:nowrap;
+}
+.section-count{
+  font-size:12px;
+  color:var(--gold);
+  font-weight:600;
+  background:var(--gold-glow);
+  padding:3px 10px;
+  border-radius:12px;
+  white-space:nowrap;
+}
+
+.tag-cloud{display:flex;flex-wrap:wrap;gap:10px}
+.tag{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  padding:8px 18px;
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:24px;
+  font-size:14px;
+  color:var(--text);
+  text-decoration:none;
+  transition:all .25s cubic-bezier(.4,0,.2,1);
+  font-weight:500;
+}
+.tag:hover{
+  border-color:var(--gold);
+  color:var(--navy);
+  box-shadow:0 4px 16px var(--gold-glow);
+  transform:translateY(-2px);
+}
+.tag-n{
+  font-size:11px;
+  font-weight:700;
+  color:#fff;
+  background:var(--gold);
+  padding:2px 8px;
+  border-radius:10px;
+  min-width:20px;
+  text-align:center;
+}
+.tag.tier-1{
+  font-size:16px;
+  padding:10px 22px;
+  font-weight:700;
+  border-color:var(--gold-light);
+  background:linear-gradient(135deg,#FFFDF5,#FFF8E7);
+}
+.tag.tier-1 .tag-n{font-size:12px;padding:3px 10px;background:var(--gold)}
+.tag.tier-2{font-size:15px;padding:9px 20px;font-weight:600}
+
+.people-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(180px,1fr));
+  gap:14px;
+}
+.person-card{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  padding:24px 16px 20px;
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:14px;
+  text-decoration:none;
+  transition:all .3s;
+  text-align:center;
+  color:inherit;
+}
+.person-card:hover{
+  transform:translateY(-3px);
+  box-shadow:0 8px 24px rgba(0,0,0,.06);
+  border-color:var(--gold-light);
+}
+.person-avatar{
+  width:56px;height:56px;
+  border-radius:50%;
+  background:linear-gradient(135deg,var(--navy),var(--navy-light));
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:22px;
+  margin-bottom:12px;
+  color:var(--gold-light);
+  font-family:var(--serif);
+  font-weight:700;
+  box-shadow:0 4px 12px rgba(26,35,50,.15);
+}
+.person-name{
+  font-family:var(--serif);
+  font-size:15px;
+  font-weight:700;
+  color:var(--navy);
+  margin-bottom:4px;
+}
+.person-refs{font-size:12px;color:var(--text2)}
+
+.gold-divider{display:flex;align-items:center;gap:16px;margin:56px 0}
+.gold-divider::before,.gold-divider::after{
+  content:'';
+  flex:1;
+  height:1px;
+  background:linear-gradient(to right,transparent,var(--border),transparent);
+}
+.gold-divider-diamond{
+  width:8px;height:8px;
+  background:var(--gold);
+  transform:rotate(45deg);
+  flex-shrink:0;
+}
+
+.footer-promo{
+  position:relative;
+  overflow:hidden;
+  padding:40px;
+  background:var(--navy);
+  border-radius:20px;
+  color:#fff;
+  display:flex;
+  gap:40px;
+  align-items:center;
+}
+.footer-promo::before{
+  content:'';
+  position:absolute;
+  top:-50%;right:-20%;
+  width:400px;height:400px;
+  border-radius:50%;
+  background:radial-gradient(circle,rgba(184,134,11,.15),transparent 70%);
+}
+.promo-story{flex:1;position:relative;z-index:1;min-width:0}
+.promo-story h3{
+  font-family:var(--serif);
+  font-size:20px;
+  font-weight:700;
+  margin-bottom:12px;
+  color:var(--gold-light);
+}
+.promo-story p{font-size:14px;color:rgba(255,255,255,.75);line-height:1.8;margin:8px 0}
+.promo-credit{
+  margin-top:16px !important;
+  padding-top:14px;
+  border-top:1px solid rgba(255,255,255,.12);
+  font-size:13px !important;
+}
+.promo-credit strong{color:var(--gold-light);font-weight:700}
+
+.promo-qr{
+  flex-shrink:0;
+  position:relative;
+  z-index:1;
+  text-align:center;
+}
+.qr-img{
+  display:block;
+  width:140px;
+  height:140px;
+  border-radius:12px;
+  border:3px solid rgba(255,255,255,.15);
+  box-shadow:0 8px 24px rgba(0,0,0,.25);
+  background:#fff;
+  padding:6px;
+}
+.qr-text{
+  font-size:12px;
+  color:rgba(255,255,255,.6);
+  margin-top:10px;
+  letter-spacing:.5px;
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes fadeUp{
+  from{opacity:0;transform:translateY(16px)}
+  to{opacity:1;transform:translateY(0)}
+}
+.section{opacity:0;animation:fadeUp .5s ease forwards}
+.section:nth-child(1){animation-delay:.45s}
+.section:nth-child(2){animation-delay:.55s}
+.section:nth-child(3){animation-delay:.65s}
+.section:nth-child(4){animation-delay:.75s}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:1024px){
+  .main.has-backlinks{display:block}
+  .backlinks-panel{
+    position:static;
+    max-height:none;
+    overflow-y:visible;
+    border-left:none;
+    border-top:1px solid var(--border);
+    padding:24px 16px;
+    margin-top:24px;
+    max-width:820px;
+  }
+}
+
+@media(max-width:768px){
+  .sidebar{transform:translateX(-100%);transition:transform .3s}
+  .sidebar.open{transform:translateX(0)}
+  .hamburger{display:block}
+  .main{margin-left:0;max-width:100%}
+  .main::after{left:0}
+  .main.has-backlinks{display:block}
+  .article{padding:48px 16px 60px}
+  .backlinks-panel{padding:16px 12px;margin-top:16px}
+  .hero-section{padding:44px 20px 20px}
+  .hero-eyebrow{font-size:10px;margin-bottom:12px}
+  .hero-title{font-size:26px}
+  .hero-sub{font-size:14px;line-height:1.6;margin-top:10px}
+  .stats-row{padding:0 16px;margin:0 0 20px}
+  .stat-item{padding:16px 4px}
+  .stat-num{font-size:28px;letter-spacing:-1px}
+  .stat-label{font-size:11px}
+  .main-inner{padding:0 20px 60px}
+  .nav-cards{grid-template-columns:1fr 1fr;gap:10px;margin-bottom:36px}
+  .nav-card{padding:20px 14px 18px}
+  .nav-card-icon{font-size:24px;margin-bottom:8px}
+  .nav-card-title{font-size:14px}
+  .nav-card-sub{font-size:12px}
+  .footer-promo{flex-direction:column;text-align:center;padding:28px 20px;gap:24px}
+  .people-grid{grid-template-columns:repeat(2,1fr)}
+}
+</style>
+</head>
+<body>
+<button class="hamburger" aria-label="菜单" onclick="document.querySelector('.sidebar').classList.toggle('open')">☰</button>
+<aside class="sidebar">
+  <div class="sidebar-header"><a href="/index.html" class="logo">贝佐斯知识图谱</a></div>
+  <div class="sidebar-nav">
+    <a href="/index.html" class="nav-link nav-home">🏛 首页</a>
+<div class="nav-group open">
+  <div class="nav-group-title"><span class="caret"></span>索引<span class="badge">4</span></div>
+  <div class="nav-group-items">
+    <a href="/index-pages/产品索引.html" class="nav-link" title="产品索引">产品索引</a>
+    <a href="/index-pages/人物索引.html" class="nav-link" title="人物索引">人物索引</a>
+    <a href="/index-pages/核心思想索引.html" class="nav-link" title="核心思想索引">核心思想索引</a>
+    <a href="/index-pages/贝佐斯致股东信总览.html" class="nav-link" title="贝佐斯致股东信总览">贝佐斯致股东信总览</a>
+  </div>
+</div>
+<div class="nav-group">
+  <div class="nav-group-title"><span class="caret"></span>股东信<span class="badge">24</span></div>
+  <div class="nav-group-items">
+    <a href="/letters/1997 贝佐斯致股东信.html" class="nav-link" title="1997 贝佐斯致股东信">1997 贝佐斯致股东信</a>
+    <a href="/letters/1998 贝佐斯致股东信.html" class="nav-link" title="1998 贝佐斯致股东信">1998 贝佐斯致股东信</a>
+    <a href="/letters/1999 贝佐斯致股东信.html" class="nav-link" title="1999 贝佐斯致股东信">1999 贝佐斯致股东信</a>
+    <a href="/letters/2000 贝佐斯致股东信.html" class="nav-link" title="2000 贝佐斯致股东信">2000 贝佐斯致股东信</a>
+    <a href="/letters/2001 贝佐斯致股东信.html" class="nav-link" title="2001 贝佐斯致股东信">2001 贝佐斯致股东信</a>
+    <a href="/letters/2002 贝佐斯致股东信.html" class="nav-link" title="2002 贝佐斯致股东信">2002 贝佐斯致股东信</a>
+    <a href="/letters/2003 贝佐斯致股东信.html" class="nav-link" title="2003 贝佐斯致股东信">2003 贝佐斯致股东信</a>
+    <a href="/letters/2004 贝佐斯致股东信.html" class="nav-link" title="2004 贝佐斯致股东信">2004 贝佐斯致股东信</a>
+    <a href="/letters/2005 贝佐斯致股东信.html" class="nav-link" title="2005 贝佐斯致股东信">2005 贝佐斯致股东信</a>
+    <a href="/letters/2006 贝佐斯致股东信.html" class="nav-link" title="2006 贝佐斯致股东信">2006 贝佐斯致股东信</a>
+    <a href="/letters/2007 贝佐斯致股东信.html" class="nav-link" title="2007 贝佐斯致股东信">2007 贝佐斯致股东信</a>
+    <a href="/letters/2008 贝佐斯致股东信.html" class="nav-link" title="2008 贝佐斯致股东信">2008 贝佐斯致股东信</a>
+    <a href="/letters/2009 贝佐斯致股东信.html" class="nav-link" title="2009 贝佐斯致股东信">2009 贝佐斯致股东信</a>
+    <a href="/letters/2010 贝佐斯致股东信.html" class="nav-link" title="2010 贝佐斯致股东信">2010 贝佐斯致股东信</a>
+    <a href="/letters/2011 贝佐斯致股东信.html" class="nav-link" title="2011 贝佐斯致股东信">2011 贝佐斯致股东信</a>
+    <a href="/letters/2012 贝佐斯致股东信.html" class="nav-link" title="2012 贝佐斯致股东信">2012 贝佐斯致股东信</a>
+    <a href="/letters/2013 贝佐斯致股东信.html" class="nav-link" title="2013 贝佐斯致股东信">2013 贝佐斯致股东信</a>
+    <a href="/letters/2014 贝佐斯致股东信.html" class="nav-link" title="2014 贝佐斯致股东信">2014 贝佐斯致股东信</a>
+    <a href="/letters/2015 贝佐斯致股东信.html" class="nav-link" title="2015 贝佐斯致股东信">2015 贝佐斯致股东信</a>
+    <a href="/letters/2016 贝佐斯致股东信.html" class="nav-link" title="2016 贝佐斯致股东信">2016 贝佐斯致股东信</a>
+    <a href="/letters/2017 贝佐斯致股东信.html" class="nav-link" title="2017 贝佐斯致股东信">2017 贝佐斯致股东信</a>
+    <a href="/letters/2018 贝佐斯致股东信.html" class="nav-link" title="2018 贝佐斯致股东信">2018 贝佐斯致股东信</a>
+    <a href="/letters/2019 贝佐斯致股东信.html" class="nav-link" title="2019 贝佐斯致股东信">2019 贝佐斯致股东信</a>
+    <a href="/letters/2020 贝佐斯致股东信.html" class="nav-link" title="2020 贝佐斯致股东信">2020 贝佐斯致股东信</a>
+  </div>
+</div>
+<div class="nav-group open">
+  <div class="nav-group-title"><span class="caret"></span>概念<span class="badge">16</span></div>
+  <div class="nav-group-items">
+    <a href="/concepts/Day 1.html" class="nav-link" title="Day 1">Day 1</a>
+    <a href="/concepts/一类决策与二类决策.html" class="nav-link" title="一类决策与二类决策">一类决策与二类决策</a>
+    <a href="/concepts/低价策略.html" class="nav-link" title="低价策略">低价策略</a>
+    <a href="/concepts/创造大于消耗.html" class="nav-link" title="创造大于消耗">创造大于消耗</a>
+    <a href="/concepts/发明与失败.html" class="nav-link" title="发明与失败">发明与失败</a>
+    <a href="/concepts/客户至上.html" class="nav-link active" title="客户至上">客户至上</a>
+    <a href="/concepts/差异化即生存.html" class="nav-link" title="差异化即生存">差异化即生存</a>
+    <a href="/concepts/数据驱动决策.html" class="nav-link" title="数据驱动决策">数据驱动决策</a>
+    <a href="/concepts/气候承诺.html" class="nav-link" title="气候承诺">气候承诺</a>
+    <a href="/concepts/漫游.html" class="nav-link" title="漫游">漫游</a>
+    <a href="/concepts/自助服务平台.html" class="nav-link" title="自助服务平台">自助服务平台</a>
+    <a href="/concepts/自由现金流.html" class="nav-link" title="自由现金流">自由现金流</a>
+    <a href="/concepts/逆向工作法.html" class="nav-link" title="逆向工作法">逆向工作法</a>
+    <a href="/concepts/长期主义.html" class="nav-link" title="长期主义">长期主义</a>
+    <a href="/concepts/飞轮效应.html" class="nav-link" title="飞轮效应">飞轮效应</a>
+    <a href="/concepts/高标准.html" class="nav-link" title="高标准">高标准</a>
+  </div>
+</div>
+<div class="nav-group">
+  <div class="nav-group-title"><span class="caret"></span>产品<span class="badge">15</span></div>
+  <div class="nav-group-items">
+    <a href="/companies/AWS.html" class="nav-link" title="AWS">AWS</a>
+    <a href="/companies/Alexa.html" class="nav-link" title="Alexa">Alexa</a>
+    <a href="/companies/Amazon Go.html" class="nav-link" title="Amazon Go">Amazon Go</a>
+    <a href="/companies/Amazon Logistics.html" class="nav-link" title="Amazon Logistics">Amazon Logistics</a>
+    <a href="/companies/Amazon Studios.html" class="nav-link" title="Amazon Studios">Amazon Studios</a>
+    <a href="/companies/FBA.html" class="nav-link" title="FBA">FBA</a>
+    <a href="/companies/Fire TV.html" class="nav-link" title="Fire TV">Fire TV</a>
+    <a href="/companies/KDP.html" class="nav-link" title="KDP">KDP</a>
+    <a href="/companies/Kindle.html" class="nav-link" title="Kindle">Kindle</a>
+    <a href="/companies/Marketplace.html" class="nav-link" title="Marketplace">Marketplace</a>
+    <a href="/companies/Mechanical Turk.html" class="nav-link" title="Mechanical Turk">Mechanical Turk</a>
+    <a href="/companies/Prime.html" class="nav-link" title="Prime">Prime</a>
+    <a href="/companies/Whole Foods.html" class="nav-link" title="Whole Foods">Whole Foods</a>
+    <a href="/companies/Zappos.html" class="nav-link" title="Zappos">Zappos</a>
+    <a href="/companies/亚马逊.html" class="nav-link" title="亚马逊">亚马逊</a>
+  </div>
+</div>
+<div class="nav-group">
+  <div class="nav-group-title"><span class="caret"></span>人物<span class="badge">4</span></div>
+  <div class="nav-group-items">
+    <a href="/people/安迪·贾西.html" class="nav-link" title="安迪·贾西">安迪·贾西</a>
+    <a href="/people/本杰明·格雷厄姆.html" class="nav-link" title="本杰明·格雷厄姆">本杰明·格雷厄姆</a>
+    <a href="/people/杰夫·威尔克.html" class="nav-link" title="杰夫·威尔克">杰夫·威尔克</a>
+    <a href="/people/贝佐斯.html" class="nav-link" title="贝佐斯">贝佐斯</a>
+  </div>
+</div>
+<a href="/index-pages/更新日志.html" class="nav-link nav-changelog">📋 更新日志</a>
+
+  </div>
+</aside>
+<main class="main has-backlinks">
+<div class="main-content article"><div class="meta"><span class="type-badge type-概念">概念</span></div>
+<h1 id="customer-obsession">客户至上（Customer Obsession）</h1>
+<h2 id="_1">概念解析</h2>
+<h3 id="_2">定义与起源</h3>
+<p>客户至上是贝佐斯在 <a href="/letters/1997 贝佐斯致股东信.html">1997 贝佐斯致股东信</a> 中就明确提出的第一条经营原则："我们将持续不懈地聚焦于客户至上。"这不仅是亚马逊众多领导力准则之一，更是贝佐斯反复强调的"最核心"理念——在他看来，客户至上是保持 <a href="/concepts/Day 1.html">Day 1</a> 活力的最有效方式，也是驱动亚马逊所有创新和业务决策的根本出发点。</p>
+<h3 id="_3">核心要义</h3>
+<p><strong>1. 客户至上而非竞争对手至上</strong></p>
+<p>贝佐斯反复将"客户导向"与"竞争对手导向"进行对比。在 <a href="/letters/2012 贝佐斯致股东信.html">2012 贝佐斯致股东信</a> 中他写道："驱动亚马逊的能量来自于取悦顾客的渴望，而非击败竞争对手的狂热。"在 <a href="/letters/2015 贝佐斯致股东信.html">2015 贝佐斯致股东信</a> 中进一步阐释："客户至上而非竞争对手至上、渴望发明和开拓、愿意失败、耐心地长期思考，以及对卓越运营的专业自豪感。"他认为以客户为驱动有一个不那么显而易见的优势——它有助于一种主动性："在不得不做之前就改进我们的服务、增加功能和权益。在不得不降价之前就降价。在不得不发明之前就去发明。"</p>
+<p><strong>2. 客户永远"美妙而贪心地不满足"</strong></p>
+<p>在 <a href="/letters/2017 贝佐斯致股东信.html">2017 贝佐斯致股东信</a> 中，贝佐斯指出："客户永远是美妙而贪心地不满足。即使他们自己说很满意、生意很好，客户仍然在渴望更好的东西——只是他们自己可能还不知道。"正是这种永不满足推动着亚马逊不断提高标准。</p>
+<p><strong>3. 敬畏客户而非害怕竞争对手</strong></p>
+<p>在 <a href="/letters/1998 贝佐斯致股东信.html">1998 贝佐斯致股东信</a> 中有一段经典表述："我不断提醒员工要心存敬畏，每天早上醒来都应该感到紧迫。不是害怕竞争对手，而是敬畏客户。是客户成就了我们的事业。"同时他指出："我们认为客户对我们是忠诚的——直到有人提供了更好的服务的那一秒钟。"</p>
+<p><strong>4. 客户利益与股东利益长期一致</strong></p>
+<p>在 <a href="/letters/2001 贝佐斯致股东信.html">2001 贝佐斯致股东信</a> 中，贝佐斯阐明了客户至上与股东价值之间的关系："我们坚信股东的长期利益与客户利益高度一致：如果我们把事情做对了，今天的客户明天会买更多，我们在这个过程中会赢得更多新客户，这一切最终都会转化为更多的现金流和更大的股东长期价值。"在 <a href="/letters/2002 贝佐斯致股东信.html">2002 贝佐斯致股东信</a> 中更简洁地总结为："对客户好的事情，对股东也好。"</p>
+<h3 id="_4">实践应用</h3>
+<ul>
+<li><strong>客户评论系统（1995年）</strong>：亚马逊上线后不久即开放差评功能。供应商质疑"你们靠卖东西赚钱——为什么要在自己网站上允许差评？"但贝佐斯在 <a href="/letters/2003 贝佐斯致股东信.html">2003 贝佐斯致股东信</a> 中解释："帮助客户做出更好的购买决策，长远来看是对公司有利的。"</li>
+<li><strong>即时订单提醒</strong>：提醒客户已经购买过某商品，短期降低了销售额，但贝佐斯认为这是"对客户好"的做法（<a href="/letters/2003 贝佐斯致股东信.html">2003 贝佐斯致股东信</a>）。</li>
+<li><strong>主动退款系统</strong>：在 <a href="/letters/2012 贝佐斯致股东信.html">2012 贝佐斯致股东信</a> 中提到构建自动化系统监测客户体验，发现视频播放质量不佳时主动退款，而不是等客户投诉。</li>
+<li><strong>第三方卖家详情页</strong>：2000年将亚马逊自营的"黄金地段"——商品详情页——开放给第三方卖家竞争，因为"如果第三方能提供更好的价格或更好的库存供应，我们就应该让客户轻松获取这些选择"（<a href="/letters/2005 贝佐斯致股东信.html">2005 贝佐斯致股东信</a>）。</li>
+<li><strong>ACSI 满意度指数</strong>：亚马逊连续多年在美国顾客满意度指数中创下所有服务行业最高分——88分（<a href="/letters/2002 贝佐斯致股东信.html">2002 贝佐斯致股东信</a>、<a href="/letters/2003 贝佐斯致股东信.html">2003 贝佐斯致股东信</a>），连续8年排名第一（<a href="/letters/2017 贝佐斯致股东信.html">2017 贝佐斯致股东信</a>）。</li>
+<li><strong>452个年度目标中的优先级</strong>：在 <a href="/letters/2009 贝佐斯致股东信.html">2009 贝佐斯致股东信</a> 中透露，452个目标中360个直接影响客户体验，"收入"出现8次，"自由现金流"出现4次，而"净利润"、"毛利"或"营业利润"一次都没有出现。</li>
+</ul>
+<h3 id="_5">常见误区</h3>
+<p><strong>误区一：客户至上 = 只听客户的话</strong><br />
+贝佐斯在 <a href="/letters/2016 贝佐斯致股东信.html">2016 贝佐斯致股东信</a> 中警告不要让市场调研变成客户的"代理指标"。"优秀的发明者和设计师深刻地理解他们的客户。他们投入大量精力培养这种直觉。"卓越的客户体验"始于内心、直觉、好奇、玩耍、胆识和品味。这些东西，你在调查问卷里一个也找不到。"</p>
+<p><strong>误区二：客户至上与盈利矛盾</strong><br />
+在 <a href="/letters/2012 贝佐斯致股东信.html">2012 贝佐斯致股东信</a> 中有人评论亚马逊是"由投资界某些人士运营的、造福消费者的慈善机构"。贝佐斯回应说，以长远眼光看，顾客的利益和股东的利益是一致的。主动取悦客户赢得信任，信任则能从客户那里赢得更多生意。</p>
+<p><strong>误区三：客户至上 = 讨好所有人</strong><br />
+客户至上的核心是创造真正的价值，而非简单的迎合。贝佐斯在 <a href="/letters/2008 贝佐斯致股东信.html">2008 贝佐斯致股东信</a> 中强调，他们聚焦的是"低价、海量选择和快速便捷的配送"这些长期不变的客户需求，而非追逐每一个变化的潮流。</p>
+<h2 id="_6">贝佐斯原话精选</h2>
+<blockquote>
+<p>"我们将持续不懈地聚焦于客户至上。"<br />
+——<a href="/letters/1997 贝佐斯致股东信.html">1997 贝佐斯致股东信</a></p>
+<p>"不是害怕竞争对手，而是敬畏客户。是客户成就了我们的事业……我们认为客户对我们是忠诚的——直到有人提供了更好的服务的那一秒钟。"<br />
+——<a href="/letters/1998 贝佐斯致股东信.html">1998 贝佐斯致股东信</a></p>
+<p>"对客户好的事情，对股东也好。"<br />
+——<a href="/letters/2002 贝佐斯致股东信.html">2002 贝佐斯致股东信</a></p>
+<p>"客户永远是美妙而贪心地不满足。即使他们自己说很满意、生意很好，客户仍然在渴望更好的东西——只是他们自己可能还不知道。"<br />
+——<a href="/letters/2017 贝佐斯致股东信.html">2017 贝佐斯致股东信</a></p>
+<p>"痴迷于客户是保持 Day 1 活力最有效的方式。"<br />
+——<a href="/letters/2016 贝佐斯致股东信.html">2016 贝佐斯致股东信</a></p>
+</blockquote>
+<h2 id="_7">思想演变</h2>
+<ul>
+<li><strong>1997-1999年（奠基期）</strong>：客户至上作为核心原则被正式提出，重点是"为客户提供无与伦比的价值"，具体体现为海量选品、便利购物和口碑传播。</li>
+<li><strong>2000-2003年（深化期）</strong>：在互联网泡沫破裂的背景下，客户至上的含义扩展为"客户体验三大支柱"——选品、便利、低价。贝佐斯开始系统阐述客户至上与长期股东价值的统一关系。</li>
+<li><strong>2004-2008年（指标化期）</strong>：客户至上与<a href="/concepts/自由现金流.html">自由现金流</a>的关系被明确化。通过ACSI评分等外部指标验证客户至上策略的成效。客户体验被定义为"低价、海量选择和快速便捷的配送"三大不变的支柱。</li>
+<li><strong>2009-2015年（平台化期）</strong>：客户至上从直接服务消费者扩展到赋能第三方（卖家、开发者、作者）。AWS、FBA、KDP等自助服务平台让"客户"的定义大大拓宽。</li>
+<li><strong>2016-2020年（哲学化期）</strong>：客户至上上升到抵御 Day 2 的根本哲学层面，与高速决策、拥抱外部趋势等并列为Day 1的"防御工具包"。2020年进一步升级为"创造的比消耗的多"——为每一个利益相关方创造价值。</li>
+</ul>
+<h2 id="_8">相关概念</h2>
+<ul>
+<li><a href="/concepts/长期主义.html">长期主义</a>：客户至上的时间维度保障</li>
+<li><a href="/concepts/Day 1.html">Day 1</a>：客户至上是保持Day 1活力的最有效方式</li>
+<li><a href="/concepts/逆向工作法.html">逆向工作法</a>：从客户需求出发的具体方法论</li>
+<li><a href="/concepts/飞轮效应.html">飞轮效应</a>：客户至上驱动飞轮的起点</li>
+<li><a href="/concepts/高标准.html">高标准</a>：持续满足客户不断攀升的期望</li>
+</ul>
+<h2 id="_9">典型案例</h2>
+<ul>
+<li><strong>Amazon Prime</strong>：没有客户曾要求创建Prime，但贝佐斯判断客户需要它。这是客户至上驱动发明的经典案例。</li>
+<li><strong><a href="/companies/AWS.html">AWS</a></strong>：同样没有客户要求过AWS，但亚马逊从开发者社区的需求出发，创造了云计算行业。</li>
+<li><strong><a href="/companies/Kindle.html">Kindle</a></strong>：从"人类有史以来出版的每一本书，任何语言，都能在60秒内获取"的客户愿景出发，驱动亚马逊学习全新的硬件技能。</li>
+<li><strong><a href="/companies/Amazon Go.html">Amazon Go</a></strong>：消除实体零售中客户最讨厌的体验——排队结账。</li>
+<li><strong><a href="/companies/Marketplace.html">Marketplace</a></strong>：将最有价值的商品详情页开放给第三方卖家，短期看可能蚕食自营收入，长期看为客户提供了更多选择和更优价格。</li>
+</ul></div><aside class="backlinks-panel">
+  <div class="bl-panel-header">
+    <h3 class="bl-panel-title">链接到本页 <span class="bl-count">50</span></h3>
+    <div class="bl-panel-actions">
+      <button class="bl-action bl-expand-all">展开</button>
+      <button class="bl-action bl-collapse-all">折叠</button>
+    </div>
+  </div>
+  <div class="bl-group">
+  <button class="bl-group-header">
+    <span class="bl-caret"></span>
+    <span class="bl-source-name">贝佐斯致股东信知识库</span>
+    <span class="bl-mention-cat"></span>
+  </button>
+  <div class="bl-snippets">
+    <div class="bl-snippet">…亚马逊产品档案 - 人物索引 — 4 位关键人物传记  ---  ## 核心概念 TOP 10  1. 客户至上 — 贝佐斯最核心的信念 2. 长期主义 — "一切关乎长期" 3. 飞轮效应 — 低价→流量→卖家→选…</div>
+    <a href="/index.html" class="bl-go-link">查看原文 →</a>
+  </div>
+</div>
+<div class="bl-group">
+  <button class="bl-group-header">
+    <span class="bl-caret"></span>
+    <span class="bl-source-name">1997 贝佐斯致股东信</span>
+    <span class="bl-mention-cat">信</span>
+  </button>
+  <div class="bl-snippets">
+    <div class="bl-snippet">…们希望与你们分享我们的核心经营理念和决策方法，以便各位股东判断这是否与你们的投资哲学一致：  - 我们将持续不懈地聚焦于客户至上。  - 我们将基于长期市场领导力来做投资决策，而非短期盈利或华尔街的短期反应。  - 我们将用数据分析来衡量每个项目和…</div>
+    <a href="/letters/1997 贝佐斯致股东信.html" class="bl-go-link">查看原文 →</a>
+  </div>
+</div>
+<div class="bl-group">
+  <button class="bl-group-header">
+    <span class="bl-caret"></span>
+    <span class="bl-source-name">1999 贝佐斯致股东信</span>
+    <span class="bl-mention-cat">信</span>
+  </button>
+  <div class="bl-snippets">
+    <div class="bl-snippet">…创造巨大价值。事实上，我们的经验表明，亚马逊可能是合作伙伴拓展业务最高效、最有效的途径。在许多领域，合作是我们以客户至上、高性价比方式快速拓展商店的最佳路径。值得强调的一点是：合作伙伴所提供的客户体验质量是我们选择合作对象的首要标准——我们…</div>
+    <a href="/letters/1999 贝佐斯致股东信.html" class="bl-go-link">查看原文 →</a>
+  </div>
+</div>
+<div class="bl-group">
+  <button class="bl-group-header">
+    <span class="bl-caret"></span>
+    <span class="bl-source-name">2000 贝佐斯致股东信</span>
+    <span class="bl-mention-cat">信</span>
+  </button>
+  <div class="bl-snippets">
+    <div class="bl-snippet">…系、技术、物流基础设施、财务实力、人才，以及在这个新兴行业中扩大领先优势、打造一家重要而持久公司的决心。我们将以客户至上为准则来实现这一切。  2001 年将是我们发展历程中的重要一年。与 2000 年一样，这将是专注和执行之年。作为第一步…</div>
+    <a href="/letters/2000 贝佐斯致股东信.html" class="bl-go-link">查看原文 →</a>
+  </div>
+</div>
+<div class="bl-group">
+  <button class="bl-group-header">
+    <span class="bl-caret"></span>
+    <span class="bl-source-name">2006 贝佐斯致股东信</span>
+    <span class="bl-mention-cat">信</span>
+  </button>
+  <div class="bl-snippets">
+    <div class="bl-snippet">…信这是一个绝佳的商业机会。鞋类、服装、食品杂货：这些都是巨大的品类，我们有能力在其中发明并发展出大规模、高回报、真正改善客户体验的业务。  Fulfillment by Amazon（亚马逊物流）是一组网络服务API，它把我们120…</div>
+    <a href="/letters/2006 贝佐斯致股东信.html" class="bl-go-link">查看原文 →</a>
+  </div>
+</div>
+<div class="bl-group">
+  <button class="bl-group-header">
+    <span class="bl-caret"></span>
+    <span class="bl-source-name">2008 贝佐斯致股东信</span>
+    <span class="bl-mention-cat">信</span>
+  </button>
+  <div class="bl-snippets">
+    <div class="bl-snippet">…在未知领域开拓。追求即时满足——或那遥不可及的即时满足承诺——你多半会发现前面已经挤满了人。长期导向与客户痴迷之间有着极好的化学反应。如果我们能识别出一个客户需求，并且进一步确信这个需求是有意义且持久的，那么我们的方法就允许我们耐…</div>
+    <a href="/letters/2008 贝佐斯致股东信.html" class="bl-go-link">查看原文 →</a>
+  </div>
+</div>
+<div class="bl-group">
+  <button class="bl-group-header">
+    <span class="bl-caret"></span>
+    <span class="bl-source-name">2009 贝佐斯致股东信</span>
+    <span class="bl-mention-cat">信</span>
+  </button>
+  <div class="bl-snippets">
+    <div class="bl-snippet">…中，"净利润"、"毛利"或"利润率"以及"营业利润"一次都没有出现过。  从整体来看，这套目标体系体现了我们的根本理念：从客户出发，逆向工作。倾听客户的声音，但不要仅仅倾听——还要替他们发明创造。我们不能保证会完成今年所有目标，过…</div>
+    <a href="/letters/2009 贝佐斯致股东信.html" class="bl-go-link">查看原文 →</a>
+  </div>
+</div>
+<div class="bl-group">
+  <button class="bl-group-header">
+    <span class="bl-caret"></span>
+    <span class="bl-source-name">2012 贝佐斯致股东信</span>
+    <span class="bl-mention-cat">信</span>
+  </button>
+  <div class="bl-snippets">
+    <div class="bl-snippet">…种方式更有可能实现商业成功不做判断。两者各有优劣，也都有很多成功的案例。我们确实会关注竞争对手并从中汲取灵感，但事实是，客户至上的理念在这个阶段已经成为我们文化的一个定义性元素。  以客户为驱动有一个优势——也许不那么显而易见——它有助于一种特定类…</div>
+    <a href="/letters/2012 贝佐斯致股东信.html" class="bl-go-link">查看原文 →</a>
+  </div>
+</div>
+<div class="bl-group">
+  <button class="bl-group-header">
+    <span class="bl-caret"></span>
+    <span class="bl-source-name">2013 贝佐斯致股东信</span>
+    <span class="bl-mention-cat">信</span>
+  </button>
+  <div class="bl-snippets">
+    <div class="bl-snippet">…这封信中我省略了很多同样有前景、同样重要、同样有趣的项目。  我们拥有一支庞大的、富有创造力的团队，以及一种耐心、开拓、客户至上的文化——每天都有大大小小的伟大创新在为顾客发生，遍布公司的各个层级。这种分散在整个公司的创新分布——而非仅限于公司高层…</div>
+    <a href="/letters/2013 贝佐斯致股东信.html" class="bl-go-link">查看原文 →</a>
+  </div>
+</div>
+<div class="bl-group">
+  <button class="bl-group-header">
+    <span class="bl-caret"></span>
+    <span class="bl-source-name">2014 贝佐斯致股东信</span>
+    <span class="bl-mention-cat">信</span>
+  </button>
+  <div class="bl-snippets">
+    <div class="bl-snippet">…楚了。同样清楚的是，商业世界里没有铁饭碗。我们知道始终滋养和强化它们是我们的职责。  我们将用一贯的工具来对待这项职责：客户至上而非竞争对手至上，发自内心的创新热情，对卓越运营的追求，以及长期主义的思维。只要执行到位再加上一点持续的…</div>
+    <a href="/letters/2014 贝佐斯致股东信.html" class="bl-go-link">查看原文 →</a>
+  </div>
+</div>
+<div class="bl-group">
+  <button class="bl-group-header">
+    <span class="bl-caret"></span>
+    <span class="bl-source-name">2015 贝佐斯致股东信</span>
+    <span class="bl-mention-cat">信</span>
+  </button>
+  <div class="bl-snippets">
+    <div class="bl-snippet">…。在表面之下，它们其实并没有那么不同。它们共享着一种独特的组织文化，这种文化深切地关注并坚定地践行少数几个原则。我说的是客户至上而非竞争对手至上、渴望发明和开拓、愿意失败、耐心地长期主义思考，以及对卓越运营的专业自豪感。透过这个镜头…</div>
+    <a href="/letters/2015 贝佐斯致股东信.html" class="bl-go-link">查看原文 →</a>
+  </div>
+</div>
+<div class="bl-group">
+  <button class="bl-group-header">
+    <span class="bl-caret"></span>
+    <span class="bl-source-name">2016 贝佐斯致股东信</span>
+    <span class="bl-mention-cat">信</span>
+  </button>
+  <div class="bl-snippets">
+    <div class="bl-snippet">…的答案。其中有很多要素、多条路径和许多陷阱。我不知道全部的答案，但或许知道一部分。以下是防御 Day 2 的基础工具包：客户至上、警惕代理指标、拥抱外部趋势，以及高速决策。  ## 真正的客户至上  企业可以有很多种经营导向——竞争对手导向…</div>
+    <a href="/letters/2016 贝佐斯致股东信.html" class="bl-go-link">查看原文 →</a>
+  </div>
+</div>
+<div class="bl-group">
+  <button class="bl-group-header">
+    <span class="bl-caret"></span>
+    <span class="bl-source-name">2017 贝佐斯致股东信</span>
+    <span class="bl-mention-cat">信</span>
+  </button>
+  <div class="bl-snippets">
+    <div class="bl-snippet">…。  ## 前方的路  今年是我们第一封股东信的20周年，我们的核心价值观和方法论始终如一。我们继续致力于成为地球上最以客户为中心的公司，我们深知这不是一个简单的挑战。我们知道还有很多可以改进的地方，前方的诸多挑战和机遇让我们充满能量。  衷心感谢每…</div>
+    <a href="/letters/2017 贝佐斯致股东信.html" class="bl-go-link">查看原文 →</a>
+  </div>
+</div>
+<div class="bl-group">
+  <button class="bl-group-header">
+    <span class="bl-caret"></span>
+    <span class="bl-source-name">2018 贝佐斯致股东信</span>
+    <span class="bl-mention-cat">信</span>
+  </button>
+  <div class="bl-snippets">
+    <div class="bl-snippet">…很多东西是基于倾听客户。问客户他们想要什么、仔细倾听、然后快速而周到地提供，这至关重要（速度在商业中很重要！）。没有这种客户痴迷，任何企业都无法繁荣。但光有这些还不够。最大的推动力将来自客户不知道如何去要求的东西。我们必须代替他们去发明。我们必须挖…</div>
+    <a href="/letters/2018 贝佐斯致股东信.html" class="bl-go-link">查看原文 →</a>
+  </div>
+</div>
+<div class="bl-group">
+  <button class="bl-group-header">
+    <span class="bl-caret"></span>
+    <span class="bl-source-name">2020 贝佐斯致股东信</span>
+    <span class="bl-mention-cat">信</span>
+  </button>
+  <div class="bl-snippets">
+    <div class="bl-snippet">…些从未获得这些优势的人创造就业。  尽管取得了这些成绩，我清楚地知道我们需要为员工的成功提供更好的愿景。我们一直希望成为地球上最以客户为中心的公司。这不会改变，正是它把我们带到了今天。但我要加一条承诺：我们要成为地球最佳雇主和地球最安全的工作场所。  在我即…</div>
+    <a href="/letters/2020 贝佐斯致股东信.html" class="bl-go-link">查看原文 →</a>
+  </div>
+</div>
+<div class="bl-group">
+  <button class="bl-group-header">
+    <span class="bl-caret"></span>
+    <span class="bl-source-name">Day 1（Day 1 心态）</span>
+    <span class="bl-mention-cat">概念</span>
+  </button>
+  <div class="bl-snippets">
+    <div class="bl-snippet">…四个工具  同样在 2016 贝佐斯致股东信 中，贝佐斯给出了"防御 Day 2 的基础工具包"： - 客户至上：痴迷于客户是保持 Day 1 活力最有效的方式 - 警惕代理指标**：不让流程变成目的本身，不让市场调研变成客…</div>
+    <a href="/concepts/Day 1.html" class="bl-go-link">查看原文 →</a>
+  </div>
+</div>
+<div class="bl-group">
+  <button class="bl-group-header">
+    <span class="bl-caret"></span>
+    <span class="bl-source-name">一类决策与二类决策（Type 1 & Type 2 Decisions）</span>
+    <span class="bl-mention-cat">概念</span>
+  </button>
+  <div class="bl-snippets">
+    <div class="bl-snippet">…ay 1]]：保持Day 1决策速度的核心方法论 - 长期主义：一类决策需要长期思考，二类决策需要快速迭代 - 客户至上：客户需求是判断决策类型的重要依据 - 高标准：决策质量的标准不能因追求速度而降低  ## 典型案例  - **…</div>
+    <a href="/concepts/一类决策与二类决策.html" class="bl-go-link">查看原文 →</a>
+  </div>
+</div>
+<div class="bl-group">
+  <button class="bl-group-header">
+    <span class="bl-caret"></span>
+    <span class="bl-source-name">低价策略（Low Prices）</span>
+    <span class="bl-mention-cat">概念</span>
+  </button>
+  <div class="bl-snippets">
+    <div class="bl-snippet">…每年节省时间价值1,260亿美元 |  ## 相关概念  - 飞轮效应 — 低价是飞轮启动和加速的关键齿轮 - 客户至上 — 低价本质上是客户痴迷的价格维度体现 - 长期主义 — 低价策略牺牲短期利润换取长期市场领导力 - [[数据…</div>
+    <a href="/concepts/低价策略.html" class="bl-go-link">查看原文 →</a>
+  </div>
+</div>
+<div class="bl-group">
+  <button class="bl-group-header">
+    <span class="bl-caret"></span>
+    <span class="bl-source-name">创造大于消耗（Create More Than You Consume）</span>
+    <span class="bl-mention-cat">概念</span>
+  </button>
+  <div class="bl-snippets">
+    <div class="bl-snippet">…时间 | 核心表述 | |------|------|---------| | 隐含期 | 1997-2004年 | 客户至上和长期主义本质上就是优先为客户创造价值、再回收股东价值的逻辑 | | 飞轮萌芽 | 2005-2014年 | […</div>
+    <a href="/concepts/创造大于消耗.html" class="bl-go-link">查看原文 →</a>
+  </div>
+</div>
+<div class="bl-group">
+  <button class="bl-group-header">
+    <span class="bl-caret"></span>
+    <span class="bl-source-name">发明与失败（Invention & Failure）</span>
+    <span class="bl-mention-cat">概念</span>
+  </button>
+  <div class="bl-snippets">
+    <div class="bl-snippet">…为"所有真正价值创造的根源" |  ## 相关概念  - 长期主义 — 长期视角为失败实验提供了时间和空间 - 客户至上 — 发明的方向始终从客户需求出发 - 漫游 — 漫游式探索是产生非线性发明的路径 - Day 1 —…</div>
+    <a href="/concepts/发明与失败.html" class="bl-go-link">查看原文 →</a>
+  </div>
+</div>
+<div class="bl-group">
+  <button class="bl-group-header">
+    <span class="bl-caret"></span>
+    <span class="bl-source-name">差异化即生存（Differentiation is Survival）</span>
+    <span class="bl-mention-cat">概念</span>
+  </button>
+  <div class="bl-snippets">
+    <div class="bl-snippet">…竞争对手的差异  ### 常见误区  误区一：差异化 = 标新立异 贝佐斯所说的独特性不是为不同而不同，而是源于客户至上的发明和漫游。亚马逊的差异化始终服务于为客户创造更大价值，而非追求表面上的与众不同。  **误区二：一旦建立差异…</div>
+    <a href="/concepts/差异化即生存.html" class="bl-go-link">查看原文 →</a>
+  </div>
+</div>
+<div class="bl-group">
+  <button class="bl-group-header">
+    <span class="bl-caret"></span>
+    <span class="bl-source-name">数据驱动决策（Data-driven Decisions）</span>
+    <span class="bl-mention-cat">概念</span>
+  </button>
+  <div class="bl-snippets">
+    <div class="bl-snippet">…价策略]] — 低价是判断型决策战胜数学型决策的经典案例 - 长期主义 — 判断型决策的核心依据是长期思维 - 客户至上 — 可控输入指标体系围绕客户体验构建 - 高速决策 — "大多数决策可能应该在掌握大约70%信息时就做出" -…</div>
+    <a href="/concepts/数据驱动决策.html" class="bl-go-link">查看原文 →</a>
+  </div>
+</div>
+<div class="bl-group">
+  <button class="bl-group-header">
+    <span class="bl-caret"></span>
+    <span class="bl-source-name">气候承诺（The Climate Pledge）</span>
+    <span class="bl-mention-cat">概念</span>
+  </button>
+  <div class="bl-snippets">
+    <div class="bl-snippet">…实验和失败 - 创造大于消耗 — 气候承诺的核心逻辑与"创造大于消耗"一脉相承——企业不应只是从环境中索取 - 客户至上 — 可持续发展最终服务于客户和社会的长期利益 - Day 1 — Day 1 心态推动亚马逊主动引领变革，而非…</div>
+    <a href="/concepts/气候承诺.html" class="bl-go-link">查看原文 →</a>
+  </div>
+</div>
+<div class="bl-group">
+  <button class="bl-group-header">
+    <span class="bl-caret"></span>
+    <span class="bl-source-name">漫游（Wandering）</span>
+    <span class="bl-mention-cat">概念</span>
+  </button>
+  <div class="bl-snippets">
+    <div class="bl-snippet">…自己需要的东西，后者从客户已知需求出发 - 发明与失败 — 漫游天然伴随大量失败实验，失败是漫游的必要成本 - 客户至上 — 漫游的深层动力仍然是为客户创造价值 - Day 1 — Day 1 心态中的好奇心和新手心态是漫游的文化土…</div>
+    <a href="/concepts/漫游.html" class="bl-go-link">查看原文 →</a>
+  </div>
+</div>
+<div class="bl-group">
+  <button class="bl-group-header">
+    <span class="bl-caret"></span>
+    <span class="bl-source-name">自助服务平台（Self-service Platforms）</span>
+    <span class="bl-mention-cat">概念</span>
+  </button>
+  <div class="bl-snippets">
+    <div class="bl-snippet">…相关概念  - 飞轮效应 — 自助平台是飞轮加速的关键机制，FBA连接了Marketplace和Prime - 客户至上 — 平台的设计始终从用户（开发者、卖家、作者）的需求出发 - 发明与失败 — 自助平台降低了实验的门槛，让更多…</div>
+    <a href="/concepts/自助服务平台.html" class="bl-go-link">查看原文 →</a>
+  </div>
+</div>
+<div class="bl-group">
+  <button class="bl-group-header">
+    <span class="bl-caret"></span>
+    <span class="bl-source-name">自由现金流（Free Cash Flow）</span>
+    <span class="bl-mention-cat">概念</span>
+  </button>
+  <div class="bl-snippets">
+    <div class="bl-snippet">…升每股自由现金流和资本回报率充满热情"。  ## 相关概念  - 长期主义：自由现金流是长期主义的财务表达 - 客户至上：客户体验改善是驱动自由现金流增长的核心输入 - 飞轮效应：飞轮的每次转动最终体现为自由现金流的增长 - [[高…</div>
+    <a href="/concepts/自由现金流.html" class="bl-go-link">查看原文 →</a>
+  </div>
+</div>
+<div class="bl-group">
+  <button class="bl-group-header">
+    <span class="bl-caret"></span>
+    <span class="bl-source-name">逆向工作法（Working Backwards）</span>
+    <span class="bl-mention-cat">概念</span>
+  </button>
+  <div class="bl-snippets">
+    <div class="bl-snippet">…度理解）和"漫游"（在客户方向明确但路径不明确时进行探索性创新）融合，形成更丰富的方法论体系。  ## 相关概念  - 客户至上：逆向工作法是客户至上的方法论实现 - 长期主义：逆向工作法需要长期视角来容忍前期的笨拙和失败 - [[Day…</div>
+    <a href="/concepts/逆向工作法.html" class="bl-go-link">查看原文 →</a>
+  </div>
+</div>
+<div class="bl-group">
+  <button class="bl-group-header">
+    <span class="bl-caret"></span>
+    <span class="bl-source-name">长期主义（Long-term Thinking）</span>
+    <span class="bl-mention-cat">概念</span>
+  </button>
+  <div class="bl-snippets">
+    <div class="bl-snippet">…2]] 的根本力量。2020年以"创造大于消耗"的框架，将长期价值创造扩展到所有利益相关方。  ## 相关概念  - 客户至上：长期主义的行动指南——长期来看客户利益与股东利益一致 - Day 1：长期主义精神的文化载体 - [[自由现金…</div>
+    <a href="/concepts/长期主义.html" class="bl-go-link">查看原文 →</a>
+  </div>
+</div>
+<div class="bl-group">
+  <button class="bl-group-header">
+    <span class="bl-caret"></span>
+    <span class="bl-source-name">飞轮效应（Flywheel Effect）</span>
+    <span class="bl-mention-cat">概念</span>
+  </button>
+  <div class="bl-snippets">
+    <div class="bl-snippet">…Video为Prime飞轮注入能量，AWS有自己独立的飞轮，数字和实体业务的飞轮开始交叉强化。  ## 相关概念  - 客户至上：飞轮的起点——更好的客户体验 - 长期主义：飞轮需要长期投入和耐心才能加速 - 自由现金流：飞轮转动的…</div>
+    <a href="/concepts/飞轮效应.html" class="bl-go-link">查看原文 →</a>
+  </div>
+</div>
+<div class="bl-group">
+  <button class="bl-group-header">
+    <span class="bl-caret"></span>
+    <span class="bl-source-name">高标准（High Standards）</span>
+    <span class="bl-mention-cat">概念</span>
+  </button>
+  <div class="bl-snippets">
+    <div class="bl-snippet">…，贝佐斯将高标准的维护与"抵御熵增"联系在一起——组织必须持续投入能量来维持其独特性和高标准。  ## 相关概念  - 客户至上：客户永不满足的期望是设定高标准的外部驱动力 - Day 1：高标准是抵御Day 2的关键防线 - [[长期主义…</div>
+    <a href="/concepts/高标准.html" class="bl-go-link">查看原文 →</a>
+  </div>
+</div>
+<div class="bl-group">
+  <button class="bl-group-header">
+    <span class="bl-caret"></span>
+    <span class="bl-source-name">AWS</span>
+    <span class="bl-mention-cat">产品</span>
+  </button>
+  <div class="bl-snippets">
+    <div class="bl-snippet">…WS是自助式的：你不需要谈判合同或联系销售人员。" —— 2011 贝佐斯致股东信  ## 体现的核心概念 - 客户至上 — 90%-95%的功能由客户需求驱动 - 自助服务平台 — 无守门人，任何人都能使用 - 长期主义…</div>
+    <a href="/companies/AWS.html" class="bl-go-link">查看原文 →</a>
+  </div>
+</div>
+<div class="bl-group">
+  <button class="bl-group-header">
+    <span class="bl-caret"></span>
+    <span class="bl-source-name">Alexa</span>
+    <span class="bl-mention-cat">产品</span>
+  </button>
+  <div class="bl-snippets">
+    <div class="bl-snippet">…过Echo，完全靠直觉和好奇心驱动 - 发明与失败 — Fire Phone失败的经验加速了Echo的成功 - 客户至上 — 让技术隐于无形，简化生活 - 机器学习 — Alexa背后的核心技术  ## 关键数据  | 年份 | 关…</div>
+    <a href="/companies/Alexa.html" class="bl-go-link">查看原文 →</a>
+  </div>
+</div>
+<div class="bl-group">
+  <button class="bl-group-header">
+    <span class="bl-caret"></span>
+    <span class="bl-source-name">Amazon Go</span>
+    <span class="bl-mention-cat">产品</span>
+  </button>
+  <div class="bl-snippets">
+    <div class="bl-snippet">…融合和深度学习的综合运用 - 发明与失败 — 大胆进入实体零售（此前贝佐斯在2006年信中称不会开实体店） - 客户至上 — 让技术好到隐于无形  ## 关键数据  | 年份 | 关键指标 | |------|---------| | 20…</div>
+    <a href="/companies/Amazon Go.html" class="bl-go-link">查看原文 →</a>
+  </div>
+</div>
+<div class="bl-group">
+  <button class="bl-group-header">
+    <span class="bl-caret"></span>
+    <span class="bl-source-name">Amazon Logistics</span>
+    <span class="bl-mention-cat">产品</span>
+  </button>
+  <div class="bl-snippets">
+    <div class="bl-snippet">…分，也是我们2040年净零碳计划中最艰难的部分。" —— 2020 贝佐斯致股东信  ## 体现的核心概念 - 客户至上 — 为实现更快配送不惜自建物流网络 - 长期主义 — 从 13 个物流中心到全球上百个，持续数十年投资 - […</div>
+    <a href="/companies/Amazon Logistics.html" class="bl-go-link">查看原文 →</a>
+  </div>
+</div>
+<div class="bl-group">
+  <button class="bl-group-header">
+    <span class="bl-caret"></span>
+    <span class="bl-source-name">Amazon Studios</span>
+    <span class="bl-mention-cat">产品</span>
+  </button>
+  <div class="bl-snippets">
+    <div class="bl-snippet">…会员增长和留存，会员又促进商品销售 - 发明与失败 — 许多是在传统线性节目模式下可能永远不会被讲述的故事 - 客户至上 — 为 Prime 会员持续增加高质量独家内容 - 长期主义 — 持续多年在原创内容上大力投入  ## 关键数…</div>
+    <a href="/companies/Amazon Studios.html" class="bl-go-link">查看原文 →</a>
+  </div>
+</div>
+<div class="bl-group">
+  <button class="bl-group-header">
+    <span class="bl-caret"></span>
+    <span class="bl-source-name">FBA</span>
+    <span class="bl-mention-cat">产品</span>
+  </button>
+  <div class="bl-snippets">
+    <div class="bl-snippet">…— 无需守门人，卖家可自主管理库存 - 飞轮效应 — FBA连接Marketplace和Prime的闭环 - 客户至上 — 同时服务卖家和买家两个客户群 - 规模经济 — 利用亚马逊庞大的物流网络为卖家降低成本  ## 关键数据…</div>
+    <a href="/companies/FBA.html" class="bl-go-link">查看原文 →</a>
+  </div>
+</div>
+<div class="bl-group">
+  <button class="bl-group-header">
+    <span class="bl-caret"></span>
+    <span class="bl-source-name">Fire TV</span>
+    <span class="bl-mention-cat">产品</span>
+  </button>
+  <div class="bl-snippets">
+    <div class="bl-snippet">…&gt; "团队做得非常出色——语音搜索确实好用。" —— 2013 贝佐斯致股东信  ## 体现的核心概念 - 客户至上 — 解决流媒体设备体验痛点（慢、搜索难），拥抱第三方内容 - 飞轮效应 — 作为硬件入口驱动 Prime Vi…</div>
+    <a href="/companies/Fire TV.html" class="bl-go-link">查看原文 →</a>
+  </div>
+</div>
+<div class="bl-group">
+  <button class="bl-group-header">
+    <span class="bl-caret"></span>
+    <span class="bl-source-name">KDP</span>
+    <span class="bl-mention-cat">产品</span>
+  </button>
+  <div class="bl-snippets">
+    <div class="bl-snippet">…2011 贝佐斯致股东信  ## 体现的核心概念 - 自助服务平台 — 无守门人，任何作者都能出版 - 客户至上 — 同时服务作者和读者两个客户群 - 发明与失败 — 颠覆传统出版模式 - 长期主义 — 持续扩展和改…</div>
+    <a href="/companies/KDP.html" class="bl-go-link">查看原文 →</a>
+  </div>
+</div>
+<div class="bl-group">
+  <button class="bl-group-header">
+    <span class="bl-caret"></span>
+    <span class="bl-source-name">Kindle</span>
+    <span class="bl-mention-cat">产品</span>
+  </button>
+  <div class="bl-snippets">
+    <div class="bl-snippet">…[长期主义]] — 三年研发，耐心打磨产品 - 发明与失败 — 亚马逊此前从未设计硬件，为了愿景学习新技能 - 客户至上 — 让设备"退到幕后"，读者沉浸在文字中  ## 关键数据  | 年份 | 关键指标 | |------|------…</div>
+    <a href="/companies/Kindle.html" class="bl-go-link">查看原文 →</a>
+  </div>
+</div>
+<div class="bl-group">
+  <button class="bl-group-header">
+    <span class="bl-caret"></span>
+    <span class="bl-source-name">Marketplace</span>
+    <span class="bl-mention-cat">产品</span>
+  </button>
+  <div class="bl-snippets">
+    <div class="bl-snippet">…] — 经历拍卖、zShops两次失败才找到成功模式 - 飞轮效应 — 更多卖家带来更多选品，吸引更多客户 - 客户至上 — 将最有价值的页面位置开放给竞争对手 - 自助服务平台 — 数百万卖家自主管理业务  ## 关键数据  |…</div>
+    <a href="/companies/Marketplace.html" class="bl-go-link">查看原文 →</a>
+  </div>
+</div>
+<div class="bl-group">
+  <button class="bl-group-header">
+    <span class="bl-caret"></span>
+    <span class="bl-source-name">Mechanical Turk</span>
+    <span class="bl-mention-cat">产品</span>
+  </button>
+  <div class="bl-snippets">
+    <div class="bl-snippet">…类智能封装为自助式 API，无需守门人 - 发明与失败 — 将人类劳动以编程接口方式提供，概念上极具创新性 - 客户至上 — 为开发者解决机器无法完成但人类擅长的任务需求  ## 关键数据  | 年份 | 关键指标 | |------|--…</div>
+    <a href="/companies/Mechanical Turk.html" class="bl-go-link">查看原文 →</a>
+  </div>
+</div>
+<div class="bl-group">
+  <button class="bl-group-header">
+    <span class="bl-caret"></span>
+    <span class="bl-source-name">Prime</span>
+    <span class="bl-mention-cat">产品</span>
+  </button>
+  <div class="bl-snippets">
+    <div class="bl-snippet">…短期昂贵但长期回报巨大的大胆赌注 - 飞轮效应 — 更多Prime商品吸引更多会员，更多会员吸引更多卖家 - 客户至上 — 主动增加权益而不加价 - 发明与失败 — 最初被认为是鲁莽的决定  ## 关键数据  | 年份 | 关键指…</div>
+    <a href="/companies/Prime.html" class="bl-go-link">查看原文 →</a>
+  </div>
+</div>
+<div class="bl-group">
+  <button class="bl-group-header">
+    <span class="bl-caret"></span>
+    <span class="bl-source-name">Whole Foods</span>
+    <span class="bl-mention-cat">产品</span>
+  </button>
+  <div class="bl-snippets">
+    <div class="bl-snippet">…有机食品，并立即降低了一系列热销日用食品的价格。" —— 2017 贝佐斯致股东信  ## 体现的核心概念 - 客户至上 — 收购后立即降价让健康食品更可及 - Prime — 与Prime生态深度整合（免费配送、返现） - [[飞…</div>
+    <a href="/companies/Whole Foods.html" class="bl-go-link">查看原文 →</a>
+  </div>
+</div>
+<div class="bl-group">
+  <button class="bl-group-header">
+    <span class="bl-caret"></span>
+    <span class="bl-source-name">Zappos</span>
+    <span class="bl-mention-cat">产品</span>
+  </button>
+  <div class="bl-snippets">
+    <div class="bl-snippet">…不想待的地方，无论对员工还是对公司都是不健康的。" —— 2013 贝佐斯致股东信  ## 体现的核心概念 - 客户至上 — Zappos 以极致客户服务闻名，与亚马逊文化高度契合 - 发明与失败 — Pay to Quit 等创新…</div>
+    <a href="/companies/Zappos.html" class="bl-go-link">查看原文 →</a>
+  </div>
+</div>
+<div class="bl-group">
+  <button class="bl-group-header">
+    <span class="bl-caret"></span>
+    <span class="bl-source-name">亚马逊</span>
+    <span class="bl-mention-cat">产品</span>
+  </button>
+  <div class="bl-snippets">
+    <div class="bl-snippet">…—— 2020 贝佐斯致股东信  ## 体现的核心概念 - 长期主义 — 贯穿所有信件的核心理念 - 客户至上 — "地球上最以客户为中心的公司" - Day 1 — 永远保持创业第一天的心态 - 自由现金流 —…</div>
+    <a href="/companies/亚马逊.html" class="bl-go-link">查看原文 →</a>
+  </div>
+</div>
+<div class="bl-group">
+  <button class="bl-group-header">
+    <span class="bl-caret"></span>
+    <span class="bl-source-name">安迪·贾西</span>
+    <span class="bl-mention-cat">人物</span>
+  </button>
+  <div class="bl-snippets">
+    <div class="bl-snippet">…为继任者，贾西承担着延续 Day 1 文化的责任 - 长期主义——AWS 本身就是长期主义最成功的案例之一 - 客户至上——贝佐斯在 2015 贝佐斯致股东信 中指出 AWS 90%-95% 的功能由客户需求驱动</div>
+    <a href="/people/安迪·贾西.html" class="bl-go-link">查看原文 →</a>
+  </div>
+</div>
+<div class="bl-group">
+  <button class="bl-group-header">
+    <span class="bl-caret"></span>
+    <span class="bl-source-name">本杰明·格雷厄姆</span>
+    <span class="bl-mention-cat">人物</span>
+  </button>
+  <div class="bl-snippets">
+    <div class="bl-snippet">…价等"投票"指标 - Day 1——每天都是第一天的心态，与格雷厄姆"不被短期市场噪音干扰"的教诲一脉相承 - 客户至上——贝佐斯将"让公司变得更重"等同于为客户创造更多价值，而非取悦华尔街 - 创造大于消耗——[[2020 贝佐斯…</div>
+    <a href="/people/本杰明·格雷厄姆.html" class="bl-go-link">查看原文 →</a>
+  </div>
+</div>
+<div class="bl-group">
+  <button class="bl-group-header">
+    <span class="bl-caret"></span>
+    <span class="bl-source-name">杰夫·威尔克</span>
+    <span class="bl-mention-cat">人物</span>
+  </button>
+  <div class="bl-snippets">
+    <div class="bl-snippet">…Prime 深度交织，形成飞轮效应 - 飞轮效应——物流规模扩大带来成本下降，进一步吸引卖家和客户 - 客户至上——威尔克将"客户痴迷"转化为可衡量的运营指标和流程 - Day 1——威尔克的运营文化体现了持续改善、永不满足…</div>
+    <a href="/people/杰夫·威尔克.html" class="bl-go-link">查看原文 →</a>
+  </div>
+</div>
+<div class="bl-group">
+  <button class="bl-group-header">
+    <span class="bl-caret"></span>
+    <span class="bl-source-name">贝佐斯</span>
+    <span class="bl-mention-cat">人物</span>
+  </button>
+  <div class="bl-snippets">
+    <div class="bl-snippet">…多次回忆这一细节）。他在 1997 贝佐斯致股东信 中奠定了此后二十余年不变的经营哲学框架——长期主义、客户至上、大胆下注、聚焦自由现金流。他反复强调"这是 Day 1"，将互联网视为改变一切的力量。  在 [[20…</div>
+    <a href="/people/贝佐斯.html" class="bl-go-link">查看原文 →</a>
+  </div>
+</div>
+<div class="bl-group">
+  <button class="bl-group-header">
+    <span class="bl-caret"></span>
+    <span class="bl-source-name">核心思想索引</span>
+    <span class="bl-mention-cat">索引</span>
+  </button>
+  <div class="bl-snippets">
+    <div class="bl-snippet">…思想索引  贝佐斯致股东信中反复出现的核心理念，按主题分类。共 16 个核心概念。  ## 核心经营哲学  - 客户至上（Customer Obsession）— 贝佐斯最核心的信念，贯穿全部 24 封信 - 长期主义（Long-t…</div>
+    <a href="/index-pages/核心思想索引.html" class="bl-go-link">查看原文 →</a>
+  </div>
+</div>
+
+</aside>
+
+</main>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Toggle sidebar nav groups
+  document.querySelectorAll('.nav-group-title').forEach(function(el) {
+    el.addEventListener('click', function() {
+      this.parentElement.classList.toggle('open');
+    });
+  });
+
+  // Backlinks: toggle individual groups
+  document.querySelectorAll('.bl-group-header').forEach(function(header) {
+    header.addEventListener('click', function() {
+      this.closest('.bl-group').classList.toggle('open');
+    });
+  });
+
+  // Favorite / bookmark popup
+  var favBtn = document.getElementById('fav-btn');
+  var favPop = document.getElementById('fav-pop');
+  if (favBtn && favPop) {
+    var isMac = /Mac|iPhone|iPad/.test(navigator.platform);
+    var key = isMac ? '⌘ + D' : 'Ctrl + D';
+    favPop.innerHTML =
+      '按 <kbd>' + key + '</kbd> 收藏本页到浏览器书签' +
+      '<button class="fav-pop-copy" id="fav-pop-copy">复制本页链接</button>';
+
+    favBtn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      favPop.classList.toggle('show');
+    });
+    document.addEventListener('click', function(e) {
+      if (!favPop.contains(e.target) && e.target !== favBtn) {
+        favPop.classList.remove('show');
+      }
+    });
+
+    var copyBtn = document.getElementById('fav-pop-copy');
+    if (copyBtn) {
+      copyBtn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        navigator.clipboard.writeText(window.location.href).then(function() {
+          copyBtn.textContent = '✓ 已复制';
+          copyBtn.classList.add('copied');
+          setTimeout(function() {
+            copyBtn.textContent = '复制本页链接';
+            copyBtn.classList.remove('copied');
+          }, 1500);
+        });
+      });
+    }
+  }
+
+  // Backlinks: expand/collapse all
+  document.querySelectorAll('.bl-expand-all').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      this.closest('.backlinks-panel').querySelectorAll('.bl-group').forEach(function(g) {
+        g.classList.add('open');
+      });
+    });
+  });
+  document.querySelectorAll('.bl-collapse-all').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      this.closest('.backlinks-panel').querySelectorAll('.bl-group').forEach(function(g) {
+        g.classList.remove('open');
+      });
+    });
+  });
+});
+</script>
+</body>
+</html>

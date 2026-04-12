@@ -1,0 +1,1444 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>GTC 2023 春 — AI 的 iPhone 时刻 - 黄仁勋知识图谱</title>
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon-180.png">
+<link rel="shortcut icon" href="/assets/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700;900&family=Crimson+Pro:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-WLE88B2LL3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-WLE88B2LL3');
+</script>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+
+:root{
+  --bg:#FAF7F2;
+  --bg2:#F3EDE4;
+  --text:#1B1B18;
+  --text2:#6B6560;
+  --gold:#B8860B;
+  --gold-light:#D4A843;
+  --gold-glow:rgba(184,134,11,.12);
+  --navy:#1A2332;
+  --navy-light:#2C3E50;
+  --cream:#FFF8EE;
+  --border:#E0D6C8;
+  --card:#FFFFFF;
+  --link:#8B5E0B;
+  --serif:'Noto Serif SC','Crimson Pro',Georgia,'Times New Roman',serif;
+  --sans:'DM Sans',-apple-system,BlinkMacSystemFont,'PingFang SC','Microsoft YaHei',sans-serif;
+  --sidebar-w:260px;
+}
+
+html{font-size:15px;scroll-behavior:smooth}
+body{
+  font-family:var(--sans);
+  color:var(--text);
+  background:var(--bg);
+  display:flex;
+  min-height:100vh;
+  line-height:1.8;
+  -webkit-font-smoothing:antialiased;
+}
+
+/* ===== SIDEBAR ===== */
+.sidebar{
+  width:var(--sidebar-w);
+  background:var(--navy);
+  position:fixed;top:0;left:0;bottom:0;
+  overflow-y:auto;
+  z-index:100;
+  display:flex;
+  flex-direction:column;
+}
+.sidebar-header{padding:20px 16px 16px;border-bottom:1px solid rgba(255,255,255,.08)}
+.logo{
+  color:#fff;
+  font-size:17px;
+  font-weight:700;
+  text-decoration:none;
+  letter-spacing:.5px;
+  font-family:var(--serif);
+  display:block;
+}
+.logo:hover{color:var(--gold-light)}
+
+.sidebar-nav{flex:1;padding:8px 0;overflow-y:auto}
+.sidebar-nav::-webkit-scrollbar{width:4px}
+.sidebar-nav::-webkit-scrollbar-thumb{background:rgba(255,255,255,.15);border-radius:2px}
+
+.nav-link{
+  display:block;
+  padding:6px 16px;
+  color:#cbd5e1;
+  text-decoration:none;
+  font-size:13px;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  border-left:3px solid transparent;
+  transition:all .15s;
+}
+.nav-link:hover{background:rgba(255,255,255,.06);color:#fff}
+.nav-link.active{
+  color:#fff;
+  background:rgba(184,134,11,.15);
+  border-left-color:var(--gold);
+  font-weight:600;
+}
+.nav-home{font-size:14px;padding:10px 16px;font-weight:500;margin-bottom:4px}
+.nav-changelog{
+  margin-top:auto;
+  padding:14px 16px;
+  font-size:12px;
+  color:rgba(255,255,255,.4);
+  border-top:1px solid rgba(255,255,255,.08);
+}
+.nav-changelog:hover{color:rgba(255,255,255,.7)}
+.nav-changelog.active{color:var(--gold-light)}
+.sidebar-nav{display:flex;flex-direction:column;height:100%}
+
+.nav-group{margin-bottom:2px}
+.nav-group-title{
+  padding:8px 16px;
+  color:#cbd5e1;
+  font-size:12px;
+  font-weight:600;
+  text-transform:uppercase;
+  letter-spacing:.5px;
+  cursor:pointer;
+  display:flex;
+  align-items:center;
+  gap:6px;
+  user-select:none;
+  transition:color .15s;
+}
+.nav-group-title:hover{color:#fff}
+.caret{
+  display:inline-block;
+  width:0;height:0;
+  border-left:5px solid #cbd5e1;
+  border-top:4px solid transparent;
+  border-bottom:4px solid transparent;
+  transition:transform .2s;
+}
+.nav-group.open .nav-group-title .caret{transform:rotate(90deg);border-left-color:#fff}
+.nav-group-title .badge{
+  margin-left:auto;
+  background:rgba(255,255,255,.1);
+  color:#cbd5e1;
+  font-size:11px;
+  padding:1px 6px;
+  border-radius:8px;
+  font-weight:400;
+}
+.nav-group-items{display:none;padding-left:8px}
+.nav-group.open .nav-group-items{display:block}
+
+.hamburger{
+  display:none;
+  position:fixed;
+  top:12px;left:12px;
+  z-index:200;
+  background:var(--navy);
+  color:#fff;
+  border:none;
+  font-size:20px;
+  padding:6px 10px;
+  border-radius:6px;
+  cursor:pointer;
+}
+
+/* ===== MAIN ===== */
+.main{
+  margin-left:max(var(--sidebar-w), calc((100vw - 1160px) / 2));
+  flex:1;
+  position:relative;
+  max-width:1160px;
+  padding:0;
+}
+
+/* grain overlay */
+.main::after{
+  content:'';
+  position:fixed;
+  top:0;left:var(--sidebar-w);right:0;bottom:0;
+  pointer-events:none;
+  opacity:.03;
+  z-index:999;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* ===== FAV / BOOKMARK BUTTON ===== */
+.fav-wrap{
+  position:absolute;
+  top:24px;right:48px;
+  z-index:50;
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+.sister-link{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  padding:8px 16px;
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:24px;
+  color:var(--navy);
+  font-size:13px;
+  font-weight:600;
+  font-family:var(--sans);
+  text-decoration:none;
+  box-shadow:0 2px 8px rgba(0,0,0,.04);
+  transition:all .25s;
+  white-space:nowrap;
+}
+.sister-link:hover{
+  border-color:var(--gold);
+  color:var(--gold);
+  box-shadow:0 4px 16px var(--gold-glow);
+  transform:translateY(-1px);
+}
+.sister-link .arrow{
+  color:var(--gold);
+  font-weight:700;
+}
+.fav-btn{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  padding:8px 18px;
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:24px;
+  color:var(--gold);
+  font-size:16px;
+  cursor:pointer;
+  transition:all .25s;
+  font-family:var(--sans);
+  box-shadow:0 2px 8px rgba(0,0,0,.04);
+}
+.fav-btn:hover{
+  border-color:var(--gold);
+  box-shadow:0 4px 16px var(--gold-glow);
+  transform:translateY(-1px);
+}
+.fav-label{
+  font-size:13px;
+  color:var(--text2);
+  font-weight:500;
+}
+.fav-btn:hover .fav-label{color:var(--gold)}
+.fav-pop{
+  display:none;
+  position:absolute;
+  right:0;top:48px;
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:10px;
+  padding:14px 16px;
+  box-shadow:0 8px 32px rgba(0,0,0,.12);
+  font-size:13px;
+  min-width:240px;
+  z-index:51;
+  color:var(--text);
+  line-height:1.6;
+}
+.fav-pop.show{display:block}
+.fav-pop kbd{
+  background:var(--bg2);
+  padding:2px 7px;
+  border-radius:4px;
+  font-size:12px;
+  border:1px solid var(--border);
+  font-family:var(--sans);
+  color:var(--navy);
+  font-weight:600;
+}
+.fav-pop-copy{
+  display:block;
+  width:100%;
+  margin-top:10px;
+  padding:8px 0;
+  background:var(--bg);
+  border:1px solid var(--border);
+  border-radius:6px;
+  color:var(--text2);
+  font-size:12px;
+  cursor:pointer;
+  text-align:center;
+  transition:all .15s;
+  font-family:var(--sans);
+}
+.fav-pop-copy:hover{
+  border-color:var(--gold);
+  color:var(--gold);
+}
+.fav-pop-copy.copied{
+  background:#ecfdf5;
+  border-color:#6ee7b7;
+  color:#059669;
+}
+
+@media(max-width:768px){
+  .fav-wrap{right:16px;top:12px;gap:6px}
+  .sister-link{padding:6px 12px;font-size:11px}
+  .fav-btn{padding:6px 14px}
+  .fav-label{font-size:12px}
+}
+
+/* ===== CHANGELOG ===== */
+.article.changelog h2{
+  border-bottom-color:var(--gold);
+  display:flex;
+  align-items:center;
+  gap:10px;
+  flex-wrap:wrap;
+}
+.version{
+  display:inline-flex;
+  align-items:center;
+  background:var(--gold);
+  color:#fff;
+  font-size:13px;
+  font-weight:700;
+  padding:3px 11px;
+  border-radius:6px;
+  font-family:var(--sans);
+  letter-spacing:.3px;
+}
+.changelog-date{
+  font-size:14px;
+  color:var(--text2);
+  font-weight:500;
+  font-family:var(--sans);
+}
+.change-list{
+  list-style:none;
+  padding:0;
+  margin:16px 0;
+}
+.change-list li{
+  padding:10px 0 10px 18px;
+  position:relative;
+  border-bottom:1px solid var(--border);
+  font-size:14px;
+  line-height:1.75;
+}
+.change-list li:last-child{border-bottom:none}
+.change-list li::before{
+  content:"";
+  position:absolute;
+  left:0;
+  top:20px;
+  width:6px;
+  height:6px;
+  border-radius:50%;
+  background:var(--gold);
+}
+.change-type{
+  display:inline-block;
+  font-size:11px;
+  padding:2px 8px;
+  border-radius:4px;
+  color:#fff;
+  font-weight:600;
+  margin-right:8px;
+  font-family:var(--sans);
+  vertical-align:1px;
+  letter-spacing:.2px;
+}
+.change-type.feat{background:#059669}
+.change-type.fix{background:#dc2626}
+.change-type.plan{background:#3b82f6}
+.change-list li strong{color:var(--navy);font-weight:700}
+
+/* ===== ARTICLE (content pages) ===== */
+.article{max-width:820px;padding:48px 48px 80px}
+.meta{
+  font-size:13px;
+  color:var(--text2);
+  margin-bottom:16px;
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+.type-badge{
+  font-size:11px;
+  padding:2px 8px;
+  border-radius:4px;
+  color:#fff;
+  font-weight:600;
+}
+.type-概念{background:#7C5E2A}
+.type-方法{background:#5E4A8B}
+.type-产品{background:#1A6B7C}
+.type-人物{background:#8B2F2F}
+.type-演讲{background:#2A6B4F}
+.type-毕业演讲{background:#7E6B30}
+.type-访谈{background:#3A5E8B}
+.type-财报会议{background:#4A6E2A}
+.type-索引{background:#6B6560}
+
+.article h1{
+  font-family:var(--serif);
+  font-size:28px;
+  line-height:1.3;
+  margin-bottom:24px;
+  font-weight:900;
+  color:var(--navy);
+  letter-spacing:-.5px;
+}
+.article h2{
+  font-family:var(--serif);
+  font-size:21px;
+  margin:36px 0 14px;
+  padding-bottom:8px;
+  border-bottom:2px solid var(--border);
+  font-weight:700;
+  color:var(--navy);
+}
+.article h3{
+  font-family:var(--serif);
+  font-size:17px;
+  margin:24px 0 10px;
+  font-weight:600;
+  color:var(--navy-light);
+}
+.article p{margin:10px 0}
+.article ul,.article ol{padding-left:24px;margin:10px 0}
+.article li{margin:4px 0}
+
+.article a{
+  color:var(--link);
+  text-decoration:none;
+  background:linear-gradient(to bottom,transparent 60%,var(--gold-glow) 60%);
+  transition:background .2s;
+}
+.article a:hover{background:linear-gradient(to bottom,transparent 40%,rgba(184,134,11,.2) 40%)}
+
+.article blockquote{
+  background:var(--cream);
+  border-left:4px solid var(--gold);
+  padding:14px 20px;
+  margin:16px 0;
+  border-radius:0 8px 8px 0;
+  font-style:italic;
+  color:#5C4813;
+  font-family:var(--serif);
+}
+.article blockquote p{margin:0}
+.article blockquote a{background:none;color:var(--gold)}
+.article blockquote a:hover{text-decoration:underline}
+
+.article table{border-collapse:collapse;width:100%;margin:16px 0;font-size:14px}
+.article th,.article td{border:1px solid var(--border);padding:8px 12px;text-align:left}
+.article th{background:var(--bg2);font-weight:600;color:var(--navy)}
+.article strong{font-weight:700}
+.article hr{border:none;border-top:1px solid var(--border);margin:32px 0}
+.article code{
+  background:var(--bg2);
+  padding:2px 6px;
+  border-radius:3px;
+  font-size:13px;
+  font-family:'SF Mono',Menlo,Consolas,monospace;
+  color:#5C4813;
+}
+
+/* ===== KNOWLEDGE GRAPH PAGE ===== */
+.main.full-bleed{max-width:none;padding:0;margin-left:var(--sidebar-w)}
+.main.full-bleed::after{display:none}
+.graph-wrap{position:relative;width:100%;height:100vh;overflow:hidden;background:var(--bg)}
+.graph-wrap svg{width:100%;height:100%;display:block}
+.graph-toolbar{position:absolute;top:16px;right:16px;display:flex;gap:8px;z-index:10}
+.graph-toolbar button{
+  padding:6px 14px;background:var(--card);border:1px solid var(--border);
+  border-radius:8px;font-size:12px;color:var(--text);cursor:pointer;
+  font-family:var(--sans);transition:all .15s;font-weight:500;
+}
+.graph-toolbar button:hover{border-color:var(--gold);color:var(--gold)}
+.graph-title{position:absolute;top:16px;left:16px;z-index:10}
+.graph-title h1{font-family:var(--serif);font-size:20px;color:var(--navy);margin:0}
+.graph-title p{font-size:12px;color:var(--text2);margin:4px 0 0;font-family:var(--sans)}
+.graph-tooltip{
+  position:absolute;padding:8px 14px;background:var(--navy);color:#fff;
+  border-radius:8px;font-size:12px;pointer-events:none;opacity:0;transition:opacity .15s;
+  box-shadow:0 4px 16px rgba(0,0,0,.2);z-index:20;white-space:nowrap;font-family:var(--sans);
+}
+.graph-tooltip strong{display:block;font-size:13px;margin-bottom:2px}
+.graph-tooltip span{color:rgba(255,255,255,.6)}
+.graph-legend{
+  position:absolute;bottom:16px;left:16px;display:flex;gap:12px;z-index:10;
+  flex-wrap:wrap;max-width:calc(100% - 32px);
+  background:rgba(255,255,255,.92);padding:8px 14px;border-radius:8px;
+  border:1px solid var(--border);font-family:var(--sans);
+}
+.legend-item{display:flex;align-items:center;gap:5px;font-size:11px;color:var(--text2);cursor:pointer;user-select:none}
+.legend-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0}
+.legend-item.dimmed{opacity:.3}
+.nav-graph{
+  padding:14px 16px 6px;
+  font-size:12px;
+  color:rgba(255,255,255,.4);
+  border-top:1px solid rgba(255,255,255,.08);
+  margin-top:auto;
+}
+.nav-graph:hover{color:rgba(255,255,255,.7)}
+.nav-graph.active{color:var(--gold-light)}
+/* When graph link present, changelog should not push it to bottom */
+.nav-graph + .nav-changelog{margin-top:0;border-top:none;padding-top:6px;padding-bottom:14px}
+
+/* ===== BACKLINKS PANEL (right sidebar) ===== */
+.main.has-backlinks{
+  display:grid;
+  grid-template-columns:minmax(0,820px) 280px;
+  gap:0 24px;
+  max-width:1160px;
+}
+.main-content{min-width:0}
+
+.backlinks-panel{
+  grid-column:2;
+  grid-row:1/-1;
+  position:sticky;
+  top:24px;
+  max-height:calc(100vh - 48px);
+  overflow-y:auto;
+  padding:24px 0 24px 20px;
+  border-left:1px solid var(--border);
+  font-size:13px;
+  align-self:start;
+}
+.backlinks-panel::-webkit-scrollbar{width:3px}
+.backlinks-panel::-webkit-scrollbar-thumb{background:var(--border);border-radius:2px}
+
+.bl-panel-header{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  margin-bottom:12px;
+}
+.bl-panel-title{
+  font-family:var(--serif);
+  font-size:14px;
+  font-weight:700;
+  color:var(--navy);
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+.bl-count{
+  font-size:11px;
+  background:var(--bg2);
+  padding:1px 7px;
+  border-radius:10px;
+  color:var(--text2);
+  font-weight:600;
+}
+.bl-panel-actions{display:flex;gap:4px}
+.bl-action{
+  background:none;
+  border:1px solid var(--border);
+  border-radius:4px;
+  padding:2px 8px;
+  font-size:11px;
+  color:var(--text2);
+  cursor:pointer;
+  font-family:var(--sans);
+  transition:all .15s;
+}
+.bl-action:hover{border-color:var(--gold);color:var(--gold)}
+
+.bl-group{margin-bottom:4px}
+.bl-group-header{
+  display:flex;
+  align-items:center;
+  gap:6px;
+  background:none;
+  border:none;
+  cursor:pointer;
+  padding:5px 0;
+  width:100%;
+  text-align:left;
+  font-size:13px;
+  font-family:var(--sans);
+}
+.bl-group-header:hover{background:rgba(0,0,0,.02);border-radius:4px}
+
+.bl-caret{
+  display:inline-block;
+  width:0;height:0;
+  border:4px solid transparent;
+  border-left:5px solid var(--text2);
+  transition:transform .15s;
+  flex-shrink:0;
+}
+.bl-group.open .bl-caret{transform:rotate(90deg)}
+
+.bl-source-name{
+  color:var(--navy);
+  font-weight:600;
+  flex:1;
+  min-width:0;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
+.bl-mention-cat{
+  font-size:10px;
+  color:var(--text2);
+  background:var(--bg2);
+  padding:0 5px;
+  border-radius:8px;
+  flex-shrink:0;
+  margin-left:4px;
+}
+
+.bl-snippets{display:none;padding:4px 0 4px 14px}
+.bl-group.open .bl-snippets{display:block}
+
+.bl-snippet{
+  padding:6px 0;
+  border-bottom:1px solid var(--border);
+  line-height:1.6;
+  color:var(--text2);
+  font-size:12px;
+}
+.bl-snippet:last-child{border-bottom:none}
+.bl-go-link{
+  display:inline-block;
+  font-size:11px;
+  color:var(--link);
+  text-decoration:none;
+  padding:4px 0 2px;
+  font-weight:600;
+  transition:color .15s;
+}
+.bl-go-link:hover{color:var(--gold);text-decoration:underline}
+
+/* ===== HOMEPAGE ===== */
+.hero-section{
+  position:relative;
+  padding:72px 48px 56px;
+  max-width:900px;
+  margin:0 auto;
+}
+.hero-eyebrow{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  font-size:12px;
+  font-weight:600;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  color:var(--gold);
+  margin-bottom:20px;
+  opacity:0;
+  animation:fadeUp .6s ease forwards;
+}
+.hero-eyebrow::before{content:'';width:24px;height:1px;background:var(--gold)}
+.hero-title{
+  font-family:var(--serif);
+  font-size:clamp(32px,5vw,48px);
+  font-weight:900;
+  line-height:1.25;
+  letter-spacing:-1px;
+  color:var(--navy);
+  margin-bottom:6px;
+  opacity:0;
+  animation:fadeUp .6s ease .1s forwards;
+}
+.hero-title .gold{color:var(--gold)}
+.hero-sub{
+  font-size:17px;
+  color:var(--text2);
+  line-height:1.8;
+  margin-top:16px;
+  max-width:640px;
+  font-family:var(--serif);
+  font-weight:400;
+  opacity:0;
+  animation:fadeUp .6s ease .2s forwards;
+}
+.hero-sub b{color:var(--navy);font-weight:700}
+
+.stats-row{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:0;
+  max-width:900px;
+  margin:0 auto 48px;
+  padding:0 48px;
+  border-top:1px solid var(--border);
+  border-bottom:1px solid var(--border);
+  opacity:0;
+  animation:fadeUp .6s ease .3s forwards;
+}
+.stat-item{
+  text-align:center;
+  padding:28px 12px;
+  position:relative;
+  transition:background .3s;
+  text-decoration:none;
+  color:inherit;
+}
+.stat-item:not(:last-child)::after{
+  content:'';
+  position:absolute;
+  right:0;top:20%;
+  height:60%;
+  width:1px;
+  background:var(--border);
+}
+.stat-item:hover{background:var(--gold-glow)}
+.stat-num{
+  font-family:var(--serif);
+  font-size:42px;
+  font-weight:900;
+  color:var(--navy);
+  line-height:1;
+  margin-bottom:6px;
+  letter-spacing:-2px;
+}
+.stat-label{
+  font-size:13px;
+  color:var(--text2);
+  font-weight:500;
+  letter-spacing:.5px;
+}
+
+.main-inner{max-width:900px;padding:0 48px 80px;margin:0 auto}
+
+.nav-cards{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:16px;
+  margin-bottom:56px;
+  opacity:0;
+  animation:fadeUp .6s ease .4s forwards;
+}
+.nav-card{
+  position:relative;
+  padding:28px 20px 24px;
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:14px;
+  text-decoration:none;
+  transition:all .3s cubic-bezier(.4,0,.2,1);
+  overflow:hidden;
+  display:block;
+  color:inherit;
+}
+.nav-card::before{
+  content:'';
+  position:absolute;
+  top:0;left:0;right:0;
+  height:3px;
+  background:var(--gold);
+  opacity:0;
+  transition:opacity .3s;
+}
+.nav-card:hover{
+  transform:translateY(-4px);
+  box-shadow:0 12px 32px rgba(0,0,0,.08);
+  border-color:var(--gold-light);
+}
+.nav-card:hover::before{opacity:1}
+.nav-card-icon{font-size:32px;margin-bottom:14px;display:block;line-height:1}
+.nav-card-title{
+  font-family:var(--serif);
+  font-size:16px;
+  font-weight:700;
+  color:var(--navy);
+  margin-bottom:4px;
+}
+.nav-card-sub{font-size:13px;color:var(--text2)}
+.nav-card-arrow{
+  position:absolute;
+  bottom:20px;right:20px;
+  font-size:18px;
+  color:var(--border);
+  transition:all .3s;
+}
+.nav-card:hover .nav-card-arrow{color:var(--gold);transform:translateX(4px)}
+
+.section{margin-bottom:48px}
+.section-header{display:flex;align-items:center;gap:12px;margin-bottom:20px}
+.section-line{flex:1;height:1px;background:var(--border)}
+.section-title{
+  font-family:var(--serif);
+  font-size:22px;
+  font-weight:700;
+  color:var(--navy);
+  white-space:nowrap;
+}
+.section-count{
+  font-size:12px;
+  color:var(--gold);
+  font-weight:600;
+  background:var(--gold-glow);
+  padding:3px 10px;
+  border-radius:12px;
+  white-space:nowrap;
+}
+
+.tag-cloud{display:flex;flex-wrap:wrap;gap:10px}
+.tag{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  padding:8px 18px;
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:24px;
+  font-size:14px;
+  color:var(--text);
+  text-decoration:none;
+  transition:all .25s cubic-bezier(.4,0,.2,1);
+  font-weight:500;
+}
+.tag:hover{
+  border-color:var(--gold);
+  color:var(--navy);
+  box-shadow:0 4px 16px var(--gold-glow);
+  transform:translateY(-2px);
+}
+.tag-n{
+  font-size:11px;
+  font-weight:700;
+  color:#fff;
+  background:var(--gold);
+  padding:2px 8px;
+  border-radius:10px;
+  min-width:20px;
+  text-align:center;
+}
+.tag.tier-1{
+  font-size:16px;
+  padding:10px 22px;
+  font-weight:700;
+  border-color:var(--gold-light);
+  background:linear-gradient(135deg,#FFFDF5,#FFF8E7);
+}
+.tag.tier-1 .tag-n{font-size:12px;padding:3px 10px;background:var(--gold)}
+.tag.tier-2{font-size:15px;padding:9px 20px;font-weight:600}
+
+.people-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(180px,1fr));
+  gap:14px;
+}
+.person-card{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  padding:24px 16px 20px;
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:14px;
+  text-decoration:none;
+  transition:all .3s;
+  text-align:center;
+  color:inherit;
+}
+.person-card:hover{
+  transform:translateY(-3px);
+  box-shadow:0 8px 24px rgba(0,0,0,.06);
+  border-color:var(--gold-light);
+}
+.person-avatar{
+  width:56px;height:56px;
+  border-radius:50%;
+  background:linear-gradient(135deg,var(--navy),var(--navy-light));
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:22px;
+  margin-bottom:12px;
+  color:var(--gold-light);
+  font-family:var(--serif);
+  font-weight:700;
+  box-shadow:0 4px 12px rgba(26,35,50,.15);
+}
+.person-name{
+  font-family:var(--serif);
+  font-size:15px;
+  font-weight:700;
+  color:var(--navy);
+  margin-bottom:4px;
+}
+.person-refs{font-size:12px;color:var(--text2)}
+
+.gold-divider{display:flex;align-items:center;gap:16px;margin:56px 0}
+.gold-divider::before,.gold-divider::after{
+  content:'';
+  flex:1;
+  height:1px;
+  background:linear-gradient(to right,transparent,var(--border),transparent);
+}
+.gold-divider-diamond{
+  width:8px;height:8px;
+  background:var(--gold);
+  transform:rotate(45deg);
+  flex-shrink:0;
+}
+
+.footer-promo{
+  position:relative;
+  overflow:hidden;
+  padding:40px;
+  background:var(--navy);
+  border-radius:20px;
+  color:#fff;
+  display:flex;
+  gap:40px;
+  align-items:center;
+}
+.footer-promo::before{
+  content:'';
+  position:absolute;
+  top:-50%;right:-20%;
+  width:400px;height:400px;
+  border-radius:50%;
+  background:radial-gradient(circle,rgba(184,134,11,.15),transparent 70%);
+}
+.promo-story{flex:1;position:relative;z-index:1;min-width:0}
+.promo-story h3{
+  font-family:var(--serif);
+  font-size:20px;
+  font-weight:700;
+  margin-bottom:12px;
+  color:var(--gold-light);
+}
+.promo-story p{font-size:14px;color:rgba(255,255,255,.75);line-height:1.8;margin:8px 0}
+.promo-credit{
+  margin-top:16px !important;
+  padding-top:14px;
+  border-top:1px solid rgba(255,255,255,.12);
+  font-size:13px !important;
+}
+.promo-credit strong{color:var(--gold-light);font-weight:700}
+
+.promo-qr{
+  flex-shrink:0;
+  position:relative;
+  z-index:1;
+  text-align:center;
+}
+.qr-img{
+  display:block;
+  width:140px;
+  height:140px;
+  border-radius:12px;
+  border:3px solid rgba(255,255,255,.15);
+  box-shadow:0 8px 24px rgba(0,0,0,.25);
+  background:#fff;
+  padding:6px;
+}
+.qr-text{
+  font-size:12px;
+  color:rgba(255,255,255,.6);
+  margin-top:10px;
+  letter-spacing:.5px;
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes fadeUp{
+  from{opacity:0;transform:translateY(16px)}
+  to{opacity:1;transform:translateY(0)}
+}
+.section{opacity:0;animation:fadeUp .5s ease forwards}
+.section:nth-child(1){animation-delay:.45s}
+.section:nth-child(2){animation-delay:.55s}
+.section:nth-child(3){animation-delay:.65s}
+.section:nth-child(4){animation-delay:.75s}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:1024px){
+  .main.has-backlinks{display:block}
+  .backlinks-panel{
+    position:static;
+    max-height:none;
+    overflow-y:visible;
+    border-left:none;
+    border-top:1px solid var(--border);
+    padding:24px 16px;
+    margin-top:24px;
+    max-width:820px;
+  }
+}
+
+@media(max-width:768px){
+  .sidebar{transform:translateX(-100%);transition:transform .3s}
+  .sidebar.open{transform:translateX(0)}
+  .hamburger{display:block}
+  .main{margin-left:0;max-width:100%}
+  .main::after{left:0}
+  .main.has-backlinks{display:block}
+  .article{padding:48px 16px 60px}
+  .backlinks-panel{padding:16px 12px;margin-top:16px}
+  .hero-section{padding:44px 20px 20px}
+  .hero-eyebrow{font-size:10px;margin-bottom:12px}
+  .hero-title{font-size:26px}
+  .hero-sub{font-size:14px;line-height:1.6;margin-top:10px}
+  .stats-row{padding:0 16px;margin:0 0 20px}
+  .stat-item{padding:16px 4px}
+  .stat-num{font-size:28px;letter-spacing:-1px}
+  .stat-label{font-size:11px}
+  .main-inner{padding:0 20px 60px}
+  .nav-cards{grid-template-columns:1fr 1fr;gap:10px;margin-bottom:36px}
+  .nav-card{padding:20px 14px 18px}
+  .nav-card-icon{font-size:24px;margin-bottom:8px}
+  .nav-card-title{font-size:14px}
+  .nav-card-sub{font-size:12px}
+  .footer-promo{flex-direction:column;text-align:center;padding:28px 20px;gap:24px}
+  .people-grid{grid-template-columns:repeat(2,1fr)}
+}
+</style>
+</head>
+<body>
+<button class="hamburger" aria-label="菜单" onclick="document.querySelector('.sidebar').classList.toggle('open')">☰</button>
+<aside class="sidebar">
+  <div class="sidebar-header"><a href="/index.html" class="logo">黄仁勋知识图谱</a></div>
+  <div class="sidebar-nav">
+    <a href="/index.html" class="nav-link nav-home">🏛 首页</a>
+<div class="nav-group open">
+  <div class="nav-group-title"><span class="caret"></span>索引<span class="badge">5</span></div>
+  <div class="nav-group-items">
+    <a href="/index-pages/人物索引.html" class="nav-link" title="人物索引">人物索引</a>
+    <a href="/index-pages/公司与产品索引.html" class="nav-link" title="公司与产品索引">公司与产品索引</a>
+    <a href="/index-pages/工作方法索引.html" class="nav-link" title="工作方法索引">工作方法索引</a>
+    <a href="/index-pages/核心思想索引.html" class="nav-link" title="核心思想索引">核心思想索引</a>
+    <a href="/index-pages/素材总览.html" class="nav-link" title="素材总览">素材总览</a>
+  </div>
+</div>
+<div class="nav-group open">
+  <div class="nav-group-title"><span class="caret"></span>演讲<span class="badge">10</span></div>
+  <div class="nav-group-items">
+    <a href="/keynotes/2021-04 GTC 2021 春 - AI Factory 概念.html" class="nav-link" title="2021-04 GTC 2021 春 - AI Factory 概念">2021-04 GTC 2021 春 - AI Factory 概念</a>
+    <a href="/keynotes/2021-11 GTC 2021 秋 - Omniverse 与数字孪生.html" class="nav-link" title="2021-11 GTC 2021 秋 - Omniverse 与数字孪生">2021-11 GTC 2021 秋 - Omniverse 与数字孪生</a>
+    <a href="/keynotes/2022-03 GTC 2022 - Hopper H100 与 AI Factories.html" class="nav-link" title="2022-03 GTC 2022 - Hopper H100 与 AI Factories">2022-03 GTC 2022 - Hopper H100 与 AI Factories</a>
+    <a href="/keynotes/2022-09 GTC 2022 秋 - H100 量产.html" class="nav-link" title="2022-09 GTC 2022 秋 - H100 量产">2022-09 GTC 2022 秋 - H100 量产</a>
+    <a href="/keynotes/2023-03 GTC 2023 - AI 的 iPhone 时刻.html" class="nav-link active" title="2023-03 GTC 2023 - AI 的 iPhone 时刻">2023-03 GTC 2023 - AI 的 iPhone 时刻</a>
+    <a href="/keynotes/2024-03 GTC 2024 - Blackwell B200 发布.html" class="nav-link" title="2024-03 GTC 2024 - Blackwell B200 发布">2024-03 GTC 2024 - Blackwell B200 发布</a>
+    <a href="/keynotes/2025-01 CES 2025 - Project DIGITS 与 Cosmos.html" class="nav-link" title="2025-01 CES 2025 - Project DIGITS 与 Cosmos">2025-01 CES 2025 - Project DIGITS 与 Cosmos</a>
+    <a href="/keynotes/2025-03 GTC 2025 - Blackwell Ultra 与 Vera Rubin.html" class="nav-link" title="2025-03 GTC 2025 - Blackwell Ultra 与 Vera Rubin">2025-03 GTC 2025 - Blackwell Ultra 与 Vera Rubin</a>
+    <a href="/keynotes/2025-10 GTC 2025 华盛顿.html" class="nav-link" title="2025-10 GTC 2025 华盛顿">2025-10 GTC 2025 华盛顿</a>
+    <a href="/keynotes/2026-01 CES 2026 - 推理时代与 Agentic AI.html" class="nav-link" title="2026-01 CES 2026 - 推理时代与 Agentic AI">2026-01 CES 2026 - 推理时代与 Agentic AI</a>
+  </div>
+</div>
+<div class="nav-group">
+  <div class="nav-group-title"><span class="caret"></span>访谈<span class="badge">3</span></div>
+  <div class="nav-group-items">
+    <a href="/interviews/2023-10 Acquired - 黄仁勋深度访谈.html" class="nav-link" title="2023-10 Acquired - 黄仁勋深度访谈">2023-10 Acquired - 黄仁勋深度访谈</a>
+    <a href="/interviews/2025-09 BG2 Pod - OpenAI 与算力未来.html" class="nav-link" title="2025-09 BG2 Pod - OpenAI 与算力未来">2025-09 BG2 Pod - OpenAI 与算力未来</a>
+    <a href="/interviews/2026-03 Lex Fridman 494 - 4 万亿公司与 AGI.html" class="nav-link" title="2026-03 Lex Fridman 494 - 4 万亿公司与 AGI">2026-03 Lex Fridman 494 - 4 万亿公司与 AGI</a>
+  </div>
+</div>
+<div class="nav-group">
+  <div class="nav-group-title"><span class="caret"></span>财报会议<span class="badge">4</span></div>
+  <div class="nav-group-items">
+    <a href="/earnings/2023-Q1 NVIDIA FY24 财报 - iPhone 时刻.html" class="nav-link" title="2023-Q1 NVIDIA FY24 财报 - iPhone 时刻">2023-Q1 NVIDIA FY24 财报 - iPhone 时刻</a>
+    <a href="/earnings/2023-Q2 NVIDIA FY24 财报 - 历史性爆发.html" class="nav-link" title="2023-Q2 NVIDIA FY24 财报 - 历史性爆发">2023-Q2 NVIDIA FY24 财报 - 历史性爆发</a>
+    <a href="/earnings/2025-Q4 NVIDIA FY25 财报 - Blackwell ramp.html" class="nav-link" title="2025-Q4 NVIDIA FY25 财报 - Blackwell ramp">2025-Q4 NVIDIA FY25 财报 - Blackwell ramp</a>
+    <a href="/earnings/2026-Q4 NVIDIA FY26 财报.html" class="nav-link" title="2026-Q4 NVIDIA FY26 财报">2026-Q4 NVIDIA FY26 财报</a>
+  </div>
+</div>
+<div class="nav-group">
+  <div class="nav-group-title"><span class="caret"></span>毕业演讲<span class="badge">2</span></div>
+  <div class="nav-group-items">
+    <a href="/commencements/2023-05 NTU - Run, dont walk.html" class="nav-link" title="2023-05 NTU - Run, dont walk">2023-05 NTU - Run, dont walk</a>
+    <a href="/commencements/2024-06 Caltech - 相信非常规.html" class="nav-link" title="2024-06 Caltech - 相信非常规">2024-06 Caltech - 相信非常规</a>
+  </div>
+</div>
+<div class="nav-group">
+  <div class="nav-group-title"><span class="caret"></span>方法<span class="badge">8</span></div>
+  <div class="nav-group-items">
+    <a href="/methods/30 年公司.html" class="nav-link" title="30 年公司">30 年公司</a>
+    <a href="/methods/Mission is the Boss.html" class="nav-link" title="Mission is the Boss">Mission is the Boss</a>
+    <a href="/methods/Run, dont walk.html" class="nav-link" title="Run, dont walk">Run, dont walk</a>
+    <a href="/methods/不开 1-on-1.html" class="nav-link" title="不开 1-on-1">不开 1-on-1</a>
+    <a href="/methods/扁平管理.html" class="nav-link" title="扁平管理">扁平管理</a>
+    <a href="/methods/痛苦与磨难.html" class="nav-link" title="痛苦与磨难">痛苦与磨难</a>
+    <a href="/methods/群发邮件.html" class="nav-link" title="群发邮件">群发邮件</a>
+    <a href="/methods/首席解释官.html" class="nav-link" title="首席解释官">首席解释官</a>
+  </div>
+</div>
+<div class="nav-group">
+  <div class="nav-group-title"><span class="caret"></span>概念<span class="badge">18</span></div>
+  <div class="nav-group-items">
+    <a href="/concepts/AGI 已实现.html" class="nav-link" title="AGI 已实现">AGI 已实现</a>
+    <a href="/concepts/AI 工厂.html" class="nav-link" title="AI 工厂">AI 工厂</a>
+    <a href="/concepts/Bet the Company.html" class="nav-link" title="Bet the Company">Bet the Company</a>
+    <a href="/concepts/CUDA 平台.html" class="nav-link" title="CUDA 平台">CUDA 平台</a>
+    <a href="/concepts/Extreme Co-Design.html" class="nav-link" title="Extreme Co-Design">Extreme Co-Design</a>
+    <a href="/concepts/Scale Up 与 Scale Out.html" class="nav-link" title="Scale Up 与 Scale Out">Scale Up 与 Scale Out</a>
+    <a href="/concepts/Speed of Light 工程方法.html" class="nav-link" title="Speed of Light 工程方法">Speed of Light 工程方法</a>
+    <a href="/concepts/Token 经济.html" class="nav-link" title="Token 经济">Token 经济</a>
+    <a href="/concepts/加速计算.html" class="nav-link" title="加速计算">加速计算</a>
+    <a href="/concepts/推理时代.html" class="nav-link" title="推理时代">推理时代</a>
+    <a href="/concepts/摩尔定律已死.html" class="nav-link" title="摩尔定律已死">摩尔定律已死</a>
+    <a href="/concepts/数字孪生.html" class="nav-link" title="数字孪生">数字孪生</a>
+    <a href="/concepts/数据中心即计算机.html" class="nav-link" title="数据中心即计算机">数据中心即计算机</a>
+    <a href="/concepts/物理 AI.html" class="nav-link" title="物理 AI">物理 AI</a>
+    <a href="/concepts/生成式 AI 工业革命.html" class="nav-link" title="生成式 AI 工业革命">生成式 AI 工业革命</a>
+    <a href="/concepts/目的与任务.html" class="nav-link" title="目的与任务">目的与任务</a>
+    <a href="/concepts/装机量定义架构.html" class="nav-link" title="装机量定义架构">装机量定义架构</a>
+    <a href="/concepts/零亿美元市场.html" class="nav-link" title="零亿美元市场">零亿美元市场</a>
+  </div>
+</div>
+<div class="nav-group">
+  <div class="nav-group-title"><span class="caret"></span>产品<span class="badge">18</span></div>
+  <div class="nav-group-items">
+    <a href="/companies/Blackwell.html" class="nav-link" title="Blackwell">Blackwell</a>
+    <a href="/companies/BlueField DPU.html" class="nav-link" title="BlueField DPU">BlueField DPU</a>
+    <a href="/companies/Cosmos.html" class="nav-link" title="Cosmos">Cosmos</a>
+    <a href="/companies/DGX.html" class="nav-link" title="DGX">DGX</a>
+    <a href="/companies/Dynamo.html" class="nav-link" title="Dynamo">Dynamo</a>
+    <a href="/companies/GR00T.html" class="nav-link" title="GR00T">GR00T</a>
+    <a href="/companies/Hopper.html" class="nav-link" title="Hopper">Hopper</a>
+    <a href="/companies/NIM.html" class="nav-link" title="NIM">NIM</a>
+    <a href="/companies/NVIDIA.html" class="nav-link" title="NVIDIA">NVIDIA</a>
+    <a href="/companies/NVIDIA Drive.html" class="nav-link" title="NVIDIA Drive">NVIDIA Drive</a>
+    <a href="/companies/NVIDIA Omniverse.html" class="nav-link" title="NVIDIA Omniverse">NVIDIA Omniverse</a>
+    <a href="/companies/NVLink.html" class="nav-link" title="NVLink">NVLink</a>
+    <a href="/companies/Newton.html" class="nav-link" title="Newton">Newton</a>
+    <a href="/companies/OpenAI.html" class="nav-link" title="OpenAI">OpenAI</a>
+    <a href="/companies/Project DIGITS.html" class="nav-link" title="Project DIGITS">Project DIGITS</a>
+    <a href="/companies/RIVA 128.html" class="nav-link" title="RIVA 128">RIVA 128</a>
+    <a href="/companies/TSMC.html" class="nav-link" title="TSMC">TSMC</a>
+    <a href="/companies/Vera Rubin.html" class="nav-link" title="Vera Rubin">Vera Rubin</a>
+  </div>
+</div>
+<div class="nav-group">
+  <div class="nav-group-title"><span class="caret"></span>人物<span class="badge">14</span></div>
+  <div class="nav-group-items">
+    <a href="/people/Ben Gilbert 与 David Rosenthal.html" class="nav-link" title="Ben Gilbert 与 David Rosenthal">Ben Gilbert 与 David Rosenthal</a>
+    <a href="/people/Bill Dally.html" class="nav-link" title="Bill Dally">Bill Dally</a>
+    <a href="/people/Carver Mead.html" class="nav-link" title="Carver Mead">Carver Mead</a>
+    <a href="/people/Chris Malachowsky.html" class="nav-link" title="Chris Malachowsky">Chris Malachowsky</a>
+    <a href="/people/Curtis Priem.html" class="nav-link" title="Curtis Priem">Curtis Priem</a>
+    <a href="/people/Don Valentine.html" class="nav-link" title="Don Valentine">Don Valentine</a>
+    <a href="/people/Jeff Fisher.html" class="nav-link" title="Jeff Fisher">Jeff Fisher</a>
+    <a href="/people/Lex Fridman.html" class="nav-link" title="Lex Fridman">Lex Fridman</a>
+    <a href="/people/Mark Zuckerberg.html" class="nav-link" title="Mark Zuckerberg">Mark Zuckerberg</a>
+    <a href="/people/Morris Chang.html" class="nav-link" title="Morris Chang">Morris Chang</a>
+    <a href="/people/Sam Altman.html" class="nav-link" title="Sam Altman">Sam Altman</a>
+    <a href="/people/Tench Coxe.html" class="nav-link" title="Tench Coxe">Tench Coxe</a>
+    <a href="/people/Wilf Corrigan.html" class="nav-link" title="Wilf Corrigan">Wilf Corrigan</a>
+    <a href="/people/黄仁勋.html" class="nav-link" title="黄仁勋">黄仁勋</a>
+  </div>
+</div>
+<a href="/graph.html" class="nav-link nav-graph">🕸️ 知识图谱</a>
+
+  </div>
+</aside>
+<main class="main has-backlinks">
+<div class="main-content article"><div class="meta"><span class="type-badge type-演讲">演讲</span></div>
+<h1 id="gtc-2023-ai-iphone">GTC 2023 春 — AI 的 iPhone 时刻</h1>
+<h2 id="ai">开场：曲速引擎是加速计算，能量源是 AI</h2>
+<p>GTC 2023 春是 NVIDIA 第一次在台面上把 ChatGPT 的冲击波全面整合进它的产业叙事里。黄仁勋给出了那年最好记的一句金句：</p>
+<p>"<strong>曲速引擎是 <a href="/concepts/加速计算.html">加速计算</a>，而能量源是 AI</strong>。生成式 AI 的惊人能力，让全世界的公司都产生了一种紧迫感——必须重新构想自己的产品和业务模式。"</p>
+<p>78 分钟的演讲里，他讲清楚了四件事：<br />
+1. <strong>ChatGPT 不是终点，是起点</strong>——AI 进入"iPhone 时刻"。<br />
+2. <strong>H100 与 Grace Hopper</strong>——为大模型专门设计的新一代硬件。<br />
+3. <strong>DGX Cloud 与 AI Foundations</strong>——让 AI 瞬间抵达每一家企业。<br />
+4. <strong>cuLitho</strong>——把加速计算带进芯片制造本身，让 2 纳米成为可能。</p>
+<h2 id="ai-iphone-dgx-ai">AI 的 iPhone 时刻：DGX 是现代 AI 工厂</h2>
+<p>他把故事往回拉到 2016 年："我亲手把第一台 NVIDIA DGX AI 超级计算机送到 <a href="/companies/OpenAI.html">OpenAI</a>——那就是今天驱动 ChatGPT 的大语言模型背后的引擎。"</p>
+<p>"ChatGPT 去年底发布，几乎在一夜之间成为主流，1 亿用户——<strong>史上增长最快的应用</strong>。我们正处于 AI 的 iPhone 时刻。"</p>
+<p>然后他给出了一句标志性的定位："<a href="/companies/DGX.html">DGX</a> 超级计算机，曾经是 AI 研究的仪器，现在正 <strong>24/7 地在全球的企业里运行</strong>，提炼数据、处理 AI。财富 100 强里有一半都装了 DGX AI 超算——<strong>DGX 超级计算机就是现代的 <a href="/concepts/AI 工厂.html">AI 工厂</a></strong>。"</p>
+<p>这是"AI 工厂"这个概念从隐喻走向产品定位的关键一刻。GTC 2021 春他只是用 AI 工厂形容未来数据中心的方向；到了 2023 春，DGX 本身就被重命名为 AI Factory。</p>
+<h2 id="h100grace-hoppergrace-ai">H100、Grace Hopper、Grace：为 AI 而生的芯片栈</h2>
+<p>"部署 ChatGPT 这样的大语言模型是一种全新的、规模巨大的推理工作负载。" 他为此发布了 <strong>H100 NVL</strong>——一对 H100 通过 NVLink 连在一起的变种，专门为 <a href="/companies/Hopper.html">Hopper</a> 处理 GPT 这类模型而设计。"一台标配 4 对 H100 NVL 的服务器，在做 GPT-3 推理时，速度可达 HGX A100 的 10 倍。H100 可以把大语言模型的处理成本降一个数量级。"</p>
+<p>同时他正式宣布 <strong>Grace CPU 开始送样</strong>——"云计算在过去十年以 20% 的年增长率长成了一个万亿美元的行业。我们为一个 AI 优先、云优先的世界设计了 Grace CPU——在这个世界里，AI 工作负载是 GPU 加速的。"</p>
+<p>而真正的核心是 <strong>Grace Hopper 超级芯片（GH200）</strong>——通过 900 GB/s 的 chip-to-chip 相干互联，把 Grace CPU 和 Hopper GPU 连成一块。"客户希望构建比现在大几个数量级的 AI 数据库——<strong>Grace Hopper 就是为此而生的引擎</strong>。它非常适合处理超大数据集，比如推荐系统的 AI 数据库、以及大语言模型。"</p>
+<p>这是 NVIDIA 第一次把 CPU + GPU 合体超级芯片的形态推上舞台，为后来的 GB200、Vera Rubin 打下了模板。</p>
+<h2 id="dgx-cloudai">DGX Cloud：AI 从此"一个浏览器就能用"</h2>
+<p>"DGX H100 是全世界客户构建 AI 基础设施的蓝本——它现在全面量产。" H100 超算开始在全球上线：Oracle Cloud Infrastructure、Amazon Web Services（EC2 UltraClusters，可以扩展到 20000 颗 H100）、Microsoft Azure（ND H100 v5）、Meta（Grand Teton）——OpenAI 则继续用 Azure 上的 H100 做研究。</p>
+<p>但最具颠覆性的不是硬件，而是发布模式的变化。"为了让创业公司和企业尽快用上 DGX，我们宣布 <strong>NVIDIA <a href="/companies/DGX.html">DGX</a> Cloud</strong>——通过与 Microsoft Azure、Google Cloud、Oracle Cloud Infrastructure 合作，<strong>把 NVIDIA DGX AI 超级计算机送到每一家公司、通过一个浏览器就能用</strong>。"</p>
+<p>企业可以按月租用 DGX Cloud 集群，快速上线超大规模、多节点的训练任务。"DGX Cloud 同时拥有 NVIDIA AI 的最佳能力和世界顶级云服务商的最佳能力。"</p>
+<p>这一步的意义被他自己总结得很清楚：<strong>这既让 NVIDIA 的生态走向云，也借云的触达放大了 NVIDIA 的规模</strong>。NVIDIA 不再跟云平台竞争，而是把自己变成云上最强的 AI 超算层。</p>
+<h2 id="nvidia-ai-foundations-ai">NVIDIA AI Foundations：生成式 AI 的"工厂"</h2>
+<p>为了服务想用自己的私有数据训练定制大模型的客户，他发布了 <strong>NVIDIA AI Foundations</strong>——一组云服务：<br />
+- <strong>NeMo</strong>：构建自定义文本生成模型。<br />
+- <strong>Picasso</strong>：训练自定义视觉大模型的服务——用你的授权或专有内容。<br />
+- <strong>BioNeMo</strong>：面向 2 万亿美元的药物发现行业。</p>
+<p>合作伙伴名单本身就是一份"谁在抢跑生成式 AI"的地图：<strong>Adobe</strong>（下一代创意 AI）、<strong>Getty Images</strong>（负责任的 text-to-image / text-to-video 基础模型）、<strong>Shutterstock</strong>（text-to-3D 基础模型）。而在生物医药这端，Amgen、Alchemab Therapeutics、AstraZeneca、Evozyne、Innophore、Insilico 都加入 BioNeMo 早期访问。</p>
+<p>他同时宣布 <strong>NVIDIA 与 Medtronic</strong> 合作——"全球最大的医疗技术公司"——共同构建一个软件定义医疗设备的 AI 平台。Medtronic 的 GI Genius 系统（用 AI 做早期结直肠癌检测）将基于 NVIDIA Holoscan 出货。"全球 2500 亿美元的医疗器械市场正在被改写。"</p>
+<h2 id="l4-h100-nvl-grace-hopper">四块推理平台：从 L4 到 H100 NVL 到 Grace Hopper</h2>
+<p>推理不再是一块通用 GPU 的事情，而是要按工作负载分层：<br />
+- <strong>NVIDIA L4 for AI Video</strong>：相比 CPU 可以带来 120 倍的 AI 视频性能、99% 更优的能效。<br />
+- <strong>NVIDIA L40 for Image Generation</strong>：为图形 + 2D/视频/3D 图像生成优化。<br />
+- <strong>NVIDIA H100 NVL for LLM Deployment</strong>：为 ChatGPT 这类超大模型部署而生。<br />
+- <strong>NVIDIA Grace Hopper for Recommendation Models</strong>：理想地服务于图推荐模型、向量数据库、图神经网络。</p>
+<p>Google Cloud 成为首家提供 L4 的云服务商。</p>
+<h2 id="microsoft-nvidia-omniverse-cloud">Microsoft × NVIDIA：把 Omniverse Cloud 带给数亿企业用户</h2>
+<p>"Microsoft 和 NVIDIA 将把 <a href="/companies/NVIDIA Omniverse.html">NVIDIA Omniverse</a> 带给数亿 Microsoft 365 和 Azure 用户。" 这句话是当天另一个标志性的商业合作。</p>
+<p>Omniverse Cloud 作为一个完全托管的云服务，加上新一代 OVX 服务器、基于 RTX Ada 架构 GPU 的工作站，被推向全球企业用户。</p>
+<p>而演示案例是 <strong>Amazon</strong>：Proteus——Amazon 第一台全自主仓储机器人——正在通过 NVIDIA Isaac Sim（基于 Omniverse 构建）的高保真数字孪生被训练。"帮助 Amazon 在它那些像洞穴一样大的仓库里，协调机器人与人类、其他机器人一起搬运货箱，同时省时省钱。"</p>
+<h2 id="3">数字化 3 万亿美元的汽车产业</h2>
+<p>"到 2030 年，汽车厂商要建 300 座工厂来生产 2 亿辆电动车；电池厂商还要再建 100 座超级工厂。数字化将大幅提升这个产业的效率、产量和速度。"</p>
+<p>Omniverse 的合作伙伴地图：<strong>Lotus</strong> 用它虚拟装配焊接工位；<strong>Mercedes-Benz</strong> 用它建造、优化和规划新车型的装配线；<strong>Rimac</strong> 和 <strong>Lucid Motors</strong> 用它根据真实设计数据建数字展厅；<strong>BMW</strong> 用 Idealworks + Isaac Sim 生成合成数据训练工厂机器人，并且<strong>在工厂实际落成之前两年，就在 Omniverse 里完整构建了一座新的电动车工厂</strong>。</p>
+<p>同时 <strong>BYD</strong> 宣布扩大 NVIDIA Drive Orin 在其新能源车产品线的使用范围。</p>
+<h2 id="culitho-2">cuLitho：让 2 纳米成为可能</h2>
+<p>这是当天最深的一个发布——也是黄仁勋最喜欢的类型："一个每一家有工厂的公司都会有两个工厂"这个叙事的第一块基石。</p>
+<p>"随着现在的制造工艺逼近物理极限，我们宣布 <strong>cuLitho</strong>——一个把加速计算带进计算光刻领域的突破。" NVIDIA 与 <strong>ASML、TSMC、Synopsys</strong> 联手："cuLitho 被 <a href="/companies/TSMC.html">TSMC</a>（全球领先的晶圆厂）和 Synopsys（电子设计自动化领导者）集成进他们的软件、制造工艺和系统里，用于生产最新一代的 NVIDIA Hopper 架构 GPU。ASML 也计划在他们所有计算光刻软件产品里集成对 GPU 的支持。"</p>
+<p>"<strong>光刻已经走到了物理极限。cuLitho 让这个行业能够走到 2 纳米、甚至更远。芯片产业是几乎所有产业的基础</strong>。"</p>
+<p>这一段是 NVIDIA 从一家"做芯片的公司"走向"把自己的加速计算技术回馈给整个半导体制造业"的关键一步。</p>
+<h2 id="_1">曲速引擎启动：帮助世界做不可能的事</h2>
+<p>收尾时，他更新了几个大数字——<strong>NVIDIA 已有 100 个加速库</strong>，包括 cuQuantum、刚刚开源的 CUDA Quantum、用于组合优化的 cuOPT、用于计算光刻的 cuLitho。"NVIDIA 的全球生态系统现在覆盖 <strong>400 万开发者、4 万家公司、1.4 万家 Inception 初创公司</strong>。"</p>
+<p>"摩尔定律在放慢，而产业要同时应对可持续、生成式 AI 和数字化这三股动力。工业公司正在争先恐后地数字化、把自己重塑成软件驱动的科技公司——<strong>要做颠覆者，而不是被颠覆者</strong>。"</p>
+<p>"加速（acceleration）是让你重获电力、实现 Net Zero 的最佳方式。<strong>我们一起，正在帮助这个世界做过去做不到的事</strong>。"</p>
+<hr />
+<p><strong>原文出处</strong>：NVIDIA 官方 wrap-up（blogs.nvidia.com/blog/gtc-keynote-spring-2023/）</p></div><aside class="backlinks-panel">
+  <div class="bl-panel-header">
+    <h3 class="bl-panel-title">链接到本页 <span class="bl-count">14</span></h3>
+    <div class="bl-panel-actions">
+      <button class="bl-action bl-expand-all">展开</button>
+      <button class="bl-action bl-collapse-all">折叠</button>
+    </div>
+  </div>
+  <div class="bl-group">
+  <button class="bl-group-header">
+    <span class="bl-caret"></span>
+    <span class="bl-source-name">AI 工厂（AI Factory）</span>
+    <span class="bl-mention-cat">概念</span>
+  </button>
+  <div class="bl-snippets">
+    <div class="bl-snippet">…ubin]]  ### 实践应用  - DGX：黄仁勋称 "DGX 超级计算机就是现代的 AI 工厂"（2023-03 GTC 2023 - AI 的 iPhone 时刻） - Blackwell NVLink72：单机柜 720 petaflops，是"装在一个机柜里的…</div>
+    <a href="/concepts/AI 工厂.html" class="bl-go-link">查看原文 →</a>
+  </div>
+</div>
+<div class="bl-group">
+  <button class="bl-group-header">
+    <span class="bl-caret"></span>
+    <span class="bl-source-name">加速计算（Accelerated Computing）</span>
+    <span class="bl-mention-cat">概念</span>
+  </button>
+  <div class="bl-snippets">
+    <div class="bl-snippet">…, and the energy source is AI." &gt; "曲速引擎是加速计算，而能量源是 AI。" &gt; ——2023-03 GTC 2023 - AI 的 iPhone 时刻  &gt; "Accelerated computing is the best way for you to reclai…</div>
+    <a href="/concepts/加速计算.html" class="bl-go-link">查看原文 →</a>
+  </div>
+</div>
+<div class="bl-group">
+  <button class="bl-group-header">
+    <span class="bl-caret"></span>
+    <span class="bl-source-name">数字孪生（Digital Twin）</span>
+    <span class="bl-mention-cat">概念</span>
+  </button>
+  <div class="bl-snippets">
+    <div class="bl-snippet">…ory 概念]]） - Amazon 仓储机器人 Proteus —— 在 Isaac Sim 数字孪生里训练（2023-03 GTC 2023 - AI 的 iPhone 时刻） - Mercedes、Lucid、Rimac 数字展厅 —— 基于真实设计数据建虚拟展厅 - **[[Ear…</div>
+    <a href="/concepts/数字孪生.html" class="bl-go-link">查看原文 →</a>
+  </div>
+</div>
+<div class="bl-group">
+  <button class="bl-group-header">
+    <span class="bl-caret"></span>
+    <span class="bl-source-name">DGX</span>
+    <span class="bl-mention-cat">产品</span>
+  </button>
+  <div class="bl-snippets">
+    <div class="bl-snippet">…tGPT 的大语言模型背后的引擎"。（2024-03 GTC 2024 - Blackwell B200 发布、2023-03 GTC 2023 - AI 的 iPhone 时刻） - 2021 年 4 月（GTC 2021 春）：黄仁勋系统化介绍 DGX 系列：   - **DGX A1…</div>
+    <a href="/companies/DGX.html" class="bl-go-link">查看原文 →</a>
+  </div>
+</div>
+<div class="bl-group">
+  <button class="bl-group-header">
+    <span class="bl-caret"></span>
+    <span class="bl-source-name">Hopper</span>
+    <span class="bl-mention-cat">产品</span>
+  </button>
+  <div class="bl-snippets">
+    <div class="bl-snippet">…达 HGX A100 的 10 倍。" 同时发布 Grace Hopper (GH200) 超级芯片。（2023-03 GTC 2023 - AI 的 iPhone 时刻） - 2023 Q1 财报（FY24 Q1）：iPhone 时刻到来时，"Ampere 和 Hopper 已经…</div>
+    <a href="/companies/Hopper.html" class="bl-go-link">查看原文 →</a>
+  </div>
+</div>
+<div class="bl-group">
+  <button class="bl-group-header">
+    <span class="bl-caret"></span>
+    <span class="bl-source-name">NVIDIA Omniverse</span>
+    <span class="bl-mention-cat">产品</span>
+  </button>
+  <div class="bl-snippets">
+    <div class="bl-snippet">…iverse）训练。BMW 在工厂实际落成之前两年，就在 Omniverse 里完整构建了一座新的电动车工厂。（2023-03 GTC 2023 - AI 的 iPhone 时刻） - 2024 年 3 月（GTC 2024）："Omniverse 与 Isaac 机器人——未来所有会动的…</div>
+    <a href="/companies/NVIDIA Omniverse.html" class="bl-go-link">查看原文 →</a>
+  </div>
+</div>
+<div class="bl-group">
+  <button class="bl-group-header">
+    <span class="bl-caret"></span>
+    <span class="bl-source-name">NVIDIA</span>
+    <span class="bl-mention-cat">产品</span>
+  </button>
+  <div class="bl-snippets">
+    <div class="bl-snippet">…one 时刻"，DGX 被重命名为"现代 AI 工厂"，DGX Cloud 让 AI"通过一个浏览器就能用"。（2023-03 GTC 2023 - AI 的 iPhone 时刻） - 2023 Q2 财报（FY24 Q2）：单季营收 135.1 亿美元，环比 +88%、同比 +101%。…</div>
+    <a href="/companies/NVIDIA.html" class="bl-go-link">查看原文 →</a>
+  </div>
+</div>
+<div class="bl-group">
+  <button class="bl-group-header">
+    <span class="bl-caret"></span>
+    <span class="bl-source-name">NVLink</span>
+    <span class="bl-mention-cat">产品</span>
+  </button>
+  <div class="bl-snippets">
+    <div class="bl-snippet">…"一台标配 4 对 H100 NVL 的服务器，在做 GPT-3 推理时，速度可达 HGX A100 的 10 倍。"（2023-03 GTC 2023 - AI 的 iPhone 时刻） - 2024 年 3 月（GTC 2024）：第五代 NVLink + NVLink Switch…</div>
+    <a href="/companies/NVLink.html" class="bl-go-link">查看原文 →</a>
+  </div>
+</div>
+<div class="bl-group">
+  <button class="bl-group-header">
+    <span class="bl-caret"></span>
+    <span class="bl-source-name">OpenAI</span>
+    <span class="bl-mention-cat">产品</span>
+  </button>
+  <div class="bl-snippets">
+    <div class="bl-snippet">…本信息  - 全称：OpenAI - 类型：客户 + 战略合作伙伴 + 被投资方 - 首次提及：2023-03 GTC 2023 - AI 的 iPhone 时刻 - 提及次数：18 篇素材中 11 篇明确出现  ## 一句话定位  OpenAI 是黄仁勋叙事里那家"NVI…</div>
+    <a href="/companies/OpenAI.html" class="bl-go-link">查看原文 →</a>
+  </div>
+</div>
+<div class="bl-group">
+  <button class="bl-group-header">
+    <span class="bl-caret"></span>
+    <span class="bl-source-name">TSMC</span>
+    <span class="bl-mention-cat">产品</span>
+  </button>
+  <div class="bl-snippets">
+    <div class="bl-snippet">…per 架构 GPU。" "光刻已经走到了物理极限。cuLitho 让这个行业能够走到 2 纳米、甚至更远。"（2023-03 GTC 2023 - AI 的 iPhone 时刻） - 2024 年 3 月（GTC 2024）："台积电今天宣布正式用 cuLitho 量产。"（[[2024…</div>
+    <a href="/companies/TSMC.html" class="bl-go-link">查看原文 →</a>
+  </div>
+</div>
+<div class="bl-group">
+  <button class="bl-group-header">
+    <span class="bl-caret"></span>
+    <span class="bl-source-name">Mark Zuckerberg</span>
+    <span class="bl-mention-cat">人物</span>
+  </button>
+  <div class="bl-snippets">
+    <div class="bl-snippet">…GPUs, search with GPUs, for sure, brand spanking new"。 - 2023-03 GTC 2023 - AI 的 iPhone 时刻：H100 全球客户名单里 Meta 的 Grand Teton 服务器被列出。  ## 黄仁勋对 Mark Zuc…</div>
+    <a href="/people/Mark Zuckerberg.html" class="bl-go-link">查看原文 →</a>
+  </div>
+</div>
+<div class="bl-group">
+  <button class="bl-group-header">
+    <span class="bl-caret"></span>
+    <span class="bl-source-name">Morris Chang</span>
+    <span class="bl-mention-cat">人物</span>
+  </button>
+  <div class="bl-snippets">
+    <div class="bl-snippet">…100 用台积电 4N 工艺，800 亿晶体管——黄仁勋反复称 TSMC 为"我们最重要的合作伙伴"。 - 2023-03 GTC 2023 - AI 的 iPhone 时刻：cuLitho 项目把 NVIDIA 的加速计算带进计算光刻——"被 TSMC（全球领先的晶圆厂）和 Synops…</div>
+    <a href="/people/Morris Chang.html" class="bl-go-link">查看原文 →</a>
+  </div>
+</div>
+<div class="bl-group">
+  <button class="bl-group-header">
+    <span class="bl-caret"></span>
+    <span class="bl-source-name">Sam Altman</span>
+    <span class="bl-mention-cat">人物</span>
+  </button>
+  <div class="bl-snippets">
+    <div class="bl-snippet">…A FY26 财报]] · 2025-Q4 NVIDIA FY25 财报 - Blackwell ramp · 2023-03 GTC 2023 - AI 的 iPhone 时刻），但 18 篇里黄仁勋几乎从不直呼 Sam 的名字——他用的是 "OpenAI"。  ## 在素材中的出现  - **…</div>
+    <a href="/people/Sam Altman.html" class="bl-go-link">查看原文 →</a>
+  </div>
+</div>
+<div class="bl-group">
+  <button class="bl-group-header">
+    <span class="bl-caret"></span>
+    <span class="bl-source-name">素材总览</span>
+    <span class="bl-mention-cat">索引</span>
+  </button>
+  <div class="bl-snippets">
+    <div class="bl-snippet">…AI 工厂" 概念第一次清晰提出 / Bluefield / Morpheus  ### 摘要 / 节选  - 2023-03 GTC 2023 - AI 的 iPhone 时刻 —— "AI 的 iPhone moment" 命题诞生 / Hopper / DGX Cloud / NVI…</div>
+    <a href="/index-pages/素材总览.html" class="bl-go-link">查看原文 →</a>
+  </div>
+</div>
+
+</aside>
+
+</main>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Toggle sidebar nav groups
+  document.querySelectorAll('.nav-group-title').forEach(function(el) {
+    el.addEventListener('click', function() {
+      this.parentElement.classList.toggle('open');
+    });
+  });
+
+  // Backlinks: toggle individual groups
+  document.querySelectorAll('.bl-group-header').forEach(function(header) {
+    header.addEventListener('click', function() {
+      this.closest('.bl-group').classList.toggle('open');
+    });
+  });
+
+  // Favorite / bookmark popup
+  var favBtn = document.getElementById('fav-btn');
+  var favPop = document.getElementById('fav-pop');
+  if (favBtn && favPop) {
+    var isMac = /Mac|iPhone|iPad/.test(navigator.platform);
+    var key = isMac ? '⌘ + D' : 'Ctrl + D';
+    favPop.innerHTML =
+      '按 <kbd>' + key + '</kbd> 收藏本页到浏览器书签' +
+      '<button class="fav-pop-copy" id="fav-pop-copy">复制本页链接</button>';
+
+    favBtn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      favPop.classList.toggle('show');
+    });
+    document.addEventListener('click', function(e) {
+      if (!favPop.contains(e.target) && e.target !== favBtn) {
+        favPop.classList.remove('show');
+      }
+    });
+
+    var copyBtn = document.getElementById('fav-pop-copy');
+    if (copyBtn) {
+      copyBtn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        navigator.clipboard.writeText(window.location.href).then(function() {
+          copyBtn.textContent = '✓ 已复制';
+          copyBtn.classList.add('copied');
+          setTimeout(function() {
+            copyBtn.textContent = '复制本页链接';
+            copyBtn.classList.remove('copied');
+          }, 1500);
+        });
+      });
+    }
+  }
+
+  // Backlinks: expand/collapse all
+  document.querySelectorAll('.bl-expand-all').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      this.closest('.backlinks-panel').querySelectorAll('.bl-group').forEach(function(g) {
+        g.classList.add('open');
+      });
+    });
+  });
+  document.querySelectorAll('.bl-collapse-all').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      this.closest('.backlinks-panel').querySelectorAll('.bl-group').forEach(function(g) {
+        g.classList.remove('open');
+      });
+    });
+  });
+});
+</script>
+</body>
+</html>

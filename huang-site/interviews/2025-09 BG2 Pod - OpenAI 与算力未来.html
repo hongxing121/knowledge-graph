@@ -1,0 +1,1650 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>BG2 Pod — 黄仁勋谈 OpenAI、算力未来与美国梦 - 黄仁勋知识图谱</title>
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon-180.png">
+<link rel="shortcut icon" href="/assets/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700;900&family=Crimson+Pro:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-WLE88B2LL3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-WLE88B2LL3');
+</script>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+
+:root{
+  --bg:#FAF7F2;
+  --bg2:#F3EDE4;
+  --text:#1B1B18;
+  --text2:#6B6560;
+  --gold:#B8860B;
+  --gold-light:#D4A843;
+  --gold-glow:rgba(184,134,11,.12);
+  --navy:#1A2332;
+  --navy-light:#2C3E50;
+  --cream:#FFF8EE;
+  --border:#E0D6C8;
+  --card:#FFFFFF;
+  --link:#8B5E0B;
+  --serif:'Noto Serif SC','Crimson Pro',Georgia,'Times New Roman',serif;
+  --sans:'DM Sans',-apple-system,BlinkMacSystemFont,'PingFang SC','Microsoft YaHei',sans-serif;
+  --sidebar-w:260px;
+}
+
+html{font-size:15px;scroll-behavior:smooth}
+body{
+  font-family:var(--sans);
+  color:var(--text);
+  background:var(--bg);
+  display:flex;
+  min-height:100vh;
+  line-height:1.8;
+  -webkit-font-smoothing:antialiased;
+}
+
+/* ===== SIDEBAR ===== */
+.sidebar{
+  width:var(--sidebar-w);
+  background:var(--navy);
+  position:fixed;top:0;left:0;bottom:0;
+  overflow-y:auto;
+  z-index:100;
+  display:flex;
+  flex-direction:column;
+}
+.sidebar-header{padding:20px 16px 16px;border-bottom:1px solid rgba(255,255,255,.08)}
+.logo{
+  color:#fff;
+  font-size:17px;
+  font-weight:700;
+  text-decoration:none;
+  letter-spacing:.5px;
+  font-family:var(--serif);
+  display:block;
+}
+.logo:hover{color:var(--gold-light)}
+
+.sidebar-nav{flex:1;padding:8px 0;overflow-y:auto}
+.sidebar-nav::-webkit-scrollbar{width:4px}
+.sidebar-nav::-webkit-scrollbar-thumb{background:rgba(255,255,255,.15);border-radius:2px}
+
+.nav-link{
+  display:block;
+  padding:6px 16px;
+  color:#cbd5e1;
+  text-decoration:none;
+  font-size:13px;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  border-left:3px solid transparent;
+  transition:all .15s;
+}
+.nav-link:hover{background:rgba(255,255,255,.06);color:#fff}
+.nav-link.active{
+  color:#fff;
+  background:rgba(184,134,11,.15);
+  border-left-color:var(--gold);
+  font-weight:600;
+}
+.nav-home{font-size:14px;padding:10px 16px;font-weight:500;margin-bottom:4px}
+.nav-changelog{
+  margin-top:auto;
+  padding:14px 16px;
+  font-size:12px;
+  color:rgba(255,255,255,.4);
+  border-top:1px solid rgba(255,255,255,.08);
+}
+.nav-changelog:hover{color:rgba(255,255,255,.7)}
+.nav-changelog.active{color:var(--gold-light)}
+.sidebar-nav{display:flex;flex-direction:column;height:100%}
+
+.nav-group{margin-bottom:2px}
+.nav-group-title{
+  padding:8px 16px;
+  color:#cbd5e1;
+  font-size:12px;
+  font-weight:600;
+  text-transform:uppercase;
+  letter-spacing:.5px;
+  cursor:pointer;
+  display:flex;
+  align-items:center;
+  gap:6px;
+  user-select:none;
+  transition:color .15s;
+}
+.nav-group-title:hover{color:#fff}
+.caret{
+  display:inline-block;
+  width:0;height:0;
+  border-left:5px solid #cbd5e1;
+  border-top:4px solid transparent;
+  border-bottom:4px solid transparent;
+  transition:transform .2s;
+}
+.nav-group.open .nav-group-title .caret{transform:rotate(90deg);border-left-color:#fff}
+.nav-group-title .badge{
+  margin-left:auto;
+  background:rgba(255,255,255,.1);
+  color:#cbd5e1;
+  font-size:11px;
+  padding:1px 6px;
+  border-radius:8px;
+  font-weight:400;
+}
+.nav-group-items{display:none;padding-left:8px}
+.nav-group.open .nav-group-items{display:block}
+
+.hamburger{
+  display:none;
+  position:fixed;
+  top:12px;left:12px;
+  z-index:200;
+  background:var(--navy);
+  color:#fff;
+  border:none;
+  font-size:20px;
+  padding:6px 10px;
+  border-radius:6px;
+  cursor:pointer;
+}
+
+/* ===== MAIN ===== */
+.main{
+  margin-left:max(var(--sidebar-w), calc((100vw - 1160px) / 2));
+  flex:1;
+  position:relative;
+  max-width:1160px;
+  padding:0;
+}
+
+/* grain overlay */
+.main::after{
+  content:'';
+  position:fixed;
+  top:0;left:var(--sidebar-w);right:0;bottom:0;
+  pointer-events:none;
+  opacity:.03;
+  z-index:999;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* ===== FAV / BOOKMARK BUTTON ===== */
+.fav-wrap{
+  position:absolute;
+  top:24px;right:48px;
+  z-index:50;
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+.sister-link{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  padding:8px 16px;
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:24px;
+  color:var(--navy);
+  font-size:13px;
+  font-weight:600;
+  font-family:var(--sans);
+  text-decoration:none;
+  box-shadow:0 2px 8px rgba(0,0,0,.04);
+  transition:all .25s;
+  white-space:nowrap;
+}
+.sister-link:hover{
+  border-color:var(--gold);
+  color:var(--gold);
+  box-shadow:0 4px 16px var(--gold-glow);
+  transform:translateY(-1px);
+}
+.sister-link .arrow{
+  color:var(--gold);
+  font-weight:700;
+}
+.fav-btn{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  padding:8px 18px;
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:24px;
+  color:var(--gold);
+  font-size:16px;
+  cursor:pointer;
+  transition:all .25s;
+  font-family:var(--sans);
+  box-shadow:0 2px 8px rgba(0,0,0,.04);
+}
+.fav-btn:hover{
+  border-color:var(--gold);
+  box-shadow:0 4px 16px var(--gold-glow);
+  transform:translateY(-1px);
+}
+.fav-label{
+  font-size:13px;
+  color:var(--text2);
+  font-weight:500;
+}
+.fav-btn:hover .fav-label{color:var(--gold)}
+.fav-pop{
+  display:none;
+  position:absolute;
+  right:0;top:48px;
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:10px;
+  padding:14px 16px;
+  box-shadow:0 8px 32px rgba(0,0,0,.12);
+  font-size:13px;
+  min-width:240px;
+  z-index:51;
+  color:var(--text);
+  line-height:1.6;
+}
+.fav-pop.show{display:block}
+.fav-pop kbd{
+  background:var(--bg2);
+  padding:2px 7px;
+  border-radius:4px;
+  font-size:12px;
+  border:1px solid var(--border);
+  font-family:var(--sans);
+  color:var(--navy);
+  font-weight:600;
+}
+.fav-pop-copy{
+  display:block;
+  width:100%;
+  margin-top:10px;
+  padding:8px 0;
+  background:var(--bg);
+  border:1px solid var(--border);
+  border-radius:6px;
+  color:var(--text2);
+  font-size:12px;
+  cursor:pointer;
+  text-align:center;
+  transition:all .15s;
+  font-family:var(--sans);
+}
+.fav-pop-copy:hover{
+  border-color:var(--gold);
+  color:var(--gold);
+}
+.fav-pop-copy.copied{
+  background:#ecfdf5;
+  border-color:#6ee7b7;
+  color:#059669;
+}
+
+@media(max-width:768px){
+  .fav-wrap{right:16px;top:12px;gap:6px}
+  .sister-link{padding:6px 12px;font-size:11px}
+  .fav-btn{padding:6px 14px}
+  .fav-label{font-size:12px}
+}
+
+/* ===== CHANGELOG ===== */
+.article.changelog h2{
+  border-bottom-color:var(--gold);
+  display:flex;
+  align-items:center;
+  gap:10px;
+  flex-wrap:wrap;
+}
+.version{
+  display:inline-flex;
+  align-items:center;
+  background:var(--gold);
+  color:#fff;
+  font-size:13px;
+  font-weight:700;
+  padding:3px 11px;
+  border-radius:6px;
+  font-family:var(--sans);
+  letter-spacing:.3px;
+}
+.changelog-date{
+  font-size:14px;
+  color:var(--text2);
+  font-weight:500;
+  font-family:var(--sans);
+}
+.change-list{
+  list-style:none;
+  padding:0;
+  margin:16px 0;
+}
+.change-list li{
+  padding:10px 0 10px 18px;
+  position:relative;
+  border-bottom:1px solid var(--border);
+  font-size:14px;
+  line-height:1.75;
+}
+.change-list li:last-child{border-bottom:none}
+.change-list li::before{
+  content:"";
+  position:absolute;
+  left:0;
+  top:20px;
+  width:6px;
+  height:6px;
+  border-radius:50%;
+  background:var(--gold);
+}
+.change-type{
+  display:inline-block;
+  font-size:11px;
+  padding:2px 8px;
+  border-radius:4px;
+  color:#fff;
+  font-weight:600;
+  margin-right:8px;
+  font-family:var(--sans);
+  vertical-align:1px;
+  letter-spacing:.2px;
+}
+.change-type.feat{background:#059669}
+.change-type.fix{background:#dc2626}
+.change-type.plan{background:#3b82f6}
+.change-list li strong{color:var(--navy);font-weight:700}
+
+/* ===== ARTICLE (content pages) ===== */
+.article{max-width:820px;padding:48px 48px 80px}
+.meta{
+  font-size:13px;
+  color:var(--text2);
+  margin-bottom:16px;
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+.type-badge{
+  font-size:11px;
+  padding:2px 8px;
+  border-radius:4px;
+  color:#fff;
+  font-weight:600;
+}
+.type-概念{background:#7C5E2A}
+.type-方法{background:#5E4A8B}
+.type-产品{background:#1A6B7C}
+.type-人物{background:#8B2F2F}
+.type-演讲{background:#2A6B4F}
+.type-毕业演讲{background:#7E6B30}
+.type-访谈{background:#3A5E8B}
+.type-财报会议{background:#4A6E2A}
+.type-索引{background:#6B6560}
+
+.article h1{
+  font-family:var(--serif);
+  font-size:28px;
+  line-height:1.3;
+  margin-bottom:24px;
+  font-weight:900;
+  color:var(--navy);
+  letter-spacing:-.5px;
+}
+.article h2{
+  font-family:var(--serif);
+  font-size:21px;
+  margin:36px 0 14px;
+  padding-bottom:8px;
+  border-bottom:2px solid var(--border);
+  font-weight:700;
+  color:var(--navy);
+}
+.article h3{
+  font-family:var(--serif);
+  font-size:17px;
+  margin:24px 0 10px;
+  font-weight:600;
+  color:var(--navy-light);
+}
+.article p{margin:10px 0}
+.article ul,.article ol{padding-left:24px;margin:10px 0}
+.article li{margin:4px 0}
+
+.article a{
+  color:var(--link);
+  text-decoration:none;
+  background:linear-gradient(to bottom,transparent 60%,var(--gold-glow) 60%);
+  transition:background .2s;
+}
+.article a:hover{background:linear-gradient(to bottom,transparent 40%,rgba(184,134,11,.2) 40%)}
+
+.article blockquote{
+  background:var(--cream);
+  border-left:4px solid var(--gold);
+  padding:14px 20px;
+  margin:16px 0;
+  border-radius:0 8px 8px 0;
+  font-style:italic;
+  color:#5C4813;
+  font-family:var(--serif);
+}
+.article blockquote p{margin:0}
+.article blockquote a{background:none;color:var(--gold)}
+.article blockquote a:hover{text-decoration:underline}
+
+.article table{border-collapse:collapse;width:100%;margin:16px 0;font-size:14px}
+.article th,.article td{border:1px solid var(--border);padding:8px 12px;text-align:left}
+.article th{background:var(--bg2);font-weight:600;color:var(--navy)}
+.article strong{font-weight:700}
+.article hr{border:none;border-top:1px solid var(--border);margin:32px 0}
+.article code{
+  background:var(--bg2);
+  padding:2px 6px;
+  border-radius:3px;
+  font-size:13px;
+  font-family:'SF Mono',Menlo,Consolas,monospace;
+  color:#5C4813;
+}
+
+/* ===== KNOWLEDGE GRAPH PAGE ===== */
+.main.full-bleed{max-width:none;padding:0;margin-left:var(--sidebar-w)}
+.main.full-bleed::after{display:none}
+.graph-wrap{position:relative;width:100%;height:100vh;overflow:hidden;background:var(--bg)}
+.graph-wrap svg{width:100%;height:100%;display:block}
+.graph-toolbar{position:absolute;top:16px;right:16px;display:flex;gap:8px;z-index:10}
+.graph-toolbar button{
+  padding:6px 14px;background:var(--card);border:1px solid var(--border);
+  border-radius:8px;font-size:12px;color:var(--text);cursor:pointer;
+  font-family:var(--sans);transition:all .15s;font-weight:500;
+}
+.graph-toolbar button:hover{border-color:var(--gold);color:var(--gold)}
+.graph-title{position:absolute;top:16px;left:16px;z-index:10}
+.graph-title h1{font-family:var(--serif);font-size:20px;color:var(--navy);margin:0}
+.graph-title p{font-size:12px;color:var(--text2);margin:4px 0 0;font-family:var(--sans)}
+.graph-tooltip{
+  position:absolute;padding:8px 14px;background:var(--navy);color:#fff;
+  border-radius:8px;font-size:12px;pointer-events:none;opacity:0;transition:opacity .15s;
+  box-shadow:0 4px 16px rgba(0,0,0,.2);z-index:20;white-space:nowrap;font-family:var(--sans);
+}
+.graph-tooltip strong{display:block;font-size:13px;margin-bottom:2px}
+.graph-tooltip span{color:rgba(255,255,255,.6)}
+.graph-legend{
+  position:absolute;bottom:16px;left:16px;display:flex;gap:12px;z-index:10;
+  flex-wrap:wrap;max-width:calc(100% - 32px);
+  background:rgba(255,255,255,.92);padding:8px 14px;border-radius:8px;
+  border:1px solid var(--border);font-family:var(--sans);
+}
+.legend-item{display:flex;align-items:center;gap:5px;font-size:11px;color:var(--text2);cursor:pointer;user-select:none}
+.legend-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0}
+.legend-item.dimmed{opacity:.3}
+.nav-graph{
+  padding:14px 16px 6px;
+  font-size:12px;
+  color:rgba(255,255,255,.4);
+  border-top:1px solid rgba(255,255,255,.08);
+  margin-top:auto;
+}
+.nav-graph:hover{color:rgba(255,255,255,.7)}
+.nav-graph.active{color:var(--gold-light)}
+/* When graph link present, changelog should not push it to bottom */
+.nav-graph + .nav-changelog{margin-top:0;border-top:none;padding-top:6px;padding-bottom:14px}
+
+/* ===== BACKLINKS PANEL (right sidebar) ===== */
+.main.has-backlinks{
+  display:grid;
+  grid-template-columns:minmax(0,820px) 280px;
+  gap:0 24px;
+  max-width:1160px;
+}
+.main-content{min-width:0}
+
+.backlinks-panel{
+  grid-column:2;
+  grid-row:1/-1;
+  position:sticky;
+  top:24px;
+  max-height:calc(100vh - 48px);
+  overflow-y:auto;
+  padding:24px 0 24px 20px;
+  border-left:1px solid var(--border);
+  font-size:13px;
+  align-self:start;
+}
+.backlinks-panel::-webkit-scrollbar{width:3px}
+.backlinks-panel::-webkit-scrollbar-thumb{background:var(--border);border-radius:2px}
+
+.bl-panel-header{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  margin-bottom:12px;
+}
+.bl-panel-title{
+  font-family:var(--serif);
+  font-size:14px;
+  font-weight:700;
+  color:var(--navy);
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+.bl-count{
+  font-size:11px;
+  background:var(--bg2);
+  padding:1px 7px;
+  border-radius:10px;
+  color:var(--text2);
+  font-weight:600;
+}
+.bl-panel-actions{display:flex;gap:4px}
+.bl-action{
+  background:none;
+  border:1px solid var(--border);
+  border-radius:4px;
+  padding:2px 8px;
+  font-size:11px;
+  color:var(--text2);
+  cursor:pointer;
+  font-family:var(--sans);
+  transition:all .15s;
+}
+.bl-action:hover{border-color:var(--gold);color:var(--gold)}
+
+.bl-group{margin-bottom:4px}
+.bl-group-header{
+  display:flex;
+  align-items:center;
+  gap:6px;
+  background:none;
+  border:none;
+  cursor:pointer;
+  padding:5px 0;
+  width:100%;
+  text-align:left;
+  font-size:13px;
+  font-family:var(--sans);
+}
+.bl-group-header:hover{background:rgba(0,0,0,.02);border-radius:4px}
+
+.bl-caret{
+  display:inline-block;
+  width:0;height:0;
+  border:4px solid transparent;
+  border-left:5px solid var(--text2);
+  transition:transform .15s;
+  flex-shrink:0;
+}
+.bl-group.open .bl-caret{transform:rotate(90deg)}
+
+.bl-source-name{
+  color:var(--navy);
+  font-weight:600;
+  flex:1;
+  min-width:0;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
+.bl-mention-cat{
+  font-size:10px;
+  color:var(--text2);
+  background:var(--bg2);
+  padding:0 5px;
+  border-radius:8px;
+  flex-shrink:0;
+  margin-left:4px;
+}
+
+.bl-snippets{display:none;padding:4px 0 4px 14px}
+.bl-group.open .bl-snippets{display:block}
+
+.bl-snippet{
+  padding:6px 0;
+  border-bottom:1px solid var(--border);
+  line-height:1.6;
+  color:var(--text2);
+  font-size:12px;
+}
+.bl-snippet:last-child{border-bottom:none}
+.bl-go-link{
+  display:inline-block;
+  font-size:11px;
+  color:var(--link);
+  text-decoration:none;
+  padding:4px 0 2px;
+  font-weight:600;
+  transition:color .15s;
+}
+.bl-go-link:hover{color:var(--gold);text-decoration:underline}
+
+/* ===== HOMEPAGE ===== */
+.hero-section{
+  position:relative;
+  padding:72px 48px 56px;
+  max-width:900px;
+  margin:0 auto;
+}
+.hero-eyebrow{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  font-size:12px;
+  font-weight:600;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  color:var(--gold);
+  margin-bottom:20px;
+  opacity:0;
+  animation:fadeUp .6s ease forwards;
+}
+.hero-eyebrow::before{content:'';width:24px;height:1px;background:var(--gold)}
+.hero-title{
+  font-family:var(--serif);
+  font-size:clamp(32px,5vw,48px);
+  font-weight:900;
+  line-height:1.25;
+  letter-spacing:-1px;
+  color:var(--navy);
+  margin-bottom:6px;
+  opacity:0;
+  animation:fadeUp .6s ease .1s forwards;
+}
+.hero-title .gold{color:var(--gold)}
+.hero-sub{
+  font-size:17px;
+  color:var(--text2);
+  line-height:1.8;
+  margin-top:16px;
+  max-width:640px;
+  font-family:var(--serif);
+  font-weight:400;
+  opacity:0;
+  animation:fadeUp .6s ease .2s forwards;
+}
+.hero-sub b{color:var(--navy);font-weight:700}
+
+.stats-row{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:0;
+  max-width:900px;
+  margin:0 auto 48px;
+  padding:0 48px;
+  border-top:1px solid var(--border);
+  border-bottom:1px solid var(--border);
+  opacity:0;
+  animation:fadeUp .6s ease .3s forwards;
+}
+.stat-item{
+  text-align:center;
+  padding:28px 12px;
+  position:relative;
+  transition:background .3s;
+  text-decoration:none;
+  color:inherit;
+}
+.stat-item:not(:last-child)::after{
+  content:'';
+  position:absolute;
+  right:0;top:20%;
+  height:60%;
+  width:1px;
+  background:var(--border);
+}
+.stat-item:hover{background:var(--gold-glow)}
+.stat-num{
+  font-family:var(--serif);
+  font-size:42px;
+  font-weight:900;
+  color:var(--navy);
+  line-height:1;
+  margin-bottom:6px;
+  letter-spacing:-2px;
+}
+.stat-label{
+  font-size:13px;
+  color:var(--text2);
+  font-weight:500;
+  letter-spacing:.5px;
+}
+
+.main-inner{max-width:900px;padding:0 48px 80px;margin:0 auto}
+
+.nav-cards{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:16px;
+  margin-bottom:56px;
+  opacity:0;
+  animation:fadeUp .6s ease .4s forwards;
+}
+.nav-card{
+  position:relative;
+  padding:28px 20px 24px;
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:14px;
+  text-decoration:none;
+  transition:all .3s cubic-bezier(.4,0,.2,1);
+  overflow:hidden;
+  display:block;
+  color:inherit;
+}
+.nav-card::before{
+  content:'';
+  position:absolute;
+  top:0;left:0;right:0;
+  height:3px;
+  background:var(--gold);
+  opacity:0;
+  transition:opacity .3s;
+}
+.nav-card:hover{
+  transform:translateY(-4px);
+  box-shadow:0 12px 32px rgba(0,0,0,.08);
+  border-color:var(--gold-light);
+}
+.nav-card:hover::before{opacity:1}
+.nav-card-icon{font-size:32px;margin-bottom:14px;display:block;line-height:1}
+.nav-card-title{
+  font-family:var(--serif);
+  font-size:16px;
+  font-weight:700;
+  color:var(--navy);
+  margin-bottom:4px;
+}
+.nav-card-sub{font-size:13px;color:var(--text2)}
+.nav-card-arrow{
+  position:absolute;
+  bottom:20px;right:20px;
+  font-size:18px;
+  color:var(--border);
+  transition:all .3s;
+}
+.nav-card:hover .nav-card-arrow{color:var(--gold);transform:translateX(4px)}
+
+.section{margin-bottom:48px}
+.section-header{display:flex;align-items:center;gap:12px;margin-bottom:20px}
+.section-line{flex:1;height:1px;background:var(--border)}
+.section-title{
+  font-family:var(--serif);
+  font-size:22px;
+  font-weight:700;
+  color:var(--navy);
+  white-space:nowrap;
+}
+.section-count{
+  font-size:12px;
+  color:var(--gold);
+  font-weight:600;
+  background:var(--gold-glow);
+  padding:3px 10px;
+  border-radius:12px;
+  white-space:nowrap;
+}
+
+.tag-cloud{display:flex;flex-wrap:wrap;gap:10px}
+.tag{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  padding:8px 18px;
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:24px;
+  font-size:14px;
+  color:var(--text);
+  text-decoration:none;
+  transition:all .25s cubic-bezier(.4,0,.2,1);
+  font-weight:500;
+}
+.tag:hover{
+  border-color:var(--gold);
+  color:var(--navy);
+  box-shadow:0 4px 16px var(--gold-glow);
+  transform:translateY(-2px);
+}
+.tag-n{
+  font-size:11px;
+  font-weight:700;
+  color:#fff;
+  background:var(--gold);
+  padding:2px 8px;
+  border-radius:10px;
+  min-width:20px;
+  text-align:center;
+}
+.tag.tier-1{
+  font-size:16px;
+  padding:10px 22px;
+  font-weight:700;
+  border-color:var(--gold-light);
+  background:linear-gradient(135deg,#FFFDF5,#FFF8E7);
+}
+.tag.tier-1 .tag-n{font-size:12px;padding:3px 10px;background:var(--gold)}
+.tag.tier-2{font-size:15px;padding:9px 20px;font-weight:600}
+
+.people-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(180px,1fr));
+  gap:14px;
+}
+.person-card{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  padding:24px 16px 20px;
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:14px;
+  text-decoration:none;
+  transition:all .3s;
+  text-align:center;
+  color:inherit;
+}
+.person-card:hover{
+  transform:translateY(-3px);
+  box-shadow:0 8px 24px rgba(0,0,0,.06);
+  border-color:var(--gold-light);
+}
+.person-avatar{
+  width:56px;height:56px;
+  border-radius:50%;
+  background:linear-gradient(135deg,var(--navy),var(--navy-light));
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:22px;
+  margin-bottom:12px;
+  color:var(--gold-light);
+  font-family:var(--serif);
+  font-weight:700;
+  box-shadow:0 4px 12px rgba(26,35,50,.15);
+}
+.person-name{
+  font-family:var(--serif);
+  font-size:15px;
+  font-weight:700;
+  color:var(--navy);
+  margin-bottom:4px;
+}
+.person-refs{font-size:12px;color:var(--text2)}
+
+.gold-divider{display:flex;align-items:center;gap:16px;margin:56px 0}
+.gold-divider::before,.gold-divider::after{
+  content:'';
+  flex:1;
+  height:1px;
+  background:linear-gradient(to right,transparent,var(--border),transparent);
+}
+.gold-divider-diamond{
+  width:8px;height:8px;
+  background:var(--gold);
+  transform:rotate(45deg);
+  flex-shrink:0;
+}
+
+.footer-promo{
+  position:relative;
+  overflow:hidden;
+  padding:40px;
+  background:var(--navy);
+  border-radius:20px;
+  color:#fff;
+  display:flex;
+  gap:40px;
+  align-items:center;
+}
+.footer-promo::before{
+  content:'';
+  position:absolute;
+  top:-50%;right:-20%;
+  width:400px;height:400px;
+  border-radius:50%;
+  background:radial-gradient(circle,rgba(184,134,11,.15),transparent 70%);
+}
+.promo-story{flex:1;position:relative;z-index:1;min-width:0}
+.promo-story h3{
+  font-family:var(--serif);
+  font-size:20px;
+  font-weight:700;
+  margin-bottom:12px;
+  color:var(--gold-light);
+}
+.promo-story p{font-size:14px;color:rgba(255,255,255,.75);line-height:1.8;margin:8px 0}
+.promo-credit{
+  margin-top:16px !important;
+  padding-top:14px;
+  border-top:1px solid rgba(255,255,255,.12);
+  font-size:13px !important;
+}
+.promo-credit strong{color:var(--gold-light);font-weight:700}
+
+.promo-qr{
+  flex-shrink:0;
+  position:relative;
+  z-index:1;
+  text-align:center;
+}
+.qr-img{
+  display:block;
+  width:140px;
+  height:140px;
+  border-radius:12px;
+  border:3px solid rgba(255,255,255,.15);
+  box-shadow:0 8px 24px rgba(0,0,0,.25);
+  background:#fff;
+  padding:6px;
+}
+.qr-text{
+  font-size:12px;
+  color:rgba(255,255,255,.6);
+  margin-top:10px;
+  letter-spacing:.5px;
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes fadeUp{
+  from{opacity:0;transform:translateY(16px)}
+  to{opacity:1;transform:translateY(0)}
+}
+.section{opacity:0;animation:fadeUp .5s ease forwards}
+.section:nth-child(1){animation-delay:.45s}
+.section:nth-child(2){animation-delay:.55s}
+.section:nth-child(3){animation-delay:.65s}
+.section:nth-child(4){animation-delay:.75s}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:1024px){
+  .main.has-backlinks{display:block}
+  .backlinks-panel{
+    position:static;
+    max-height:none;
+    overflow-y:visible;
+    border-left:none;
+    border-top:1px solid var(--border);
+    padding:24px 16px;
+    margin-top:24px;
+    max-width:820px;
+  }
+}
+
+@media(max-width:768px){
+  .sidebar{transform:translateX(-100%);transition:transform .3s}
+  .sidebar.open{transform:translateX(0)}
+  .hamburger{display:block}
+  .main{margin-left:0;max-width:100%}
+  .main::after{left:0}
+  .main.has-backlinks{display:block}
+  .article{padding:48px 16px 60px}
+  .backlinks-panel{padding:16px 12px;margin-top:16px}
+  .hero-section{padding:44px 20px 20px}
+  .hero-eyebrow{font-size:10px;margin-bottom:12px}
+  .hero-title{font-size:26px}
+  .hero-sub{font-size:14px;line-height:1.6;margin-top:10px}
+  .stats-row{padding:0 16px;margin:0 0 20px}
+  .stat-item{padding:16px 4px}
+  .stat-num{font-size:28px;letter-spacing:-1px}
+  .stat-label{font-size:11px}
+  .main-inner{padding:0 20px 60px}
+  .nav-cards{grid-template-columns:1fr 1fr;gap:10px;margin-bottom:36px}
+  .nav-card{padding:20px 14px 18px}
+  .nav-card-icon{font-size:24px;margin-bottom:8px}
+  .nav-card-title{font-size:14px}
+  .nav-card-sub{font-size:12px}
+  .footer-promo{flex-direction:column;text-align:center;padding:28px 20px;gap:24px}
+  .people-grid{grid-template-columns:repeat(2,1fr)}
+}
+</style>
+</head>
+<body>
+<button class="hamburger" aria-label="菜单" onclick="document.querySelector('.sidebar').classList.toggle('open')">☰</button>
+<aside class="sidebar">
+  <div class="sidebar-header"><a href="/index.html" class="logo">黄仁勋知识图谱</a></div>
+  <div class="sidebar-nav">
+    <a href="/index.html" class="nav-link nav-home">🏛 首页</a>
+<div class="nav-group open">
+  <div class="nav-group-title"><span class="caret"></span>索引<span class="badge">5</span></div>
+  <div class="nav-group-items">
+    <a href="/index-pages/人物索引.html" class="nav-link" title="人物索引">人物索引</a>
+    <a href="/index-pages/公司与产品索引.html" class="nav-link" title="公司与产品索引">公司与产品索引</a>
+    <a href="/index-pages/工作方法索引.html" class="nav-link" title="工作方法索引">工作方法索引</a>
+    <a href="/index-pages/核心思想索引.html" class="nav-link" title="核心思想索引">核心思想索引</a>
+    <a href="/index-pages/素材总览.html" class="nav-link" title="素材总览">素材总览</a>
+  </div>
+</div>
+<div class="nav-group">
+  <div class="nav-group-title"><span class="caret"></span>演讲<span class="badge">10</span></div>
+  <div class="nav-group-items">
+    <a href="/keynotes/2021-04 GTC 2021 春 - AI Factory 概念.html" class="nav-link" title="2021-04 GTC 2021 春 - AI Factory 概念">2021-04 GTC 2021 春 - AI Factory 概念</a>
+    <a href="/keynotes/2021-11 GTC 2021 秋 - Omniverse 与数字孪生.html" class="nav-link" title="2021-11 GTC 2021 秋 - Omniverse 与数字孪生">2021-11 GTC 2021 秋 - Omniverse 与数字孪生</a>
+    <a href="/keynotes/2022-03 GTC 2022 - Hopper H100 与 AI Factories.html" class="nav-link" title="2022-03 GTC 2022 - Hopper H100 与 AI Factories">2022-03 GTC 2022 - Hopper H100 与 AI Factories</a>
+    <a href="/keynotes/2022-09 GTC 2022 秋 - H100 量产.html" class="nav-link" title="2022-09 GTC 2022 秋 - H100 量产">2022-09 GTC 2022 秋 - H100 量产</a>
+    <a href="/keynotes/2023-03 GTC 2023 - AI 的 iPhone 时刻.html" class="nav-link" title="2023-03 GTC 2023 - AI 的 iPhone 时刻">2023-03 GTC 2023 - AI 的 iPhone 时刻</a>
+    <a href="/keynotes/2024-03 GTC 2024 - Blackwell B200 发布.html" class="nav-link" title="2024-03 GTC 2024 - Blackwell B200 发布">2024-03 GTC 2024 - Blackwell B200 发布</a>
+    <a href="/keynotes/2025-01 CES 2025 - Project DIGITS 与 Cosmos.html" class="nav-link" title="2025-01 CES 2025 - Project DIGITS 与 Cosmos">2025-01 CES 2025 - Project DIGITS 与 Cosmos</a>
+    <a href="/keynotes/2025-03 GTC 2025 - Blackwell Ultra 与 Vera Rubin.html" class="nav-link" title="2025-03 GTC 2025 - Blackwell Ultra 与 Vera Rubin">2025-03 GTC 2025 - Blackwell Ultra 与 Vera Rubin</a>
+    <a href="/keynotes/2025-10 GTC 2025 华盛顿.html" class="nav-link" title="2025-10 GTC 2025 华盛顿">2025-10 GTC 2025 华盛顿</a>
+    <a href="/keynotes/2026-01 CES 2026 - 推理时代与 Agentic AI.html" class="nav-link" title="2026-01 CES 2026 - 推理时代与 Agentic AI">2026-01 CES 2026 - 推理时代与 Agentic AI</a>
+  </div>
+</div>
+<div class="nav-group open">
+  <div class="nav-group-title"><span class="caret"></span>访谈<span class="badge">3</span></div>
+  <div class="nav-group-items">
+    <a href="/interviews/2023-10 Acquired - 黄仁勋深度访谈.html" class="nav-link" title="2023-10 Acquired - 黄仁勋深度访谈">2023-10 Acquired - 黄仁勋深度访谈</a>
+    <a href="/interviews/2025-09 BG2 Pod - OpenAI 与算力未来.html" class="nav-link active" title="2025-09 BG2 Pod - OpenAI 与算力未来">2025-09 BG2 Pod - OpenAI 与算力未来</a>
+    <a href="/interviews/2026-03 Lex Fridman 494 - 4 万亿公司与 AGI.html" class="nav-link" title="2026-03 Lex Fridman 494 - 4 万亿公司与 AGI">2026-03 Lex Fridman 494 - 4 万亿公司与 AGI</a>
+  </div>
+</div>
+<div class="nav-group">
+  <div class="nav-group-title"><span class="caret"></span>财报会议<span class="badge">4</span></div>
+  <div class="nav-group-items">
+    <a href="/earnings/2023-Q1 NVIDIA FY24 财报 - iPhone 时刻.html" class="nav-link" title="2023-Q1 NVIDIA FY24 财报 - iPhone 时刻">2023-Q1 NVIDIA FY24 财报 - iPhone 时刻</a>
+    <a href="/earnings/2023-Q2 NVIDIA FY24 财报 - 历史性爆发.html" class="nav-link" title="2023-Q2 NVIDIA FY24 财报 - 历史性爆发">2023-Q2 NVIDIA FY24 财报 - 历史性爆发</a>
+    <a href="/earnings/2025-Q4 NVIDIA FY25 财报 - Blackwell ramp.html" class="nav-link" title="2025-Q4 NVIDIA FY25 财报 - Blackwell ramp">2025-Q4 NVIDIA FY25 财报 - Blackwell ramp</a>
+    <a href="/earnings/2026-Q4 NVIDIA FY26 财报.html" class="nav-link" title="2026-Q4 NVIDIA FY26 财报">2026-Q4 NVIDIA FY26 财报</a>
+  </div>
+</div>
+<div class="nav-group">
+  <div class="nav-group-title"><span class="caret"></span>毕业演讲<span class="badge">2</span></div>
+  <div class="nav-group-items">
+    <a href="/commencements/2023-05 NTU - Run, dont walk.html" class="nav-link" title="2023-05 NTU - Run, dont walk">2023-05 NTU - Run, dont walk</a>
+    <a href="/commencements/2024-06 Caltech - 相信非常规.html" class="nav-link" title="2024-06 Caltech - 相信非常规">2024-06 Caltech - 相信非常规</a>
+  </div>
+</div>
+<div class="nav-group">
+  <div class="nav-group-title"><span class="caret"></span>方法<span class="badge">8</span></div>
+  <div class="nav-group-items">
+    <a href="/methods/30 年公司.html" class="nav-link" title="30 年公司">30 年公司</a>
+    <a href="/methods/Mission is the Boss.html" class="nav-link" title="Mission is the Boss">Mission is the Boss</a>
+    <a href="/methods/Run, dont walk.html" class="nav-link" title="Run, dont walk">Run, dont walk</a>
+    <a href="/methods/不开 1-on-1.html" class="nav-link" title="不开 1-on-1">不开 1-on-1</a>
+    <a href="/methods/扁平管理.html" class="nav-link" title="扁平管理">扁平管理</a>
+    <a href="/methods/痛苦与磨难.html" class="nav-link" title="痛苦与磨难">痛苦与磨难</a>
+    <a href="/methods/群发邮件.html" class="nav-link" title="群发邮件">群发邮件</a>
+    <a href="/methods/首席解释官.html" class="nav-link" title="首席解释官">首席解释官</a>
+  </div>
+</div>
+<div class="nav-group">
+  <div class="nav-group-title"><span class="caret"></span>概念<span class="badge">18</span></div>
+  <div class="nav-group-items">
+    <a href="/concepts/AGI 已实现.html" class="nav-link" title="AGI 已实现">AGI 已实现</a>
+    <a href="/concepts/AI 工厂.html" class="nav-link" title="AI 工厂">AI 工厂</a>
+    <a href="/concepts/Bet the Company.html" class="nav-link" title="Bet the Company">Bet the Company</a>
+    <a href="/concepts/CUDA 平台.html" class="nav-link" title="CUDA 平台">CUDA 平台</a>
+    <a href="/concepts/Extreme Co-Design.html" class="nav-link" title="Extreme Co-Design">Extreme Co-Design</a>
+    <a href="/concepts/Scale Up 与 Scale Out.html" class="nav-link" title="Scale Up 与 Scale Out">Scale Up 与 Scale Out</a>
+    <a href="/concepts/Speed of Light 工程方法.html" class="nav-link" title="Speed of Light 工程方法">Speed of Light 工程方法</a>
+    <a href="/concepts/Token 经济.html" class="nav-link" title="Token 经济">Token 经济</a>
+    <a href="/concepts/加速计算.html" class="nav-link" title="加速计算">加速计算</a>
+    <a href="/concepts/推理时代.html" class="nav-link" title="推理时代">推理时代</a>
+    <a href="/concepts/摩尔定律已死.html" class="nav-link" title="摩尔定律已死">摩尔定律已死</a>
+    <a href="/concepts/数字孪生.html" class="nav-link" title="数字孪生">数字孪生</a>
+    <a href="/concepts/数据中心即计算机.html" class="nav-link" title="数据中心即计算机">数据中心即计算机</a>
+    <a href="/concepts/物理 AI.html" class="nav-link" title="物理 AI">物理 AI</a>
+    <a href="/concepts/生成式 AI 工业革命.html" class="nav-link" title="生成式 AI 工业革命">生成式 AI 工业革命</a>
+    <a href="/concepts/目的与任务.html" class="nav-link" title="目的与任务">目的与任务</a>
+    <a href="/concepts/装机量定义架构.html" class="nav-link" title="装机量定义架构">装机量定义架构</a>
+    <a href="/concepts/零亿美元市场.html" class="nav-link" title="零亿美元市场">零亿美元市场</a>
+  </div>
+</div>
+<div class="nav-group">
+  <div class="nav-group-title"><span class="caret"></span>产品<span class="badge">18</span></div>
+  <div class="nav-group-items">
+    <a href="/companies/Blackwell.html" class="nav-link" title="Blackwell">Blackwell</a>
+    <a href="/companies/BlueField DPU.html" class="nav-link" title="BlueField DPU">BlueField DPU</a>
+    <a href="/companies/Cosmos.html" class="nav-link" title="Cosmos">Cosmos</a>
+    <a href="/companies/DGX.html" class="nav-link" title="DGX">DGX</a>
+    <a href="/companies/Dynamo.html" class="nav-link" title="Dynamo">Dynamo</a>
+    <a href="/companies/GR00T.html" class="nav-link" title="GR00T">GR00T</a>
+    <a href="/companies/Hopper.html" class="nav-link" title="Hopper">Hopper</a>
+    <a href="/companies/NIM.html" class="nav-link" title="NIM">NIM</a>
+    <a href="/companies/NVIDIA.html" class="nav-link" title="NVIDIA">NVIDIA</a>
+    <a href="/companies/NVIDIA Drive.html" class="nav-link" title="NVIDIA Drive">NVIDIA Drive</a>
+    <a href="/companies/NVIDIA Omniverse.html" class="nav-link" title="NVIDIA Omniverse">NVIDIA Omniverse</a>
+    <a href="/companies/NVLink.html" class="nav-link" title="NVLink">NVLink</a>
+    <a href="/companies/Newton.html" class="nav-link" title="Newton">Newton</a>
+    <a href="/companies/OpenAI.html" class="nav-link" title="OpenAI">OpenAI</a>
+    <a href="/companies/Project DIGITS.html" class="nav-link" title="Project DIGITS">Project DIGITS</a>
+    <a href="/companies/RIVA 128.html" class="nav-link" title="RIVA 128">RIVA 128</a>
+    <a href="/companies/TSMC.html" class="nav-link" title="TSMC">TSMC</a>
+    <a href="/companies/Vera Rubin.html" class="nav-link" title="Vera Rubin">Vera Rubin</a>
+  </div>
+</div>
+<div class="nav-group">
+  <div class="nav-group-title"><span class="caret"></span>人物<span class="badge">14</span></div>
+  <div class="nav-group-items">
+    <a href="/people/Ben Gilbert 与 David Rosenthal.html" class="nav-link" title="Ben Gilbert 与 David Rosenthal">Ben Gilbert 与 David Rosenthal</a>
+    <a href="/people/Bill Dally.html" class="nav-link" title="Bill Dally">Bill Dally</a>
+    <a href="/people/Carver Mead.html" class="nav-link" title="Carver Mead">Carver Mead</a>
+    <a href="/people/Chris Malachowsky.html" class="nav-link" title="Chris Malachowsky">Chris Malachowsky</a>
+    <a href="/people/Curtis Priem.html" class="nav-link" title="Curtis Priem">Curtis Priem</a>
+    <a href="/people/Don Valentine.html" class="nav-link" title="Don Valentine">Don Valentine</a>
+    <a href="/people/Jeff Fisher.html" class="nav-link" title="Jeff Fisher">Jeff Fisher</a>
+    <a href="/people/Lex Fridman.html" class="nav-link" title="Lex Fridman">Lex Fridman</a>
+    <a href="/people/Mark Zuckerberg.html" class="nav-link" title="Mark Zuckerberg">Mark Zuckerberg</a>
+    <a href="/people/Morris Chang.html" class="nav-link" title="Morris Chang">Morris Chang</a>
+    <a href="/people/Sam Altman.html" class="nav-link" title="Sam Altman">Sam Altman</a>
+    <a href="/people/Tench Coxe.html" class="nav-link" title="Tench Coxe">Tench Coxe</a>
+    <a href="/people/Wilf Corrigan.html" class="nav-link" title="Wilf Corrigan">Wilf Corrigan</a>
+    <a href="/people/黄仁勋.html" class="nav-link" title="黄仁勋">黄仁勋</a>
+  </div>
+</div>
+<a href="/graph.html" class="nav-link nav-graph">🕸️ 知识图谱</a>
+
+  </div>
+</aside>
+<main class="main has-backlinks">
+<div class="main-content article"><div class="meta"><span class="type-badge type-访谈">访谈</span></div>
+<h1 id="bg2-pod-openai">BG2 Pod — 黄仁勋谈 OpenAI、算力未来与美国梦</h1>
+<blockquote>
+<p>主持人：Bill Gurley、Brad Gerstner、Clark Tang<br />
+发布时间：2025-09-26<br />
+时长：约 1 小时 30 分<br />
+主题：OpenAI Stargate 1000 亿美元大单 · <a href="/concepts/Token 经济.html">Token 经济</a> · <a href="/concepts/AI 工厂.html">AI 工厂</a> · 资本支出周期 · 电力与基建瓶颈 · <a href="/concepts/Extreme Co-Design.html">Extreme Co-Design</a> · 中国与主权 AI</p>
+</blockquote>
+<p>这一期录于 NVIDIA 刚刚宣布要向 <a href="/companies/OpenAI.html">OpenAI</a> 投资 1000 亿美元、合作建设 10 GW "Stargate" 算力之后。Brad 和 Bill Gurley 本身就是顶级资金分配者，他们把<strong>华尔街的怀疑</strong>、<strong>周期性过剩担忧</strong>、<strong>ASIC 竞争</strong>、<strong>中国市场</strong>、<strong>主权 AI</strong>、<strong>美国梦</strong>这些最硬的问题一个个摆到 <a href="/people/黄仁勋.html">黄仁勋</a> 面前。下面按主题把他的核心论述整理出来。</p>
+<hr />
+<h2 id="scaling-laws-10">一、三条 Scaling Laws：一年前说 10 亿倍是低估</h2>
+<p>Brad 一开场就追溯到一年半前黄仁勋做的那个预测——"推理不是涨 100 倍或者 1000 倍，而是 10 亿倍"。黄仁勋笑着说：</p>
+<blockquote>
+<p>"I underestimated. We now have three scaling laws. We have pre-training scaling. We have post-training—that's basically like AI practicing a skill until it gets it right. And then the third is inference. The old way of doing inference was one shot. The new way of doing inference is thinking. Think before you answer. The longer you think, the better the quality answer you get."</p>
+<p>"我低估了。现在我们有三条 scaling law：预训练 scaling、post-training scaling（就是 AI 反复练习一门技能直到做对）、以及推理 scaling（旧的推理是 one-shot，新的推理是<strong>先思考再回答</strong>——你思考得越久，答案质量越高）。"</p>
+</blockquote>
+<p>他对这件事今年的信心<strong>比去年更高</strong>，因为 agent 系统已经不再是单一模型，而是一整组模型并发运行、调用工具、做调研、生成多模态内容的复杂系统。</p>
+<hr />
+<h2 id="openai-stargate10-gw4000">二、<a href="/companies/OpenAI.html">OpenAI</a> Stargate：10 GW、4000 亿美金的"直签关系"</h2>
+<p>这是整期最重磅的一段。Brad 问："为什么投 1000 亿？" 黄仁勋先回答了最后一个问题：</p>
+<blockquote>
+<p>"I think that OpenAI is likely going to be the next multi-trillion dollar hyperscale company. The opportunity to invest before they get there—this is some of the smartest investments we can possibly imagine. We don't have to invest. It's not required for us to invest. But they're giving us the opportunity to invest. Fantastic thing."</p>
+<p>"我认为 <a href="/companies/OpenAI.html">OpenAI</a> 很可能是下一个市值数万亿美元的超大规模云公司。能在他们到达那里之前投进去，这是我能想象到的最聪明的投资之一。我们并不必须投。他们给了我们这个机会，太棒了。"</p>
+</blockquote>
+<p>然后他梳理了 NVIDIA 与 OpenAI 正在进行的<strong>四条并行 buildout</strong>：<br />
+1. <strong>Microsoft Azure</strong> 的持续建设，几年内几千亿美金的工程量；<br />
+2. <strong>OCI + SoftBank + OpenAI</strong> 的 5-7 GW；<br />
+3. <strong>CoreWeave</strong> 的全量；<br />
+4. 新的 Stargate — <strong>OpenAI 第一次自建 AI 基础设施</strong>。</p>
+<blockquote>
+<p>"This new partnership is about helping OpenAI build their own self-build AI infrastructure for the first time. Us working directly with OpenAI at the chip level, software level, systems level, AI factory level. I mean, this is going to go on for some time."</p>
+</blockquote>
+<p>他把 Stargate 的逻辑拆成<strong>两个指数的叠加</strong>：</p>
+<blockquote>
+<p>"They're going through two exponentials. The first exponential is the number of customers is growing exponentially because the AI is getting better. The second exponential is the computational exponential of every use—instead of just one-shot inference, it's now thinking before it answers. These two exponentials compounding their compute requirements."</p>
+<p>"他们正在穿越两个指数——第一个是<strong>用户数的指数增长</strong>，因为 AI 越来越好用；第二个是<strong>每次调用的计算量的指数增长</strong>，因为推理从 one-shot 变成了'先思考再回答'。两个指数在互相叠加。"</p>
+</blockquote>
+<p>他把 OpenAI 和 Meta/Google/Azure 放到同一类 hyperscaler——"他们想要一种像 Elon Musk 和 X 那样的直签关系，也像 Zuck 和 Meta、Sundar 和 Google、Satya 和 Azure 那样的直签关系"，每一家都超大规模、都自建。</p>
+<hr />
+<h2 id="_1">三、为什么华尔街是错的：三层论证</h2>
+<p>Brad 抛出一个很有趣的数据点——<strong>华尔街 25 位卖方分析师的共识预期认为 NVIDIA 从 2027 年开始增长会降到 8%</strong>。黄仁勋淡定地说："我们对这个预期很舒服，我们有能力稳定地跑赢。"</p>
+<p>但他用三个层次论证为什么这个预期从根本上错了：</p>
+<p><strong>第一层——物理定律。</strong> 通用计算已死，未来是加速计算和 AI 计算。</p>
+<blockquote>
+<p>"General purpose computing is over. The future is accelerated computing and AI computing. How many trillions of dollars of computing infrastructure in the world has to be refreshed?"</p>
+</blockquote>
+<p><strong>第二层——超大规模云的刷新。</strong> 这是他最关键的判断：<strong>超大规模云自己已经在从 CPU 迁到 GPU</strong>。搜索、推荐、TikTok、YouTube Shorts、Instagram——所有这些不是 AI 的"新用例"，而是<strong>本来就存在的百亿级流量被迁到了 AI 上</strong>。</p>
+<blockquote>
+<p>"You can't do TikTok without AI. You can't do YouTube Short without AI. Meta's late getting to GPUs, search with GPUs, for sure, brand spanking new. Hundreds of billions of dollars just feeding the Metas, the Googles, the ByteDances, the Amazons—taking their classical hyperscaling and moving it to AI."</p>
+</blockquote>
+<p><strong>第三层——AI 作为"智能放大器"。</strong> 他做了一个非常清晰的"员工账本"：</p>
+<blockquote>
+<p>"Suppose I were to hire a $100,000 employee, and I augmented that employee with a $10,000 AI, and that AI made the employee twice or three times more productive. Would I do it? Heartbeat I'm doing it across every single person in our company. Every software engineer, every chip designer already has AIs working with them. 100% coverage."</p>
+<p>"假设我雇一个 10 万美元的员工，我再花 1 万美元给他配一个 AI，让他效率提高 2-3 倍。我会不会这么做？当然会。我们公司现在每一个人都已经配了 AI 同事——100% 覆盖。"</p>
+</blockquote>
+<p>然后他把 NVIDIA 的故事套到世界 GDP 上：人类智能贡献了世界 GDP 的 55-65%，大约 50 万亿美元。如果其中有 10 万亿美元被 AI 增强，按 50% 毛利算，需要 5 万亿美元的年度基础设施投资——<strong>每年 5 万亿美元的 capex 是合理的</strong>。</p>
+<blockquote>
+<p>"If you told me that on an annual basis the cap ex of the world was about $5 trillion, I would say the math seems to make sense. And that's kind of the future."</p>
+</blockquote>
+<hr />
+<h2 id="1-ai">四、"我们已经站在 1 万亿美金 AI 收入门口了"</h2>
+<p>Brad 追问："2026 年 AI 收入我们估 1000 亿，2030 年要到 1 万亿——你觉得能做到吗？"</p>
+<blockquote>
+<p>"Yes. And I would also say we're already there. Because the hyperscalers, they went from CPUs to AI. Their entire revenue base is all now AI driven. You can't do TikTok without AI. Correct. It's all of that stuff used to be humans creating four choices that are then selected by a recommender engine. And now it's infinite number of choices generated by an AI."</p>
+<p>"可以。而且我还要说一句——<strong>我们已经到了</strong>。因为超大规模云厂商已经从 CPU 切到 AI 了。他们的整个收入基盘现在都是 AI 驱动的。以前是人创造 4 个候选、推荐引擎从中选；现在是 AI 创造无限个候选。"</p>
+</blockquote>
+<p>Brad 问他未来会不会出现供给过剩（glut）。他说：</p>
+<blockquote>
+<p>"Until we fully convert all general purpose computing to accelerated computing and AI, I think the chances are extremely low. That'll take a few years. And then until all recommender engines are AI based, until all content generation is AI based."</p>
+<p>"直到所有通用计算都转成加速计算和 AI，出现过剩的概率都非常低。这要花几年。然后还要等所有推荐引擎和内容生成都变成 AI 的。"</p>
+</blockquote>
+<p>关于订单节奏：NVIDIA 处在供应链末端，<strong>响应需求</strong>。过去几年他们深度打通供应链（wafer start、CoWoS、HBM），随时可以翻倍。客户每次给的预测<strong>都是错的</strong>——但是往小了错，"比去年显著增长，但还是不够"。</p>
+<hr />
+<h2 id="_2">五、关于"循环收入"与"泡沫"的反驳</h2>
+<p>CNBC 上每天有人在喊"glut"、"bubble"、"round-tripping"（循环收入），Brad 把这个问题直接丢给他。黄仁勋的回答简单有力：</p>
+<blockquote>
+<p>"Ten gigawatts is like $400 billion. And that $400 billion will have to be largely funded by their offtake—their revenues, which is growing exponentially. It has to be funded by their capital, the money they've raised through equity and whatever debt they can raise. Those are the three vehicles."</p>
+<p>"10 GW 大约 4000 亿美元。这笔钱主要要靠他们<strong>自己指数级增长的收入</strong>来买单，加上他们自己融到的股权和债。这是三个来源。"</p>
+</blockquote>
+<p>他的投资和他们的采购<strong>是完全分开的</strong>——"投资那一侧和任何事都没绑定，只是一个让我们能以早期价格进入未来多万亿美元公司的机会"。</p>
+<blockquote>
+<p>"The equity and debt they could raise has something to do with the confidence of the revenues that they could sustain. Smart investors and smart lenders will consider all of these factors. Fundamentally, that's their company. It's not my business. My only regret is that they invited us to invest early on—we were so poor, we didn't invest enough. I should have given all my money."</p>
+</blockquote>
+<p>Brad 顺势补了一句很关键的事实检查：<strong>每个月全球都有 15 亿人为 ChatGPT 付钱</strong>——"这不是把收入在两家公司之间倒腾，是真实的付费用户"。</p>
+<hr />
+<h2 id="token-perf-per-watt">六、<a href="/concepts/Token 经济.html">Token 经济</a>：Perf-per-Watt = 收入</h2>
+<p>这是整期最漂亮的一段推理。Brad 问："你说过就算竞争对手的 ASIC 免费送，客户也应该买 NVIDIA 的系统——这怎么可能？"</p>
+<p>黄仁勋的回答是：<strong>所有人都是电力受限的</strong>。</p>
+<blockquote>
+<p>"Everybody's power limited. Let's say you were able to secure two more gigawatts of power. You would want that to translate to revenues. So if your performance per watt was twice as high as somebody else's, you can produce twice as much revenues from your data center. Who doesn't want twice as much revenues?"</p>
+<p>"所有人都是电力受限的。假如你多拿到 2 GW 电力，你当然想把它变成收入。如果我的 perf-per-watt 是别人的两倍，我的客户就能从同一个数据中心生出两倍的收入——谁不想要两倍的收入？"</p>
+</blockquote>
+<p>更狠的一步：</p>
+<blockquote>
+<p>"Blackwell is 30 times Hopper. Let's pretend somebody else's ASIC is Hopper. So you've got to give up 30 times revenues in that 1 gigawatt. It's too much to give up. So even if they gave it to you for free, your opportunity cost is so insanely high, you would always choose the best performance per watt."</p>
+<p>"<a href="/companies/Blackwell.html">Blackwell</a> 是 <a href="/companies/Hopper.html">Hopper</a> 的 30 倍。假如别人的 ASIC 相当于 Hopper，你就要在那 1 GW 里放弃 30 倍的收入——这代价太大了。就算他们免费送，你的机会成本也高到你必须选 perf-per-watt 最高的那家。"</p>
+</blockquote>
+<p>这就是为什么"土地、电、外壳本身就要 150 亿美金"的情况下，芯片价格几乎不是主要变量。<strong>这是整个行业过去两年才真正内化的账</strong>。</p>
+<hr />
+<h2 id="extreme-co-design">七、什么是 <a href="/concepts/Extreme Co-Design.html">Extreme Co-Design</a>？一年一代的暴力美学</h2>
+<p>Brad 问："对普通人怎么解释 extreme co-design？" 黄仁勋说：</p>
+<blockquote>
+<p>"Extreme co-design means that you have to optimize the model algorithm, system and chip at the same time. You have to innovate outside the box. Because Moore's law said you just have to keep making the CPU faster. Everything got faster. You were innovating within the box. Well, if that chip doesn't go any faster, then what are you going to do? Innovate outside the box."</p>
+<p>"Extreme co-design 就是你得同时优化模型算法、系统和芯片——你必须在框外创新。因为摩尔定律告诉你只要让 CPU 更快就行，所有东西都会跟着快——那是<strong>框内</strong>创新。但如果那颗芯片不能更快了，你怎么办？<strong>框外</strong>创新。"</p>
+</blockquote>
+<p>他给了一组震撼的数字：<strong>Blackwell 对 Hopper 是 30 倍</strong>——不是因为晶体管密度，而是因为他们同时重做了 CPU、GPU、网络芯片、NVLink scale-up、Spectrum-X scale-out、冷却、电源、机架——全部重新设计。他说摩尔定律连十分之一都给不了。</p>
+<blockquote>
+<p>"Blackwell to Hopper is 30 times. No Moore's law could possibly achieve that. That's because NVIDIA got into networking and switching and scale up and scale out and scale across, building CPUs and building GPUs and building NICs. That's the reason why NVIDIA is so rich in software and people."</p>
+</blockquote>
+<p>一年一代的节奏本身就是护城河——<strong>每年 6-7 颗芯片同步进化，整个系统每年推倒一次</strong>。他反问："谁会给一个首次流片的新架构下 500 亿美金的 PO？NVIDIA 可以，因为架构已经验证过，客户规模极大，供应链规模极大。"</p>
+<hr />
+<h2 id="asic-vs-gpu">八、ASIC vs GPU：三种芯片、两种生意</h2>
+<p>Clark 问到 Google TPU 和 Amazon Trainium 这些 ASIC 的威胁。黄仁勋的回答是<strong>三类芯片论</strong>：</p>
+<blockquote>
+<p>"There are three categories of chips. First, architectural chips—x86 CPUs, ARM CPUs, NVIDIA GPUs. They have an ecosystem above and rich IP. Second, ASICs. I worked for the original company that invented ASICs—LSI Logic. LSI Logic is not here anymore. ASICs is fantastic when the market size is not very large. Third, COT—customer owned tooling. That's what Apple does for the iPhone chip. So where will TPUs go when it becomes a large business? Customer owned tooling. No question about it."</p>
+<p>"芯片有三类：第一类是<strong>架构型</strong>（x86、ARM、NVIDIA GPU）——有生态、有丰富 IP；第二类是 ASIC——我当年在发明 ASIC 这个概念的 LSI Logic 工作过，那家公司今天已经不存在了。ASIC 在市场不大的时候很好用；第三类是 COT（客户自持工艺），Apple 的手机芯片就是这样。TPU 等到规模够大的时候会去哪里？毫无疑问——COT。"</p>
+</blockquote>
+<p>然后他讲了 ASIC 的根本困境：你三五年前立项的时候，整个行业看起来只是"一颗 GPU"；今天它是<strong>整个 AI 工厂</strong>——需要 CPX（context processing）、长短期记忆、KV cache 处理器、视频转码……而 transformer 架构本身每六个月就在变。</p>
+<blockquote>
+<p>"If not for the fact that CUDA is easy to operate on and iterate on, how do they try all of their vast number of experiments? CUDA helps you do all that because it's so programmable."</p>
+</blockquote>
+<p>最尖锐的一句：</p>
+<blockquote>
+<p>"That industry three, four, five years ago was super adorable and simple. Now it's giant and complex and in another two years it's going to be completely massive. The battle of getting into a very large market as a nascent player is just hard."</p>
+<p>"三四年前那个行业非常可爱也非常简单。今天它已经庞大复杂，再过两年会巨大到让人窒息。<strong>作为一个小玩家想进入已经巨大的市场，是非常非常难的一件事。</strong>"</p>
+</blockquote>
+<hr />
+<h2 id="elon-musk-colossus">九、Elon Musk 与 Colossus：人脑作为系统集成者</h2>
+<p>Brad 问：为什么 Elon 能用四个月建起 Colossus，而大部分公司不行？黄仁勋说：</p>
+<blockquote>
+<p>"These AI supercomputers are complicated things. The technology is complicated, procuring it is complicated because of financing issues, securing the land, power and shell, powering it, building it all, bringing it all up. This is unquestionably the most complex systems problem humanity has ever endeavored."</p>
+<p>"这些 AI 超算是非常复杂的东西——技术复杂、融资复杂、拿地拿电拿外壳复杂、通电复杂、系统集成复杂。<strong>这毫无疑问是人类尝试过最复杂的系统问题。</strong>"</p>
+</blockquote>
+<p>然后他说了一句让我反复回味的话：</p>
+<blockquote>
+<p>"Elon has a great advantage that in his head, all of these systems are interoperating and the interdependencies reside in one head, including the financing."</p>
+<p>"Elon 有一个巨大优势——所有这些系统、所有这些相互依赖，<strong>都在他一个大脑里同时跑</strong>，连融资也在。"</p>
+</blockquote>
+<p>Brad 补了一句："他自己就是一台 GPT。" 黄仁勋说："<strong>He's the ultimate GPU.</strong>"</p>
+<hr />
+<h2 id="ai-ai">十、主权 AI：每个国家都需要 AI 基础设施</h2>
+<p>Brad 把话题拉到地缘政治——"30 年前你很难想象今天你会和酋长、国王、白宫聊这些"。黄仁勋说：</p>
+<blockquote>
+<p>"Nobody needs atomic bombs. Everybody needs AI. AI is modern software. We've reinvented computing. There's not a new species on Earth. We just reinvented computing. Everybody needs computing. There's nobody in the world that says, 'I used to use computers yesterday. I'm pretty good with clubs and fire tomorrow.' "</p>
+<p>"没有人需要原子弹，但所有人都需要 AI。AI 就是现代版的软件。我们重新发明了计算——这地球上没有新物种，我们只是重新发明了计算。所有人都需要计算，世界上没有人会说'我昨天还在用计算机，明天我要回去用棍棒和火把'。"</p>
+</blockquote>
+<p>他对"主权 AI"的立场是务实的——<strong>每个国家都应该用 <a href="/companies/OpenAI.html">OpenAI</a>、Anthropic、Gemini、Grok</strong>，但<strong>也要有自己的基础设施</strong>去发展工业模型、制造模型、国家安全模型：</p>
+<blockquote>
+<p>"In order to participate in AI, you have to encode within AI your history, your culture, your values. Every country needs to have some sovereign capability. They need to build it not just for language models, but for industrial models, manufacturing models, national security models."</p>
+</blockquote>
+<p>他打了一个非常好的类比——AI 基础设施就像每个国家的能源基础设施、通信基础设施，是国家级必须品。</p>
+<hr />
+<h2 id="95">十一、中国：被迫放弃 95% 市场份额是"单方面缴械"</h2>
+<p>这是整期最锋利的一段。Brad 提到华为正在用"中国市场的垄断利润"发展、三年计划超过 NVIDIA。黄仁勋承认：</p>
+<blockquote>
+<p>"95% market share. And the facts are just wrong. They are nanoseconds behind us. Not two years, three years. They're nanoseconds behind us."</p>
+<p>"我们曾有 95% 的中国市场份额。关于中国的那些'事实'大多是错的——他们不是落后我们两三年，<strong>他们落后我们的是纳秒级</strong>。"</p>
+</blockquote>
+<p>他给出了一个非常干练的判断：</p>
+<blockquote>
+<p>"50% of the world's AI researchers are Chinese. They are a formidable, innovative, hungry, fast moving, under-regulated. People don't realize this. They are lightly regulated, less regulated ironically than we are in the capitalist system. Some of the things I heard—they could never build AI chips—that just sounded insane. They can't manufacture? If there's one thing they could do, it's manufacture."</p>
+<p>"全世界 50% 的 AI 研究者是中国人。他们是一群可怕的、有创新力的、饥饿的、快速行动的、被<strong>轻监管</strong>的人——很多人没有意识到这一点，讽刺的是，他们比我们资本主义体系下的监管还要轻。那些'他们永远造不出 AI 芯片'的说法太疯狂了。'他们不会制造'？如果这个世界上有一件事他们会做，那就是制造。"</p>
+</blockquote>
+<p>他的中国战略很清晰——<strong>竞争，而不是脱钩</strong>：</p>
+<blockquote>
+<p>"The single best industry we have is our technology industry. Why would we not allow this industry to go compete for its survival, proliferate American technology around the world, maximize economic success, maximize geopolitical influence? I've never heard President Trump say the word 'decouple.' You can't decouple the two most important relationships of the next century. Decoupling is exactly the wrong concept."</p>
+<p>"我们最强的产业就是科技产业。我们为什么不让这个产业去竞争、去求生存、去把美国技术扩散到全世界、去最大化我们的经济成功和地缘影响？我从来没有听 Trump 总统说过'脱钩'这个词——你怎么可能和未来 100 年里最重要的两对关系脱钩？脱钩就是错的概念。"</p>
+</blockquote>
+<p>被问到"你只是想多卖芯片吧"，他直接回应：</p>
+<blockquote>
+<p>"Just because I want America, ecosystem and economy to grow, doesn't make me wrong. Everything that has been said so far about China has proven to be wrong. The facts are just wrong."</p>
+</blockquote>
+<hr />
+<h2 id="invest-america">十二、美国梦 与 Invest America</h2>
+<p>访谈的后半段转向一个很温暖的话题——Brad 推动的 "Invest America" 计划。这个想法是：每个在 2026 年之后出生的美国孩子，国家出 1000 美元为他开一个投资账户，投资于最好的美国公司。<a href="/people/黄仁勋.html">黄仁勋</a> 已经决定 NVIDIA 不仅为员工的孩子追加资金，还会扩展到更多孩子。</p>
+<p>他谈到自己就是美国梦的象征：</p>
+<blockquote>
+<p>"My parents didn't have any money, sent us over here. We started from nothing. You guys know I bus tables, wash dishes, clean toilets, and here I am. This is the American dream. You go to Wikipedia, you can look up American dream. My picture."</p>
+<p>"我父母没钱，把我们送到这里来。我们从一无所有开始。你们都知道我洗过盘子、收过桌子、擦过厕所——然后我站到了这里。这就是美国梦。你去 Wikipedia 查 American Dream，会看到我的照片。"</p>
+</blockquote>
+<p>对于 H1B 签证 10 万美元收费的争议，他说"这是一个好的开始"，但明确：</p>
+<blockquote>
+<p>"America has a singular brand reputation that no country in the world has. No country in the world is in the position to be able to say, 'Come to America and realize the American dream.' What country has the word 'dream' behind it? We are utterly singular."</p>
+</blockquote>
+<hr />
+<h2 id="china-hawk">十三、"China Hawk" 是耻辱，不是荣耀</h2>
+<p>这一段是我第一次听到他用这么重的词。Brad 提到一位在美国顶级实验室的华人 AI 研究员说：三年前 90% 的中国顶尖毕业生会来美国，今天只有 10-15%。黄仁勋说：</p>
+<blockquote>
+<p>"This is precisely a concern that we have. This is a source of existential crisis. Definitely the early indicators of a future problem. Smart people's desire to come to America, smart students' desire to stay—those are KPIs."</p>
+</blockquote>
+<p>然后他直接对"China Hawk"这个标签开火：</p>
+<blockquote>
+<p>"There's a phrase, 'China Hawks.' If you're a China Hawk, you get to wear that label with pride. It's almost like a badge of honor. It's a badge of shame. Although they want what's in the best interest of our country, destroying that pipeline of the American dream is not patriotic. Not even a little bit."</p>
+<p>"有个词叫 'China Hawks'。如果你是 China Hawk，你可以骄傲地戴着这个标签——但它其实是<strong>耻辱的勋章</strong>。尽管他们也想为这个国家好，但<strong>摧毁美国梦的输送管道不是爱国行为。一点都不是</strong>。"</p>
+<p>"We need to have the confidence of a great country. And to somebody who wants to compete with us, have the attitude 'bring it on.' Bring it on. Because I believe in our people. I believe in our culture. I believe in our country. I believe in our system. Bring it on."</p>
+</blockquote>
+<hr />
+<h2 id="_3">十四、加速进步：上车，别想着在未来某个路口拦截它</h2>
+<p>访谈尾声 Brad 引了 Ray Kurzweil 的话："21 世纪不是 100 年的进步，而是 20,000 年的进步。" 黄仁勋给了一个特别好的实操建议：</p>
+<blockquote>
+<p>"If you have a train that's about to get faster and faster and go exponential, the only thing you really need to do is get on it. Once you get on it, you'll figure everything else out along the way. To predict where that train's going to be and try to shoot a bullet at it, or predict where that train's going to be and it's going exponentially faster every second and figure out what intersection to wait for it—that's impossible."</p>
+<p>"如果一列火车即将越开越快、进入指数级加速——你真正要做的只有一件事：<strong>上车</strong>。一旦你上了车，剩下的你会在路上想明白。想预判这列车的位置再开一枪、或者预判在哪个路口拦截它——这是不可能的，它每一秒都在指数级变快。"</p>
+</blockquote>
+<p>他预测未来 5 年会发生的一件"很酷的事"：AI 和机电一体化的融合。</p>
+<blockquote>
+<p>"We're going to have AIs wandering around us. We all know that we're going to grow up with our own R2-D2—our own companion that remembers everything about us and coaches us along the way. Every human will have their own GPUs associated with them in the cloud. 8 billion people, 8 billion GPUs—that's a viable outcome."</p>
+<p>"我们每个人都会陪着自己的 R2-D2 长大——一个记得我们一切、一路指导我们的陪伴者。每个人在云端都会有自己专属的 GPU。80 亿人，80 亿 GPU——这是完全可能的结局。"</p>
+</blockquote>
+<p>结尾他对 AI 与工作的看法依然是那个乐观的乘数逻辑：</p>
+<blockquote>
+<p>"Intelligence is not a zero-sum game. The more intelligent people I'm surrounded by, the more geniuses I'm surrounded by, surprisingly, the more ideas I have, the more problems I imagine that we can go solve. The more work we create, the more jobs we create."</p>
+<p>"智能不是零和游戏。我身边的聪明人和天才越多，奇怪的是<strong>我自己的想法反而越多，想解决的问题越多，创造的工作越多，雇的人越多</strong>。"</p>
+</blockquote>
+<p>然后他对 Brad 说："Don't scare them, bring them along."（别吓到他们，带他们一起走。）</p>
+<hr />
+<h2 id="_4">金句集</h2>
+<ol>
+<li>"I underestimated it. Inference is going up by a billion times." — 关于三条 scaling law</li>
+<li>"OpenAI is likely going to be the next multi-trillion dollar hyperscale company."</li>
+<li>"$5 trillion of annual global capex—the math seems to make sense."</li>
+<li>"We're already there." — 关于 1 万亿美金 AI 收入</li>
+<li>"Even if somebody's ASIC is free, opportunity cost is too high. You'd always choose the best perf per watt."</li>
+<li>"Blackwell is 30 times Hopper. No Moore's law could possibly achieve that."</li>
+<li>"Nobody needs atomic bombs. Everybody needs AI."</li>
+<li>"China is nanoseconds behind us."</li>
+<li>"China Hawk is a badge of shame, not honor."</li>
+<li>"Get on the train. You'll figure everything else out along the way."</li>
+<li>"Intelligence is not a zero-sum game."</li>
+</ol>
+<hr />
+<p><strong>原文出处</strong>：<a href="https://singjupost.com/transcript-nvidia-ceo-jensen-huang-on-openai-future-of-compute-and-the-american-dream-bg2-pod/">BG2 Pod — NVIDIA CEO Jensen Huang on OpenAI, Future of Compute, and the American Dream (2025-09-26)</a></p></div><aside class="backlinks-panel">
+  <div class="bl-panel-header">
+    <h3 class="bl-panel-title">链接到本页 <span class="bl-count">17</span></h3>
+    <div class="bl-panel-actions">
+      <button class="bl-action bl-expand-all">展开</button>
+      <button class="bl-action bl-collapse-all">折叠</button>
+    </div>
+  </div>
+  <div class="bl-group">
+  <button class="bl-group-header">
+    <span class="bl-caret"></span>
+    <span class="bl-source-name">AI 工厂（AI Factory）</span>
+    <span class="bl-mention-cat">概念</span>
+  </button>
+  <div class="bl-snippets">
+    <div class="bl-snippet">…一个机柜里的 AI 工厂" - OpenAI Stargate：10 GW、4000 亿美金的 AI 工厂集群（2025-09 BG2 Pod - OpenAI 与算力未来） - xAI Colossus：4 个月建起 20 万卡 → 50 万卡的 AI 工厂 - **Meta Su…</div>
+    <a href="/concepts/AI 工厂.html" class="bl-go-link">查看原文 →</a>
+  </div>
+</div>
+<div class="bl-group">
+  <button class="bl-group-header">
+    <span class="bl-caret"></span>
+    <span class="bl-source-name">Bet the Company（赌上整个公司）</span>
+    <span class="bl-mention-cat">概念</span>
+  </button>
+  <div class="bl-snippets">
+    <div class="bl-snippet">…从芯片公司转身为数据中心公司 - Blackwell 一年一代节奏：每一代都是 6-7 颗芯片同时下注（2025-09 BG2 Pod - OpenAI 与算力未来）  ### 常见误区  误区一：Bet the Company = 鲁莽赌博。 错。黄仁勋 反复强调：…</div>
+    <a href="/concepts/Bet the Company.html" class="bl-go-link">查看原文 →</a>
+  </div>
+</div>
+<div class="bl-group">
+  <button class="bl-group-header">
+    <span class="bl-caret"></span>
+    <span class="bl-source-name">CUDA 平台（CUDA）</span>
+    <span class="bl-mention-cat">概念</span>
+  </button>
+  <div class="bl-snippets">
+    <div class="bl-snippet">…年的库积累 + 几亿装机量 + 上千万开发者社区 = 一道在工程层面无法被一夜复制的护城河。这是 黄仁勋 在 2025-09 BG2 Pod - OpenAI 与算力未来 里反复强调的"ASIC 永远追不上"的根本原因。  误区三：等专用 ASIC 成熟，CUDA 的灵活性就不值钱…</div>
+    <a href="/concepts/CUDA 平台.html" class="bl-go-link">查看原文 →</a>
+  </div>
+</div>
+<div class="bl-group">
+  <button class="bl-group-header">
+    <span class="bl-caret"></span>
+    <span class="bl-source-name">Extreme Co-Design（极端协同设计）</span>
+    <span class="bl-mention-cat">概念</span>
+  </button>
+  <div class="bl-snippets">
+    <div class="bl-snippet">…算法、系统软件、芯片架构、网络、机柜结构、电源、冷却——把"框内创新"变成"框外创新"**。  最完整的一段定义出现在 2025-09 BG2 Pod - OpenAI 与算力未来：  &gt; "Extreme co-design means that you have to optimize the…</div>
+    <a href="/concepts/Extreme Co-Design.html" class="bl-go-link">查看原文 →</a>
+  </div>
+</div>
+<div class="bl-group">
+  <button class="bl-group-header">
+    <span class="bl-caret"></span>
+    <span class="bl-source-name">Token 经济（Token Economy）</span>
+    <span class="bl-mention-cat">概念</span>
+  </button>
+  <div class="bl-snippets">
+    <div class="bl-snippet">…的"发电机"致敬。  第二，Perf-per-Watt = 收入。  这是 Token 经济最核心的换算式。在 2025-09 BG2 Pod - OpenAI 与算力未来 里 黄仁勋 给出最完整的论证：  &gt; "Everybody's power limited. Let's sa…</div>
+    <a href="/concepts/Token 经济.html" class="bl-go-link">查看原文 →</a>
+  </div>
+</div>
+<div class="bl-group">
+  <button class="bl-group-header">
+    <span class="bl-caret"></span>
+    <span class="bl-source-name">加速计算（Accelerated Computing）</span>
+    <span class="bl-mention-cat">概念</span>
+  </button>
+  <div class="bl-snippets">
+    <div class="bl-snippet">…computing and AI computing." &gt; "通用计算已死。未来是加速计算和 AI 计算。" &gt; ——2025-09 BG2 Pod - OpenAI 与算力未来  ## 思想演变  - 1993 年：NVIDIA 创立，加速计算还只是"用一颗专用芯片做 PC 3D…</div>
+    <a href="/concepts/加速计算.html" class="bl-go-link">查看原文 →</a>
+  </div>
+</div>
+<div class="bl-group">
+  <button class="bl-group-header">
+    <span class="bl-caret"></span>
+    <span class="bl-source-name">摩尔定律已死（Moore's Law is Dead）</span>
+    <span class="bl-mention-cat">概念</span>
+  </button>
+  <div class="bl-snippets">
+    <div class="bl-snippet">…times. No Moore's law could possibly achieve that." &gt; ——2025-09 BG2 Pod - OpenAI 与算力未来  黄仁勋 自己有时候也会用 新摩尔定律（Huang's Law）来描述 NVIDIA 的加速曲…</div>
+    <a href="/concepts/摩尔定律已死.html" class="bl-go-link">查看原文 →</a>
+  </div>
+</div>
+<div class="bl-group">
+  <button class="bl-group-header">
+    <span class="bl-caret"></span>
+    <span class="bl-source-name">生成式 AI 工业革命（Generative AI Industrial Revolution）</span>
+    <span class="bl-mention-cat">概念</span>
+  </button>
+  <div class="bl-snippets">
+    <div class="bl-snippet">…ic bombs. Everybody needs AI." &gt; "没有人需要原子弹，但所有人都需要 AI。" &gt; ——2025-09 BG2 Pod - OpenAI 与算力未来  ## 思想演变  - 2023 年春：iPhone 时刻——FY24 Q1 财报第一次喊出"1 万亿美元数据…</div>
+    <a href="/concepts/生成式 AI 工业革命.html" class="bl-go-link">查看原文 →</a>
+  </div>
+</div>
+<div class="bl-group">
+  <button class="bl-group-header">
+    <span class="bl-caret"></span>
+    <span class="bl-source-name">目的与任务（Purpose vs Tasks）</span>
+    <span class="bl-mention-cat">概念</span>
+  </button>
+  <div class="bl-snippets">
+    <div class="bl-snippet">…目的和任务有结构性差异。  误区三：必须乐观——所以不必为转型担心。 黄仁勋 自己的态度更细致——他在 2025-09 BG2 Pod - OpenAI 与算力未来 给的最后一句话是"Don't scare them, bring them along."（别吓到他们，带他们一起走。…</div>
+    <a href="/concepts/目的与任务.html" class="bl-go-link">查看原文 →</a>
+  </div>
+</div>
+<div class="bl-group">
+  <button class="bl-group-header">
+    <span class="bl-caret"></span>
+    <span class="bl-source-name">Blackwell</span>
+    <span class="bl-mention-cat">产品</span>
+  </button>
+  <div class="bl-snippets">
+    <div class="bl-snippet">…CPU、GPU、网络芯片、NVLink scale-up、Spectrum-X scale-out、冷却、电源、机架。（2025-09 BG2 Pod - OpenAI 与算力未来） - 2025 年 1 月 CES：消费级也有了——**GeForce RTX 50 系列（Blackwell…</div>
+    <a href="/companies/Blackwell.html" class="bl-go-link">查看原文 →</a>
+  </div>
+</div>
+<div class="bl-group">
+  <button class="bl-group-header">
+    <span class="bl-caret"></span>
+    <span class="bl-source-name">Hopper</span>
+    <span class="bl-mention-cat">产品</span>
+  </button>
+  <div class="bl-snippets">
+    <div class="bl-snippet">…opper 的 30 倍。假如别人的 ASIC 相当于 Hopper，你就要在那 1 GW 里放弃 30 倍的收入。"（2025-09 BG2 Pod - OpenAI 与算力未来） - 2025 Q4 财报（FY25 Q4）：Hopper 仍然是大量推理工作负载的主力——"老的 GPU 也…</div>
+    <a href="/companies/Hopper.html" class="bl-go-link">查看原文 →</a>
+  </div>
+</div>
+<div class="bl-group">
+  <button class="bl-group-header">
+    <span class="bl-caret"></span>
+    <span class="bl-source-name">NVIDIA</span>
+    <span class="bl-mention-cat">产品</span>
+  </button>
+  <div class="bl-snippets">
+    <div class="bl-snippet">…9 月 BG2 Pod：宣布对 OpenAI 投资 1000 亿美元、合作 10 GW Stargate。（2025-09 BG2 Pod - OpenAI 与算力未来） - 2025 年 10 月 GTC 华盛顿**："这是美国的下一个阿波罗时刻。"（[[2025-10 GTC 2…</div>
+    <a href="/companies/NVIDIA.html" class="bl-go-link">查看原文 →</a>
+  </div>
+</div>
+<div class="bl-group">
+  <button class="bl-group-header">
+    <span class="bl-caret"></span>
+    <span class="bl-source-name">OpenAI</span>
+    <span class="bl-mention-cat">产品</span>
+  </button>
+  <div class="bl-snippets">
+    <div class="bl-snippet">…"质疑的回应："我唯一的遗憾是，他们当年邀请我们投资 OpenAI 的时候我们太穷，没投够——我应该把所有钱都给的。"（2025-09 BG2 Pod - OpenAI 与算力未来）  ### 2026：GPT-5.3 Codex 与"百年一遇的公司"  - **2026 Q4 财报（FY26 Q4…</div>
+    <a href="/companies/OpenAI.html" class="bl-go-link">查看原文 →</a>
+  </div>
+</div>
+<div class="bl-group">
+  <button class="bl-group-header">
+    <span class="bl-caret"></span>
+    <span class="bl-source-name">Mark Zuckerberg</span>
+    <span class="bl-mention-cat">人物</span>
+  </button>
+  <div class="bl-snippets">
+    <div class="bl-snippet">…广泛传播的 fireside chat（"换皮夹克"那场） - 在素材中出现：0 篇直接点名（"Zuck" 在 2025-09 BG2 Pod - OpenAI 与算力未来 里被以"Zuck and Meta"提到一次，作为"CEO 直签"清单的一员）  ## 在素材中的出现  - **[[…</div>
+    <a href="/people/Mark Zuckerberg.html" class="bl-go-link">查看原文 →</a>
+  </div>
+</div>
+<div class="bl-group">
+  <button class="bl-group-header">
+    <span class="bl-caret"></span>
+    <span class="bl-source-name">Sam Altman</span>
+    <span class="bl-mention-cat">人物</span>
+  </button>
+  <div class="bl-snippets">
+    <div class="bl-snippet">…大单的对手方；NVIDIA 反向投资 OpenAI 1000 亿美元 - 在素材中出现：4 篇间接出现（2025-09 BG2 Pod - OpenAI 与算力未来 · 2026-Q4 NVIDIA FY26 财报 · [[2025-Q4 NVIDIA FY25 财报 - B…</div>
+    <a href="/people/Sam Altman.html" class="bl-go-link">查看原文 →</a>
+  </div>
+</div>
+<div class="bl-group">
+  <button class="bl-group-header">
+    <span class="bl-caret"></span>
+    <span class="bl-source-name">黄仁勋</span>
+    <span class="bl-mention-cat">人物</span>
+  </button>
+  <div class="bl-snippets">
+    <div class="bl-snippet">…慈悲、慷慨、对痛苦的忍耐、决心。在他看来，"智能"会被商品化，而"人性"才是真正的超能力。  这句话不是孤立的——他在 2025-09 BG2 Pod - OpenAI 与算力未来 里也说过近乎一样的话："我父母没钱，把我们送到这里来。我们从一无所有开始。你们都知道我洗过盘子、收过桌子、擦过厕所——…</div>
+    <a href="/people/黄仁勋.html" class="bl-go-link">查看原文 →</a>
+  </div>
+</div>
+<div class="bl-group">
+  <button class="bl-group-header">
+    <span class="bl-caret"></span>
+    <span class="bl-source-name">素材总览</span>
+    <span class="bl-mention-cat">索引</span>
+  </button>
+  <div class="bl-snippets">
+    <div class="bl-snippet">…史 / CUDA 平台 17 年坚持 / 押注深度学习 / Mission is the Boss - 2025-09 BG2 Pod - OpenAI 与算力未来 —— Bill Gurley / Brad Gerstner 主持，OpenAI Starga…</div>
+    <a href="/index-pages/素材总览.html" class="bl-go-link">查看原文 →</a>
+  </div>
+</div>
+
+</aside>
+
+</main>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Toggle sidebar nav groups
+  document.querySelectorAll('.nav-group-title').forEach(function(el) {
+    el.addEventListener('click', function() {
+      this.parentElement.classList.toggle('open');
+    });
+  });
+
+  // Backlinks: toggle individual groups
+  document.querySelectorAll('.bl-group-header').forEach(function(header) {
+    header.addEventListener('click', function() {
+      this.closest('.bl-group').classList.toggle('open');
+    });
+  });
+
+  // Favorite / bookmark popup
+  var favBtn = document.getElementById('fav-btn');
+  var favPop = document.getElementById('fav-pop');
+  if (favBtn && favPop) {
+    var isMac = /Mac|iPhone|iPad/.test(navigator.platform);
+    var key = isMac ? '⌘ + D' : 'Ctrl + D';
+    favPop.innerHTML =
+      '按 <kbd>' + key + '</kbd> 收藏本页到浏览器书签' +
+      '<button class="fav-pop-copy" id="fav-pop-copy">复制本页链接</button>';
+
+    favBtn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      favPop.classList.toggle('show');
+    });
+    document.addEventListener('click', function(e) {
+      if (!favPop.contains(e.target) && e.target !== favBtn) {
+        favPop.classList.remove('show');
+      }
+    });
+
+    var copyBtn = document.getElementById('fav-pop-copy');
+    if (copyBtn) {
+      copyBtn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        navigator.clipboard.writeText(window.location.href).then(function() {
+          copyBtn.textContent = '✓ 已复制';
+          copyBtn.classList.add('copied');
+          setTimeout(function() {
+            copyBtn.textContent = '复制本页链接';
+            copyBtn.classList.remove('copied');
+          }, 1500);
+        });
+      });
+    }
+  }
+
+  // Backlinks: expand/collapse all
+  document.querySelectorAll('.bl-expand-all').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      this.closest('.backlinks-panel').querySelectorAll('.bl-group').forEach(function(g) {
+        g.classList.add('open');
+      });
+    });
+  });
+  document.querySelectorAll('.bl-collapse-all').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      this.closest('.backlinks-panel').querySelectorAll('.bl-group').forEach(function(g) {
+        g.classList.remove('open');
+      });
+    });
+  });
+});
+</script>
+</body>
+</html>

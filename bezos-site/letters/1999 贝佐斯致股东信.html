@@ -1,0 +1,1235 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>1999 贝佐斯致股东信 - 贝佐斯致股东信知识图谱</title>
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon-180.png">
+<link rel="shortcut icon" href="/assets/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700;900&family=Crimson+Pro:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-WLE88B2LL3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-WLE88B2LL3');
+</script>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+
+:root{
+  --bg:#FAF7F2;
+  --bg2:#F3EDE4;
+  --text:#1B1B18;
+  --text2:#6B6560;
+  --gold:#B8860B;
+  --gold-light:#D4A843;
+  --gold-glow:rgba(184,134,11,.12);
+  --navy:#1A2332;
+  --navy-light:#2C3E50;
+  --cream:#FFF8EE;
+  --border:#E0D6C8;
+  --card:#FFFFFF;
+  --link:#8B5E0B;
+  --serif:'Noto Serif SC','Crimson Pro',Georgia,'Times New Roman',serif;
+  --sans:'DM Sans',-apple-system,BlinkMacSystemFont,'PingFang SC','Microsoft YaHei',sans-serif;
+  --sidebar-w:260px;
+}
+
+html{font-size:15px;scroll-behavior:smooth}
+body{
+  font-family:var(--sans);
+  color:var(--text);
+  background:var(--bg);
+  display:flex;
+  min-height:100vh;
+  line-height:1.8;
+  -webkit-font-smoothing:antialiased;
+}
+
+/* ===== SIDEBAR ===== */
+.sidebar{
+  width:var(--sidebar-w);
+  background:var(--navy);
+  position:fixed;top:0;left:0;bottom:0;
+  overflow-y:auto;
+  z-index:100;
+  display:flex;
+  flex-direction:column;
+}
+.sidebar-header{padding:20px 16px 16px;border-bottom:1px solid rgba(255,255,255,.08)}
+.logo{
+  color:#fff;
+  font-size:17px;
+  font-weight:700;
+  text-decoration:none;
+  letter-spacing:.5px;
+  font-family:var(--serif);
+  display:block;
+}
+.logo:hover{color:var(--gold-light)}
+
+.sidebar-nav{flex:1;padding:8px 0;overflow-y:auto}
+.sidebar-nav::-webkit-scrollbar{width:4px}
+.sidebar-nav::-webkit-scrollbar-thumb{background:rgba(255,255,255,.15);border-radius:2px}
+
+.nav-link{
+  display:block;
+  padding:6px 16px;
+  color:#cbd5e1;
+  text-decoration:none;
+  font-size:13px;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  border-left:3px solid transparent;
+  transition:all .15s;
+}
+.nav-link:hover{background:rgba(255,255,255,.06);color:#fff}
+.nav-link.active{
+  color:#fff;
+  background:rgba(184,134,11,.15);
+  border-left-color:var(--gold);
+  font-weight:600;
+}
+.nav-home{font-size:14px;padding:10px 16px;font-weight:500;margin-bottom:4px}
+.nav-changelog{
+  margin-top:auto;
+  padding:14px 16px;
+  font-size:12px;
+  color:rgba(255,255,255,.4);
+  border-top:1px solid rgba(255,255,255,.08);
+}
+.nav-changelog:hover{color:rgba(255,255,255,.7)}
+.nav-changelog.active{color:var(--gold-light)}
+.sidebar-nav{display:flex;flex-direction:column;height:100%}
+
+.nav-group{margin-bottom:2px}
+.nav-group-title{
+  padding:8px 16px;
+  color:#cbd5e1;
+  font-size:12px;
+  font-weight:600;
+  text-transform:uppercase;
+  letter-spacing:.5px;
+  cursor:pointer;
+  display:flex;
+  align-items:center;
+  gap:6px;
+  user-select:none;
+  transition:color .15s;
+}
+.nav-group-title:hover{color:#fff}
+.caret{
+  display:inline-block;
+  width:0;height:0;
+  border-left:5px solid #cbd5e1;
+  border-top:4px solid transparent;
+  border-bottom:4px solid transparent;
+  transition:transform .2s;
+}
+.nav-group.open .nav-group-title .caret{transform:rotate(90deg);border-left-color:#fff}
+.nav-group-title .badge{
+  margin-left:auto;
+  background:rgba(255,255,255,.1);
+  color:#cbd5e1;
+  font-size:11px;
+  padding:1px 6px;
+  border-radius:8px;
+  font-weight:400;
+}
+.nav-group-items{display:none;padding-left:8px}
+.nav-group.open .nav-group-items{display:block}
+
+.hamburger{
+  display:none;
+  position:fixed;
+  top:12px;left:12px;
+  z-index:200;
+  background:var(--navy);
+  color:#fff;
+  border:none;
+  font-size:20px;
+  padding:6px 10px;
+  border-radius:6px;
+  cursor:pointer;
+}
+
+/* ===== MAIN ===== */
+.main{
+  margin-left:max(var(--sidebar-w), calc((100vw - 1160px) / 2));
+  flex:1;
+  position:relative;
+  max-width:1160px;
+  padding:0;
+}
+
+/* grain overlay */
+.main::after{
+  content:'';
+  position:fixed;
+  top:0;left:var(--sidebar-w);right:0;bottom:0;
+  pointer-events:none;
+  opacity:.03;
+  z-index:999;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* ===== FAV / BOOKMARK BUTTON ===== */
+.fav-wrap{
+  position:absolute;
+  top:24px;right:48px;
+  z-index:50;
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+.sister-link{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  padding:8px 16px;
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:24px;
+  color:var(--navy);
+  font-size:13px;
+  font-weight:600;
+  font-family:var(--sans);
+  text-decoration:none;
+  box-shadow:0 2px 8px rgba(0,0,0,.04);
+  transition:all .25s;
+  white-space:nowrap;
+}
+.sister-link:hover{
+  border-color:var(--gold);
+  color:var(--gold);
+  box-shadow:0 4px 16px var(--gold-glow);
+  transform:translateY(-1px);
+}
+.sister-link .arrow{
+  color:var(--gold);
+  font-weight:700;
+}
+.fav-btn{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  padding:8px 18px;
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:24px;
+  color:var(--gold);
+  font-size:16px;
+  cursor:pointer;
+  transition:all .25s;
+  font-family:var(--sans);
+  box-shadow:0 2px 8px rgba(0,0,0,.04);
+}
+.fav-btn:hover{
+  border-color:var(--gold);
+  box-shadow:0 4px 16px var(--gold-glow);
+  transform:translateY(-1px);
+}
+.fav-label{
+  font-size:13px;
+  color:var(--text2);
+  font-weight:500;
+}
+.fav-btn:hover .fav-label{color:var(--gold)}
+.fav-pop{
+  display:none;
+  position:absolute;
+  right:0;top:48px;
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:10px;
+  padding:14px 16px;
+  box-shadow:0 8px 32px rgba(0,0,0,.12);
+  font-size:13px;
+  min-width:240px;
+  z-index:51;
+  color:var(--text);
+  line-height:1.6;
+}
+.fav-pop.show{display:block}
+.fav-pop kbd{
+  background:var(--bg2);
+  padding:2px 7px;
+  border-radius:4px;
+  font-size:12px;
+  border:1px solid var(--border);
+  font-family:var(--sans);
+  color:var(--navy);
+  font-weight:600;
+}
+.fav-pop-copy{
+  display:block;
+  width:100%;
+  margin-top:10px;
+  padding:8px 0;
+  background:var(--bg);
+  border:1px solid var(--border);
+  border-radius:6px;
+  color:var(--text2);
+  font-size:12px;
+  cursor:pointer;
+  text-align:center;
+  transition:all .15s;
+  font-family:var(--sans);
+}
+.fav-pop-copy:hover{
+  border-color:var(--gold);
+  color:var(--gold);
+}
+.fav-pop-copy.copied{
+  background:#ecfdf5;
+  border-color:#6ee7b7;
+  color:#059669;
+}
+
+@media(max-width:768px){
+  .fav-wrap{right:16px;top:12px;gap:6px}
+  .sister-link{padding:6px 12px;font-size:11px}
+  .fav-btn{padding:6px 14px}
+  .fav-label{font-size:12px}
+}
+
+/* ===== CHANGELOG ===== */
+.article.changelog h2{
+  border-bottom-color:var(--gold);
+  display:flex;
+  align-items:center;
+  gap:10px;
+  flex-wrap:wrap;
+}
+.version{
+  display:inline-flex;
+  align-items:center;
+  background:var(--gold);
+  color:#fff;
+  font-size:13px;
+  font-weight:700;
+  padding:3px 11px;
+  border-radius:6px;
+  font-family:var(--sans);
+  letter-spacing:.3px;
+}
+.changelog-date{
+  font-size:14px;
+  color:var(--text2);
+  font-weight:500;
+  font-family:var(--sans);
+}
+.change-list{
+  list-style:none;
+  padding:0;
+  margin:16px 0;
+}
+.change-list li{
+  padding:10px 0 10px 18px;
+  position:relative;
+  border-bottom:1px solid var(--border);
+  font-size:14px;
+  line-height:1.75;
+}
+.change-list li:last-child{border-bottom:none}
+.change-list li::before{
+  content:"";
+  position:absolute;
+  left:0;
+  top:20px;
+  width:6px;
+  height:6px;
+  border-radius:50%;
+  background:var(--gold);
+}
+.change-type{
+  display:inline-block;
+  font-size:11px;
+  padding:2px 8px;
+  border-radius:4px;
+  color:#fff;
+  font-weight:600;
+  margin-right:8px;
+  font-family:var(--sans);
+  vertical-align:1px;
+  letter-spacing:.2px;
+}
+.change-type.feat{background:#059669}
+.change-type.fix{background:#dc2626}
+.change-type.plan{background:#3b82f6}
+.change-list li strong{color:var(--navy);font-weight:700}
+
+/* ===== ARTICLE (content pages) ===== */
+.article{max-width:820px;padding:48px 48px 80px}
+.meta{
+  font-size:13px;
+  color:var(--text2);
+  margin-bottom:16px;
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+.type-badge{
+  font-size:11px;
+  padding:2px 8px;
+  border-radius:4px;
+  color:#fff;
+  font-weight:600;
+}
+.type-概念{background:#7C5E2A}
+.type-产品{background:#1A6B7C}
+.type-人物{background:#8B2F2F}
+.type-股东信{background:#2A6B4F}
+.type-索引{background:#6B6560}
+
+.article h1{
+  font-family:var(--serif);
+  font-size:28px;
+  line-height:1.3;
+  margin-bottom:24px;
+  font-weight:900;
+  color:var(--navy);
+  letter-spacing:-.5px;
+}
+.article h2{
+  font-family:var(--serif);
+  font-size:21px;
+  margin:36px 0 14px;
+  padding-bottom:8px;
+  border-bottom:2px solid var(--border);
+  font-weight:700;
+  color:var(--navy);
+}
+.article h3{
+  font-family:var(--serif);
+  font-size:17px;
+  margin:24px 0 10px;
+  font-weight:600;
+  color:var(--navy-light);
+}
+.article p{margin:10px 0}
+.article ul,.article ol{padding-left:24px;margin:10px 0}
+.article li{margin:4px 0}
+
+.article a{
+  color:var(--link);
+  text-decoration:none;
+  background:linear-gradient(to bottom,transparent 60%,var(--gold-glow) 60%);
+  transition:background .2s;
+}
+.article a:hover{background:linear-gradient(to bottom,transparent 40%,rgba(184,134,11,.2) 40%)}
+
+.article blockquote{
+  background:var(--cream);
+  border-left:4px solid var(--gold);
+  padding:14px 20px;
+  margin:16px 0;
+  border-radius:0 8px 8px 0;
+  font-style:italic;
+  color:#5C4813;
+  font-family:var(--serif);
+}
+.article blockquote p{margin:0}
+.article blockquote a{background:none;color:var(--gold)}
+.article blockquote a:hover{text-decoration:underline}
+
+.article table{border-collapse:collapse;width:100%;margin:16px 0;font-size:14px}
+.article th,.article td{border:1px solid var(--border);padding:8px 12px;text-align:left}
+.article th{background:var(--bg2);font-weight:600;color:var(--navy)}
+.article strong{font-weight:700}
+.article hr{border:none;border-top:1px solid var(--border);margin:32px 0}
+.article code{
+  background:var(--bg2);
+  padding:2px 6px;
+  border-radius:3px;
+  font-size:13px;
+  font-family:'SF Mono',Menlo,Consolas,monospace;
+  color:#5C4813;
+}
+
+/* ===== BACKLINKS PANEL (right sidebar) ===== */
+.main.has-backlinks{
+  display:grid;
+  grid-template-columns:minmax(0,820px) 280px;
+  gap:0 24px;
+  max-width:1160px;
+}
+.main-content{min-width:0}
+
+.backlinks-panel{
+  grid-column:2;
+  grid-row:1/-1;
+  position:sticky;
+  top:24px;
+  max-height:calc(100vh - 48px);
+  overflow-y:auto;
+  padding:24px 0 24px 20px;
+  border-left:1px solid var(--border);
+  font-size:13px;
+  align-self:start;
+}
+.backlinks-panel::-webkit-scrollbar{width:3px}
+.backlinks-panel::-webkit-scrollbar-thumb{background:var(--border);border-radius:2px}
+
+.bl-panel-header{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  margin-bottom:12px;
+}
+.bl-panel-title{
+  font-family:var(--serif);
+  font-size:14px;
+  font-weight:700;
+  color:var(--navy);
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+.bl-count{
+  font-size:11px;
+  background:var(--bg2);
+  padding:1px 7px;
+  border-radius:10px;
+  color:var(--text2);
+  font-weight:600;
+}
+.bl-panel-actions{display:flex;gap:4px}
+.bl-action{
+  background:none;
+  border:1px solid var(--border);
+  border-radius:4px;
+  padding:2px 8px;
+  font-size:11px;
+  color:var(--text2);
+  cursor:pointer;
+  font-family:var(--sans);
+  transition:all .15s;
+}
+.bl-action:hover{border-color:var(--gold);color:var(--gold)}
+
+.bl-group{margin-bottom:4px}
+.bl-group-header{
+  display:flex;
+  align-items:center;
+  gap:6px;
+  background:none;
+  border:none;
+  cursor:pointer;
+  padding:5px 0;
+  width:100%;
+  text-align:left;
+  font-size:13px;
+  font-family:var(--sans);
+}
+.bl-group-header:hover{background:rgba(0,0,0,.02);border-radius:4px}
+
+.bl-caret{
+  display:inline-block;
+  width:0;height:0;
+  border:4px solid transparent;
+  border-left:5px solid var(--text2);
+  transition:transform .15s;
+  flex-shrink:0;
+}
+.bl-group.open .bl-caret{transform:rotate(90deg)}
+
+.bl-source-name{
+  color:var(--navy);
+  font-weight:600;
+  flex:1;
+  min-width:0;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
+.bl-mention-cat{
+  font-size:10px;
+  color:var(--text2);
+  background:var(--bg2);
+  padding:0 5px;
+  border-radius:8px;
+  flex-shrink:0;
+  margin-left:4px;
+}
+
+.bl-snippets{display:none;padding:4px 0 4px 14px}
+.bl-group.open .bl-snippets{display:block}
+
+.bl-snippet{
+  padding:6px 0;
+  border-bottom:1px solid var(--border);
+  line-height:1.6;
+  color:var(--text2);
+  font-size:12px;
+}
+.bl-snippet:last-child{border-bottom:none}
+.bl-go-link{
+  display:inline-block;
+  font-size:11px;
+  color:var(--link);
+  text-decoration:none;
+  padding:4px 0 2px;
+  font-weight:600;
+  transition:color .15s;
+}
+.bl-go-link:hover{color:var(--gold);text-decoration:underline}
+
+/* ===== HOMEPAGE ===== */
+.hero-section{
+  position:relative;
+  padding:72px 48px 56px;
+  max-width:900px;
+  margin:0 auto;
+}
+.hero-eyebrow{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  font-size:12px;
+  font-weight:600;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  color:var(--gold);
+  margin-bottom:20px;
+  opacity:0;
+  animation:fadeUp .6s ease forwards;
+}
+.hero-eyebrow::before{content:'';width:24px;height:1px;background:var(--gold)}
+.hero-title{
+  font-family:var(--serif);
+  font-size:clamp(32px,5vw,48px);
+  font-weight:900;
+  line-height:1.25;
+  letter-spacing:-1px;
+  color:var(--navy);
+  margin-bottom:6px;
+  opacity:0;
+  animation:fadeUp .6s ease .1s forwards;
+}
+.hero-title .gold{color:var(--gold)}
+.hero-sub{
+  font-size:17px;
+  color:var(--text2);
+  line-height:1.8;
+  margin-top:16px;
+  max-width:640px;
+  font-family:var(--serif);
+  font-weight:400;
+  opacity:0;
+  animation:fadeUp .6s ease .2s forwards;
+}
+.hero-sub b{color:var(--navy);font-weight:700}
+
+.stats-row{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:0;
+  max-width:900px;
+  margin:0 auto 48px;
+  padding:0 48px;
+  border-top:1px solid var(--border);
+  border-bottom:1px solid var(--border);
+  opacity:0;
+  animation:fadeUp .6s ease .3s forwards;
+}
+.stat-item{
+  text-align:center;
+  padding:28px 12px;
+  position:relative;
+  transition:background .3s;
+  text-decoration:none;
+  color:inherit;
+}
+.stat-item:not(:last-child)::after{
+  content:'';
+  position:absolute;
+  right:0;top:20%;
+  height:60%;
+  width:1px;
+  background:var(--border);
+}
+.stat-item:hover{background:var(--gold-glow)}
+.stat-num{
+  font-family:var(--serif);
+  font-size:42px;
+  font-weight:900;
+  color:var(--navy);
+  line-height:1;
+  margin-bottom:6px;
+  letter-spacing:-2px;
+}
+.stat-label{
+  font-size:13px;
+  color:var(--text2);
+  font-weight:500;
+  letter-spacing:.5px;
+}
+
+.main-inner{max-width:900px;padding:0 48px 80px;margin:0 auto}
+
+.nav-cards{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:16px;
+  margin-bottom:56px;
+  opacity:0;
+  animation:fadeUp .6s ease .4s forwards;
+}
+.nav-card{
+  position:relative;
+  padding:28px 20px 24px;
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:14px;
+  text-decoration:none;
+  transition:all .3s cubic-bezier(.4,0,.2,1);
+  overflow:hidden;
+  display:block;
+  color:inherit;
+}
+.nav-card::before{
+  content:'';
+  position:absolute;
+  top:0;left:0;right:0;
+  height:3px;
+  background:var(--gold);
+  opacity:0;
+  transition:opacity .3s;
+}
+.nav-card:hover{
+  transform:translateY(-4px);
+  box-shadow:0 12px 32px rgba(0,0,0,.08);
+  border-color:var(--gold-light);
+}
+.nav-card:hover::before{opacity:1}
+.nav-card-icon{font-size:32px;margin-bottom:14px;display:block;line-height:1}
+.nav-card-title{
+  font-family:var(--serif);
+  font-size:16px;
+  font-weight:700;
+  color:var(--navy);
+  margin-bottom:4px;
+}
+.nav-card-sub{font-size:13px;color:var(--text2)}
+.nav-card-arrow{
+  position:absolute;
+  bottom:20px;right:20px;
+  font-size:18px;
+  color:var(--border);
+  transition:all .3s;
+}
+.nav-card:hover .nav-card-arrow{color:var(--gold);transform:translateX(4px)}
+
+.section{margin-bottom:48px}
+.section-header{display:flex;align-items:center;gap:12px;margin-bottom:20px}
+.section-line{flex:1;height:1px;background:var(--border)}
+.section-title{
+  font-family:var(--serif);
+  font-size:22px;
+  font-weight:700;
+  color:var(--navy);
+  white-space:nowrap;
+}
+.section-count{
+  font-size:12px;
+  color:var(--gold);
+  font-weight:600;
+  background:var(--gold-glow);
+  padding:3px 10px;
+  border-radius:12px;
+  white-space:nowrap;
+}
+
+.tag-cloud{display:flex;flex-wrap:wrap;gap:10px}
+.tag{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  padding:8px 18px;
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:24px;
+  font-size:14px;
+  color:var(--text);
+  text-decoration:none;
+  transition:all .25s cubic-bezier(.4,0,.2,1);
+  font-weight:500;
+}
+.tag:hover{
+  border-color:var(--gold);
+  color:var(--navy);
+  box-shadow:0 4px 16px var(--gold-glow);
+  transform:translateY(-2px);
+}
+.tag-n{
+  font-size:11px;
+  font-weight:700;
+  color:#fff;
+  background:var(--gold);
+  padding:2px 8px;
+  border-radius:10px;
+  min-width:20px;
+  text-align:center;
+}
+.tag.tier-1{
+  font-size:16px;
+  padding:10px 22px;
+  font-weight:700;
+  border-color:var(--gold-light);
+  background:linear-gradient(135deg,#FFFDF5,#FFF8E7);
+}
+.tag.tier-1 .tag-n{font-size:12px;padding:3px 10px;background:var(--gold)}
+.tag.tier-2{font-size:15px;padding:9px 20px;font-weight:600}
+
+.people-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(180px,1fr));
+  gap:14px;
+}
+.person-card{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  padding:24px 16px 20px;
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:14px;
+  text-decoration:none;
+  transition:all .3s;
+  text-align:center;
+  color:inherit;
+}
+.person-card:hover{
+  transform:translateY(-3px);
+  box-shadow:0 8px 24px rgba(0,0,0,.06);
+  border-color:var(--gold-light);
+}
+.person-avatar{
+  width:56px;height:56px;
+  border-radius:50%;
+  background:linear-gradient(135deg,var(--navy),var(--navy-light));
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:22px;
+  margin-bottom:12px;
+  color:var(--gold-light);
+  font-family:var(--serif);
+  font-weight:700;
+  box-shadow:0 4px 12px rgba(26,35,50,.15);
+}
+.person-name{
+  font-family:var(--serif);
+  font-size:15px;
+  font-weight:700;
+  color:var(--navy);
+  margin-bottom:4px;
+}
+.person-refs{font-size:12px;color:var(--text2)}
+
+.gold-divider{display:flex;align-items:center;gap:16px;margin:56px 0}
+.gold-divider::before,.gold-divider::after{
+  content:'';
+  flex:1;
+  height:1px;
+  background:linear-gradient(to right,transparent,var(--border),transparent);
+}
+.gold-divider-diamond{
+  width:8px;height:8px;
+  background:var(--gold);
+  transform:rotate(45deg);
+  flex-shrink:0;
+}
+
+.footer-promo{
+  position:relative;
+  overflow:hidden;
+  padding:40px;
+  background:var(--navy);
+  border-radius:20px;
+  color:#fff;
+  display:flex;
+  gap:40px;
+  align-items:center;
+}
+.footer-promo::before{
+  content:'';
+  position:absolute;
+  top:-50%;right:-20%;
+  width:400px;height:400px;
+  border-radius:50%;
+  background:radial-gradient(circle,rgba(184,134,11,.15),transparent 70%);
+}
+.promo-story{flex:1;position:relative;z-index:1;min-width:0}
+.promo-story h3{
+  font-family:var(--serif);
+  font-size:20px;
+  font-weight:700;
+  margin-bottom:12px;
+  color:var(--gold-light);
+}
+.promo-story p{font-size:14px;color:rgba(255,255,255,.75);line-height:1.8;margin:8px 0}
+.promo-credit{
+  margin-top:16px !important;
+  padding-top:14px;
+  border-top:1px solid rgba(255,255,255,.12);
+  font-size:13px !important;
+}
+.promo-credit strong{color:var(--gold-light);font-weight:700}
+
+.promo-qr{
+  flex-shrink:0;
+  position:relative;
+  z-index:1;
+  text-align:center;
+}
+.qr-img{
+  display:block;
+  width:140px;
+  height:140px;
+  border-radius:12px;
+  border:3px solid rgba(255,255,255,.15);
+  box-shadow:0 8px 24px rgba(0,0,0,.25);
+  background:#fff;
+  padding:6px;
+}
+.qr-text{
+  font-size:12px;
+  color:rgba(255,255,255,.6);
+  margin-top:10px;
+  letter-spacing:.5px;
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes fadeUp{
+  from{opacity:0;transform:translateY(16px)}
+  to{opacity:1;transform:translateY(0)}
+}
+.section{opacity:0;animation:fadeUp .5s ease forwards}
+.section:nth-child(1){animation-delay:.45s}
+.section:nth-child(2){animation-delay:.55s}
+.section:nth-child(3){animation-delay:.65s}
+.section:nth-child(4){animation-delay:.75s}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:1024px){
+  .main.has-backlinks{display:block}
+  .backlinks-panel{
+    position:static;
+    max-height:none;
+    overflow-y:visible;
+    border-left:none;
+    border-top:1px solid var(--border);
+    padding:24px 16px;
+    margin-top:24px;
+    max-width:820px;
+  }
+}
+
+@media(max-width:768px){
+  .sidebar{transform:translateX(-100%);transition:transform .3s}
+  .sidebar.open{transform:translateX(0)}
+  .hamburger{display:block}
+  .main{margin-left:0;max-width:100%}
+  .main::after{left:0}
+  .main.has-backlinks{display:block}
+  .article{padding:48px 16px 60px}
+  .backlinks-panel{padding:16px 12px;margin-top:16px}
+  .hero-section{padding:44px 20px 20px}
+  .hero-eyebrow{font-size:10px;margin-bottom:12px}
+  .hero-title{font-size:26px}
+  .hero-sub{font-size:14px;line-height:1.6;margin-top:10px}
+  .stats-row{padding:0 16px;margin:0 0 20px}
+  .stat-item{padding:16px 4px}
+  .stat-num{font-size:28px;letter-spacing:-1px}
+  .stat-label{font-size:11px}
+  .main-inner{padding:0 20px 60px}
+  .nav-cards{grid-template-columns:1fr 1fr;gap:10px;margin-bottom:36px}
+  .nav-card{padding:20px 14px 18px}
+  .nav-card-icon{font-size:24px;margin-bottom:8px}
+  .nav-card-title{font-size:14px}
+  .nav-card-sub{font-size:12px}
+  .footer-promo{flex-direction:column;text-align:center;padding:28px 20px;gap:24px}
+  .people-grid{grid-template-columns:repeat(2,1fr)}
+}
+</style>
+</head>
+<body>
+<button class="hamburger" aria-label="菜单" onclick="document.querySelector('.sidebar').classList.toggle('open')">☰</button>
+<aside class="sidebar">
+  <div class="sidebar-header"><a href="/index.html" class="logo">贝佐斯知识图谱</a></div>
+  <div class="sidebar-nav">
+    <a href="/index.html" class="nav-link nav-home">🏛 首页</a>
+<div class="nav-group open">
+  <div class="nav-group-title"><span class="caret"></span>索引<span class="badge">4</span></div>
+  <div class="nav-group-items">
+    <a href="/index-pages/产品索引.html" class="nav-link" title="产品索引">产品索引</a>
+    <a href="/index-pages/人物索引.html" class="nav-link" title="人物索引">人物索引</a>
+    <a href="/index-pages/核心思想索引.html" class="nav-link" title="核心思想索引">核心思想索引</a>
+    <a href="/index-pages/贝佐斯致股东信总览.html" class="nav-link" title="贝佐斯致股东信总览">贝佐斯致股东信总览</a>
+  </div>
+</div>
+<div class="nav-group open">
+  <div class="nav-group-title"><span class="caret"></span>股东信<span class="badge">24</span></div>
+  <div class="nav-group-items">
+    <a href="/letters/1997 贝佐斯致股东信.html" class="nav-link" title="1997 贝佐斯致股东信">1997 贝佐斯致股东信</a>
+    <a href="/letters/1998 贝佐斯致股东信.html" class="nav-link" title="1998 贝佐斯致股东信">1998 贝佐斯致股东信</a>
+    <a href="/letters/1999 贝佐斯致股东信.html" class="nav-link active" title="1999 贝佐斯致股东信">1999 贝佐斯致股东信</a>
+    <a href="/letters/2000 贝佐斯致股东信.html" class="nav-link" title="2000 贝佐斯致股东信">2000 贝佐斯致股东信</a>
+    <a href="/letters/2001 贝佐斯致股东信.html" class="nav-link" title="2001 贝佐斯致股东信">2001 贝佐斯致股东信</a>
+    <a href="/letters/2002 贝佐斯致股东信.html" class="nav-link" title="2002 贝佐斯致股东信">2002 贝佐斯致股东信</a>
+    <a href="/letters/2003 贝佐斯致股东信.html" class="nav-link" title="2003 贝佐斯致股东信">2003 贝佐斯致股东信</a>
+    <a href="/letters/2004 贝佐斯致股东信.html" class="nav-link" title="2004 贝佐斯致股东信">2004 贝佐斯致股东信</a>
+    <a href="/letters/2005 贝佐斯致股东信.html" class="nav-link" title="2005 贝佐斯致股东信">2005 贝佐斯致股东信</a>
+    <a href="/letters/2006 贝佐斯致股东信.html" class="nav-link" title="2006 贝佐斯致股东信">2006 贝佐斯致股东信</a>
+    <a href="/letters/2007 贝佐斯致股东信.html" class="nav-link" title="2007 贝佐斯致股东信">2007 贝佐斯致股东信</a>
+    <a href="/letters/2008 贝佐斯致股东信.html" class="nav-link" title="2008 贝佐斯致股东信">2008 贝佐斯致股东信</a>
+    <a href="/letters/2009 贝佐斯致股东信.html" class="nav-link" title="2009 贝佐斯致股东信">2009 贝佐斯致股东信</a>
+    <a href="/letters/2010 贝佐斯致股东信.html" class="nav-link" title="2010 贝佐斯致股东信">2010 贝佐斯致股东信</a>
+    <a href="/letters/2011 贝佐斯致股东信.html" class="nav-link" title="2011 贝佐斯致股东信">2011 贝佐斯致股东信</a>
+    <a href="/letters/2012 贝佐斯致股东信.html" class="nav-link" title="2012 贝佐斯致股东信">2012 贝佐斯致股东信</a>
+    <a href="/letters/2013 贝佐斯致股东信.html" class="nav-link" title="2013 贝佐斯致股东信">2013 贝佐斯致股东信</a>
+    <a href="/letters/2014 贝佐斯致股东信.html" class="nav-link" title="2014 贝佐斯致股东信">2014 贝佐斯致股东信</a>
+    <a href="/letters/2015 贝佐斯致股东信.html" class="nav-link" title="2015 贝佐斯致股东信">2015 贝佐斯致股东信</a>
+    <a href="/letters/2016 贝佐斯致股东信.html" class="nav-link" title="2016 贝佐斯致股东信">2016 贝佐斯致股东信</a>
+    <a href="/letters/2017 贝佐斯致股东信.html" class="nav-link" title="2017 贝佐斯致股东信">2017 贝佐斯致股东信</a>
+    <a href="/letters/2018 贝佐斯致股东信.html" class="nav-link" title="2018 贝佐斯致股东信">2018 贝佐斯致股东信</a>
+    <a href="/letters/2019 贝佐斯致股东信.html" class="nav-link" title="2019 贝佐斯致股东信">2019 贝佐斯致股东信</a>
+    <a href="/letters/2020 贝佐斯致股东信.html" class="nav-link" title="2020 贝佐斯致股东信">2020 贝佐斯致股东信</a>
+  </div>
+</div>
+<div class="nav-group">
+  <div class="nav-group-title"><span class="caret"></span>概念<span class="badge">16</span></div>
+  <div class="nav-group-items">
+    <a href="/concepts/Day 1.html" class="nav-link" title="Day 1">Day 1</a>
+    <a href="/concepts/一类决策与二类决策.html" class="nav-link" title="一类决策与二类决策">一类决策与二类决策</a>
+    <a href="/concepts/低价策略.html" class="nav-link" title="低价策略">低价策略</a>
+    <a href="/concepts/创造大于消耗.html" class="nav-link" title="创造大于消耗">创造大于消耗</a>
+    <a href="/concepts/发明与失败.html" class="nav-link" title="发明与失败">发明与失败</a>
+    <a href="/concepts/客户至上.html" class="nav-link" title="客户至上">客户至上</a>
+    <a href="/concepts/差异化即生存.html" class="nav-link" title="差异化即生存">差异化即生存</a>
+    <a href="/concepts/数据驱动决策.html" class="nav-link" title="数据驱动决策">数据驱动决策</a>
+    <a href="/concepts/气候承诺.html" class="nav-link" title="气候承诺">气候承诺</a>
+    <a href="/concepts/漫游.html" class="nav-link" title="漫游">漫游</a>
+    <a href="/concepts/自助服务平台.html" class="nav-link" title="自助服务平台">自助服务平台</a>
+    <a href="/concepts/自由现金流.html" class="nav-link" title="自由现金流">自由现金流</a>
+    <a href="/concepts/逆向工作法.html" class="nav-link" title="逆向工作法">逆向工作法</a>
+    <a href="/concepts/长期主义.html" class="nav-link" title="长期主义">长期主义</a>
+    <a href="/concepts/飞轮效应.html" class="nav-link" title="飞轮效应">飞轮效应</a>
+    <a href="/concepts/高标准.html" class="nav-link" title="高标准">高标准</a>
+  </div>
+</div>
+<div class="nav-group">
+  <div class="nav-group-title"><span class="caret"></span>产品<span class="badge">15</span></div>
+  <div class="nav-group-items">
+    <a href="/companies/AWS.html" class="nav-link" title="AWS">AWS</a>
+    <a href="/companies/Alexa.html" class="nav-link" title="Alexa">Alexa</a>
+    <a href="/companies/Amazon Go.html" class="nav-link" title="Amazon Go">Amazon Go</a>
+    <a href="/companies/Amazon Logistics.html" class="nav-link" title="Amazon Logistics">Amazon Logistics</a>
+    <a href="/companies/Amazon Studios.html" class="nav-link" title="Amazon Studios">Amazon Studios</a>
+    <a href="/companies/FBA.html" class="nav-link" title="FBA">FBA</a>
+    <a href="/companies/Fire TV.html" class="nav-link" title="Fire TV">Fire TV</a>
+    <a href="/companies/KDP.html" class="nav-link" title="KDP">KDP</a>
+    <a href="/companies/Kindle.html" class="nav-link" title="Kindle">Kindle</a>
+    <a href="/companies/Marketplace.html" class="nav-link" title="Marketplace">Marketplace</a>
+    <a href="/companies/Mechanical Turk.html" class="nav-link" title="Mechanical Turk">Mechanical Turk</a>
+    <a href="/companies/Prime.html" class="nav-link" title="Prime">Prime</a>
+    <a href="/companies/Whole Foods.html" class="nav-link" title="Whole Foods">Whole Foods</a>
+    <a href="/companies/Zappos.html" class="nav-link" title="Zappos">Zappos</a>
+    <a href="/companies/亚马逊.html" class="nav-link" title="亚马逊">亚马逊</a>
+  </div>
+</div>
+<div class="nav-group">
+  <div class="nav-group-title"><span class="caret"></span>人物<span class="badge">4</span></div>
+  <div class="nav-group-items">
+    <a href="/people/安迪·贾西.html" class="nav-link" title="安迪·贾西">安迪·贾西</a>
+    <a href="/people/本杰明·格雷厄姆.html" class="nav-link" title="本杰明·格雷厄姆">本杰明·格雷厄姆</a>
+    <a href="/people/杰夫·威尔克.html" class="nav-link" title="杰夫·威尔克">杰夫·威尔克</a>
+    <a href="/people/贝佐斯.html" class="nav-link" title="贝佐斯">贝佐斯</a>
+  </div>
+</div>
+<a href="/index-pages/更新日志.html" class="nav-link nav-changelog">📋 更新日志</a>
+
+  </div>
+</aside>
+<main class="main has-backlinks">
+<div class="main-content article"><div class="meta"><span class="type-badge type-股东信">股东信</span></div>
+<h1 id="1999">1999 <a href="/people/贝佐斯.html">贝佐斯</a>致股东信</h1>
+<p>致各位股东：</p>
+<p>我们旅程的头四年半结出了令人惊叹的果实：我们已在超过 150 个国家服务了逾 1,700 万客户，建成了全球领先的电子商务品牌和平台。</p>
+<p>未来几年，随着全球数百万新消费者首次接入互联网，我们将受益于电子商务的持续普及。在线购物体验的不断改善将增强消费者的信任和信心，进而推动更广泛的采用。如果我们<a href="/companies/亚马逊.html">亚马逊</a>做好自己的工作，我们将处于独一无二的位置，最好地服务这些新客户并从中受益。</p>
+<h2 id="1999_1">1999 年回顾</h2>
+<p>1999 年，我们对客户的执着追求收到了成效：</p>
+<ul>
+<li>营收从 1998 年的 6.10 亿美元增至 16.4 亿美元，增幅 169%。</li>
+<li>新增 1,070 万客户，累计客户账户从 620 万增至 1,690 万。</li>
+<li>复购率从 1998 年第四季度的 64% 以上提升至 1999 年同期的 73% 以上。</li>
+<li>全球客户现在通过<a href="/companies/亚马逊.html">亚马逊</a>购买种类丰富的商品。仅两年前，美国图书业务占销售额的 100%。如今，尽管美国图书业务依然强劲增长，其他品类已贡献超过一半的销售额。1999 年的重大新业务包括：拍卖、zShops、玩具、消费电子、家居装修、软件、电子游戏、支付，以及无线业务 Amazon Anywhere。</li>
+<li>我们不仅在图书等成熟领域被评为同类最佳，在新品类也获得了认可。以玩具为例，Amazon Toys 获得了多项大奖：MSNBC 调查评选的最佳在线玩具商店、Forrester Research 排名第一的在线玩具商店，以及 Consumer Reports 玩具品类的最高电商评级——每次都击败了一众更老牌的竞争对手。</li>
+<li>美国以外的销售占业务总量的 22%，达到 3.58 亿美元。在英国和德国，我们新增了音乐、拍卖和 zShops。事实上，Amazon.co.uk、Amazon.de 和 Amazon.com 已分别成为欧洲排名第一、第二和第三的最受欢迎在线零售域名。</li>
+<li>全球配送能力在不到 12 个月内从约 30 万平方英尺扩展至超过 500 万平方英尺。</li>
+<li>部分得益于这些基础设施，我们在短短三个月内实现了 90% 的收入增长，同时在节日季准时发出了超过 99% 的订单。据我们所知，从未有公司在 10 亿美元以上的销售基础上实现过三个月内 90% 的增长。</li>
+</ul>
+<p>我为<a href="/companies/亚马逊.html">亚马逊</a>全球每一位同事不知疲倦的努力感到无比自豪——他们在应对如此惊人增速的同时，交付了已经成为行业标杆的<a href="/companies/亚马逊.html">亚马逊</a>级客户体验。如果各位股东想向这支了不起的全球 Amazonian 团队表示感谢，欢迎发邮件至 jeff@amazon.com。在我优秀的办公室团队协助下，我会把邮件汇总转发给全公司。我相信大家会很感激。（额外好处：我还能看看是否有人真的读了这些股东信！）</p>
+<p>1999 年，我们继续受益于一个天生资本效率极高的商业模式。无需建设实体门店或在门店中囤货，我们的集中式配送模式让我们在年化销售额超过 20 亿美元的规模上，仅需 2.2 亿美元库存和 3.18 亿美元固定资产。过去五年，我们累计仅使用了 6,200 万美元的运营现金。</p>
+<h2 id="_1">你拥有的是什么？</h2>
+<p>在斯坦福大学最近的一次活动上，一位年轻女士走到麦克风前问了我一个绝妙的问题："我持有 100 股<a href="/companies/亚马逊.html">亚马逊</a>的股票，我拥有的到底是什么？"</p>
+<p>这个问题如此直白，我竟然惊讶于自己从未被这样问过。你拥有的是什么？你拥有的是全球领先电子商务平台的一部分。</p>
+<p><a href="/companies/亚马逊.html">亚马逊</a>平台由品牌、客户、技术、配送能力、深厚的电商专业知识，以及一支对创新和卓越服务充满热情的出色团队所构成。进入 2000 年时，我们拥有 1,700 万客户、全球闻名的客户专注度、最好的电子商务软件系统，以及专门打造的配送和客服基础设施。我们相信已经到达了一个"引爆点"——这个平台让我们能够以更快的速度、更高的客户体验品质、更低的边际成本、更高的成功概率和更短的盈利路径来推出新的电子商务业务——超越任何其他公司。</p>
+<p>我们的愿景是利用这个平台打造<strong>地球上最以客户为中心的公司</strong>——一个客户可以找到并发现他们想在网上购买的一切的地方。我们不会独自完成这件事，而是与数千个大大小小的合作伙伴共同实现。我们会倾听客户的声音，代表他们进行创新，为每一位客户个性化推荐店铺体验，同时努力持续赢得他们的信任。显然，这个平台提供了一个异常庞大的规模化机会——如果我们能充分把握，它将为客户和股东都创造巨大价值。尽管风险和复杂性重重，我们全心全意投入其中。</p>
+<h2 id="2000">2000 年目标</h2>
+<p>2000 年，<a href="/companies/亚马逊.html">亚马逊</a>有六大目标：增长客户数量并深化与每位客户的关系；持续快速扩展产品和服务；在公司各个领域追求运营卓越；国际扩张；拓展合作伙伴计划；最后也是同样重要的，推动每一项业务走向盈利。让我逐一展开。</p>
+<p><strong>增长和深化客户关系</strong>——我们将继续大力投资获取新客户。尽管过去五年发生了太多变化，但对电子商务来说仍然是 Day 1——现在正是品类形成的早期阶段，许多客户正在建立第一次消费关系。我们必须努力增长购物客户数量、他们购买的产品数量、购物频次以及满意度。</p>
+<p><strong>产品和服务扩展</strong>——我们正在打造一个客户可以随时随地找到并发现想买的一切的地方。每一个新产品和新服务都让我们与更广泛的客户群更加相关，并能提升他们访问商店的频率。因此，每一次扩展都为整个业务创造了一个<a href="/concepts/飞轮效应.html">良性循环</a>。客户越频繁地光顾，下次让他们回来所需的时间、精力和营销投入就越少。常来常新，始终在心。</p>
+<p>此外，每个新品类都有一个专门团队致力于将其打造成该领域的最佳体验；因此，每个新品类也是一次向客户展示我们对他们专注度的新机会。最后，每一个新产品或服务都能进一步发挥我们在配送、客服、技术和品牌上的投资效益，为底线带来更大的杠杆效应。</p>
+<p><strong>运营卓越</strong>——对我们来说，运营卓越意味着两件事：持续改善客户体验，以及在所有业务中提升生产力、利润率、效率和资产周转速度。</p>
+<p>通常，做好一件就能带动另一件。比如，更高效的配送意味着更快的到货时间，这反过来降低每单客服联系次数和客服成本。而这些又能改善客户体验、强化品牌，从而降低客户获取和留存成本。</p>
+<p>2000 年，整个公司高度聚焦于在各业务领域追求运营卓越。在客户体验和运营效率上同时做到世界级，将让我们增长更快、服务水平更高。</p>
+<p><strong>国际扩张</strong>——我们认为美国以外的消费者在零售方面受到的服务不足甚至比美国更严重。凭借我们已有的平台，<a href="/companies/亚马逊.html">亚马逊</a>有望成为全球领先的零售商。我们已经在全球范围内建立了显著的品牌、销售和客户基础——近五年来我们一直向 150 多个国家发货。我很高兴地报告，英国和德国站表现强劲——它们已跻身各自市场的前十大网站和第一大电商网站。全球客户和股东可以期待明年以此为基础的进一步地域扩张。</p>
+<p><strong>拓展合作伙伴计划</strong>——通过我们的平台，我们能为合作伙伴（如 drugstore.com）创造巨大价值。事实上，我们的经验表明，<a href="/companies/亚马逊.html">亚马逊</a>可能是合作伙伴拓展业务最高效、最有效的途径。在许多领域，合作是我们以<a href="/concepts/客户至上.html">客户至上</a>、高性价比方式快速拓展商店的最佳路径。值得强调的一点是：合作伙伴所提供的客户体验质量是我们选择合作对象的首要标准——我们绝不会与不认同服务客户这一热情的公司合作。</p>
+<p>我们热爱这类合作关系，因为它让客户满意、让合作伙伴受益，且在财务上极具吸引力——让股东（包括你们和我们）同样满意。</p>
+<p><strong>推动每项业务走向盈利</strong>——前述每个目标都服务于我们的长期目标：打造最好的、最赚钱的、投资回报率最高的长期商业特许权。所以从某种意义上说，追求盈利是所有目标的基石。在新的一年里，我们预计将在供应商合作、自身生产力与效率、固定和运营资本管理，以及产品组合和定价方面实现显著的利润率改善和成本杠杆。</p>
+<p>今年每一个新推出的产品和服务都应该建立在我们的平台之上，因此投资曲线将更加平缓，每项业务的盈利周期总体上应该持续缩短。</p>
+<h2 id="_2">一切都关乎<a href="/concepts/长期主义.html">长期主义</a></h2>
+<p>在我们 1997 年的首封股东信中，我们详细阐述了长期投资理念。由于不断有新股东加入，我们将那封信附在今年的信后面。我邀请你们阅读题为"一切都关乎<a href="/concepts/长期主义.html">长期主义</a>"的章节——这是我所知道的最好方式，帮助确认我们是否是你们想要投资的那种公司。正如我们当时写的，我们不宣称这是正确的哲学——我们只说这是<strong>我们的哲学</strong>！</p>
+<p>最后，请记住这一最重要的观点：<strong>当前的在线购物体验是它永远不会再差的样子。</strong> 今天的体验已足以吸引 1,700 万客户，但它将变得好得多。带宽的增长将带来更快的页面加载和更丰富的内容。进一步的改进将实现"永远在线"的接入方式（我预计这将极大推动家庭在线购物，相对于在办公室购物而言），我们还将看到非 PC 设备和无线接入的显著增长。更重要的是，能参与一个数万亿美元的全球市场实在是太棒了——而我们在其中还非常、非常渺小。我们是双重幸运：我们在一个不受市场规模约束的领域拥有巨大机会，而且我们所依赖的底层基础技术每天都在进步。这<strong>不是</strong>常态。</p>
+<p>一如既往，我们<a href="/companies/亚马逊.html">亚马逊</a>全体感谢客户的惠顾和信任，感谢彼此的辛勤付出，也感谢股东的支持和鼓励。万分感谢。</p>
+<hr />
+<p><strong>原文签署：</strong> Jeffrey P. Bezos<br />
+Founder and Chief Executive Officer<br />
+Amazon.com, Inc.</p></div><aside class="backlinks-panel">
+  <div class="bl-panel-header">
+    <h3 class="bl-panel-title">链接到本页 <span class="bl-count">4</span></h3>
+    <div class="bl-panel-actions">
+      <button class="bl-action bl-expand-all">展开</button>
+      <button class="bl-action bl-collapse-all">折叠</button>
+    </div>
+  </div>
+  <div class="bl-group">
+  <button class="bl-group-header">
+    <span class="bl-caret"></span>
+    <span class="bl-source-name">Day 1（Day 1 心态）</span>
+    <span class="bl-mention-cat">概念</span>
+  </button>
+  <div class="bl-snippets">
+    <div class="bl-snippet">…衡。这需要持续的努力，但我们可以、也必须做得比那更好。"  ### 实践应用  - 每封信附1997年原文：从 1999 贝佐斯致股东信 开始，每一年都会在信末附上1997年首封股东信的副本，提醒读者和亚马逊人初心不改。 - 大楼命名：贝佐斯在名为…</div>
+    <a href="/concepts/Day 1.html" class="bl-go-link">查看原文 →</a>
+  </div>
+</div>
+<div class="bl-group">
+  <button class="bl-group-header">
+    <span class="bl-caret"></span>
+    <span class="bl-source-name">飞轮效应（Flywheel Effect）</span>
+    <span class="bl-mention-cat">概念</span>
+  </button>
+  <div class="bl-snippets">
+    <div class="bl-snippet">…定成本分摊 → 单位成本下降 → 继续降价。这是飞轮最基本的经济学逻辑。  2. 客户体验驱动的良性循环  在 1999 贝佐斯致股东信 中，贝佐斯提到每个新品类"为整个业务创造了一个良性循环。客户越频繁地光顾，下次让他们回来所需的时间、精力和营销投入就越…</div>
+    <a href="/concepts/飞轮效应.html" class="bl-go-link">查看原文 →</a>
+  </div>
+</div>
+<div class="bl-group">
+  <button class="bl-group-header">
+    <span class="bl-caret"></span>
+    <span class="bl-source-name">亚马逊</span>
+    <span class="bl-mention-cat">产品</span>
+  </button>
+  <div class="bl-snippets">
+    <div class="bl-snippet">…700万客户，营收16.4亿美元。拓展至玩具、消费电子等品类，国际销售占22%。配送面积从30万扩至500万平方英尺。（1999 贝佐斯致股东信） - 2000年：服务2,000万客户，营收27.6亿美元。股价下跌超过80%，但公司实力处于历史最佳。ACS…</div>
+    <a href="/companies/亚马逊.html" class="bl-go-link">查看原文 →</a>
+  </div>
+</div>
+<div class="bl-group">
+  <button class="bl-group-header">
+    <span class="bl-caret"></span>
+    <span class="bl-source-name">贝佐斯致股东信总览</span>
+    <span class="bl-mention-cat">索引</span>
+  </button>
+  <div class="bl-snippets">
+    <div class="bl-snippet">…1998 贝佐斯致股东信 | 品类扩张与人才 | 音乐/视频/礼品、英国德国扩张、"你会敬佩这个人吗" | | 1999 贝佐斯致股东信 | 平台愿景 | 1700万客户、150+国家、电商基础设施 | | 2000 贝佐斯致股东信 | "哎哟"…</div>
+    <a href="/index-pages/贝佐斯致股东信总览.html" class="bl-go-link">查看原文 →</a>
+  </div>
+</div>
+
+</aside>
+
+</main>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Toggle sidebar nav groups
+  document.querySelectorAll('.nav-group-title').forEach(function(el) {
+    el.addEventListener('click', function() {
+      this.parentElement.classList.toggle('open');
+    });
+  });
+
+  // Backlinks: toggle individual groups
+  document.querySelectorAll('.bl-group-header').forEach(function(header) {
+    header.addEventListener('click', function() {
+      this.closest('.bl-group').classList.toggle('open');
+    });
+  });
+
+  // Favorite / bookmark popup
+  var favBtn = document.getElementById('fav-btn');
+  var favPop = document.getElementById('fav-pop');
+  if (favBtn && favPop) {
+    var isMac = /Mac|iPhone|iPad/.test(navigator.platform);
+    var key = isMac ? '⌘ + D' : 'Ctrl + D';
+    favPop.innerHTML =
+      '按 <kbd>' + key + '</kbd> 收藏本页到浏览器书签' +
+      '<button class="fav-pop-copy" id="fav-pop-copy">复制本页链接</button>';
+
+    favBtn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      favPop.classList.toggle('show');
+    });
+    document.addEventListener('click', function(e) {
+      if (!favPop.contains(e.target) && e.target !== favBtn) {
+        favPop.classList.remove('show');
+      }
+    });
+
+    var copyBtn = document.getElementById('fav-pop-copy');
+    if (copyBtn) {
+      copyBtn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        navigator.clipboard.writeText(window.location.href).then(function() {
+          copyBtn.textContent = '✓ 已复制';
+          copyBtn.classList.add('copied');
+          setTimeout(function() {
+            copyBtn.textContent = '复制本页链接';
+            copyBtn.classList.remove('copied');
+          }, 1500);
+        });
+      });
+    }
+  }
+
+  // Backlinks: expand/collapse all
+  document.querySelectorAll('.bl-expand-all').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      this.closest('.backlinks-panel').querySelectorAll('.bl-group').forEach(function(g) {
+        g.classList.add('open');
+      });
+    });
+  });
+  document.querySelectorAll('.bl-collapse-all').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      this.closest('.backlinks-panel').querySelectorAll('.bl-group').forEach(function(g) {
+        g.classList.remove('open');
+      });
+    });
+  });
+});
+</script>
+</body>
+</html>

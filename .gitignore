@@ -1,0 +1,27 @@
+# macOS
+.DS_Store
+._*
+
+# Backup files
+*.bak-*
+
+# Raw source text (large, not needed in repo)
+*.txt
+
+# WeChat article drafts & images (separate workflow)
+article-*.md
+article-*.html
+claude-mythos-*
+karpathy-*
+notebooklm-*
+vibe-coding-*
+cover-image/
+illustrations/
+images/
+url-to-markdown/
+x-to-markdown/
+qrcode-group.jpg
+养龙虾*
+
+# gstack
+.gstack/

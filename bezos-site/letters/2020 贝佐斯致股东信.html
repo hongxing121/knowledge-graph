@@ -1,0 +1,1424 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>2020 贝佐斯致股东信 - 贝佐斯致股东信知识图谱</title>
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon-180.png">
+<link rel="shortcut icon" href="/assets/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700;900&family=Crimson+Pro:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-WLE88B2LL3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-WLE88B2LL3');
+</script>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+
+:root{
+  --bg:#FAF7F2;
+  --bg2:#F3EDE4;
+  --text:#1B1B18;
+  --text2:#6B6560;
+  --gold:#B8860B;
+  --gold-light:#D4A843;
+  --gold-glow:rgba(184,134,11,.12);
+  --navy:#1A2332;
+  --navy-light:#2C3E50;
+  --cream:#FFF8EE;
+  --border:#E0D6C8;
+  --card:#FFFFFF;
+  --link:#8B5E0B;
+  --serif:'Noto Serif SC','Crimson Pro',Georgia,'Times New Roman',serif;
+  --sans:'DM Sans',-apple-system,BlinkMacSystemFont,'PingFang SC','Microsoft YaHei',sans-serif;
+  --sidebar-w:260px;
+}
+
+html{font-size:15px;scroll-behavior:smooth}
+body{
+  font-family:var(--sans);
+  color:var(--text);
+  background:var(--bg);
+  display:flex;
+  min-height:100vh;
+  line-height:1.8;
+  -webkit-font-smoothing:antialiased;
+}
+
+/* ===== SIDEBAR ===== */
+.sidebar{
+  width:var(--sidebar-w);
+  background:var(--navy);
+  position:fixed;top:0;left:0;bottom:0;
+  overflow-y:auto;
+  z-index:100;
+  display:flex;
+  flex-direction:column;
+}
+.sidebar-header{padding:20px 16px 16px;border-bottom:1px solid rgba(255,255,255,.08)}
+.logo{
+  color:#fff;
+  font-size:17px;
+  font-weight:700;
+  text-decoration:none;
+  letter-spacing:.5px;
+  font-family:var(--serif);
+  display:block;
+}
+.logo:hover{color:var(--gold-light)}
+
+.sidebar-nav{flex:1;padding:8px 0;overflow-y:auto}
+.sidebar-nav::-webkit-scrollbar{width:4px}
+.sidebar-nav::-webkit-scrollbar-thumb{background:rgba(255,255,255,.15);border-radius:2px}
+
+.nav-link{
+  display:block;
+  padding:6px 16px;
+  color:#cbd5e1;
+  text-decoration:none;
+  font-size:13px;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  border-left:3px solid transparent;
+  transition:all .15s;
+}
+.nav-link:hover{background:rgba(255,255,255,.06);color:#fff}
+.nav-link.active{
+  color:#fff;
+  background:rgba(184,134,11,.15);
+  border-left-color:var(--gold);
+  font-weight:600;
+}
+.nav-home{font-size:14px;padding:10px 16px;font-weight:500;margin-bottom:4px}
+.nav-changelog{
+  margin-top:auto;
+  padding:14px 16px;
+  font-size:12px;
+  color:rgba(255,255,255,.4);
+  border-top:1px solid rgba(255,255,255,.08);
+}
+.nav-changelog:hover{color:rgba(255,255,255,.7)}
+.nav-changelog.active{color:var(--gold-light)}
+.sidebar-nav{display:flex;flex-direction:column;height:100%}
+
+.nav-group{margin-bottom:2px}
+.nav-group-title{
+  padding:8px 16px;
+  color:#cbd5e1;
+  font-size:12px;
+  font-weight:600;
+  text-transform:uppercase;
+  letter-spacing:.5px;
+  cursor:pointer;
+  display:flex;
+  align-items:center;
+  gap:6px;
+  user-select:none;
+  transition:color .15s;
+}
+.nav-group-title:hover{color:#fff}
+.caret{
+  display:inline-block;
+  width:0;height:0;
+  border-left:5px solid #cbd5e1;
+  border-top:4px solid transparent;
+  border-bottom:4px solid transparent;
+  transition:transform .2s;
+}
+.nav-group.open .nav-group-title .caret{transform:rotate(90deg);border-left-color:#fff}
+.nav-group-title .badge{
+  margin-left:auto;
+  background:rgba(255,255,255,.1);
+  color:#cbd5e1;
+  font-size:11px;
+  padding:1px 6px;
+  border-radius:8px;
+  font-weight:400;
+}
+.nav-group-items{display:none;padding-left:8px}
+.nav-group.open .nav-group-items{display:block}
+
+.hamburger{
+  display:none;
+  position:fixed;
+  top:12px;left:12px;
+  z-index:200;
+  background:var(--navy);
+  color:#fff;
+  border:none;
+  font-size:20px;
+  padding:6px 10px;
+  border-radius:6px;
+  cursor:pointer;
+}
+
+/* ===== MAIN ===== */
+.main{
+  margin-left:max(var(--sidebar-w), calc((100vw - 1160px) / 2));
+  flex:1;
+  position:relative;
+  max-width:1160px;
+  padding:0;
+}
+
+/* grain overlay */
+.main::after{
+  content:'';
+  position:fixed;
+  top:0;left:var(--sidebar-w);right:0;bottom:0;
+  pointer-events:none;
+  opacity:.03;
+  z-index:999;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* ===== FAV / BOOKMARK BUTTON ===== */
+.fav-wrap{
+  position:absolute;
+  top:24px;right:48px;
+  z-index:50;
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+.sister-link{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  padding:8px 16px;
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:24px;
+  color:var(--navy);
+  font-size:13px;
+  font-weight:600;
+  font-family:var(--sans);
+  text-decoration:none;
+  box-shadow:0 2px 8px rgba(0,0,0,.04);
+  transition:all .25s;
+  white-space:nowrap;
+}
+.sister-link:hover{
+  border-color:var(--gold);
+  color:var(--gold);
+  box-shadow:0 4px 16px var(--gold-glow);
+  transform:translateY(-1px);
+}
+.sister-link .arrow{
+  color:var(--gold);
+  font-weight:700;
+}
+.fav-btn{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  padding:8px 18px;
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:24px;
+  color:var(--gold);
+  font-size:16px;
+  cursor:pointer;
+  transition:all .25s;
+  font-family:var(--sans);
+  box-shadow:0 2px 8px rgba(0,0,0,.04);
+}
+.fav-btn:hover{
+  border-color:var(--gold);
+  box-shadow:0 4px 16px var(--gold-glow);
+  transform:translateY(-1px);
+}
+.fav-label{
+  font-size:13px;
+  color:var(--text2);
+  font-weight:500;
+}
+.fav-btn:hover .fav-label{color:var(--gold)}
+.fav-pop{
+  display:none;
+  position:absolute;
+  right:0;top:48px;
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:10px;
+  padding:14px 16px;
+  box-shadow:0 8px 32px rgba(0,0,0,.12);
+  font-size:13px;
+  min-width:240px;
+  z-index:51;
+  color:var(--text);
+  line-height:1.6;
+}
+.fav-pop.show{display:block}
+.fav-pop kbd{
+  background:var(--bg2);
+  padding:2px 7px;
+  border-radius:4px;
+  font-size:12px;
+  border:1px solid var(--border);
+  font-family:var(--sans);
+  color:var(--navy);
+  font-weight:600;
+}
+.fav-pop-copy{
+  display:block;
+  width:100%;
+  margin-top:10px;
+  padding:8px 0;
+  background:var(--bg);
+  border:1px solid var(--border);
+  border-radius:6px;
+  color:var(--text2);
+  font-size:12px;
+  cursor:pointer;
+  text-align:center;
+  transition:all .15s;
+  font-family:var(--sans);
+}
+.fav-pop-copy:hover{
+  border-color:var(--gold);
+  color:var(--gold);
+}
+.fav-pop-copy.copied{
+  background:#ecfdf5;
+  border-color:#6ee7b7;
+  color:#059669;
+}
+
+@media(max-width:768px){
+  .fav-wrap{right:16px;top:12px;gap:6px}
+  .sister-link{padding:6px 12px;font-size:11px}
+  .fav-btn{padding:6px 14px}
+  .fav-label{font-size:12px}
+}
+
+/* ===== CHANGELOG ===== */
+.article.changelog h2{
+  border-bottom-color:var(--gold);
+  display:flex;
+  align-items:center;
+  gap:10px;
+  flex-wrap:wrap;
+}
+.version{
+  display:inline-flex;
+  align-items:center;
+  background:var(--gold);
+  color:#fff;
+  font-size:13px;
+  font-weight:700;
+  padding:3px 11px;
+  border-radius:6px;
+  font-family:var(--sans);
+  letter-spacing:.3px;
+}
+.changelog-date{
+  font-size:14px;
+  color:var(--text2);
+  font-weight:500;
+  font-family:var(--sans);
+}
+.change-list{
+  list-style:none;
+  padding:0;
+  margin:16px 0;
+}
+.change-list li{
+  padding:10px 0 10px 18px;
+  position:relative;
+  border-bottom:1px solid var(--border);
+  font-size:14px;
+  line-height:1.75;
+}
+.change-list li:last-child{border-bottom:none}
+.change-list li::before{
+  content:"";
+  position:absolute;
+  left:0;
+  top:20px;
+  width:6px;
+  height:6px;
+  border-radius:50%;
+  background:var(--gold);
+}
+.change-type{
+  display:inline-block;
+  font-size:11px;
+  padding:2px 8px;
+  border-radius:4px;
+  color:#fff;
+  font-weight:600;
+  margin-right:8px;
+  font-family:var(--sans);
+  vertical-align:1px;
+  letter-spacing:.2px;
+}
+.change-type.feat{background:#059669}
+.change-type.fix{background:#dc2626}
+.change-type.plan{background:#3b82f6}
+.change-list li strong{color:var(--navy);font-weight:700}
+
+/* ===== ARTICLE (content pages) ===== */
+.article{max-width:820px;padding:48px 48px 80px}
+.meta{
+  font-size:13px;
+  color:var(--text2);
+  margin-bottom:16px;
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+.type-badge{
+  font-size:11px;
+  padding:2px 8px;
+  border-radius:4px;
+  color:#fff;
+  font-weight:600;
+}
+.type-概念{background:#7C5E2A}
+.type-产品{background:#1A6B7C}
+.type-人物{background:#8B2F2F}
+.type-股东信{background:#2A6B4F}
+.type-索引{background:#6B6560}
+
+.article h1{
+  font-family:var(--serif);
+  font-size:28px;
+  line-height:1.3;
+  margin-bottom:24px;
+  font-weight:900;
+  color:var(--navy);
+  letter-spacing:-.5px;
+}
+.article h2{
+  font-family:var(--serif);
+  font-size:21px;
+  margin:36px 0 14px;
+  padding-bottom:8px;
+  border-bottom:2px solid var(--border);
+  font-weight:700;
+  color:var(--navy);
+}
+.article h3{
+  font-family:var(--serif);
+  font-size:17px;
+  margin:24px 0 10px;
+  font-weight:600;
+  color:var(--navy-light);
+}
+.article p{margin:10px 0}
+.article ul,.article ol{padding-left:24px;margin:10px 0}
+.article li{margin:4px 0}
+
+.article a{
+  color:var(--link);
+  text-decoration:none;
+  background:linear-gradient(to bottom,transparent 60%,var(--gold-glow) 60%);
+  transition:background .2s;
+}
+.article a:hover{background:linear-gradient(to bottom,transparent 40%,rgba(184,134,11,.2) 40%)}
+
+.article blockquote{
+  background:var(--cream);
+  border-left:4px solid var(--gold);
+  padding:14px 20px;
+  margin:16px 0;
+  border-radius:0 8px 8px 0;
+  font-style:italic;
+  color:#5C4813;
+  font-family:var(--serif);
+}
+.article blockquote p{margin:0}
+.article blockquote a{background:none;color:var(--gold)}
+.article blockquote a:hover{text-decoration:underline}
+
+.article table{border-collapse:collapse;width:100%;margin:16px 0;font-size:14px}
+.article th,.article td{border:1px solid var(--border);padding:8px 12px;text-align:left}
+.article th{background:var(--bg2);font-weight:600;color:var(--navy)}
+.article strong{font-weight:700}
+.article hr{border:none;border-top:1px solid var(--border);margin:32px 0}
+.article code{
+  background:var(--bg2);
+  padding:2px 6px;
+  border-radius:3px;
+  font-size:13px;
+  font-family:'SF Mono',Menlo,Consolas,monospace;
+  color:#5C4813;
+}
+
+/* ===== BACKLINKS PANEL (right sidebar) ===== */
+.main.has-backlinks{
+  display:grid;
+  grid-template-columns:minmax(0,820px) 280px;
+  gap:0 24px;
+  max-width:1160px;
+}
+.main-content{min-width:0}
+
+.backlinks-panel{
+  grid-column:2;
+  grid-row:1/-1;
+  position:sticky;
+  top:24px;
+  max-height:calc(100vh - 48px);
+  overflow-y:auto;
+  padding:24px 0 24px 20px;
+  border-left:1px solid var(--border);
+  font-size:13px;
+  align-self:start;
+}
+.backlinks-panel::-webkit-scrollbar{width:3px}
+.backlinks-panel::-webkit-scrollbar-thumb{background:var(--border);border-radius:2px}
+
+.bl-panel-header{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  margin-bottom:12px;
+}
+.bl-panel-title{
+  font-family:var(--serif);
+  font-size:14px;
+  font-weight:700;
+  color:var(--navy);
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+.bl-count{
+  font-size:11px;
+  background:var(--bg2);
+  padding:1px 7px;
+  border-radius:10px;
+  color:var(--text2);
+  font-weight:600;
+}
+.bl-panel-actions{display:flex;gap:4px}
+.bl-action{
+  background:none;
+  border:1px solid var(--border);
+  border-radius:4px;
+  padding:2px 8px;
+  font-size:11px;
+  color:var(--text2);
+  cursor:pointer;
+  font-family:var(--sans);
+  transition:all .15s;
+}
+.bl-action:hover{border-color:var(--gold);color:var(--gold)}
+
+.bl-group{margin-bottom:4px}
+.bl-group-header{
+  display:flex;
+  align-items:center;
+  gap:6px;
+  background:none;
+  border:none;
+  cursor:pointer;
+  padding:5px 0;
+  width:100%;
+  text-align:left;
+  font-size:13px;
+  font-family:var(--sans);
+}
+.bl-group-header:hover{background:rgba(0,0,0,.02);border-radius:4px}
+
+.bl-caret{
+  display:inline-block;
+  width:0;height:0;
+  border:4px solid transparent;
+  border-left:5px solid var(--text2);
+  transition:transform .15s;
+  flex-shrink:0;
+}
+.bl-group.open .bl-caret{transform:rotate(90deg)}
+
+.bl-source-name{
+  color:var(--navy);
+  font-weight:600;
+  flex:1;
+  min-width:0;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
+.bl-mention-cat{
+  font-size:10px;
+  color:var(--text2);
+  background:var(--bg2);
+  padding:0 5px;
+  border-radius:8px;
+  flex-shrink:0;
+  margin-left:4px;
+}
+
+.bl-snippets{display:none;padding:4px 0 4px 14px}
+.bl-group.open .bl-snippets{display:block}
+
+.bl-snippet{
+  padding:6px 0;
+  border-bottom:1px solid var(--border);
+  line-height:1.6;
+  color:var(--text2);
+  font-size:12px;
+}
+.bl-snippet:last-child{border-bottom:none}
+.bl-go-link{
+  display:inline-block;
+  font-size:11px;
+  color:var(--link);
+  text-decoration:none;
+  padding:4px 0 2px;
+  font-weight:600;
+  transition:color .15s;
+}
+.bl-go-link:hover{color:var(--gold);text-decoration:underline}
+
+/* ===== HOMEPAGE ===== */
+.hero-section{
+  position:relative;
+  padding:72px 48px 56px;
+  max-width:900px;
+  margin:0 auto;
+}
+.hero-eyebrow{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  font-size:12px;
+  font-weight:600;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  color:var(--gold);
+  margin-bottom:20px;
+  opacity:0;
+  animation:fadeUp .6s ease forwards;
+}
+.hero-eyebrow::before{content:'';width:24px;height:1px;background:var(--gold)}
+.hero-title{
+  font-family:var(--serif);
+  font-size:clamp(32px,5vw,48px);
+  font-weight:900;
+  line-height:1.25;
+  letter-spacing:-1px;
+  color:var(--navy);
+  margin-bottom:6px;
+  opacity:0;
+  animation:fadeUp .6s ease .1s forwards;
+}
+.hero-title .gold{color:var(--gold)}
+.hero-sub{
+  font-size:17px;
+  color:var(--text2);
+  line-height:1.8;
+  margin-top:16px;
+  max-width:640px;
+  font-family:var(--serif);
+  font-weight:400;
+  opacity:0;
+  animation:fadeUp .6s ease .2s forwards;
+}
+.hero-sub b{color:var(--navy);font-weight:700}
+
+.stats-row{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:0;
+  max-width:900px;
+  margin:0 auto 48px;
+  padding:0 48px;
+  border-top:1px solid var(--border);
+  border-bottom:1px solid var(--border);
+  opacity:0;
+  animation:fadeUp .6s ease .3s forwards;
+}
+.stat-item{
+  text-align:center;
+  padding:28px 12px;
+  position:relative;
+  transition:background .3s;
+  text-decoration:none;
+  color:inherit;
+}
+.stat-item:not(:last-child)::after{
+  content:'';
+  position:absolute;
+  right:0;top:20%;
+  height:60%;
+  width:1px;
+  background:var(--border);
+}
+.stat-item:hover{background:var(--gold-glow)}
+.stat-num{
+  font-family:var(--serif);
+  font-size:42px;
+  font-weight:900;
+  color:var(--navy);
+  line-height:1;
+  margin-bottom:6px;
+  letter-spacing:-2px;
+}
+.stat-label{
+  font-size:13px;
+  color:var(--text2);
+  font-weight:500;
+  letter-spacing:.5px;
+}
+
+.main-inner{max-width:900px;padding:0 48px 80px;margin:0 auto}
+
+.nav-cards{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:16px;
+  margin-bottom:56px;
+  opacity:0;
+  animation:fadeUp .6s ease .4s forwards;
+}
+.nav-card{
+  position:relative;
+  padding:28px 20px 24px;
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:14px;
+  text-decoration:none;
+  transition:all .3s cubic-bezier(.4,0,.2,1);
+  overflow:hidden;
+  display:block;
+  color:inherit;
+}
+.nav-card::before{
+  content:'';
+  position:absolute;
+  top:0;left:0;right:0;
+  height:3px;
+  background:var(--gold);
+  opacity:0;
+  transition:opacity .3s;
+}
+.nav-card:hover{
+  transform:translateY(-4px);
+  box-shadow:0 12px 32px rgba(0,0,0,.08);
+  border-color:var(--gold-light);
+}
+.nav-card:hover::before{opacity:1}
+.nav-card-icon{font-size:32px;margin-bottom:14px;display:block;line-height:1}
+.nav-card-title{
+  font-family:var(--serif);
+  font-size:16px;
+  font-weight:700;
+  color:var(--navy);
+  margin-bottom:4px;
+}
+.nav-card-sub{font-size:13px;color:var(--text2)}
+.nav-card-arrow{
+  position:absolute;
+  bottom:20px;right:20px;
+  font-size:18px;
+  color:var(--border);
+  transition:all .3s;
+}
+.nav-card:hover .nav-card-arrow{color:var(--gold);transform:translateX(4px)}
+
+.section{margin-bottom:48px}
+.section-header{display:flex;align-items:center;gap:12px;margin-bottom:20px}
+.section-line{flex:1;height:1px;background:var(--border)}
+.section-title{
+  font-family:var(--serif);
+  font-size:22px;
+  font-weight:700;
+  color:var(--navy);
+  white-space:nowrap;
+}
+.section-count{
+  font-size:12px;
+  color:var(--gold);
+  font-weight:600;
+  background:var(--gold-glow);
+  padding:3px 10px;
+  border-radius:12px;
+  white-space:nowrap;
+}
+
+.tag-cloud{display:flex;flex-wrap:wrap;gap:10px}
+.tag{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  padding:8px 18px;
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:24px;
+  font-size:14px;
+  color:var(--text);
+  text-decoration:none;
+  transition:all .25s cubic-bezier(.4,0,.2,1);
+  font-weight:500;
+}
+.tag:hover{
+  border-color:var(--gold);
+  color:var(--navy);
+  box-shadow:0 4px 16px var(--gold-glow);
+  transform:translateY(-2px);
+}
+.tag-n{
+  font-size:11px;
+  font-weight:700;
+  color:#fff;
+  background:var(--gold);
+  padding:2px 8px;
+  border-radius:10px;
+  min-width:20px;
+  text-align:center;
+}
+.tag.tier-1{
+  font-size:16px;
+  padding:10px 22px;
+  font-weight:700;
+  border-color:var(--gold-light);
+  background:linear-gradient(135deg,#FFFDF5,#FFF8E7);
+}
+.tag.tier-1 .tag-n{font-size:12px;padding:3px 10px;background:var(--gold)}
+.tag.tier-2{font-size:15px;padding:9px 20px;font-weight:600}
+
+.people-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(180px,1fr));
+  gap:14px;
+}
+.person-card{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  padding:24px 16px 20px;
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:14px;
+  text-decoration:none;
+  transition:all .3s;
+  text-align:center;
+  color:inherit;
+}
+.person-card:hover{
+  transform:translateY(-3px);
+  box-shadow:0 8px 24px rgba(0,0,0,.06);
+  border-color:var(--gold-light);
+}
+.person-avatar{
+  width:56px;height:56px;
+  border-radius:50%;
+  background:linear-gradient(135deg,var(--navy),var(--navy-light));
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:22px;
+  margin-bottom:12px;
+  color:var(--gold-light);
+  font-family:var(--serif);
+  font-weight:700;
+  box-shadow:0 4px 12px rgba(26,35,50,.15);
+}
+.person-name{
+  font-family:var(--serif);
+  font-size:15px;
+  font-weight:700;
+  color:var(--navy);
+  margin-bottom:4px;
+}
+.person-refs{font-size:12px;color:var(--text2)}
+
+.gold-divider{display:flex;align-items:center;gap:16px;margin:56px 0}
+.gold-divider::before,.gold-divider::after{
+  content:'';
+  flex:1;
+  height:1px;
+  background:linear-gradient(to right,transparent,var(--border),transparent);
+}
+.gold-divider-diamond{
+  width:8px;height:8px;
+  background:var(--gold);
+  transform:rotate(45deg);
+  flex-shrink:0;
+}
+
+.footer-promo{
+  position:relative;
+  overflow:hidden;
+  padding:40px;
+  background:var(--navy);
+  border-radius:20px;
+  color:#fff;
+  display:flex;
+  gap:40px;
+  align-items:center;
+}
+.footer-promo::before{
+  content:'';
+  position:absolute;
+  top:-50%;right:-20%;
+  width:400px;height:400px;
+  border-radius:50%;
+  background:radial-gradient(circle,rgba(184,134,11,.15),transparent 70%);
+}
+.promo-story{flex:1;position:relative;z-index:1;min-width:0}
+.promo-story h3{
+  font-family:var(--serif);
+  font-size:20px;
+  font-weight:700;
+  margin-bottom:12px;
+  color:var(--gold-light);
+}
+.promo-story p{font-size:14px;color:rgba(255,255,255,.75);line-height:1.8;margin:8px 0}
+.promo-credit{
+  margin-top:16px !important;
+  padding-top:14px;
+  border-top:1px solid rgba(255,255,255,.12);
+  font-size:13px !important;
+}
+.promo-credit strong{color:var(--gold-light);font-weight:700}
+
+.promo-qr{
+  flex-shrink:0;
+  position:relative;
+  z-index:1;
+  text-align:center;
+}
+.qr-img{
+  display:block;
+  width:140px;
+  height:140px;
+  border-radius:12px;
+  border:3px solid rgba(255,255,255,.15);
+  box-shadow:0 8px 24px rgba(0,0,0,.25);
+  background:#fff;
+  padding:6px;
+}
+.qr-text{
+  font-size:12px;
+  color:rgba(255,255,255,.6);
+  margin-top:10px;
+  letter-spacing:.5px;
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes fadeUp{
+  from{opacity:0;transform:translateY(16px)}
+  to{opacity:1;transform:translateY(0)}
+}
+.section{opacity:0;animation:fadeUp .5s ease forwards}
+.section:nth-child(1){animation-delay:.45s}
+.section:nth-child(2){animation-delay:.55s}
+.section:nth-child(3){animation-delay:.65s}
+.section:nth-child(4){animation-delay:.75s}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:1024px){
+  .main.has-backlinks{display:block}
+  .backlinks-panel{
+    position:static;
+    max-height:none;
+    overflow-y:visible;
+    border-left:none;
+    border-top:1px solid var(--border);
+    padding:24px 16px;
+    margin-top:24px;
+    max-width:820px;
+  }
+}
+
+@media(max-width:768px){
+  .sidebar{transform:translateX(-100%);transition:transform .3s}
+  .sidebar.open{transform:translateX(0)}
+  .hamburger{display:block}
+  .main{margin-left:0;max-width:100%}
+  .main::after{left:0}
+  .main.has-backlinks{display:block}
+  .article{padding:48px 16px 60px}
+  .backlinks-panel{padding:16px 12px;margin-top:16px}
+  .hero-section{padding:44px 20px 20px}
+  .hero-eyebrow{font-size:10px;margin-bottom:12px}
+  .hero-title{font-size:26px}
+  .hero-sub{font-size:14px;line-height:1.6;margin-top:10px}
+  .stats-row{padding:0 16px;margin:0 0 20px}
+  .stat-item{padding:16px 4px}
+  .stat-num{font-size:28px;letter-spacing:-1px}
+  .stat-label{font-size:11px}
+  .main-inner{padding:0 20px 60px}
+  .nav-cards{grid-template-columns:1fr 1fr;gap:10px;margin-bottom:36px}
+  .nav-card{padding:20px 14px 18px}
+  .nav-card-icon{font-size:24px;margin-bottom:8px}
+  .nav-card-title{font-size:14px}
+  .nav-card-sub{font-size:12px}
+  .footer-promo{flex-direction:column;text-align:center;padding:28px 20px;gap:24px}
+  .people-grid{grid-template-columns:repeat(2,1fr)}
+}
+</style>
+</head>
+<body>
+<button class="hamburger" aria-label="菜单" onclick="document.querySelector('.sidebar').classList.toggle('open')">☰</button>
+<aside class="sidebar">
+  <div class="sidebar-header"><a href="/index.html" class="logo">贝佐斯知识图谱</a></div>
+  <div class="sidebar-nav">
+    <a href="/index.html" class="nav-link nav-home">🏛 首页</a>
+<div class="nav-group open">
+  <div class="nav-group-title"><span class="caret"></span>索引<span class="badge">4</span></div>
+  <div class="nav-group-items">
+    <a href="/index-pages/产品索引.html" class="nav-link" title="产品索引">产品索引</a>
+    <a href="/index-pages/人物索引.html" class="nav-link" title="人物索引">人物索引</a>
+    <a href="/index-pages/核心思想索引.html" class="nav-link" title="核心思想索引">核心思想索引</a>
+    <a href="/index-pages/贝佐斯致股东信总览.html" class="nav-link" title="贝佐斯致股东信总览">贝佐斯致股东信总览</a>
+  </div>
+</div>
+<div class="nav-group open">
+  <div class="nav-group-title"><span class="caret"></span>股东信<span class="badge">24</span></div>
+  <div class="nav-group-items">
+    <a href="/letters/1997 贝佐斯致股东信.html" class="nav-link" title="1997 贝佐斯致股东信">1997 贝佐斯致股东信</a>
+    <a href="/letters/1998 贝佐斯致股东信.html" class="nav-link" title="1998 贝佐斯致股东信">1998 贝佐斯致股东信</a>
+    <a href="/letters/1999 贝佐斯致股东信.html" class="nav-link" title="1999 贝佐斯致股东信">1999 贝佐斯致股东信</a>
+    <a href="/letters/2000 贝佐斯致股东信.html" class="nav-link" title="2000 贝佐斯致股东信">2000 贝佐斯致股东信</a>
+    <a href="/letters/2001 贝佐斯致股东信.html" class="nav-link" title="2001 贝佐斯致股东信">2001 贝佐斯致股东信</a>
+    <a href="/letters/2002 贝佐斯致股东信.html" class="nav-link" title="2002 贝佐斯致股东信">2002 贝佐斯致股东信</a>
+    <a href="/letters/2003 贝佐斯致股东信.html" class="nav-link" title="2003 贝佐斯致股东信">2003 贝佐斯致股东信</a>
+    <a href="/letters/2004 贝佐斯致股东信.html" class="nav-link" title="2004 贝佐斯致股东信">2004 贝佐斯致股东信</a>
+    <a href="/letters/2005 贝佐斯致股东信.html" class="nav-link" title="2005 贝佐斯致股东信">2005 贝佐斯致股东信</a>
+    <a href="/letters/2006 贝佐斯致股东信.html" class="nav-link" title="2006 贝佐斯致股东信">2006 贝佐斯致股东信</a>
+    <a href="/letters/2007 贝佐斯致股东信.html" class="nav-link" title="2007 贝佐斯致股东信">2007 贝佐斯致股东信</a>
+    <a href="/letters/2008 贝佐斯致股东信.html" class="nav-link" title="2008 贝佐斯致股东信">2008 贝佐斯致股东信</a>
+    <a href="/letters/2009 贝佐斯致股东信.html" class="nav-link" title="2009 贝佐斯致股东信">2009 贝佐斯致股东信</a>
+    <a href="/letters/2010 贝佐斯致股东信.html" class="nav-link" title="2010 贝佐斯致股东信">2010 贝佐斯致股东信</a>
+    <a href="/letters/2011 贝佐斯致股东信.html" class="nav-link" title="2011 贝佐斯致股东信">2011 贝佐斯致股东信</a>
+    <a href="/letters/2012 贝佐斯致股东信.html" class="nav-link" title="2012 贝佐斯致股东信">2012 贝佐斯致股东信</a>
+    <a href="/letters/2013 贝佐斯致股东信.html" class="nav-link" title="2013 贝佐斯致股东信">2013 贝佐斯致股东信</a>
+    <a href="/letters/2014 贝佐斯致股东信.html" class="nav-link" title="2014 贝佐斯致股东信">2014 贝佐斯致股东信</a>
+    <a href="/letters/2015 贝佐斯致股东信.html" class="nav-link" title="2015 贝佐斯致股东信">2015 贝佐斯致股东信</a>
+    <a href="/letters/2016 贝佐斯致股东信.html" class="nav-link" title="2016 贝佐斯致股东信">2016 贝佐斯致股东信</a>
+    <a href="/letters/2017 贝佐斯致股东信.html" class="nav-link" title="2017 贝佐斯致股东信">2017 贝佐斯致股东信</a>
+    <a href="/letters/2018 贝佐斯致股东信.html" class="nav-link" title="2018 贝佐斯致股东信">2018 贝佐斯致股东信</a>
+    <a href="/letters/2019 贝佐斯致股东信.html" class="nav-link" title="2019 贝佐斯致股东信">2019 贝佐斯致股东信</a>
+    <a href="/letters/2020 贝佐斯致股东信.html" class="nav-link active" title="2020 贝佐斯致股东信">2020 贝佐斯致股东信</a>
+  </div>
+</div>
+<div class="nav-group">
+  <div class="nav-group-title"><span class="caret"></span>概念<span class="badge">16</span></div>
+  <div class="nav-group-items">
+    <a href="/concepts/Day 1.html" class="nav-link" title="Day 1">Day 1</a>
+    <a href="/concepts/一类决策与二类决策.html" class="nav-link" title="一类决策与二类决策">一类决策与二类决策</a>
+    <a href="/concepts/低价策略.html" class="nav-link" title="低价策略">低价策略</a>
+    <a href="/concepts/创造大于消耗.html" class="nav-link" title="创造大于消耗">创造大于消耗</a>
+    <a href="/concepts/发明与失败.html" class="nav-link" title="发明与失败">发明与失败</a>
+    <a href="/concepts/客户至上.html" class="nav-link" title="客户至上">客户至上</a>
+    <a href="/concepts/差异化即生存.html" class="nav-link" title="差异化即生存">差异化即生存</a>
+    <a href="/concepts/数据驱动决策.html" class="nav-link" title="数据驱动决策">数据驱动决策</a>
+    <a href="/concepts/气候承诺.html" class="nav-link" title="气候承诺">气候承诺</a>
+    <a href="/concepts/漫游.html" class="nav-link" title="漫游">漫游</a>
+    <a href="/concepts/自助服务平台.html" class="nav-link" title="自助服务平台">自助服务平台</a>
+    <a href="/concepts/自由现金流.html" class="nav-link" title="自由现金流">自由现金流</a>
+    <a href="/concepts/逆向工作法.html" class="nav-link" title="逆向工作法">逆向工作法</a>
+    <a href="/concepts/长期主义.html" class="nav-link" title="长期主义">长期主义</a>
+    <a href="/concepts/飞轮效应.html" class="nav-link" title="飞轮效应">飞轮效应</a>
+    <a href="/concepts/高标准.html" class="nav-link" title="高标准">高标准</a>
+  </div>
+</div>
+<div class="nav-group">
+  <div class="nav-group-title"><span class="caret"></span>产品<span class="badge">15</span></div>
+  <div class="nav-group-items">
+    <a href="/companies/AWS.html" class="nav-link" title="AWS">AWS</a>
+    <a href="/companies/Alexa.html" class="nav-link" title="Alexa">Alexa</a>
+    <a href="/companies/Amazon Go.html" class="nav-link" title="Amazon Go">Amazon Go</a>
+    <a href="/companies/Amazon Logistics.html" class="nav-link" title="Amazon Logistics">Amazon Logistics</a>
+    <a href="/companies/Amazon Studios.html" class="nav-link" title="Amazon Studios">Amazon Studios</a>
+    <a href="/companies/FBA.html" class="nav-link" title="FBA">FBA</a>
+    <a href="/companies/Fire TV.html" class="nav-link" title="Fire TV">Fire TV</a>
+    <a href="/companies/KDP.html" class="nav-link" title="KDP">KDP</a>
+    <a href="/companies/Kindle.html" class="nav-link" title="Kindle">Kindle</a>
+    <a href="/companies/Marketplace.html" class="nav-link" title="Marketplace">Marketplace</a>
+    <a href="/companies/Mechanical Turk.html" class="nav-link" title="Mechanical Turk">Mechanical Turk</a>
+    <a href="/companies/Prime.html" class="nav-link" title="Prime">Prime</a>
+    <a href="/companies/Whole Foods.html" class="nav-link" title="Whole Foods">Whole Foods</a>
+    <a href="/companies/Zappos.html" class="nav-link" title="Zappos">Zappos</a>
+    <a href="/companies/亚马逊.html" class="nav-link" title="亚马逊">亚马逊</a>
+  </div>
+</div>
+<div class="nav-group">
+  <div class="nav-group-title"><span class="caret"></span>人物<span class="badge">4</span></div>
+  <div class="nav-group-items">
+    <a href="/people/安迪·贾西.html" class="nav-link" title="安迪·贾西">安迪·贾西</a>
+    <a href="/people/本杰明·格雷厄姆.html" class="nav-link" title="本杰明·格雷厄姆">本杰明·格雷厄姆</a>
+    <a href="/people/杰夫·威尔克.html" class="nav-link" title="杰夫·威尔克">杰夫·威尔克</a>
+    <a href="/people/贝佐斯.html" class="nav-link" title="贝佐斯">贝佐斯</a>
+  </div>
+</div>
+<a href="/index-pages/更新日志.html" class="nav-link nav-changelog">📋 更新日志</a>
+
+  </div>
+</aside>
+<main class="main has-backlinks">
+<div class="main-content article"><div class="meta"><span class="type-badge type-股东信">股东信</span></div>
+<h1 id="2020">2020 贝佐斯致股东信</h1>
+<p>致股东：</p>
+<p>1997年，在<a href="/companies/亚马逊.html">亚马逊</a>第一封致股东信中，我谈到我们希望创建一个"持久的特许经营权"——通过释放互联网的力量来重新定义服务客户的含义。我提到<a href="/companies/亚马逊.html">亚马逊</a>已经从158名员工增长到614名，客户账户超过了150万。我们刚刚以拆分调整后每股1.50美元的价格上市。我写道，这是 <a href="/concepts/Day 1.html">Day 1</a>。</p>
+<p>从那时起我们走了很长一段路，而且我们比以往任何时候都更加努力地服务和取悦客户。去年，我们雇用了500,000名员工，现在在全球直接雇用130万人。我们在全球有超过2亿 <a href="/companies/Prime.html">Prime</a> 会员。超过190万家中小企业在我们的商城销售，它们贡献了近60%的零售额。客户已经将超过1亿台智能家居设备连接到 <a href="/companies/Alexa.html">Alexa</a>。<a href="/companies/AWS.html">AWS</a> 服务着数百万客户，2020年底的年化营收达到500亿美元。1997年的时候，我们还没有发明 <a href="/companies/Prime.html">Prime</a>、Marketplace、<a href="/companies/Alexa.html">Alexa</a> 或 <a href="/companies/AWS.html">AWS</a>。当时它们连想法都不是，也没有一个是注定会出现的。我们为每一个承担了巨大风险，为每一个倾注了汗水和智慧。</p>
+<p>一路走来，我们为股东创造了1.6万亿美元的财富。他们是谁？你们的董事长是其中之一，我持有的亚马逊股票让我变得富有。但超过七分之八的股票——代表着1.4万亿美元的财富创造——属于其他人。他们是养老基金、大学和401(k)退休账户，他们是 Mary 和 Larry，就在我坐下来写这封信的时候，他们突然给我发来了一封邮件……</p>
+<p>我经常收到类似的故事。我认识一些用亚马逊股票收益付了大学学费的人，有应急的，有买房的，有度假的，有创业的，有做慈善的——不胜枚举。我为我们为股东创造的财富感到骄傲。这些财富意义重大，改善了他们的生活。但我也知道另一件事：这还不是我们创造的最大价值。</p>
+<h2 id="_1"><a href="/concepts/创造大于消耗.html">创造大于消耗</a></h2>
+<p>如果你想在商业（其实在人生也是如此）中获得成功，你必须创造的价值超过你消耗的。你的目标应该是为每一个与你互动的人创造价值。任何一个不为它所接触的人创造价值的企业，即使表面上看起来很成功，也不会长久。它在走向消亡。</p>
+<p>记住，股价不是关于过去的，它们是对未来现金流的折现预测。股市是向前看的。现在让我换个角度谈谈过去。2020年我们为股东创造了多少价值？这个问题相对容易回答，因为会计系统就是为此设计的。我们2020年的净利润是213亿美元。</p>
+<p>员工呢？这也是一个比较容易回答的价值创造问题，因为我们可以看薪酬支出。公司的支出就是员工的收入。2020年，员工赚了800亿美元，加上另外110亿美元的福利和各种工资税，总共910亿美元。</p>
+<p>第三方卖家呢？我们的内部团队（卖家合作伙伴服务团队）估计，2020年第三方卖家通过在<a href="/companies/亚马逊.html">亚马逊</a>上销售获得的利润在250亿到390亿美元之间。保守起见，我取250亿美元。</p>
+<p>对客户来说，我们需要分消费者客户和 <a href="/companies/AWS.html">AWS</a> 客户来看。</p>
+<p>先说消费者。我们提供低价、丰富的选择和快速配送，但想象一下我们忽略所有这些，只估算一样东西的价值：我们为客户节省的时间。</p>
+<p>28%的<a href="/companies/亚马逊.html">亚马逊</a>购买在3分钟内完成，一半的购买在15分钟内完成。对比一下去实体店购物的典型旅程——开车、停车、在货架间寻找、排队结账、找车、开车回家。研究表明，一次典型的实体店购物大约需要一小时。假设一次典型的亚马逊购物需要15分钟，每周为你省下两次实体店购物，那就是一年省下超过75个小时。这很重要。21世纪的我们都很忙。</p>
+<p>为了得出一个美元数字，我们把节省的时间按每小时10美元计算（这是保守估计）。75小时乘以10美元，减去 Prime 会员费，每位 Prime 会员每年创造的价值约为630美元。我们有2亿 Prime 会员，2020年消费者价值创造总计1,260亿美元。</p>
+<p><a href="/companies/AWS.html">AWS</a> 比较难估算，因为每个客户的工作负载差异很大。但我们还是来估算一下，先声明误差范围很大。从本地迁移到云端的直接成本节约大约是30%。以 <a href="/companies/AWS.html">AWS</a> 2020年全年450亿美元的营收计算，这30%意味着客户价值创造约190亿美元。但直接成本节约只是迁移到云端的最小部分好处。更大的好处是软件开发速度的提升——这能显著增强客户的竞争力和营收。我们无法合理地估算这部分客户价值，只能说它几乎肯定大于直接成本节约。为了保守起见，我就取相同的数字，称2020年 <a href="/companies/AWS.html">AWS</a> 客户价值创造为380亿美元。</p>
+<p>消费者和 <a href="/companies/AWS.html">AWS</a> 加在一起，2020年客户价值创造总计1,640亿美元。</p>
+<p>汇总：</p>
+<table>
+<thead>
+<tr>
+<th>利益相关方</th>
+<th>价值创造</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>股东</td>
+<td>213亿美元</td>
+</tr>
+<tr>
+<td>员工</td>
+<td>910亿美元</td>
+</tr>
+<tr>
+<td>第三方卖家</td>
+<td>250亿美元</td>
+</tr>
+<tr>
+<td>客户</td>
+<td>1,640亿美元</td>
+</tr>
+<tr>
+<td><strong>合计</strong></td>
+<td><strong>3,010亿美元</strong></td>
+</tr>
+</tbody>
+</table>
+<p>如果每个群体都有一张反映他们与<a href="/companies/亚马逊.html">亚马逊</a>互动的损益表，上面这些数字就是这些损益表的"底线"。这些数字是人们为我们工作、卖家通过我们销售、客户向我们购买的部分原因。我们为他们创造价值。而且这种价值创造不是零和博弈。它不仅仅是把钱从一个口袋转到另一个口袋。把视野扩大到整个社会，你会发现<strong>发明是所有真正价值创造的根源</strong>。价值创造最好被理解为创新的衡量指标。</p>
+<p>当然，我们与这些群体的关系以及创造的价值不仅仅是金钱。金钱不能说明全部。比如我们与股东的关系相对简单——他们投资并持有股份。但与员工的关系则完全不同。我们有他们遵循的流程和达到的标准，需要培训和各种认证。不仅仅是薪酬和福利的问题，还有关系中所有其他细节层面。</p>
+<h2 id="_2">做地球最佳雇主和地球最安全的工作场所</h2>
+<p>你们的董事长对贝瑟默最近的工会投票结果感到安慰了吗？没有。我认为我们需要为员工做得更好。虽然投票结果一边倒，我们与员工的直接关系很牢固，但很明显我们需要一个更好的愿景——一个关于如何为员工创造价值的愿景，一个关于他们成功的愿景。</p>
+<p>如果你读了一些新闻报道，可能会觉得我们对员工毫不关心。在那些报道中，我们的员工有时被描绘成走投无路的灵魂，被当作机器人对待。这不准确。他们是有思想的成熟人士，对在哪里工作有选择权。当我们调查物流中心员工时，94%的人说他们愿意向朋友推荐<a href="/companies/亚马逊.html">亚马逊</a>作为工作场所。</p>
+<p>员工在轮班期间可以随时非正式地休息，进行拉伸、喝水、上洗手间或与主管交谈，而不会影响绩效考核。这些非正式休息是在正常排班中30分钟午餐和30分钟休息之外的。</p>
+<p>我们不设不合理的绩效目标。我们设定的绩效目标是可达到的，考虑了工龄和实际员工表现数据。绩效考核跨越较长时间段。如果员工可能达不到绩效目标，他们的主管会与他们交谈并提供辅导。82%的辅导是正向的，针对的是达到或超过预期的员工。因绩效不达标而终止雇佣的员工不到2.6%。</p>
+<p>事实是，在<a href="/companies/亚马逊.html">亚马逊</a>领导运营的数千名管理者一直深切关心我们的小时工，我们为所创造的工作环境感到自豪。我们也自豪于<a href="/companies/亚马逊.html">亚马逊</a>不只是为计算机科学家和高学历人才创造就业——我们为那些从未获得这些优势的人创造就业。</p>
+<p>尽管取得了这些成绩，我清楚地知道我们需要为员工的成功提供更好的愿景。我们一直希望成为<a href="/concepts/客户至上.html">地球上最以客户为中心的公司</a>。这不会改变，正是它把我们带到了今天。但我要加一条承诺：<strong>我们要成为地球最佳雇主和地球最安全的工作场所。</strong></p>
+<p>在我即将担任的执行董事长角色中，我将专注于新的项目。我是一个发明者。这是我最享受的事情，也是我做得最好的事情，是我创造最多价值的地方。我很兴奋能与运营部门庞大而充满热情的团队一起工作，在"地球最佳雇主"和"地球最安全工作场所"这两个领域进行发明。在细节上，我们<a href="/companies/亚马逊.html">亚马逊</a>永远灵活变通，但在愿景上，我们固执而不懈。我们从来没有在下定决心的事情上失败过，这次也不会。</p>
+<p>我们深入研究安全问题。例如，<a href="/companies/亚马逊.html">亚马逊</a>约40%的工伤与肌肉骨骼疾病（MSD）有关——扭伤或拉伤等可能由重复动作导致的问题。我们推出了 WorkingWell 项目，2020年在北美和欧洲350个站点覆盖859,000名员工，辅导小组进行身体力学、主动健康和安全方面的训练。</p>
+<p>我们正在开发新的自动化排班系统，使用复杂算法在使用不同肌肉群的岗位之间轮换员工。从2019年到2020年，总体 MSD 减少了32%，导致缺勤的 MSD 减少了一半以上。</p>
+<p>我们在<a href="/companies/亚马逊.html">亚马逊</a>雇用了6,200名安全专业人员。2021年我们将在安全项目上投资超过3亿美元，包括6,600万美元用于创建防止叉车和其他工业车辆碰撞的技术。</p>
+<p>当我们引领时，其他人会跟随。两年半前，当我们将小时工最低工资设定为每小时15美元时，加州大学伯克利分校和布兰代斯大学的经济学家分析了我们这一决定的影响。研究表明，我们的加薪使同一劳动力市场中其他雇主的平均时薪增加了4.7%。</p>
+<p>如果我们想成为地球最佳雇主，不应该满足于94%的员工推荐率。我们要瞄准100%。我们将通过继续在工资、福利、技能提升机会以及其他我们将逐步摸索出的方面保持引领来实现这个目标。</p>
+<p>如果有股东担心"地球最佳雇主"和"地球最安全工作场所"会分散我们对"地球上最以客户为中心的公司"的关注，请放心。这样想：如果我们能同时经营消费者电商和 <a href="/companies/AWS.html">AWS</a> 这两个截然不同的业务，并且都做到最高水平，我们当然也能同时践行这两个愿景。事实上，我确信它们会相互强化。</p>
+<h2 id="_3"><a href="/concepts/气候承诺.html">气候承诺</a></h2>
+<p>在这封信的早期草稿中，我最初在这一节用论据和例子来证明人为气候变化是真实的。但坦率地说，我觉得我们可以不用再说这些了。你不需要说光合作用是真实的，不需要论证引力是真实的，不需要证明水在海平面100摄氏度沸腾。这些东西就是事实，气候变化的现实也是如此。</p>
+<p>不久前，大多数人相信应对气候变化是好事，但他们也认为代价高昂，会威胁就业、竞争力和经济增长。现在我们知道得更清楚了。明智的气候行动不仅能阻止坏事发生，还能让我们的经济更高效、驱动技术变革、降低风险。综合起来，这些可以带来更多更好的工作、更健康更快乐的孩子、更高效的工人和更繁荣的未来。</p>
+<p>这不意味着这会很容易。不会。接下来的十年将是决定性的。2030年的经济需要与今天截然不同，而<a href="/companies/亚马逊.html">亚马逊</a>计划站在变革的核心。我们在2019年9月与 Global Optimism 共同发起了 <a href="/concepts/气候承诺.html">气候承诺</a>，因为我们想帮助驱动这场积极的革命。</p>
+<p>不到两年后，53家代表几乎每个经济部门的公司签署了 <a href="/concepts/气候承诺.html">气候承诺</a>。Best Buy、IBM、Infosys、Mercedes-Benz、Microsoft、Siemens、Verizon 等签署方承诺在2040年——比《巴黎协定》提前10年——实现全球业务净零碳排放。</p>
+<p><a href="/companies/亚马逊.html">亚马逊</a>正朝着2025年100%可再生能源的目标迈进，比最初的2030年目标提前了五年。<a href="/companies/亚马逊.html">亚马逊</a>是全球最大的企业可再生能源买家。我们有62个公用事业级风能和太阳能项目，以及125个安装在物流和分拣中心屋顶的太阳能系统，发电容量超过6.9吉瓦。</p>
+<p>运输是<a href="/companies/亚马逊.html">亚马逊</a>业务运营的主要组成部分，也是我们2040年净零碳计划中最艰难的部分。为了加速电动汽车市场，我们向 Rivian 投资超过10亿美元并订购了100,000辆电动配送货车。这些定制电动货车已经在运营中，2月首先在洛杉矶投入使用。最早明年就有10,000辆上路，到2030年全部100,000辆将投入运营。</p>
+<p>为了进一步加速零碳经济所需的新技术投资，我们去年6月设立了气候承诺基金，初始投资20亿美元。我个人也拨出100亿美元用于资助催化系统性变革的工作，支持领先的科学家、活动家、非政府组织和环保正义组织。</p>
+<h2 id="_4"><a href="/concepts/差异化即生存.html">差异化即生存</a>：宇宙想让你变得平庸</h2>
+<p>这是我作为<a href="/companies/亚马逊.html">亚马逊</a> CEO 写的最后一封年度股东信，我有最后一件至关重要的事情必须要说。我希望所有亚马逊人把它铭记于心。</p>
+<p>以下是理查德·道金斯那本（非凡的）《盲眼钟表匠》中的一段话，讲的是生物学的一个基本事实：</p>
+<blockquote>
+<p>"抵御死亡是一件需要努力的事情。听之任之——死亡正是如此——身体会趋向于与环境达到平衡。如果你测量一个活着的身体的某种指标，比如温度、酸度、含水量或电位，你通常会发现它与周围环境的相应指标有显著差异。比如，我们的身体通常比周围环境更热，在寒冷的气候中必须努力维持这个温差。当我们死去时，这种努力停止了，温差开始消失，我们最终变得与周围环境一样的温度。更广泛地说，如果生物体不积极努力去阻止的话，它们最终会融入周围环境，不再作为自主的存在而存在。这就是它们死亡时发生的事。"</p>
+</blockquote>
+<p>虽然这段话的本意不是一个隐喻，但它却是一个绝妙的隐喻，与<a href="/companies/亚马逊.html">亚马逊</a>高度相关。我会说它与所有公司、所有机构，以及我们每个人的生活都息息相关。世界以怎样的方式试图把你拉回平庸？维持你的独特性需要多少功夫？让你特别的那些东西保持活力需要多少能量？</p>
+<p>我认识一对幸福的夫妻，他们之间有一个经常讲的笑话。丈夫时不时会假装苦恼地看着妻子说："你就不能正常一点吗？"两人相视而笑。当然，深层的真相是，她的与众不同正是他爱她的地方。但同时，如果我们都能"正常"一点，很多事情确实会更容易——消耗更少的能量。</p>
+<p>这种现象存在于所有层面。民主不是常态。暴政才是历史的常态。如果我们停止维护民主所需的持续艰苦努力，我们会很快与暴政达到平衡。</p>
+<p>我们都知道独特性——原创性——是有价值的。我们都被教导要"做自己"。我真正要告诉你的是：请接受并正视维持独特性需要多少能量。世界想让你变得平庸——以一千种方式拉扯你。不要让它得逞。你必须为你的独特性付出代价，而这是值得的。"做自己"的童话版本是：一旦你让你的独特性绽放，所有痛苦就会停止。这个版本是误导人的。做自己是值得的，但别指望它容易或免费。你必须持续投入能量。</p>
+<p>世界将永远试图让<a href="/companies/亚马逊.html">亚马逊</a>变得更平庸——将我们拉入与环境的平衡。这需要持续的努力，但我们可以、也必须做得比那更好。</p>
+<hr />
+<p>一如既往，我附上了我们1997年最初的那封信。它的结尾是："我们<a href="/companies/亚马逊.html">亚马逊</a>感谢客户的惠顾和信任，感谢彼此的辛勤工作，感谢股东的支持和鼓励。"这些一点也没变。</p>
+<p>我要特别感谢<a href="/people/安迪·贾西.html">安迪·贾西</a>同意接任 CEO 一职。这是一个责任重大的艰难工作。Andy 才华横溢，有着最高的<a href="/concepts/高标准.html">标准</a>。我向你们保证，Andy 不会让宇宙把我们变得平庸。他会调动所需的能量，保持我们之所以特别的那些东西。这不会容易，但至关重要。我也预测这会令人满足，而且经常很有趣。谢谢你，Andy。</p>
+<p>对你们所有人说：<strong>善良，保持原创，创造的比消耗的多，永远、永远、永远不要让宇宙将你磨平为周围环境的一部分。</strong></p>
+<p>现在仍然是 <a href="/concepts/Day 1.html">Day 1</a>。</p>
+<hr />
+<p><strong>原文签署：</strong> Jeffrey P. Bezos</p></div><aside class="backlinks-panel">
+  <div class="bl-panel-header">
+    <h3 class="bl-panel-title">链接到本页 <span class="bl-count">17</span></h3>
+    <div class="bl-panel-actions">
+      <button class="bl-action bl-expand-all">展开</button>
+      <button class="bl-action bl-collapse-all">折叠</button>
+    </div>
+  </div>
+  <div class="bl-group">
+  <button class="bl-group-header">
+    <span class="bl-caret"></span>
+    <span class="bl-source-name">Day 1（Day 1 心态）</span>
+    <span class="bl-mention-cat">概念</span>
+  </button>
+  <div class="bl-snippets">
+    <div class="bl-snippet">…业型初创公司才有的行动速度、灵活性和风险接受心态结合起来。"  4. Day 1 需要持续投入能量来维持  在 2020 贝佐斯致股东信——他作为CEO的最后一封信——中，贝佐斯引用理查德·道金斯关于"生物体必须持续努力抵御与环境达到平衡"的论述，将其上升…</div>
+    <a href="/concepts/Day 1.html" class="bl-go-link">查看原文 →</a>
+  </div>
+</div>
+<div class="bl-group">
+  <button class="bl-group-header">
+    <span class="bl-caret"></span>
+    <span class="bl-source-name">创造大于消耗（Create More Than You Consume）</span>
+    <span class="bl-mention-cat">概念</span>
+  </button>
+  <div class="bl-snippets">
+    <div class="bl-snippet">…e More Than You Consume）  ## 概念解析  ### 定义与起源  "创造大于消耗"是贝佐斯在 2020 贝佐斯致股东信——他作为亚马逊CEO的最后一封年度股东信——中首次系统提出的核心理念。贝佐斯写道："如果你想在商业（其实在人生也是如此…</div>
+    <a href="/concepts/创造大于消耗.html" class="bl-go-link">查看原文 →</a>
+  </div>
+</div>
+<div class="bl-group">
+  <button class="bl-group-header">
+    <span class="bl-caret"></span>
+    <span class="bl-source-name">差异化即生存（Differentiation is Survival）</span>
+    <span class="bl-mention-cat">概念</span>
+  </button>
+  <div class="bl-snippets">
+    <div class="bl-snippet">…erentiation is Survival）  ## 概念解析  ### 定义与起源  "差异化即生存"是贝佐斯在 2020 贝佐斯致股东信——他作为亚马逊CEO的最后一封年度股东信——的收尾部分提出的哲学概念。贝佐斯引用理查德·道金斯《盲眼钟表匠》中关于生物…</div>
+    <a href="/concepts/差异化即生存.html" class="bl-go-link">查看原文 →</a>
+  </div>
+</div>
+<div class="bl-group">
+  <button class="bl-group-header">
+    <span class="bl-caret"></span>
+    <span class="bl-source-name">气候承诺（The Climate Pledge）</span>
+    <span class="bl-mention-cat">概念</span>
+  </button>
+  <div class="bl-snippets">
+    <div class="bl-snippet">…碳排放。贝佐斯写道："我们相信，如果亚马逊能提前十年做到，任何公司都能做到——我们希望与所有公司合作让它成为现实。"在 2020 贝佐斯致股东信 中，这一承诺进一步深化，贝佐斯将气候行动定位为经济机遇而非成本负担。  ### 核心要义  **1. 2040年净零碳…</div>
+    <a href="/concepts/气候承诺.html" class="bl-go-link">查看原文 →</a>
+  </div>
+</div>
+<div class="bl-group">
+  <button class="bl-group-header">
+    <span class="bl-caret"></span>
+    <span class="bl-source-name">漫游（Wandering）</span>
+    <span class="bl-mention-cat">概念</span>
+  </button>
+  <div class="bl-snippets">
+    <div class="bl-snippet">…2018 贝佐斯致股东信 中首次系统阐述漫游的定义、价值和实践案例 | | 融入遗产 | 2020年 | 在 2020 贝佐斯致股东信 中，漫游精神融入"创造大于消耗"和"保持独特性"的总结哲学中 |  ## 相关概念  - 逆向工作法 — 漫游…</div>
+    <a href="/concepts/漫游.html" class="bl-go-link">查看原文 →</a>
+  </div>
+</div>
+<div class="bl-group">
+  <button class="bl-group-header">
+    <span class="bl-caret"></span>
+    <span class="bl-source-name">自助服务平台（Self-service Platforms）</span>
+    <span class="bl-mention-cat">概念</span>
+  </button>
+  <div class="bl-snippets">
+    <div class="bl-snippet">…到2020年年化营收达500亿美元。客户涵盖从初创公司到GE、Netflix等巨头。（2011 贝佐斯致股东信、2020 贝佐斯致股东信） - FBA（2007年起）：卖家将库存存入亚马逊物流中心，商品自动获得 Prime 资格。2…</div>
+    <a href="/concepts/自助服务平台.html" class="bl-go-link">查看原文 →</a>
+  </div>
+</div>
+<div class="bl-group">
+  <button class="bl-group-header">
+    <span class="bl-caret"></span>
+    <span class="bl-source-name">AWS</span>
+    <span class="bl-mention-cat">产品</span>
+  </button>
+  <div class="bl-snippets">
+    <div class="bl-snippet">…到500亿美元。服务数百万客户。在新冠疫情中发挥关键作用，支持医疗、教育和远程工作。能效是传统企业数据中心的3.6倍。（2020 贝佐斯致股东信）  ## 贝佐斯评价  &gt; "Amazon Web Services是另一个例子。通过AWS，我们正在围绕一个全新的客…</div>
+    <a href="/companies/AWS.html" class="bl-go-link">查看原文 →</a>
+  </div>
+</div>
+<div class="bl-group">
+  <button class="bl-group-header">
+    <span class="bl-caret"></span>
+    <span class="bl-source-name">Alexa</span>
+    <span class="bl-mention-cat">产品</span>
+  </button>
+  <div class="bl-snippets">
+    <div class="bl-snippet">…户评估新冠风险。（2019 贝佐斯致股东信） - 2020年：超过1亿台智能家居设备连接到Alexa。（2020 贝佐斯致股东信）  ## 贝佐斯评价  &gt; "Echo和Alexa的愿景受到《星际迷航》计算机的启发。" —— [[2018 贝佐斯致…</div>
+    <a href="/companies/Alexa.html" class="bl-go-link">查看原文 →</a>
+  </div>
+</div>
+<div class="bl-group">
+  <button class="bl-group-header">
+    <span class="bl-caret"></span>
+    <span class="bl-source-name">Amazon Logistics</span>
+    <span class="bl-mention-cat">产品</span>
+  </button>
+  <div class="bl-snippets">
+    <div class="bl-snippet">…级风能和太阳能项目，125 个物流中心屋顶太阳能系统。研究表明一辆配送车的单次行程平均可替代约 100 次私家车往返。（2020 贝佐斯致股东信）  ## 贝佐斯评价  &gt; "十九年前，我每天晚上开着我的雪佛兰 Blazer 把亚马逊的包裹送到邮局。我当时最远大的…</div>
+    <a href="/companies/Amazon Logistics.html" class="bl-go-link">查看原文 →</a>
+  </div>
+</div>
+<div class="bl-group">
+  <button class="bl-group-header">
+    <span class="bl-caret"></span>
+    <span class="bl-source-name">Marketplace</span>
+    <span class="bl-mention-cat">产品</span>
+  </button>
+  <div class="bl-snippets">
+    <div class="bl-snippet">…- 2020年：超过190万家中小企业在商城销售，贡献近60%零售额。第三方卖家利润估计250-390亿美元。（2020 贝佐斯致股东信）  ## 贝佐斯评价  &gt; "2000年，我们邀请第三方卖家直接在我们的'黄金零售地段'——商品详情页上与我们竞争。"…</div>
+    <a href="/companies/Marketplace.html" class="bl-go-link">查看原文 →</a>
+  </div>
+</div>
+<div class="bl-group">
+  <button class="bl-group-header">
+    <span class="bl-caret"></span>
+    <span class="bl-source-name">Prime</span>
+    <span class="bl-mention-cat">产品</span>
+  </button>
+  <div class="bl-snippets">
+    <div class="bl-snippet">…Day成为最大全球购物活动。（2017 贝佐斯致股东信） - 2020年：全球超过2亿Prime会员。（2020 贝佐斯致股东信）  ## 贝佐斯评价  &gt; "我们在免费超级省运费和Amazon Prime上也做出了类似的判断——两者短期内都很昂贵…</div>
+    <a href="/companies/Prime.html" class="bl-go-link">查看原文 →</a>
+  </div>
+</div>
+<div class="bl-group">
+  <button class="bl-group-header">
+    <span class="bl-caret"></span>
+    <span class="bl-source-name">亚马逊</span>
+    <span class="bl-mention-cat">产品</span>
+  </button>
+  <div class="bl-snippets">
+    <div class="bl-snippet">…造了1.6万亿美元财富。2020年净利润213亿美元，员工薪酬910亿美元。贝佐斯宣布将卸任CEO，由安迪·贾西接任。（2020 贝佐斯致股东信）  ## 贝佐斯评价  &gt; "对互联网来说，这仍然是第一天（Day 1）——如果我们执行得好，对亚马逊来说同样…</div>
+    <a href="/companies/亚马逊.html" class="bl-go-link">查看原文 →</a>
+  </div>
+</div>
+<div class="bl-group">
+  <button class="bl-group-header">
+    <span class="bl-caret"></span>
+    <span class="bl-source-name">安迪·贾西</span>
+    <span class="bl-mention-cat">人物</span>
+  </button>
+  <div class="bl-snippets">
+    <div class="bl-snippet">…角色：AWS 创始团队领导者、AWS CEO，2021年7月接任亚马逊CEO - 在信中被提及：1 封（2020 贝佐斯致股东信）  ## 在信件中的形象  安迪·贾西在24封股东信中仅在最后一封——2020 贝佐斯致股东信——中被明确提及…</div>
+    <a href="/people/安迪·贾西.html" class="bl-go-link">查看原文 →</a>
+  </div>
+</div>
+<div class="bl-group">
+  <button class="bl-group-header">
+    <span class="bl-caret"></span>
+    <span class="bl-source-name">本杰明·格雷厄姆</span>
+    <span class="bl-mention-cat">人物</span>
+  </button>
+  <div class="bl-snippets">
+    <div class="bl-snippet">…- 客户至上——贝佐斯将"让公司变得更重"等同于为客户创造更多价值，而非取悦华尔街 - 创造大于消耗——2020 贝佐斯致股东信 中系统计算价值创造的做法，是"称重"思想的终极实践</div>
+    <a href="/people/本杰明·格雷厄姆.html" class="bl-go-link">查看原文 →</a>
+  </div>
+</div>
+<div class="bl-group">
+  <button class="bl-group-header">
+    <span class="bl-caret"></span>
+    <span class="bl-source-name">杰夫·威尔克</span>
+    <span class="bl-mention-cat">人物</span>
+  </button>
+  <div class="bl-snippets">
+    <div class="bl-snippet">…175,000个岗位以应对激增需求，进行了"150多项重大流程调整"。  ### 安静的退场（2021）  与贝佐斯在 2020 贝佐斯致股东信 中盛赞安迪·贾西不同，威尔克2021年初的退休在信中没有被提及。这封作为CEO的最后一封信聚焦于哲学性的告别和…</div>
+    <a href="/people/杰夫·威尔克.html" class="bl-go-link">查看原文 →</a>
+  </div>
+</div>
+<div class="bl-group">
+  <button class="bl-group-header">
+    <span class="bl-caret"></span>
+    <span class="bl-source-name">贝佐斯</span>
+    <span class="bl-mention-cat">人物</span>
+  </button>
+  <div class="bl-snippets">
+    <div class="bl-snippet">…全球疫情，他展现了危机领导者的一面——迅速行动、关怀员工、承担社会责任。  ### 第五阶段：遗嘱式告别（2020）  2020 贝佐斯致股东信 是他作为 CEO 的最后一封信，具有深刻的哲学色彩和告别意味。他引用理查德·道金斯《盲眼钟表匠》关于生物体必须持续对抗…</div>
+    <a href="/people/贝佐斯.html" class="bl-go-link">查看原文 →</a>
+  </div>
+</div>
+<div class="bl-group">
+  <button class="bl-group-header">
+    <span class="bl-caret"></span>
+    <span class="bl-source-name">贝佐斯致股东信总览</span>
+    <span class="bl-mention-cat">索引</span>
+  </button>
+  <div class="bl-snippets">
+    <div class="bl-snippet">…15最低工资 | | 2019 贝佐斯致股东信 | 疫情与气候 | 员工安全、气候承诺、2040净零碳 | | 2020 贝佐斯致股东信 | CEO告别信 | 创造大于消耗、3010亿价值、差异化即生存 |  ---  另见：核心思想索引 | [[…</div>
+    <a href="/index-pages/贝佐斯致股东信总览.html" class="bl-go-link">查看原文 →</a>
+  </div>
+</div>
+
+</aside>
+
+</main>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Toggle sidebar nav groups
+  document.querySelectorAll('.nav-group-title').forEach(function(el) {
+    el.addEventListener('click', function() {
+      this.parentElement.classList.toggle('open');
+    });
+  });
+
+  // Backlinks: toggle individual groups
+  document.querySelectorAll('.bl-group-header').forEach(function(header) {
+    header.addEventListener('click', function() {
+      this.closest('.bl-group').classList.toggle('open');
+    });
+  });
+
+  // Favorite / bookmark popup
+  var favBtn = document.getElementById('fav-btn');
+  var favPop = document.getElementById('fav-pop');
+  if (favBtn && favPop) {
+    var isMac = /Mac|iPhone|iPad/.test(navigator.platform);
+    var key = isMac ? '⌘ + D' : 'Ctrl + D';
+    favPop.innerHTML =
+      '按 <kbd>' + key + '</kbd> 收藏本页到浏览器书签' +
+      '<button class="fav-pop-copy" id="fav-pop-copy">复制本页链接</button>';
+
+    favBtn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      favPop.classList.toggle('show');
+    });
+    document.addEventListener('click', function(e) {
+      if (!favPop.contains(e.target) && e.target !== favBtn) {
+        favPop.classList.remove('show');
+      }
+    });
+
+    var copyBtn = document.getElementById('fav-pop-copy');
+    if (copyBtn) {
+      copyBtn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        navigator.clipboard.writeText(window.location.href).then(function() {
+          copyBtn.textContent = '✓ 已复制';
+          copyBtn.classList.add('copied');
+          setTimeout(function() {
+            copyBtn.textContent = '复制本页链接';
+            copyBtn.classList.remove('copied');
+          }, 1500);
+        });
+      });
+    }
+  }
+
+  // Backlinks: expand/collapse all
+  document.querySelectorAll('.bl-expand-all').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      this.closest('.backlinks-panel').querySelectorAll('.bl-group').forEach(function(g) {
+        g.classList.add('open');
+      });
+    });
+  });
+  document.querySelectorAll('.bl-collapse-all').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      this.closest('.backlinks-panel').querySelectorAll('.bl-group').forEach(function(g) {
+        g.classList.remove('open');
+      });
+    });
+  });
+});
+</script>
+</body>
+</html>

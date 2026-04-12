@@ -1,0 +1,1585 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Lex Fridman #400 - Elon Musk: War, AI, Aliens, Politics, Physics, Video Games, and Humanity (2023) - 马斯克知识图谱</title>
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon-180.png">
+<link rel="shortcut icon" href="/assets/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700;900&family=Crimson+Pro:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-WLE88B2LL3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-WLE88B2LL3');
+</script>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+
+:root{
+  --bg:#FAF7F2;
+  --bg2:#F3EDE4;
+  --text:#1B1B18;
+  --text2:#6B6560;
+  --gold:#B8860B;
+  --gold-light:#D4A843;
+  --gold-glow:rgba(184,134,11,.12);
+  --navy:#1A2332;
+  --navy-light:#2C3E50;
+  --cream:#FFF8EE;
+  --border:#E0D6C8;
+  --card:#FFFFFF;
+  --link:#8B5E0B;
+  --serif:'Noto Serif SC','Crimson Pro',Georgia,'Times New Roman',serif;
+  --sans:'DM Sans',-apple-system,BlinkMacSystemFont,'PingFang SC','Microsoft YaHei',sans-serif;
+  --sidebar-w:260px;
+}
+
+html{font-size:15px;scroll-behavior:smooth}
+body{
+  font-family:var(--sans);
+  color:var(--text);
+  background:var(--bg);
+  display:flex;
+  min-height:100vh;
+  line-height:1.8;
+  -webkit-font-smoothing:antialiased;
+}
+
+/* ===== SIDEBAR ===== */
+.sidebar{
+  width:var(--sidebar-w);
+  background:var(--navy);
+  position:fixed;top:0;left:0;bottom:0;
+  overflow-y:auto;
+  z-index:100;
+  display:flex;
+  flex-direction:column;
+}
+.sidebar-header{padding:20px 16px 16px;border-bottom:1px solid rgba(255,255,255,.08)}
+.logo{
+  color:#fff;
+  font-size:17px;
+  font-weight:700;
+  text-decoration:none;
+  letter-spacing:.5px;
+  font-family:var(--serif);
+  display:block;
+}
+.logo:hover{color:var(--gold-light)}
+
+.sidebar-nav{flex:1;padding:8px 0;overflow-y:auto}
+.sidebar-nav::-webkit-scrollbar{width:4px}
+.sidebar-nav::-webkit-scrollbar-thumb{background:rgba(255,255,255,.15);border-radius:2px}
+
+.nav-link{
+  display:block;
+  padding:6px 16px;
+  color:#cbd5e1;
+  text-decoration:none;
+  font-size:13px;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  border-left:3px solid transparent;
+  transition:all .15s;
+}
+.nav-link:hover{background:rgba(255,255,255,.06);color:#fff}
+.nav-link.active{
+  color:#fff;
+  background:rgba(184,134,11,.15);
+  border-left-color:var(--gold);
+  font-weight:600;
+}
+.nav-home{font-size:14px;padding:10px 16px;font-weight:500;margin-bottom:4px}
+.nav-changelog{
+  margin-top:auto;
+  padding:14px 16px;
+  font-size:12px;
+  color:rgba(255,255,255,.4);
+  border-top:1px solid rgba(255,255,255,.08);
+}
+.nav-changelog:hover{color:rgba(255,255,255,.7)}
+.nav-changelog.active{color:var(--gold-light)}
+.sidebar-nav{display:flex;flex-direction:column;height:100%}
+
+.nav-group{margin-bottom:2px}
+.nav-group-title{
+  padding:8px 16px;
+  color:#cbd5e1;
+  font-size:12px;
+  font-weight:600;
+  text-transform:uppercase;
+  letter-spacing:.5px;
+  cursor:pointer;
+  display:flex;
+  align-items:center;
+  gap:6px;
+  user-select:none;
+  transition:color .15s;
+}
+.nav-group-title:hover{color:#fff}
+.caret{
+  display:inline-block;
+  width:0;height:0;
+  border-left:5px solid #cbd5e1;
+  border-top:4px solid transparent;
+  border-bottom:4px solid transparent;
+  transition:transform .2s;
+}
+.nav-group.open .nav-group-title .caret{transform:rotate(90deg);border-left-color:#fff}
+.nav-group-title .badge{
+  margin-left:auto;
+  background:rgba(255,255,255,.1);
+  color:#cbd5e1;
+  font-size:11px;
+  padding:1px 6px;
+  border-radius:8px;
+  font-weight:400;
+}
+.nav-group-items{display:none;padding-left:8px}
+.nav-group.open .nav-group-items{display:block}
+
+.hamburger{
+  display:none;
+  position:fixed;
+  top:12px;left:12px;
+  z-index:200;
+  background:var(--navy);
+  color:#fff;
+  border:none;
+  font-size:20px;
+  padding:6px 10px;
+  border-radius:6px;
+  cursor:pointer;
+}
+
+/* ===== MAIN ===== */
+.main{
+  margin-left:max(var(--sidebar-w), calc((100vw - 1160px) / 2));
+  flex:1;
+  position:relative;
+  max-width:1160px;
+  padding:0;
+}
+
+/* grain overlay */
+.main::after{
+  content:'';
+  position:fixed;
+  top:0;left:var(--sidebar-w);right:0;bottom:0;
+  pointer-events:none;
+  opacity:.03;
+  z-index:999;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* ===== FAV / BOOKMARK BUTTON ===== */
+.fav-wrap{
+  position:absolute;
+  top:24px;right:48px;
+  z-index:50;
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+.sister-link{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  padding:8px 16px;
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:24px;
+  color:var(--navy);
+  font-size:13px;
+  font-weight:600;
+  font-family:var(--sans);
+  text-decoration:none;
+  box-shadow:0 2px 8px rgba(0,0,0,.04);
+  transition:all .25s;
+  white-space:nowrap;
+}
+.sister-link:hover{
+  border-color:var(--gold);
+  color:var(--gold);
+  box-shadow:0 4px 16px var(--gold-glow);
+  transform:translateY(-1px);
+}
+.sister-link .arrow{
+  color:var(--gold);
+  font-weight:700;
+}
+.fav-btn{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  padding:8px 18px;
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:24px;
+  color:var(--gold);
+  font-size:16px;
+  cursor:pointer;
+  transition:all .25s;
+  font-family:var(--sans);
+  box-shadow:0 2px 8px rgba(0,0,0,.04);
+}
+.fav-btn:hover{
+  border-color:var(--gold);
+  box-shadow:0 4px 16px var(--gold-glow);
+  transform:translateY(-1px);
+}
+.fav-label{
+  font-size:13px;
+  color:var(--text2);
+  font-weight:500;
+}
+.fav-btn:hover .fav-label{color:var(--gold)}
+.fav-pop{
+  display:none;
+  position:absolute;
+  right:0;top:48px;
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:10px;
+  padding:14px 16px;
+  box-shadow:0 8px 32px rgba(0,0,0,.12);
+  font-size:13px;
+  min-width:240px;
+  z-index:51;
+  color:var(--text);
+  line-height:1.6;
+}
+.fav-pop.show{display:block}
+.fav-pop kbd{
+  background:var(--bg2);
+  padding:2px 7px;
+  border-radius:4px;
+  font-size:12px;
+  border:1px solid var(--border);
+  font-family:var(--sans);
+  color:var(--navy);
+  font-weight:600;
+}
+.fav-pop-copy{
+  display:block;
+  width:100%;
+  margin-top:10px;
+  padding:8px 0;
+  background:var(--bg);
+  border:1px solid var(--border);
+  border-radius:6px;
+  color:var(--text2);
+  font-size:12px;
+  cursor:pointer;
+  text-align:center;
+  transition:all .15s;
+  font-family:var(--sans);
+}
+.fav-pop-copy:hover{
+  border-color:var(--gold);
+  color:var(--gold);
+}
+.fav-pop-copy.copied{
+  background:#ecfdf5;
+  border-color:#6ee7b7;
+  color:#059669;
+}
+
+@media(max-width:768px){
+  .fav-wrap{right:16px;top:12px;gap:6px}
+  .sister-link{padding:6px 12px;font-size:11px}
+  .fav-btn{padding:6px 14px}
+  .fav-label{font-size:12px}
+}
+
+/* ===== CHANGELOG ===== */
+.article.changelog h2{
+  border-bottom-color:var(--gold);
+  display:flex;
+  align-items:center;
+  gap:10px;
+  flex-wrap:wrap;
+}
+.version{
+  display:inline-flex;
+  align-items:center;
+  background:var(--gold);
+  color:#fff;
+  font-size:13px;
+  font-weight:700;
+  padding:3px 11px;
+  border-radius:6px;
+  font-family:var(--sans);
+  letter-spacing:.3px;
+}
+.changelog-date{
+  font-size:14px;
+  color:var(--text2);
+  font-weight:500;
+  font-family:var(--sans);
+}
+.change-list{
+  list-style:none;
+  padding:0;
+  margin:16px 0;
+}
+.change-list li{
+  padding:10px 0 10px 18px;
+  position:relative;
+  border-bottom:1px solid var(--border);
+  font-size:14px;
+  line-height:1.75;
+}
+.change-list li:last-child{border-bottom:none}
+.change-list li::before{
+  content:"";
+  position:absolute;
+  left:0;
+  top:20px;
+  width:6px;
+  height:6px;
+  border-radius:50%;
+  background:var(--gold);
+}
+.change-type{
+  display:inline-block;
+  font-size:11px;
+  padding:2px 8px;
+  border-radius:4px;
+  color:#fff;
+  font-weight:600;
+  margin-right:8px;
+  font-family:var(--sans);
+  vertical-align:1px;
+  letter-spacing:.2px;
+}
+.change-type.feat{background:#059669}
+.change-type.fix{background:#dc2626}
+.change-type.plan{background:#3b82f6}
+.change-list li strong{color:var(--navy);font-weight:700}
+
+/* ===== ARTICLE (content pages) ===== */
+.article{max-width:820px;padding:48px 48px 80px}
+.meta{
+  font-size:13px;
+  color:var(--text2);
+  margin-bottom:16px;
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+.type-badge{
+  font-size:11px;
+  padding:2px 8px;
+  border-radius:4px;
+  color:#fff;
+  font-weight:600;
+}
+.type-概念{background:#7C5E2A}
+.type-方法{background:#5E4A8B}
+.type-产品{background:#1A6B7C}
+.type-人物{background:#8B2F2F}
+.type-总体规划{background:#2A6B4F}
+.type-访谈{background:#3A5E8B}
+.type-财报会议{background:#4A6E2A}
+.type-索引{background:#6B6560}
+
+.article h1{
+  font-family:var(--serif);
+  font-size:28px;
+  line-height:1.3;
+  margin-bottom:24px;
+  font-weight:900;
+  color:var(--navy);
+  letter-spacing:-.5px;
+}
+.article h2{
+  font-family:var(--serif);
+  font-size:21px;
+  margin:36px 0 14px;
+  padding-bottom:8px;
+  border-bottom:2px solid var(--border);
+  font-weight:700;
+  color:var(--navy);
+}
+.article h3{
+  font-family:var(--serif);
+  font-size:17px;
+  margin:24px 0 10px;
+  font-weight:600;
+  color:var(--navy-light);
+}
+.article p{margin:10px 0}
+.article ul,.article ol{padding-left:24px;margin:10px 0}
+.article li{margin:4px 0}
+
+.article a{
+  color:var(--link);
+  text-decoration:none;
+  background:linear-gradient(to bottom,transparent 60%,var(--gold-glow) 60%);
+  transition:background .2s;
+}
+.article a:hover{background:linear-gradient(to bottom,transparent 40%,rgba(184,134,11,.2) 40%)}
+
+.article blockquote{
+  background:var(--cream);
+  border-left:4px solid var(--gold);
+  padding:14px 20px;
+  margin:16px 0;
+  border-radius:0 8px 8px 0;
+  font-style:italic;
+  color:#5C4813;
+  font-family:var(--serif);
+}
+.article blockquote p{margin:0}
+.article blockquote a{background:none;color:var(--gold)}
+.article blockquote a:hover{text-decoration:underline}
+
+.article table{border-collapse:collapse;width:100%;margin:16px 0;font-size:14px}
+.article th,.article td{border:1px solid var(--border);padding:8px 12px;text-align:left}
+.article th{background:var(--bg2);font-weight:600;color:var(--navy)}
+.article strong{font-weight:700}
+.article hr{border:none;border-top:1px solid var(--border);margin:32px 0}
+.article code{
+  background:var(--bg2);
+  padding:2px 6px;
+  border-radius:3px;
+  font-size:13px;
+  font-family:'SF Mono',Menlo,Consolas,monospace;
+  color:#5C4813;
+}
+
+/* ===== KNOWLEDGE GRAPH PAGE ===== */
+.main.full-bleed{max-width:none;padding:0;margin-left:var(--sidebar-w)}
+.main.full-bleed::after{display:none}
+.graph-wrap{position:relative;width:100%;height:100vh;overflow:hidden;background:var(--bg)}
+.graph-wrap svg{width:100%;height:100%;display:block}
+.graph-toolbar{position:absolute;top:16px;right:16px;display:flex;gap:8px;z-index:10}
+.graph-toolbar button{
+  padding:6px 14px;background:var(--card);border:1px solid var(--border);
+  border-radius:8px;font-size:12px;color:var(--text);cursor:pointer;
+  font-family:var(--sans);transition:all .15s;font-weight:500;
+}
+.graph-toolbar button:hover{border-color:var(--gold);color:var(--gold)}
+.graph-title{position:absolute;top:16px;left:16px;z-index:10}
+.graph-title h1{font-family:var(--serif);font-size:20px;color:var(--navy);margin:0}
+.graph-title p{font-size:12px;color:var(--text2);margin:4px 0 0;font-family:var(--sans)}
+.graph-tooltip{
+  position:absolute;padding:8px 14px;background:var(--navy);color:#fff;
+  border-radius:8px;font-size:12px;pointer-events:none;opacity:0;transition:opacity .15s;
+  box-shadow:0 4px 16px rgba(0,0,0,.2);z-index:20;white-space:nowrap;font-family:var(--sans);
+}
+.graph-tooltip strong{display:block;font-size:13px;margin-bottom:2px}
+.graph-tooltip span{color:rgba(255,255,255,.6)}
+.graph-legend{
+  position:absolute;bottom:16px;left:16px;display:flex;gap:12px;z-index:10;
+  flex-wrap:wrap;max-width:calc(100% - 32px);
+  background:rgba(255,255,255,.92);padding:8px 14px;border-radius:8px;
+  border:1px solid var(--border);font-family:var(--sans);
+}
+.legend-item{display:flex;align-items:center;gap:5px;font-size:11px;color:var(--text2);cursor:pointer;user-select:none}
+.legend-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0}
+.legend-item.dimmed{opacity:.3}
+.nav-graph{
+  padding:14px 16px 6px;
+  font-size:12px;
+  color:rgba(255,255,255,.4);
+  border-top:1px solid rgba(255,255,255,.08);
+  margin-top:auto;
+}
+.nav-graph:hover{color:rgba(255,255,255,.7)}
+.nav-graph.active{color:var(--gold-light)}
+/* When graph link present, changelog should not push it to bottom */
+.nav-graph + .nav-changelog{margin-top:0;border-top:none;padding-top:6px;padding-bottom:14px}
+
+/* ===== BACKLINKS PANEL (right sidebar) ===== */
+.main.has-backlinks{
+  display:grid;
+  grid-template-columns:minmax(0,820px) 280px;
+  gap:0 24px;
+  max-width:1160px;
+}
+.main-content{min-width:0}
+
+.backlinks-panel{
+  grid-column:2;
+  grid-row:1/-1;
+  position:sticky;
+  top:24px;
+  max-height:calc(100vh - 48px);
+  overflow-y:auto;
+  padding:24px 0 24px 20px;
+  border-left:1px solid var(--border);
+  font-size:13px;
+  align-self:start;
+}
+.backlinks-panel::-webkit-scrollbar{width:3px}
+.backlinks-panel::-webkit-scrollbar-thumb{background:var(--border);border-radius:2px}
+
+.bl-panel-header{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  margin-bottom:12px;
+}
+.bl-panel-title{
+  font-family:var(--serif);
+  font-size:14px;
+  font-weight:700;
+  color:var(--navy);
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+.bl-count{
+  font-size:11px;
+  background:var(--bg2);
+  padding:1px 7px;
+  border-radius:10px;
+  color:var(--text2);
+  font-weight:600;
+}
+.bl-panel-actions{display:flex;gap:4px}
+.bl-action{
+  background:none;
+  border:1px solid var(--border);
+  border-radius:4px;
+  padding:2px 8px;
+  font-size:11px;
+  color:var(--text2);
+  cursor:pointer;
+  font-family:var(--sans);
+  transition:all .15s;
+}
+.bl-action:hover{border-color:var(--gold);color:var(--gold)}
+
+.bl-group{margin-bottom:4px}
+.bl-group-header{
+  display:flex;
+  align-items:center;
+  gap:6px;
+  background:none;
+  border:none;
+  cursor:pointer;
+  padding:5px 0;
+  width:100%;
+  text-align:left;
+  font-size:13px;
+  font-family:var(--sans);
+}
+.bl-group-header:hover{background:rgba(0,0,0,.02);border-radius:4px}
+
+.bl-caret{
+  display:inline-block;
+  width:0;height:0;
+  border:4px solid transparent;
+  border-left:5px solid var(--text2);
+  transition:transform .15s;
+  flex-shrink:0;
+}
+.bl-group.open .bl-caret{transform:rotate(90deg)}
+
+.bl-source-name{
+  color:var(--navy);
+  font-weight:600;
+  flex:1;
+  min-width:0;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
+.bl-mention-cat{
+  font-size:10px;
+  color:var(--text2);
+  background:var(--bg2);
+  padding:0 5px;
+  border-radius:8px;
+  flex-shrink:0;
+  margin-left:4px;
+}
+
+.bl-snippets{display:none;padding:4px 0 4px 14px}
+.bl-group.open .bl-snippets{display:block}
+
+.bl-snippet{
+  padding:6px 0;
+  border-bottom:1px solid var(--border);
+  line-height:1.6;
+  color:var(--text2);
+  font-size:12px;
+}
+.bl-snippet:last-child{border-bottom:none}
+.bl-go-link{
+  display:inline-block;
+  font-size:11px;
+  color:var(--link);
+  text-decoration:none;
+  padding:4px 0 2px;
+  font-weight:600;
+  transition:color .15s;
+}
+.bl-go-link:hover{color:var(--gold);text-decoration:underline}
+
+/* ===== HOMEPAGE ===== */
+.hero-section{
+  position:relative;
+  padding:72px 48px 56px;
+  max-width:900px;
+  margin:0 auto;
+}
+.hero-eyebrow{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  font-size:12px;
+  font-weight:600;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  color:var(--gold);
+  margin-bottom:20px;
+  opacity:0;
+  animation:fadeUp .6s ease forwards;
+}
+.hero-eyebrow::before{content:'';width:24px;height:1px;background:var(--gold)}
+.hero-title{
+  font-family:var(--serif);
+  font-size:clamp(32px,5vw,48px);
+  font-weight:900;
+  line-height:1.25;
+  letter-spacing:-1px;
+  color:var(--navy);
+  margin-bottom:6px;
+  opacity:0;
+  animation:fadeUp .6s ease .1s forwards;
+}
+.hero-title .gold{color:var(--gold)}
+.hero-sub{
+  font-size:17px;
+  color:var(--text2);
+  line-height:1.8;
+  margin-top:16px;
+  max-width:640px;
+  font-family:var(--serif);
+  font-weight:400;
+  opacity:0;
+  animation:fadeUp .6s ease .2s forwards;
+}
+.hero-sub b{color:var(--navy);font-weight:700}
+
+.stats-row{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:0;
+  max-width:900px;
+  margin:0 auto 48px;
+  padding:0 48px;
+  border-top:1px solid var(--border);
+  border-bottom:1px solid var(--border);
+  opacity:0;
+  animation:fadeUp .6s ease .3s forwards;
+}
+.stat-item{
+  text-align:center;
+  padding:28px 12px;
+  position:relative;
+  transition:background .3s;
+  text-decoration:none;
+  color:inherit;
+}
+.stat-item:not(:last-child)::after{
+  content:'';
+  position:absolute;
+  right:0;top:20%;
+  height:60%;
+  width:1px;
+  background:var(--border);
+}
+.stat-item:hover{background:var(--gold-glow)}
+.stat-num{
+  font-family:var(--serif);
+  font-size:42px;
+  font-weight:900;
+  color:var(--navy);
+  line-height:1;
+  margin-bottom:6px;
+  letter-spacing:-2px;
+}
+.stat-label{
+  font-size:13px;
+  color:var(--text2);
+  font-weight:500;
+  letter-spacing:.5px;
+}
+
+.main-inner{max-width:900px;padding:0 48px 80px;margin:0 auto}
+
+.nav-cards{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:16px;
+  margin-bottom:56px;
+  opacity:0;
+  animation:fadeUp .6s ease .4s forwards;
+}
+.nav-card{
+  position:relative;
+  padding:28px 20px 24px;
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:14px;
+  text-decoration:none;
+  transition:all .3s cubic-bezier(.4,0,.2,1);
+  overflow:hidden;
+  display:block;
+  color:inherit;
+}
+.nav-card::before{
+  content:'';
+  position:absolute;
+  top:0;left:0;right:0;
+  height:3px;
+  background:var(--gold);
+  opacity:0;
+  transition:opacity .3s;
+}
+.nav-card:hover{
+  transform:translateY(-4px);
+  box-shadow:0 12px 32px rgba(0,0,0,.08);
+  border-color:var(--gold-light);
+}
+.nav-card:hover::before{opacity:1}
+.nav-card-icon{font-size:32px;margin-bottom:14px;display:block;line-height:1}
+.nav-card-title{
+  font-family:var(--serif);
+  font-size:16px;
+  font-weight:700;
+  color:var(--navy);
+  margin-bottom:4px;
+}
+.nav-card-sub{font-size:13px;color:var(--text2)}
+.nav-card-arrow{
+  position:absolute;
+  bottom:20px;right:20px;
+  font-size:18px;
+  color:var(--border);
+  transition:all .3s;
+}
+.nav-card:hover .nav-card-arrow{color:var(--gold);transform:translateX(4px)}
+
+.section{margin-bottom:48px}
+.section-header{display:flex;align-items:center;gap:12px;margin-bottom:20px}
+.section-line{flex:1;height:1px;background:var(--border)}
+.section-title{
+  font-family:var(--serif);
+  font-size:22px;
+  font-weight:700;
+  color:var(--navy);
+  white-space:nowrap;
+}
+.section-count{
+  font-size:12px;
+  color:var(--gold);
+  font-weight:600;
+  background:var(--gold-glow);
+  padding:3px 10px;
+  border-radius:12px;
+  white-space:nowrap;
+}
+
+.tag-cloud{display:flex;flex-wrap:wrap;gap:10px}
+.tag{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  padding:8px 18px;
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:24px;
+  font-size:14px;
+  color:var(--text);
+  text-decoration:none;
+  transition:all .25s cubic-bezier(.4,0,.2,1);
+  font-weight:500;
+}
+.tag:hover{
+  border-color:var(--gold);
+  color:var(--navy);
+  box-shadow:0 4px 16px var(--gold-glow);
+  transform:translateY(-2px);
+}
+.tag-n{
+  font-size:11px;
+  font-weight:700;
+  color:#fff;
+  background:var(--gold);
+  padding:2px 8px;
+  border-radius:10px;
+  min-width:20px;
+  text-align:center;
+}
+.tag.tier-1{
+  font-size:16px;
+  padding:10px 22px;
+  font-weight:700;
+  border-color:var(--gold-light);
+  background:linear-gradient(135deg,#FFFDF5,#FFF8E7);
+}
+.tag.tier-1 .tag-n{font-size:12px;padding:3px 10px;background:var(--gold)}
+.tag.tier-2{font-size:15px;padding:9px 20px;font-weight:600}
+
+.people-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(180px,1fr));
+  gap:14px;
+}
+.person-card{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  padding:24px 16px 20px;
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:14px;
+  text-decoration:none;
+  transition:all .3s;
+  text-align:center;
+  color:inherit;
+}
+.person-card:hover{
+  transform:translateY(-3px);
+  box-shadow:0 8px 24px rgba(0,0,0,.06);
+  border-color:var(--gold-light);
+}
+.person-avatar{
+  width:56px;height:56px;
+  border-radius:50%;
+  background:linear-gradient(135deg,var(--navy),var(--navy-light));
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:22px;
+  margin-bottom:12px;
+  color:var(--gold-light);
+  font-family:var(--serif);
+  font-weight:700;
+  box-shadow:0 4px 12px rgba(26,35,50,.15);
+}
+.person-name{
+  font-family:var(--serif);
+  font-size:15px;
+  font-weight:700;
+  color:var(--navy);
+  margin-bottom:4px;
+}
+.person-refs{font-size:12px;color:var(--text2)}
+
+.gold-divider{display:flex;align-items:center;gap:16px;margin:56px 0}
+.gold-divider::before,.gold-divider::after{
+  content:'';
+  flex:1;
+  height:1px;
+  background:linear-gradient(to right,transparent,var(--border),transparent);
+}
+.gold-divider-diamond{
+  width:8px;height:8px;
+  background:var(--gold);
+  transform:rotate(45deg);
+  flex-shrink:0;
+}
+
+.footer-promo{
+  position:relative;
+  overflow:hidden;
+  padding:40px;
+  background:var(--navy);
+  border-radius:20px;
+  color:#fff;
+  display:flex;
+  gap:40px;
+  align-items:center;
+}
+.footer-promo::before{
+  content:'';
+  position:absolute;
+  top:-50%;right:-20%;
+  width:400px;height:400px;
+  border-radius:50%;
+  background:radial-gradient(circle,rgba(184,134,11,.15),transparent 70%);
+}
+.promo-story{flex:1;position:relative;z-index:1;min-width:0}
+.promo-story h3{
+  font-family:var(--serif);
+  font-size:20px;
+  font-weight:700;
+  margin-bottom:12px;
+  color:var(--gold-light);
+}
+.promo-story p{font-size:14px;color:rgba(255,255,255,.75);line-height:1.8;margin:8px 0}
+.promo-credit{
+  margin-top:16px !important;
+  padding-top:14px;
+  border-top:1px solid rgba(255,255,255,.12);
+  font-size:13px !important;
+}
+.promo-credit strong{color:var(--gold-light);font-weight:700}
+
+.promo-qr{
+  flex-shrink:0;
+  position:relative;
+  z-index:1;
+  text-align:center;
+}
+.qr-img{
+  display:block;
+  width:140px;
+  height:140px;
+  border-radius:12px;
+  border:3px solid rgba(255,255,255,.15);
+  box-shadow:0 8px 24px rgba(0,0,0,.25);
+  background:#fff;
+  padding:6px;
+}
+.qr-text{
+  font-size:12px;
+  color:rgba(255,255,255,.6);
+  margin-top:10px;
+  letter-spacing:.5px;
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes fadeUp{
+  from{opacity:0;transform:translateY(16px)}
+  to{opacity:1;transform:translateY(0)}
+}
+.section{opacity:0;animation:fadeUp .5s ease forwards}
+.section:nth-child(1){animation-delay:.45s}
+.section:nth-child(2){animation-delay:.55s}
+.section:nth-child(3){animation-delay:.65s}
+.section:nth-child(4){animation-delay:.75s}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:1024px){
+  .main.has-backlinks{display:block}
+  .backlinks-panel{
+    position:static;
+    max-height:none;
+    overflow-y:visible;
+    border-left:none;
+    border-top:1px solid var(--border);
+    padding:24px 16px;
+    margin-top:24px;
+    max-width:820px;
+  }
+}
+
+@media(max-width:768px){
+  .sidebar{transform:translateX(-100%);transition:transform .3s}
+  .sidebar.open{transform:translateX(0)}
+  .hamburger{display:block}
+  .main{margin-left:0;max-width:100%}
+  .main::after{left:0}
+  .main.has-backlinks{display:block}
+  .article{padding:48px 16px 60px}
+  .backlinks-panel{padding:16px 12px;margin-top:16px}
+  .hero-section{padding:44px 20px 20px}
+  .hero-eyebrow{font-size:10px;margin-bottom:12px}
+  .hero-title{font-size:26px}
+  .hero-sub{font-size:14px;line-height:1.6;margin-top:10px}
+  .stats-row{padding:0 16px;margin:0 0 20px}
+  .stat-item{padding:16px 4px}
+  .stat-num{font-size:28px;letter-spacing:-1px}
+  .stat-label{font-size:11px}
+  .main-inner{padding:0 20px 60px}
+  .nav-cards{grid-template-columns:1fr 1fr;gap:10px;margin-bottom:36px}
+  .nav-card{padding:20px 14px 18px}
+  .nav-card-icon{font-size:24px;margin-bottom:8px}
+  .nav-card-title{font-size:14px}
+  .nav-card-sub{font-size:12px}
+  .footer-promo{flex-direction:column;text-align:center;padding:28px 20px;gap:24px}
+  .people-grid{grid-template-columns:repeat(2,1fr)}
+}
+</style>
+</head>
+<body>
+<button class="hamburger" aria-label="菜单" onclick="document.querySelector('.sidebar').classList.toggle('open')">☰</button>
+<aside class="sidebar">
+  <div class="sidebar-header"><a href="/index.html" class="logo">马斯克知识图谱</a></div>
+  <div class="sidebar-nav">
+    <a href="/index.html" class="nav-link nav-home">🏛 首页</a>
+<div class="nav-group open">
+  <div class="nav-group-title"><span class="caret"></span>索引<span class="badge">5</span></div>
+  <div class="nav-group-items">
+    <a href="/index-pages/人物索引.html" class="nav-link" title="人物索引">人物索引</a>
+    <a href="/index-pages/公司与产品索引.html" class="nav-link" title="公司与产品索引">公司与产品索引</a>
+    <a href="/index-pages/工作方法索引.html" class="nav-link" title="工作方法索引">工作方法索引</a>
+    <a href="/index-pages/核心思想索引.html" class="nav-link" title="核心思想索引">核心思想索引</a>
+    <a href="/index-pages/素材总览.html" class="nav-link" title="素材总览">素材总览</a>
+  </div>
+</div>
+<div class="nav-group">
+  <div class="nav-group-title"><span class="caret"></span>总体规划<span class="badge">3</span></div>
+  <div class="nav-group-items">
+    <a href="/master-plans/2006 总体规划 第一部.html" class="nav-link" title="2006 总体规划 第一部">2006 总体规划 第一部</a>
+    <a href="/master-plans/2016 总体规划 第二部.html" class="nav-link" title="2016 总体规划 第二部">2016 总体规划 第二部</a>
+    <a href="/master-plans/2023 总体规划 第三部.html" class="nav-link" title="2023 总体规划 第三部">2023 总体规划 第三部</a>
+  </div>
+</div>
+<div class="nav-group open">
+  <div class="nav-group-title"><span class="caret"></span>访谈<span class="badge">11</span></div>
+  <div class="nav-group-items">
+    <a href="/interviews/2017-04 TED - 我们正在建造的未来.html" class="nav-link" title="2017-04 TED - 我们正在建造的未来">2017-04 TED - 我们正在建造的未来</a>
+    <a href="/interviews/2018-09 Joe Rogan 1169.html" class="nav-link" title="2018-09 Joe Rogan 1169">2018-09 Joe Rogan 1169</a>
+    <a href="/interviews/2019-04 Lex Fridman 49 - Tesla Autopilot.html" class="nav-link" title="2019-04 Lex Fridman 49 - Tesla Autopilot">2019-04 Lex Fridman 49 - Tesla Autopilot</a>
+    <a href="/interviews/2019-11 Lex Fridman 2 - Neuralink.html" class="nav-link" title="2019-11 Lex Fridman 2 - Neuralink">2019-11 Lex Fridman 2 - Neuralink</a>
+    <a href="/interviews/2020-05 Joe Rogan 1470.html" class="nav-link" title="2020-05 Joe Rogan 1470">2020-05 Joe Rogan 1470</a>
+    <a href="/interviews/2021 Sandy Munro 工厂走访.html" class="nav-link" title="2021 Sandy Munro 工厂走访">2021 Sandy Munro 工厂走访</a>
+    <a href="/interviews/2021-12 Lex Fridman 252 - SpaceX Mars.html" class="nav-link" title="2021-12 Lex Fridman 252 - SpaceX Mars">2021-12 Lex Fridman 252 - SpaceX Mars</a>
+    <a href="/interviews/2023-11 Lex Fridman 400 - War AI Politics.html" class="nav-link active" title="2023-11 Lex Fridman 400 - War AI Politics">2023-11 Lex Fridman 400 - War AI Politics</a>
+    <a href="/interviews/2023-11 NYT DealBook Summit.html" class="nav-link" title="2023-11 NYT DealBook Summit">2023-11 NYT DealBook Summit</a>
+    <a href="/interviews/2024-03 Don Lemon Show.html" class="nav-link" title="2024-03 Don Lemon Show">2024-03 Don Lemon Show</a>
+    <a href="/interviews/2024-08 Lex Fridman 438 - Neuralink Team.html" class="nav-link" title="2024-08 Lex Fridman 438 - Neuralink Team">2024-08 Lex Fridman 438 - Neuralink Team</a>
+  </div>
+</div>
+<div class="nav-group">
+  <div class="nav-group-title"><span class="caret"></span>财报会议<span class="badge">8</span></div>
+  <div class="nav-group-items">
+    <a href="/earnings-calls/2017 SpaceX IAC - Starship 更新.html" class="nav-link" title="2017 SpaceX IAC - Starship 更新">2017 SpaceX IAC - Starship 更新</a>
+    <a href="/earnings-calls/2018-Q4 Tesla 财报会议.html" class="nav-link" title="2018-Q4 Tesla 财报会议">2018-Q4 Tesla 财报会议</a>
+    <a href="/earnings-calls/2020-Q4 Tesla 财报会议.html" class="nav-link" title="2020-Q4 Tesla 财报会议">2020-Q4 Tesla 财报会议</a>
+    <a href="/earnings-calls/2021-Q4 Tesla 财报会议.html" class="nav-link" title="2021-Q4 Tesla 财报会议">2021-Q4 Tesla 财报会议</a>
+    <a href="/earnings-calls/2022 Tesla AI Day.html" class="nav-link" title="2022 Tesla AI Day">2022 Tesla AI Day</a>
+    <a href="/earnings-calls/2022-Q4 Tesla 财报会议.html" class="nav-link" title="2022-Q4 Tesla 财报会议">2022-Q4 Tesla 财报会议</a>
+    <a href="/earnings-calls/2023-Q1 Tesla 财报会议.html" class="nav-link" title="2023-Q1 Tesla 财报会议">2023-Q1 Tesla 财报会议</a>
+    <a href="/earnings-calls/2024-Q2 Tesla 财报会议.html" class="nav-link" title="2024-Q2 Tesla 财报会议">2024-Q2 Tesla 财报会议</a>
+  </div>
+</div>
+<div class="nav-group">
+  <div class="nav-group-title"><span class="caret"></span>方法<span class="badge">10</span></div>
+  <div class="nav-group-items">
+    <a href="/methods/不开会文化.html" class="nav-link" title="不开会文化">不开会文化</a>
+    <a href="/methods/不接受做不到.html" class="nav-link" title="不接受做不到">不接受做不到</a>
+    <a href="/methods/冲刺模式.html" class="nav-link" title="冲刺模式">冲刺模式</a>
+    <a href="/methods/接受高失败率.html" class="nav-link" title="接受高失败率">接受高失败率</a>
+    <a href="/methods/极致简化原则.html" class="nav-link" title="极致简化原则">极致简化原则</a>
+    <a href="/methods/物理学家而非MBA.html" class="nav-link" title="物理学家而非MBA">物理学家而非MBA</a>
+    <a href="/methods/现场指挥.html" class="nav-link" title="现场指挥">现场指挥</a>
+    <a href="/methods/设计-工程紧耦合.html" class="nav-link" title="设计-工程紧耦合">设计-工程紧耦合</a>
+    <a href="/methods/跨公司精力切换.html" class="nav-link" title="跨公司精力切换">跨公司精力切换</a>
+    <a href="/methods/跳层直达工程师.html" class="nav-link" title="跳层直达工程师">跳层直达工程师</a>
+  </div>
+</div>
+<div class="nav-group">
+  <div class="nav-group-title"><span class="caret"></span>概念<span class="badge">20</span></div>
+  <div class="nav-group-items">
+    <a href="/concepts/5步生产力框架.html" class="nav-link" title="5步生产力框架">5步生产力框架</a>
+    <a href="/concepts/AI安全立场演变.html" class="nav-link" title="AI安全立场演变">AI安全立场演变</a>
+    <a href="/concepts/FSD预测准确度.html" class="nav-link" title="FSD预测准确度">FSD预测准确度</a>
+    <a href="/concepts/Hardcore工作文化.html" class="nav-link" title="Hardcore工作文化">Hardcore工作文化</a>
+    <a href="/concepts/OpenAI关系演变.html" class="nav-link" title="OpenAI关系演变">OpenAI关系演变</a>
+    <a href="/concepts/产能地狱.html" class="nav-link" title="产能地狱">产能地狱</a>
+    <a href="/concepts/原型vs量产.html" class="nav-link" title="原型vs量产">原型vs量产</a>
+    <a href="/concepts/可持续能源.html" class="nav-link" title="可持续能源">可持续能源</a>
+    <a href="/concepts/垂直整合.html" class="nav-link" title="垂直整合">垂直整合</a>
+    <a href="/concepts/多行星物种.html" class="nav-link" title="多行星物种">多行星物种</a>
+    <a href="/concepts/失败的节奏.html" class="nav-link" title="失败的节奏">失败的节奏</a>
+    <a href="/concepts/工程师文化.html" class="nav-link" title="工程师文化">工程师文化</a>
+    <a href="/concepts/意识的光锥.html" class="nav-link" title="意识的光锥">意识的光锥</a>
+    <a href="/concepts/文明存续与衰退.html" class="nav-link" title="文明存续与衰退">文明存续与衰退</a>
+    <a href="/concepts/物理学思维.html" class="nav-link" title="物理学思维">物理学思维</a>
+    <a href="/concepts/白痴指数.html" class="nav-link" title="白痴指数">白痴指数</a>
+    <a href="/concepts/直接报告链.html" class="nav-link" title="直接报告链">直接报告链</a>
+    <a href="/concepts/第一性原理.html" class="nav-link" title="第一性原理">第一性原理</a>
+    <a href="/concepts/言论自由立场.html" class="nav-link" title="言论自由立场">言论自由立场</a>
+    <a href="/concepts/造机器的机器.html" class="nav-link" title="造机器的机器">造机器的机器</a>
+  </div>
+</div>
+<div class="nav-group">
+  <div class="nav-group-title"><span class="caret"></span>产品<span class="badge">12</span></div>
+  <div class="nav-group-items">
+    <a href="/companies/Neuralink.html" class="nav-link" title="Neuralink">Neuralink</a>
+    <a href="/companies/OpenAI.html" class="nav-link" title="OpenAI">OpenAI</a>
+    <a href="/companies/Optimus.html" class="nav-link" title="Optimus">Optimus</a>
+    <a href="/companies/SolarCity.html" class="nav-link" title="SolarCity">SolarCity</a>
+    <a href="/companies/SpaceX.html" class="nav-link" title="SpaceX">SpaceX</a>
+    <a href="/companies/Starship.html" class="nav-link" title="Starship">Starship</a>
+    <a href="/companies/Tesla.html" class="nav-link" title="Tesla">Tesla</a>
+    <a href="/companies/The Boring Company.html" class="nav-link" title="The Boring Company">The Boring Company</a>
+    <a href="/companies/X (Twitter).html" class="nav-link" title="X (Twitter)">X (Twitter)</a>
+    <a href="/companies/X.com - PayPal.html" class="nav-link" title="X.com - PayPal">X.com - PayPal</a>
+    <a href="/companies/Zip2.html" class="nav-link" title="Zip2">Zip2</a>
+    <a href="/companies/xAI.html" class="nav-link" title="xAI">xAI</a>
+  </div>
+</div>
+<div class="nav-group">
+  <div class="nav-group-title"><span class="caret"></span>人物<span class="badge">8</span></div>
+  <div class="nav-group-items">
+    <a href="/people/Elon Musk.html" class="nav-link" title="Elon Musk">Elon Musk</a>
+    <a href="/people/Gwynne Shotwell.html" class="nav-link" title="Gwynne Shotwell">Gwynne Shotwell</a>
+    <a href="/people/JB Straubel.html" class="nav-link" title="JB Straubel">JB Straubel</a>
+    <a href="/people/Larry Page.html" class="nav-link" title="Larry Page">Larry Page</a>
+    <a href="/people/Noland Arbaugh.html" class="nav-link" title="Noland Arbaugh">Noland Arbaugh</a>
+    <a href="/people/Sam Altman.html" class="nav-link" title="Sam Altman">Sam Altman</a>
+    <a href="/people/Sandy Munro.html" class="nav-link" title="Sandy Munro">Sandy Munro</a>
+    <a href="/people/Walter Isaacson.html" class="nav-link" title="Walter Isaacson">Walter Isaacson</a>
+  </div>
+</div>
+<a href="/graph.html" class="nav-link nav-graph">🕸️ 知识图谱</a>
+<a href="/index-pages/更新日志.html" class="nav-link nav-changelog">📋 更新日志</a>
+
+  </div>
+</aside>
+<main class="main has-backlinks">
+<div class="main-content article"><div class="meta"><span class="type-badge type-访谈">访谈</span></div>
+<h1 id="lex-fridman-400ai2023">Lex Fridman #400：战争、AI、外星人、政治与人性（2023）</h1>
+<blockquote>
+<p>译者注：这是 Lex Fridman 与 <a href="/people/Elon Musk.html">Elon Musk</a> 的第四次对话（约 2 小时 16 分钟，20589 词）。时间点是 2023 年 11 月——以哈冲突刚爆发一个月，俄乌战争进入僵持，<a href="/companies/xAI.html">xAI</a> 刚刚发布 Grok，Musk 对"清醒病毒"（woke mind virus）的政治斗争正处于白热化阶段。他此时已经是 X 平台的老板，即将全面拥抱特朗普之前的最后一次深度对话。本文为主题精华笔记。</p>
+</blockquote>
+<h2 id="_1">一、战争与人性</h2>
+<p>Lex 开场问：战争到底是人类天性的一部分，还是社会结构的产物？</p>
+<blockquote>
+<p>"我总体上支持和平。在我看来，<strong>无知才是真正的敌人</strong>。真正难的不是和其他人类打，而是和无知对抗。但所有生物都在互相厮杀——很多人把大自然想成田园牧歌，其实不然。沃纳·赫尔佐格有段特别有意思的话，他在丛林里说：这里就是朝着四面八方的谋杀和死亡。植物和动物每分每秒都在试图杀死彼此。所以我们（会打仗）这件事并不反常。"</p>
+</blockquote>
+<p>但 Musk 认为，<strong>智能更高意味着对暴力本能的控制力更强</strong>：</p>
+<blockquote>
+<p>"我们对边缘系统暴力冲动的控制力，远大于一只黑猩猩。如果你看黑猩猩社会，那不是友好的——那是极度的暴力，相当恐怖。而你不会想站在黑猩猩的对立面，它会把你的脸咬下来。"</p>
+</blockquote>
+<h2 id="-">二、以色列-哈马斯与"以显眼的善意回应"</h2>
+<p>Musk 对以色列-哈马斯冲突提出了一个反直觉的建议：</p>
+<blockquote>
+<p>"严格讲这是我个人的观点——哈马斯的目标是<strong>激发以色列过度反应</strong>。他们显然不指望军事胜利，但他们想犯下最可怕的暴行，以激发以色列最具侵略性的回应，然后用这个回应去在全世界穆斯林中为加沙和巴勒斯坦事业凝聚支持——他们做到了。"</p>
+<p>"所以反直觉的做法是——我会建议以色列采取<strong>最显眼的善意行动</strong>（conspicuous acts of kindness），全面、彻底、透明，让哈马斯没法把它说成是'诡计'。设立流动医院，保证食物、饮水、医疗物资。做得过头一点，挂上 24/7 的摄像头。"</p>
+<p>"我不是谁说的，但有句话叫'以眼还眼，天下皆盲'（an eye for an eye makes everyone blind）。那一带的人真的信'以眼还眼'。但问题是——<strong>每杀一个哈马斯成员，你制造了多少个新的？</strong>如果你制造的比杀掉的还多，你就没成功。"</p>
+</blockquote>
+<p>他把一战后的《凡尔赛条约》与二战后的马歇尔计划对比：前者是把所有责任推给德国并索取不可能的赔款，后者是主动帮助重建。<strong>二战胜利者帮助战败者重建，这是正确的选择</strong>。</p>
+<blockquote>
+<p>"必须有某个东西去终止互相报复的循环，否则它永远不会停。<strong>以眼还眼，以牙还牙，以命还命，永远不停</strong>。"</p>
+</blockquote>
+<h2 id="_2">三、中国 与修昔底德陷阱</h2>
+<p>Musk 推荐读《注定一战》（The Thucydides Trap）：</p>
+<blockquote>
+<p>"如果一个文明或国家超越了另一个——美国从 1890 年代起就是最大的经济体，没有人活着的时候见过美国之外的更大的经济体。战争的基础是经济。而现在中国的经济很可能会是美国的 2 到 3 倍大。想象你当了一辈子街区里最大的孩子，突然来了一个比你大两倍的孩子。"</p>
+</blockquote>
+<p><strong>他对中国的观察可能出人意料地温和</strong>：</p>
+<blockquote>
+<p>"中国真正聪明、勤奋的人数量多得惊人。而且他们能量满满。近年来中国的建筑、火车站、高速铁路——都远比美国的更令人印象深刻。……从历史上看，中国极少对外扩张。他们打内战多——比如三国时期，据说损失了 70% 的人口。中国人对中国的关注，是对外部事物关注的 10 倍。90% 的注意力都是内部的。"</p>
+</blockquote>
+<p>他把中国和美国并列为<strong>"少数非扩张性大国"</strong>：</p>
+<blockquote>
+<p>"二战后美国本可以用核武器接管全世界。你想要哪个国家？美国没有。美国反而去帮重建欧洲、重建日本，这是非常罕见、近乎前所未有的行为。柏林空运这种显眼的善意行动……一个简单的测试是——你宁愿被谁俘虏？二战末期，俄国军队从一边进来，英美法军队从另一边进来，<strong>你宁愿向谁投降？</strong>没有国家是完美的，但我推荐被美国人俘虏。"</p>
+</blockquote>
+<p><strong>关于台湾</strong>：</p>
+<blockquote>
+<p>"中国在台湾问题上一直非常清楚——他们会和平或以武力收回。从他们的立场看，这 100% 是必然的。"</p>
+</blockquote>
+<h2 id="xai-grok">四、<a href="/companies/xAI.html">xAI</a> 与 Grok：真理与幽默</h2>
+<p>Musk 把 Grok 的哲学基础追溯到《银河系漫游指南》：</p>
+<blockquote>
+<p>"Grok 是以《银河系漫游指南》为原型的。这是我最喜欢的书之一，它表面上是一本幽默书，实际上是一本哲学书。<strong>这本书构成了我哲学的基础——我们不知道生命的意义是什么，但我们扩展意识的范围和规模越多（无论是数字的还是生物的），我们就越能理解该问什么问题，而答案就是宇宙。我有一种好奇心的哲学</strong>。"</p>
+</blockquote>
+<p>他反复强调<strong>忠于物理真理</strong>：</p>
+<blockquote>
+<p>"<strong>物理是法律，其他一切都是建议</strong>。我见过很多人打破人定的法律，但没见过谁能打破物理定律。所以你要让 LLM 的输出真正可信，就必须把它的推理一层层追溯到物理第一性原理和数学逻辑。否则所有创造都只是'魔法'和'想象王国'。"</p>
+</blockquote>
+<p><strong>关于 LLM 的自我连贯</strong>：</p>
+<blockquote>
+<p>"LLM 现在的问题是——它只是在做向量求和，token 接 token，<strong>误差会漂移</strong>。时间久了，往前走几千个 token，就完全不 make sense 了。它必须像作家那样写完初稿再去修改、迭代、保持整体一致性。修改的过程也许就是推理的过程——你先说一堆废话，然后一步步变得更对。"</p>
+</blockquote>
+<h2 id="_3">五、关于外星人：费米悖论</h2>
+<blockquote>
+<p>"我一直没看到任何外星人存在的证据，这<strong>有点令人担忧</strong>。如果他们真的在外面，那他们非常隐蔽。我们可能是银河系里唯一的意识。"</p>
+</blockquote>
+<p>他再次讲地球的宇宙尺度：</p>
+<blockquote>
+<p>"地球约 45 亿岁，按照第一批文字来算，文明约 5000 年——只是地球存在的 <strong>1/100 万</strong>。文明刚刚过去的那一瞬间。而 5 亿年后太阳会开始吞没地球——这只比地球现在的年龄多 10%。<strong>如果生命的进化多花 10% 的时间，它就根本不会存在了</strong>。"</p>
+</blockquote>
+<p><strong>费米悖论的"大过滤器"</strong>：</p>
+<blockquote>
+<p>"一个大过滤器就是：你成为多行星物种了吗？如果没有，那只是时间问题，早晚会发生某种自然或人为的事情让你灭绝。就像恐龙——它们现在哪儿呢？它们没有宇宙飞船。"</p>
+<p>"我不想成为那种'可怜的单行星文明'之一。<strong>一个有自尊心的文明，不该只占一颗星球</strong>。"</p>
+</blockquote>
+<h2 id="1984">六、关于乌托邦的悖论：《1984》与《美丽新世界》</h2>
+<p>Musk 在访谈中现场掏出 Grok 查了一个极漂亮的段落——关于赫胥黎《美丽新世界》里的 Soma：</p>
+<blockquote>
+<p>"你该不该希望世界永远和平、人们永远快乐？你确定？因为那可能是一个本质上僵化、枯萎、最终注定毁灭的社会。"</p>
+</blockquote>
+<p>他进一步：</p>
+<blockquote>
+<p>"你希望世界上没有仇恨吗？真的一点都没有？我在想为什么仇恨会进化出来。我不是说我们要放大仇恨，当然要尽量减少——但<strong>完全没有呢？也许仇恨有它的理由</strong>。"</p>
+<p>"不经历过低点，能欣赏高点吗？"<br />
+"<strong>没有起伏，谁知道呢</strong>（No highs, no lows, who knows）。"</p>
+</blockquote>
+<h2 id="aicompute">七、AI、compute 与电力瓶颈</h2>
+<p>Musk 对 AI 未来的瓶颈判断很具体：</p>
+<blockquote>
+<p>"现在有硅片短缺。一年之内，会转成<strong>变压器（transformer）短缺</strong>——讽刺的是，你需要 transformer 来跑 transformer。然后大约两年内，就会有<strong>电力短缺</strong>。"</p>
+<p>"我对全世界公用事业公司的一次演讲上说——你们必须准备电力需求的三倍增长。因为交通会电动化，供暖也会电动化。粗略来说，能源使用 1/3 是电、1/3 是交通、1/3 是供暖。要想全部可持续化，电力输出需要翻三倍。"</p>
+</blockquote>
+<p>电网的结构性问题：</p>
+<blockquote>
+<p>"电网是按<strong>实时负载</strong>来设计的，这很疯狂——你必须按全年最坏那一秒去设计容量。所以必须用<strong>电池</strong>来缓冲——晚上发电白天用。"</p>
+</blockquote>
+<h2 id="ai">八、AI 监管与"封海豹戴耳机"的荒诞</h2>
+<p>Musk 支持监管 AI（他是"卡珊德拉"十年），但他讲了一段关于 SpaceX 发射许可的荒诞故事，揭示政府官僚的问题：</p>
+<blockquote>
+<p>"FAA 已经批准了，但我们还在等'鱼类和野生动物局'完成他们的分析。所以我在推特上说我想买一张'钓鱼许可证'。为什么发火箭要钓鱼许可证？"</p>
+<p>"他们担心我们的火箭会撞到鲨鱼。太平洋那么大，鲨鱼占海面面积基本是 0%。我们说好，怎么算撞上鲨鱼的概率？他们说不能给我们数据，怕鲨鱼猎人拿去猎鲨。然后又有一个部门担心鲸鱼。"</p>
+<p>"在 Vandenberg 发射时，他们担心音爆会影响<strong>海豹交配</strong>。但多年来 Vandenberg 发射了那么多火箭，海豹种群一直在增长——<strong>如果真要相关的话，火箭音爆可能是催情剂</strong>。即便如此，他们还是逼我们<strong>绑架一只海豹，绑在板子上，戴上耳机，放音爆声给它听</strong>，看它会不会应激。这是真事。这还做了两次，不同的海豹。"</p>
+<p>"这就是一个海豹的外星人绑架故事——它回去怎么和海豹朋友解释？它们肯定不信。"</p>
+</blockquote>
+<h2 id="ai-openai">九、开源 AI 与 <a href="/companies/OpenAI.html">OpenAI</a> 的恩怨</h2>
+<p>Musk 讲了他与 <a href="/people/Larry Page.html">Larry Page</a> 关系破裂的经过：</p>
+<blockquote>
+<p>"我和 Larry 曾经是朋友，我住在他家。我跟他谈 AI 安全，<strong>Larry 当时不在乎 AI 安全</strong>。有一次他骂我是'物种主义者'（speciesist），因为我站在人类这一边。我说，那你在哪队，Larry？他现在还在'机器人队'，说清楚。"</p>
+<p>"当时 Google 刚收购 DeepMind，他们有世界上约三分之二的 AI 研究人员，有基本无限的钱和算力，而老板不在乎安全。所以我们（和 Sam Altman 等人）创立了 <a href="/companies/OpenAI.html">OpenAI</a>——作为<strong>非营利、开源</strong>的反制力量。'open in OpenAI' 意思就是开源。现在它是<strong>闭源 for maximum profit</strong>，这不是好业力。"</p>
+</blockquote>
+<p>他承认招 Ilya Sutskever 是当时最艰难的一次挖角——"一会儿要留一会儿要走，反反复复"——这是 OpenAI 成功的关键。</p>
+<h2 id="sec">十、关于 SEC、马斯克被起诉与媒体偏见</h2>
+<p>Musk 反复强调 Grok 从主流媒体学到了错的东西：</p>
+<blockquote>
+<p>"'Funding Secured' 那件事，旧金山陪审团一致裁定我无罪。……我只同意付罚款的原因是——我们 CFO 告诉我，如果不付，银行会立刻停掉我们的信用额度，Tesla 会立刻破产。所以这是<strong>人质谈判</strong>——他们用枪指着你孩子的头说'付 2000 万美元'。"</p>
+<p>"SEC 的律师工资很低，他们想要的是<strong>一个可以写进 LinkedIn 的奖杯</strong>，然后跳槽去高薪律所。所以他们为自己的职业前景把小投资者卖了。这就是监管俘获（regulatory capture）。"</p>
+</blockquote>
+<p>Musk 明确表态："<strong>如果你想训练 AI，必须把真实的法庭裁决加入训练集，而不是媒体报道</strong>。在两起案子里，判决和媒体写的完全相反。"</p>
+<h2 id="community-notes">十一、社区笔记（Community Notes）</h2>
+<p>Musk 对 <a href="/concepts/言论自由立场.html">Community Notes</a> 相当自豪：</p>
+<blockquote>
+<p>"社区笔记的魔力在于——它<strong>要求历史上评分倾向不同的人必须取得一致，才能让一条笔记显示</strong>。我们用 AI 在某人对笔记的评分模式周围填充一个向量空间。所以它不是简单的左派右派——生活比左右复杂得多。如果历史上互相不同意的人，在某件事上意见一致了，那件事<strong>很可能是真的</strong>。"</p>
+<p>"任何人都不可能修改一条社区笔记，即使拿枪指着我的头也不行。代码 100% 开源，数据 100% 开源。如果有干预，会立刻被发现。"</p>
+</blockquote>
+<h2 id="_4">十二、关于信任：从不愤世嫉俗</h2>
+<blockquote>
+<p>"<strong>永远不要信任愤世嫉俗的人</strong>。愤世嫉俗的人会用'人人都这样'作为为自己坏行为开脱的借口。他们就是因为愤世嫉俗，才能原谅自己的坏。但这不是真的——<strong>大多数人其实都还是中等偏好的</strong>。"</p>
+<p>"说实话，我几乎从来没有被背叛过。这很少见。"</p>
+</blockquote>
+<h2 id="tesla-autopilot">十三、<a href="/companies/Tesla.html">Tesla</a> Autopilot：光子进，控制出</h2>
+<blockquote>
+<p>"关于端到端训练最狂的地方是——<strong>我们从没教过它什么是车、什么是人、什么是自行车手。它是从视频里学的，就像人类</strong>。人类也是'光子进，控制出'（photons in, controls out）。大脑接收的绝大多数信息来自眼睛，输出则是手指和嘴巴的运动信号。车也是一样。"</p>
+</blockquote>
+<p><strong><a href="/companies/Tesla.html">Tesla</a> 路线 vs LLM</strong>：</p>
+<blockquote>
+<p>"Tesla 的方法必须<strong>compute 高效</strong>，因为没得选——我们只有 100 瓦和一台小电脑，144 TOPS。听起来很多，但现在的算力尺度上是小钱。而人的大脑更夸张——处理高级思维的部分只有<strong>大约 10 瓦</strong>，这 10 瓦还能写出比 10 兆瓦 GPU 集群更好的小说。差<strong>六个数量级</strong>。"</p>
+<p>"AI 目前到这个程度，全靠暴力——海量 compute 和电力。这不会是终点。任何技术先让它能用，然后让它高效。Tesla 在这点上反而先行，因为我们被逼着要用 100 瓦去理解世界。"</p>
+</blockquote>
+<p><strong>关于 <a href="/companies/Optimus.html">Optimus</a> 的机器学习</strong>：</p>
+<blockquote>
+<p>"Optimus 和车本质上是一回事——视频进，控制出。车是四个轮子的机器人，Optimus 是有手和腿的机器人。控制不同，但学习机制相同。"</p>
+</blockquote>
+<h2 id="_5">十四、苦难与宽恕</h2>
+<p>最后 Lex 问 Musk 正在经历什么难事：</p>
+<blockquote>
+<p>"我在努力打败乌伯·莉莉丝（暗黑破坏神 4 的终极 boss）。我的大脑是个暴风雨，<strong>大多数人不会想变成我</strong>。他们可能以为想，但不知道是什么样。"</p>
+<p>"我总体上还行。事情大局上看，我没什么可抱怨的。"</p>
+</blockquote>
+<p>关于童年和宽恕：</p>
+<blockquote>
+<p>"什么是宽恕？至少我不记恨，所以没什么好宽恕的。……我会想'什么能让未来变好'。<strong>抓着恩怨不放不会让未来变好</strong>。"</p>
+</blockquote>
+<p>关于孩子带给他的启示：</p>
+<blockquote>
+<p>"养 AI 和看 X 长大，比我预期的有更多相似之处。我能看到他的生物神经网络在逐步理解世界，也能看到数字神经网络在同时逐步理解世界。"</p>
+<p>"孩子的特别之处是——他们眼中的一切都是新的、是鲜的。当你看他们体验新世界的时候，<strong>你自己的世界也变新了</strong>。"</p>
+</blockquote>
+<hr />
+<p><strong>原始访谈链接</strong>：<a href="https://lexfridman.com/elon-musk-4/">Lex Fridman #400</a><br />
+<strong>时长</strong>：约 2 小时 16 分钟<br />
+<strong>主要话题</strong>：战争 / <a href="/companies/xAI.html">xAI</a> / Grok / 中国 / 外星人 / AI 监管 / <a href="/companies/OpenAI.html">OpenAI</a> / Autopilot / <a href="/companies/Optimus.html">Optimus</a></p></div><aside class="backlinks-panel">
+  <div class="bl-panel-header">
+    <h3 class="bl-panel-title">链接到本页 <span class="bl-count">19</span></h3>
+    <div class="bl-panel-actions">
+      <button class="bl-action bl-expand-all">展开</button>
+      <button class="bl-action bl-collapse-all">折叠</button>
+    </div>
+  </div>
+  <div class="bl-group">
+  <button class="bl-group-header">
+    <span class="bl-caret"></span>
+    <span class="bl-source-name">5步生产力框架（5-Step Production Process）</span>
+    <span class="bl-mention-cat">概念</span>
+  </button>
+  <div class="bl-snippets">
+    <div class="bl-snippet">…为它只对硬件有效**。马斯克在 2021-12 Lex Fridman 252 - SpaceX Mars 和 2023-11 Lex Fridman 400 - War AI Politics 里都把这套方法用到了软件、法规甚至组织设计上。  ## 马斯克原话精选  &gt; "需求在某种程度上总是蠢的。" ——[[…</div>
+    <a href="/concepts/5步生产力框架.html" class="bl-go-link">查看原文 →</a>
+  </div>
+</div>
+<div class="bl-group">
+  <button class="bl-group-header">
+    <span class="bl-caret"></span>
+    <span class="bl-source-name">AI 安全立场演变（Evolution of AI Safety Position）</span>
+    <span class="bl-mention-cat">概念</span>
+  </button>
+  <div class="bl-snippets">
+    <div class="bl-snippet">…你最终什么也保护不了。你必须有一个自己的、追求真理的 AI。" &gt; ——Musk 对 xAI 的公开叙事（综合 2023-11 Lex Fridman 400 - War AI Politics / 2024-08 Lex Fridman 438 - Neuralink Team）  这是 Musk 整个…</div>
+    <a href="/concepts/AI安全立场演变.html" class="bl-go-link">查看原文 →</a>
+  </div>
+</div>
+<div class="bl-group">
+  <button class="bl-group-header">
+    <span class="bl-caret"></span>
+    <span class="bl-source-name">Hardcore 工作文化（Hardcore Work Ethic）</span>
+    <span class="bl-mention-cat">概念</span>
+  </button>
+  <div class="bl-snippets">
+    <div class="bl-snippet">…NYT DealBook Summit]]  &gt; "大多数人不会想变成我。他们可能以为想，但不知道是什么样。" &gt; ——2023-11 Lex Fridman 400 - War AI Politics  Musk 对这种强度没有美化——他说这不是一场快乐的风暴。但他也不想停下来。  **5) 留住工人：不是"困…</div>
+    <a href="/concepts/Hardcore工作文化.html" class="bl-go-link">查看原文 →</a>
+  </div>
+</div>
+<div class="bl-group">
+  <button class="bl-group-header">
+    <span class="bl-caret"></span>
+    <span class="bl-source-name">OpenAI 关系演变（Evolution of the OpenAI Relationship）</span>
+    <span class="bl-mention-cat">概念</span>
+  </button>
+  <div class="bl-snippets">
+    <div class="bl-snippet">…kever 是当时最艰难的一次挖角——'一会儿要留一会儿要走，反反复复'——这是 OpenAI 成功的关键。" &gt; ——2023-11 Lex Fridman 400 - War AI Politics  Musk 亲自把 Ilya 从 Google Brain 挖到 OpenAI—…</div>
+    <a href="/concepts/OpenAI关系演变.html" class="bl-go-link">查看原文 →</a>
+  </div>
+</div>
+<div class="bl-group">
+  <button class="bl-group-header">
+    <span class="bl-caret"></span>
+    <span class="bl-source-name">可持续能源（Sustainable Energy）</span>
+    <span class="bl-mention-cat">概念</span>
+  </button>
+  <div class="bl-snippets">
+    <div class="bl-snippet">…化。粗略来说，能源使用 1/3 是电、1/3 是交通、1/3 是供暖。要想全部可持续化，电力输出需要翻三倍。" &gt; ——2023-11 Lex Fridman 400 - War AI Politics  这是 Musk 对 2024-Q2 Tesla 财报会议 里 Megapack 储能业务爆炸的背景解…</div>
+    <a href="/concepts/可持续能源.html" class="bl-go-link">查看原文 →</a>
+  </div>
+</div>
+<div class="bl-group">
+  <button class="bl-group-header">
+    <span class="bl-caret"></span>
+    <span class="bl-source-name">多行星物种（Multiplanetary Species）</span>
+    <span class="bl-mention-cat">概念</span>
+  </button>
+  <div class="bl-snippets">
+    <div class="bl-snippet">…一颗星球  &gt; "我不想成为那种'可怜的单行星文明'之一。一个有自尊心的文明，不该只占一颗星球**。" &gt; ——2023-11 Lex Fridman 400 - War AI Politics  &gt; "如果有两个未来，一个我们在星辰大海之间，一个我们永远被困在地球——前者是一个伟大的未来，后者不是。我不想要那个…</div>
+    <a href="/concepts/多行星物种.html" class="bl-go-link">查看原文 →</a>
+  </div>
+</div>
+<div class="bl-group">
+  <button class="bl-group-header">
+    <span class="bl-caret"></span>
+    <span class="bl-source-name">意识的光锥（Consciousness Light Cone）</span>
+    <span class="bl-mention-cat">概念</span>
+  </button>
+  <div class="bl-snippets">
+    <div class="bl-snippet">…*越多（无论是数字的还是生物的），我们就越能理解该问什么问题，而答案就是宇宙。我有一种好奇心的哲学。" &gt; ——2023-11 Lex Fridman 400 - War AI Politics  Musk 明确拒绝传统宗教的"给定答案"模式——他的宗教是"持续提问"本身。  **3) 生物+数字：扩展意…</div>
+    <a href="/concepts/意识的光锥.html" class="bl-go-link">查看原文 →</a>
+  </div>
+</div>
+<div class="bl-group">
+  <button class="bl-group-header">
+    <span class="bl-caret"></span>
+    <span class="bl-source-name">物理学思维（Physics Approach）</span>
+    <span class="bl-mention-cat">概念</span>
+  </button>
+  <div class="bl-snippets">
+    <div class="bl-snippet">…或绕过，只有物理不能**。  他在 2021-12 Lex Fridman 252 - SpaceX Mars、2023-11 Lex Fridman 400 - War AI Politics、2023-11 NYT DealBook Summit 三场访谈里几乎一字不差地重复了这句话。  ### 核心…</div>
+    <a href="/concepts/物理学思维.html" class="bl-go-link">查看原文 →</a>
+  </div>
+</div>
+<div class="bl-group">
+  <button class="bl-group-header">
+    <span class="bl-caret"></span>
+    <span class="bl-source-name">言论自由立场（Evolution of Free Speech Position）</span>
+    <span class="bl-mention-cat">概念</span>
+  </button>
+  <div class="bl-snippets">
+    <div class="bl-snippet">…左派右派——生活比左右复杂得多。如果历史上互相不同意的人，在某件事上意见一致了，那件事很可能是真的。" &gt; ——2023-11 Lex Fridman 400 - War AI Politics  &gt; "任何人都不可能修改一条 Community Note，**即使拿枪指着我的头也不行。代码 100% 开源，数据…</div>
+    <a href="/concepts/言论自由立场.html" class="bl-go-link">查看原文 →</a>
+  </div>
+</div>
+<div class="bl-group">
+  <button class="bl-group-header">
+    <span class="bl-caret"></span>
+    <span class="bl-source-name">不接受'做不到'（No 'Can't Be Done'）</span>
+    <span class="bl-mention-cat"></span>
+  </button>
+  <div class="bl-snippets">
+    <div class="bl-snippet">…NYT DealBook Summit]]  &gt; "大多数人不会想变成我。他们可能以为想，但不知道是什么样。" &gt; ——2023-11 Lex Fridman 400 - War AI Politics  关键是："我的想法远远超过我能执行的"——这是他对自己说"做不到"的唯一允许。**不是"我不想做"，是"我没时间做"…</div>
+    <a href="/methods/不接受做不到.html" class="bl-go-link">查看原文 →</a>
+  </div>
+</div>
+<div class="bl-group">
+  <button class="bl-group-header">
+    <span class="bl-caret"></span>
+    <span class="bl-source-name">OpenAI</span>
+    <span class="bl-mention-cat">产品</span>
+  </button>
+  <div class="bl-snippets">
+    <div class="bl-snippet">…I 安全的多次警告）  ## 发展历程  ### 2015：作为对抗 Google/DeepMind 的非营利反制力量 2023-11 Lex Fridman 400 - War AI Politics 给出了最完整的创立动机： &gt; "我和 Larry 曾经是朋友，我住在他家。我跟他谈 AI 安全，Larry 当时不在乎…</div>
+    <a href="/companies/OpenAI.html" class="bl-go-link">查看原文 →</a>
+  </div>
+</div>
+<div class="bl-group">
+  <button class="bl-group-header">
+    <span class="bl-caret"></span>
+    <span class="bl-source-name">Optimus</span>
+    <span class="bl-mention-cat">产品</span>
+  </button>
+  <div class="bl-snippets">
+    <div class="bl-snippet">…us 只是把这套大脑装到了人形身体上。  ### 2023-11：Lex Fridman #400 - 真实世界 AI 2023-11 Lex Fridman 400 - War AI Politics——Musk 进一步统一了两个产品的机器学习框架：  &gt; "Optimus 和车本质上是一回事——视频进，控制出…</div>
+    <a href="/companies/Optimus.html" class="bl-go-link">查看原文 →</a>
+  </div>
+</div>
+<div class="bl-group">
+  <button class="bl-group-header">
+    <span class="bl-caret"></span>
+    <span class="bl-source-name">X (Twitter)</span>
+    <span class="bl-mention-cat">产品</span>
+  </button>
+  <div class="bl-snippets">
+    <div class="bl-snippet">…主杀死了这家公司。我们会详细记录这件事。"  ### 2023：Community Notes 作为反审查机制 2023-11 Lex Fridman 400 - War AI Politics： &gt; "社区笔记的魔力在于——它要求历史上评分倾向不同的人必须取得一致，才能让一条笔记显示。我们用 AI 在某人对笔记…</div>
+    <a href="/companies/X (Twitter).html" class="bl-go-link">查看原文 →</a>
+  </div>
+</div>
+<div class="bl-group">
+  <button class="bl-group-header">
+    <span class="bl-caret"></span>
+    <span class="bl-source-name">xAI</span>
+    <span class="bl-mention-cat">产品</span>
+  </button>
+  <div class="bl-snippets">
+    <div class="bl-snippet">…Corp. - 创立时间：2023 年 7 月 - 马斯克角色：创始人、所有者 - 首次提及：2023-11 Lex Fridman 400 - War AI Politics  ## 发展历程  ### 为何创立：先尝试把 AI 团队招进 Tesla [[2024-Q2 Tesla 财报会议]…</div>
+    <a href="/companies/xAI.html" class="bl-go-link">查看原文 →</a>
+  </div>
+</div>
+<div class="bl-group">
+  <button class="bl-group-header">
+    <span class="bl-caret"></span>
+    <span class="bl-source-name">Elon Musk</span>
+    <span class="bl-mention-cat">人物</span>
+  </button>
+  <div class="bl-snippets">
+    <div class="bl-snippet">…Optimus 首次亮相和 Dojo。  ### 2023：恩怨公开化 + 心理自白 两次关键访谈——2023-11 Lex Fridman 400 - War AI Politics 和 2023-11 NYT DealBook Summit——是他最坦率地讲自己心理状态与人际决裂的一年：…</div>
+    <a href="/people/Elon Musk.html" class="bl-go-link">查看原文 →</a>
+  </div>
+</div>
+<div class="bl-group">
+  <button class="bl-group-header">
+    <span class="bl-caret"></span>
+    <span class="bl-source-name">Larry Page</span>
+    <span class="bl-mention-cat">人物</span>
+  </button>
+  <div class="bl-snippets">
+    <div class="bl-snippet">…e 指责马斯克是"speciesist"（物种主义者，因为站在人类这一边）。  ## 在素材中的出现  ### 2023-11 Lex Fridman 400 - War AI Politics——最详细的版本  在第九节"开源 AI 与 OpenAI 的恩怨"里，马斯克讲了这段关系破裂的经过：  &gt; "我和 L…</div>
+    <a href="/people/Larry Page.html" class="bl-go-link">查看原文 →</a>
+  </div>
+</div>
+<div class="bl-group">
+  <button class="bl-group-header">
+    <span class="bl-caret"></span>
+    <span class="bl-source-name">Sam Altman</span>
+    <span class="bl-mention-cat">人物</span>
+  </button>
+  <div class="bl-snippets">
+    <div class="bl-snippet">…3-11 NYT DealBook Summit]] 上公开对他表达"复杂的感受"。  ## 在素材中的出现  ### 2023-11 Lex Fridman 400 - War AI Politics——创业初衷的"Altman 时代"  马斯克在第九节"开源 AI 与 OpenAI 的恩怨"里讲述 OpenAI 创立…</div>
+    <a href="/people/Sam Altman.html" class="bl-go-link">查看原文 →</a>
+  </div>
+</div>
+<div class="bl-group">
+  <button class="bl-group-header">
+    <span class="bl-caret"></span>
+    <span class="bl-source-name">Walter Isaacson</span>
+    <span class="bl-mention-cat">人物</span>
+  </button>
+  <div class="bl-snippets">
+    <div class="bl-snippet">…谈里对童年的描述（例如 2023-11 NYT DealBook Summit 里"脑子里持续的暴力的力场"和 2023-11 Lex Fridman 400 - War AI Politics 里"我的大脑是个暴风雨"）都可以和 Isaacson 的书互为注脚。  ### 作为交叉参考的背景  本知识库里马斯克…</div>
+    <a href="/people/Walter Isaacson.html" class="bl-go-link">查看原文 →</a>
+  </div>
+</div>
+<div class="bl-group">
+  <button class="bl-group-header">
+    <span class="bl-caret"></span>
+    <span class="bl-source-name">素材总览</span>
+    <span class="bl-mention-cat">索引</span>
+  </button>
+  <div class="bl-snippets">
+    <div class="bl-snippet">…Fridman 252 - SpaceX Mars]] | 第一性原理五步法、Raptor 生产、多行星物种 | | 2023-11 Lex Fridman 400 - War AI Politics | 以哈冲突、修昔底德陷阱、xAI、和 Larry Page 决裂 | | [[2024-08 Lex Fridman…</div>
+    <a href="/index-pages/素材总览.html" class="bl-go-link">查看原文 →</a>
+  </div>
+</div>
+
+</aside>
+
+</main>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Toggle sidebar nav groups
+  document.querySelectorAll('.nav-group-title').forEach(function(el) {
+    el.addEventListener('click', function() {
+      this.parentElement.classList.toggle('open');
+    });
+  });
+
+  // Backlinks: toggle individual groups
+  document.querySelectorAll('.bl-group-header').forEach(function(header) {
+    header.addEventListener('click', function() {
+      this.closest('.bl-group').classList.toggle('open');
+    });
+  });
+
+  // Favorite / bookmark popup
+  var favBtn = document.getElementById('fav-btn');
+  var favPop = document.getElementById('fav-pop');
+  if (favBtn && favPop) {
+    var isMac = /Mac|iPhone|iPad/.test(navigator.platform);
+    var key = isMac ? '⌘ + D' : 'Ctrl + D';
+    favPop.innerHTML =
+      '按 <kbd>' + key + '</kbd> 收藏本页到浏览器书签' +
+      '<button class="fav-pop-copy" id="fav-pop-copy">复制本页链接</button>';
+
+    favBtn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      favPop.classList.toggle('show');
+    });
+    document.addEventListener('click', function(e) {
+      if (!favPop.contains(e.target) && e.target !== favBtn) {
+        favPop.classList.remove('show');
+      }
+    });
+
+    var copyBtn = document.getElementById('fav-pop-copy');
+    if (copyBtn) {
+      copyBtn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        navigator.clipboard.writeText(window.location.href).then(function() {
+          copyBtn.textContent = '✓ 已复制';
+          copyBtn.classList.add('copied');
+          setTimeout(function() {
+            copyBtn.textContent = '复制本页链接';
+            copyBtn.classList.remove('copied');
+          }, 1500);
+        });
+      });
+    }
+  }
+
+  // Backlinks: expand/collapse all
+  document.querySelectorAll('.bl-expand-all').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      this.closest('.backlinks-panel').querySelectorAll('.bl-group').forEach(function(g) {
+        g.classList.add('open');
+      });
+    });
+  });
+  document.querySelectorAll('.bl-collapse-all').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      this.closest('.backlinks-panel').querySelectorAll('.bl-group').forEach(function(g) {
+        g.classList.remove('open');
+      });
+    });
+  });
+});
+</script>
+</body>
+</html>
