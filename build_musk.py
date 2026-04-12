@@ -204,15 +204,15 @@ CSS = r"""
   --bg2:#EEF0F3;
   --text:#1B1B18;
   --text2:#5A6270;
-  --gold:#3E6AE1;
-  --gold-light:#5A82F0;
-  --gold-glow:rgba(62,106,225,.10);
-  --navy:#171A20;
-  --navy-light:#2C3040;
-  --cream:#F0F3FF;
+  --gold:#D4A017;
+  --gold-light:#E2B840;
+  --gold-glow:rgba(212,160,23,.12);
+  --navy:#1A1A2E;
+  --navy-light:#2D2D44;
+  --cream:#FFFBF0;
   --border:#DEE2E6;
   --card:#FFFFFF;
-  --link:#2D5BD0;
+  --link:#B8880E;
   --serif:'Noto Serif SC','Crimson Pro',Georgia,'Times New Roman',serif;
   --sans:'DM Sans',-apple-system,BlinkMacSystemFont,'PingFang SC','Microsoft YaHei',sans-serif;
   --sidebar-w:260px;
@@ -270,7 +270,7 @@ body{
 .nav-link:hover{background:rgba(255,255,255,.06);color:#fff}
 .nav-link.active{
   color:#fff;
-  background:rgba(62,106,225,.15);
+  background:rgba(212,160,23,.15);
   border-left-color:var(--gold);
   font-weight:600;
 }
@@ -604,7 +604,7 @@ body{
   background:linear-gradient(to bottom,transparent 60%,var(--gold-glow) 60%);
   transition:background .2s;
 }
-.article a:hover{background:linear-gradient(to bottom,transparent 40%,rgba(62,106,225,.2) 40%)}
+.article a:hover{background:linear-gradient(to bottom,transparent 40%,rgba(212,160,23,.2) 40%)}
 
 .article blockquote{
   background:var(--cream);
@@ -613,7 +613,7 @@ body{
   margin:16px 0;
   border-radius:0 8px 8px 0;
   font-style:italic;
-  color:#2D5BD0;
+  color:#B8880E;
   font-family:var(--serif);
 }
 .article blockquote p{margin:0}
@@ -631,7 +631,7 @@ body{
   border-radius:3px;
   font-size:13px;
   font-family:'SF Mono',Menlo,Consolas,monospace;
-  color:#2D5BD0;
+  color:#B8880E;
 }
 
 /* ===== KNOWLEDGE GRAPH PAGE ===== */
@@ -1089,7 +1089,7 @@ body{
   top:-50%;right:-20%;
   width:400px;height:400px;
   border-radius:50%;
-  background:radial-gradient(circle,rgba(62,106,225,.15),transparent 70%);
+  background:radial-gradient(circle,rgba(212,160,23,.15),transparent 70%);
 }
 .promo-story{flex:1;position:relative;z-index:1;min-width:0}
 .promo-story h3{
