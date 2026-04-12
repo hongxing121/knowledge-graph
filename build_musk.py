@@ -1164,7 +1164,7 @@ body{
   .main{margin-left:0;max-width:100%}
   .main::after{left:0}
   .main.has-backlinks{display:block}
-  .article{padding:48px 16px 60px}
+  .article{padding:48px 16px 60px;overflow-wrap:break-word;word-break:break-word}
   .backlinks-panel{padding:16px 12px;margin-top:16px}
   .hero-section{padding:44px 20px 20px}
   .hero-eyebrow{font-size:10px;margin-bottom:12px}
