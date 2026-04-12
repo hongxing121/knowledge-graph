@@ -147,6 +147,8 @@ def build_backlinks(files, link_map):
     for f in files:
         src_stem = f["stem"]
         src_cat = f["category"]
+        if src_cat == "home":
+            continue  # 首页不贡献反向链接
         src_title = f["fm"].get("title", src_stem)
         raw = f["body"]
 
