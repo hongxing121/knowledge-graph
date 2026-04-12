@@ -191,8 +191,8 @@ CSS = r"""
 *{box-sizing:border-box;margin:0;padding:0}
 
 :root{
-  --bg:#F9FAFB;
-  --bg2:#F0F2F5;
+  --bg:#FFFAF4;
+  --bg2:#F7EDDF;
   --text:#1B1B18;
   --text2:#5F6B7A;
   --gold:#FF9900;
