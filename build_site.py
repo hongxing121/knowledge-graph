@@ -191,19 +191,19 @@ CSS = r"""
 *{box-sizing:border-box;margin:0;padding:0}
 
 :root{
-  --bg:#FAF7F2;
-  --bg2:#F3EDE4;
+  --bg:#F9FAFB;
+  --bg2:#F0F2F5;
   --text:#1B1B18;
-  --text2:#6B6560;
-  --gold:#B8860B;
-  --gold-light:#D4A843;
-  --gold-glow:rgba(184,134,11,.12);
-  --navy:#1A2332;
-  --navy-light:#2C3E50;
-  --cream:#FFF8EE;
-  --border:#E0D6C8;
+  --text2:#5F6B7A;
+  --gold:#FF9900;
+  --gold-light:#FFB340;
+  --gold-glow:rgba(255,153,0,.10);
+  --navy:#232F3E;
+  --navy-light:#37475A;
+  --cream:#FFF9F0;
+  --border:#DEE2E6;
   --card:#FFFFFF;
-  --link:#8B5E0B;
+  --link:#146EB4;
   --serif:'Noto Serif SC','Crimson Pro',Georgia,'Times New Roman',serif;
   --sans:'DM Sans',-apple-system,BlinkMacSystemFont,'PingFang SC','Microsoft YaHei',sans-serif;
   --sidebar-w:260px;
@@ -261,7 +261,7 @@ body{
 .nav-link:hover{background:rgba(255,255,255,.06);color:#fff}
 .nav-link.active{
   color:#fff;
-  background:rgba(184,134,11,.15);
+  background:rgba(255,153,0,.15);
   border-left-color:var(--gold);
   font-weight:600;
 }
@@ -592,7 +592,7 @@ body{
   background:linear-gradient(to bottom,transparent 60%,var(--gold-glow) 60%);
   transition:background .2s;
 }
-.article a:hover{background:linear-gradient(to bottom,transparent 40%,rgba(184,134,11,.2) 40%)}
+.article a:hover{background:linear-gradient(to bottom,transparent 40%,rgba(255,153,0,.2) 40%)}
 
 .article blockquote{
   background:var(--cream);
@@ -601,7 +601,7 @@ body{
   margin:16px 0;
   border-radius:0 8px 8px 0;
   font-style:italic;
-  color:#5C4813;
+  color:#146EB4;
   font-family:var(--serif);
 }
 .article blockquote p{margin:0}
@@ -619,7 +619,7 @@ body{
   border-radius:3px;
   font-size:13px;
   font-family:'SF Mono',Menlo,Consolas,monospace;
-  color:#5C4813;
+  color:#146EB4;
 }
 
 /* ===== BACKLINKS PANEL (right sidebar) ===== */
@@ -1034,7 +1034,7 @@ body{
   top:-50%;right:-20%;
   width:400px;height:400px;
   border-radius:50%;
-  background:radial-gradient(circle,rgba(184,134,11,.15),transparent 70%);
+  background:radial-gradient(circle,rgba(255,153,0,.15),transparent 70%);
 }
 .promo-story{flex:1;position:relative;z-index:1;min-width:0}
 .promo-story h3{
