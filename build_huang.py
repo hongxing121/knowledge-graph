@@ -156,6 +156,8 @@ def build_backlinks(files, link_map):
 
     backlinks = {}  # target_stem → list of source info
     for f in files:
+        if f["category"] == "home":
+            continue  # exclude homepage from backlinks — it links to everything
         src_stem = f["stem"]
         src_cat = f["category"]
         src_title = f["fm"].get("title", src_stem)
