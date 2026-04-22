@@ -1,0 +1,1541 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>专注、运气与耐心 - 纳瓦尔知识图谱</title>
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon-180.png">
+<link rel="shortcut icon" href="/assets/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700;900&family=Crimson+Pro:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-WLE88B2LL3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-WLE88B2LL3');
+</script>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+
+:root{
+  --bg:#FBF7F1;
+  --bg2:#F5EDE2;
+  --text:#1B1B18;
+  --text2:#5A6670;
+  --gold:#CC7A00;
+  --gold-light:#E09520;
+  --gold-glow:rgba(204,122,0,.12);
+  --navy:#1E1710;
+  --navy-light:#352C20;
+  --cream:#FFF9F0;
+  --border:#DEE2E6;
+  --card:#FFFFFF;
+  --link:#B06A00;
+  --serif:'Noto Serif SC','Crimson Pro',Georgia,'Times New Roman',serif;
+  --sans:'DM Sans',-apple-system,BlinkMacSystemFont,'PingFang SC','Microsoft YaHei',sans-serif;
+  --sidebar-w:260px;
+}
+
+html{font-size:15px;scroll-behavior:smooth}
+body{
+  font-family:var(--sans);
+  color:var(--text);
+  background:var(--bg);
+  display:flex;
+  min-height:100vh;
+  line-height:1.8;
+  -webkit-font-smoothing:antialiased;
+}
+
+/* ===== SIDEBAR ===== */
+.sidebar{
+  width:var(--sidebar-w);
+  background:var(--navy);
+  position:fixed;top:0;left:0;bottom:0;
+  overflow-y:auto;
+  z-index:100;
+  display:flex;
+  flex-direction:column;
+}
+.sidebar-header{padding:20px 16px 16px;border-bottom:1px solid rgba(255,255,255,.08)}
+.logo{
+  color:#fff;
+  font-size:17px;
+  font-weight:700;
+  text-decoration:none;
+  letter-spacing:.5px;
+  font-family:var(--serif);
+  display:block;
+}
+.logo:hover{color:var(--gold-light)}
+
+.sidebar-nav{flex:1;padding:8px 0;overflow-y:auto}
+.sidebar-nav::-webkit-scrollbar{width:4px}
+.sidebar-nav::-webkit-scrollbar-thumb{background:rgba(255,255,255,.15);border-radius:2px}
+
+.nav-link{
+  display:block;
+  padding:6px 16px;
+  color:#cbd5e1;
+  text-decoration:none;
+  font-size:13px;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  border-left:3px solid transparent;
+  transition:all .15s;
+}
+.nav-link:hover{background:rgba(255,255,255,.06);color:#fff}
+.nav-link.active{
+  color:#fff;
+  background:rgba(204,122,0,.15);
+  border-left-color:var(--gold);
+  font-weight:600;
+}
+.nav-home{font-size:14px;padding:10px 16px;font-weight:500;margin-bottom:4px}
+.nav-changelog{
+  margin-top:auto;
+  padding:14px 16px;
+  font-size:12px;
+  color:rgba(255,255,255,.4);
+  border-top:1px solid rgba(255,255,255,.08);
+}
+.nav-changelog:hover{color:rgba(255,255,255,.7)}
+.nav-changelog.active{color:var(--gold-light)}
+.sidebar-nav{display:flex;flex-direction:column;height:100%}
+
+.nav-group{margin-bottom:2px}
+.nav-group-title{
+  padding:8px 16px;
+  color:#cbd5e1;
+  font-size:12px;
+  font-weight:600;
+  text-transform:uppercase;
+  letter-spacing:.5px;
+  cursor:pointer;
+  display:flex;
+  align-items:center;
+  gap:6px;
+  user-select:none;
+  transition:color .15s;
+}
+.nav-group-title:hover{color:#fff}
+.caret{
+  display:inline-block;
+  width:0;height:0;
+  border-left:5px solid #cbd5e1;
+  border-top:4px solid transparent;
+  border-bottom:4px solid transparent;
+  transition:transform .2s;
+}
+.nav-group.open .nav-group-title .caret{transform:rotate(90deg);border-left-color:#fff}
+.nav-group-title .badge{
+  margin-left:auto;
+  background:rgba(255,255,255,.1);
+  color:#cbd5e1;
+  font-size:11px;
+  padding:1px 6px;
+  border-radius:8px;
+  font-weight:400;
+}
+.nav-group-items{display:none;padding-left:8px}
+.nav-group.open .nav-group-items{display:block}
+
+.hamburger{
+  display:none;
+  position:fixed;
+  top:12px;left:12px;
+  z-index:200;
+  background:var(--navy);
+  color:#fff;
+  border:none;
+  font-size:20px;
+  padding:6px 10px;
+  border-radius:6px;
+  cursor:pointer;
+}
+
+/* ===== MAIN ===== */
+.main{
+  margin-left:max(var(--sidebar-w), calc((100vw - 1160px) / 2));
+  flex:1;
+  position:relative;
+  max-width:1160px;
+  padding:0;
+}
+
+/* grain overlay */
+.main::after{
+  content:'';
+  position:fixed;
+  top:0;left:var(--sidebar-w);right:0;bottom:0;
+  pointer-events:none;
+  opacity:.03;
+  z-index:999;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* ===== FAV / BOOKMARK BUTTON ===== */
+.fav-wrap{
+  position:absolute;
+  top:24px;right:48px;
+  z-index:50;
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+.sister-link{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  padding:8px 16px;
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:24px;
+  color:var(--navy);
+  font-size:13px;
+  font-weight:600;
+  font-family:var(--sans);
+  text-decoration:none;
+  box-shadow:0 2px 8px rgba(0,0,0,.04);
+  transition:all .25s;
+  white-space:nowrap;
+}
+.sister-link:hover{
+  border-color:var(--gold);
+  color:var(--gold);
+  box-shadow:0 4px 16px var(--gold-glow);
+  transform:translateY(-1px);
+}
+.sister-link .arrow{
+  color:var(--gold);
+  font-weight:700;
+}
+.fav-btn{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  padding:8px 18px;
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:24px;
+  color:var(--gold);
+  font-size:16px;
+  cursor:pointer;
+  transition:all .25s;
+  font-family:var(--sans);
+  box-shadow:0 2px 8px rgba(0,0,0,.04);
+}
+.fav-btn:hover{
+  border-color:var(--gold);
+  box-shadow:0 4px 16px var(--gold-glow);
+  transform:translateY(-1px);
+}
+.fav-label{
+  font-size:13px;
+  color:var(--text2);
+  font-weight:500;
+}
+.fav-btn:hover .fav-label{color:var(--gold)}
+.fav-pop{
+  display:none;
+  position:absolute;
+  right:0;top:48px;
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:10px;
+  padding:14px 16px;
+  box-shadow:0 8px 32px rgba(0,0,0,.12);
+  font-size:13px;
+  min-width:240px;
+  z-index:51;
+  color:var(--text);
+  line-height:1.6;
+}
+.fav-pop.show{display:block}
+.fav-pop kbd{
+  background:var(--bg2);
+  padding:2px 7px;
+  border-radius:4px;
+  font-size:12px;
+  border:1px solid var(--border);
+  font-family:var(--sans);
+  color:var(--navy);
+  font-weight:600;
+}
+.fav-pop-copy{
+  display:block;
+  width:100%;
+  margin-top:10px;
+  padding:8px 0;
+  background:var(--bg);
+  border:1px solid var(--border);
+  border-radius:6px;
+  color:var(--text2);
+  font-size:12px;
+  cursor:pointer;
+  text-align:center;
+  transition:all .15s;
+  font-family:var(--sans);
+}
+.fav-pop-copy:hover{
+  border-color:var(--gold);
+  color:var(--gold);
+}
+.fav-pop-copy.copied{
+  background:#ecfdf5;
+  border-color:#6ee7b7;
+  color:#059669;
+}
+
+@media(max-width:768px){
+  .fav-wrap{right:16px;top:12px;gap:6px}
+  .sister-link{padding:6px 12px;font-size:11px}
+  .fav-btn{padding:6px 14px}
+  .fav-label{font-size:12px}
+}
+
+/* ===== CHANGELOG ===== */
+.article.changelog h2{
+  border-bottom-color:var(--gold);
+  display:flex;
+  align-items:center;
+  gap:10px;
+  flex-wrap:wrap;
+}
+.version{
+  display:inline-flex;
+  align-items:center;
+  background:var(--gold);
+  color:#fff;
+  font-size:13px;
+  font-weight:700;
+  padding:3px 11px;
+  border-radius:6px;
+  font-family:var(--sans);
+  letter-spacing:.3px;
+}
+.changelog-date{
+  font-size:14px;
+  color:var(--text2);
+  font-weight:500;
+  font-family:var(--sans);
+}
+.change-list{
+  list-style:none;
+  padding:0;
+  margin:16px 0;
+}
+.change-list li{
+  padding:10px 0 10px 18px;
+  position:relative;
+  border-bottom:1px solid var(--border);
+  font-size:14px;
+  line-height:1.75;
+}
+.change-list li:last-child{border-bottom:none}
+.change-list li::before{
+  content:"";
+  position:absolute;
+  left:0;
+  top:20px;
+  width:6px;
+  height:6px;
+  border-radius:50%;
+  background:var(--gold);
+}
+.change-type{
+  display:inline-block;
+  font-size:11px;
+  padding:2px 8px;
+  border-radius:4px;
+  color:#fff;
+  font-weight:600;
+  margin-right:8px;
+  font-family:var(--sans);
+  vertical-align:1px;
+  letter-spacing:.2px;
+}
+.change-type.feat{background:#059669}
+.change-type.fix{background:#dc2626}
+.change-type.plan{background:#3b82f6}
+.change-list li strong{color:var(--navy);font-weight:700}
+
+/* ===== ARTICLE (content pages) ===== */
+.article{max-width:820px;padding:48px 48px 80px}
+.meta{
+  font-size:13px;
+  color:var(--text2);
+  margin-bottom:16px;
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+.type-badge{
+  font-size:11px;
+  padding:2px 8px;
+  border-radius:4px;
+  color:#fff;
+  font-weight:600;
+}
+.type-概念{background:#7C5E2A}
+.type-方法{background:#5E4A8B}
+.type-产品{background:#1A6B7C}
+.type-人物{background:#8B2F2F}
+.type-著作{background:#2A6B4F}
+.type-文章{background:#7E6B30}
+.type-访谈{background:#3A5E8B}
+.type-财报会议{background:#4A6E2A}
+.type-索引{background:#6B6560}
+
+.article h1{
+  font-family:var(--serif);
+  font-size:28px;
+  line-height:1.3;
+  margin-bottom:24px;
+  font-weight:900;
+  color:var(--navy);
+  letter-spacing:-.5px;
+}
+.article h2{
+  font-family:var(--serif);
+  font-size:21px;
+  margin:36px 0 14px;
+  padding-bottom:8px;
+  border-bottom:2px solid var(--border);
+  font-weight:700;
+  color:var(--navy);
+}
+.article h3{
+  font-family:var(--serif);
+  font-size:17px;
+  margin:24px 0 10px;
+  font-weight:600;
+  color:var(--navy-light);
+}
+.article p{margin:10px 0}
+.article ul,.article ol{padding-left:24px;margin:10px 0}
+.article li{margin:4px 0}
+
+.article a{
+  color:var(--link);
+  text-decoration:none;
+  background:linear-gradient(to bottom,transparent 60%,var(--gold-glow) 60%);
+  transition:background .2s;
+}
+.article a:hover{background:linear-gradient(to bottom,transparent 40%,rgba(204,122,0,.2) 40%)}
+
+.article blockquote{
+  background:var(--cream);
+  border-left:4px solid var(--gold);
+  padding:14px 20px;
+  margin:16px 0;
+  border-radius:0 8px 8px 0;
+  font-style:italic;
+  color:#B06A00;
+  font-family:var(--serif);
+}
+.article blockquote p{margin:0}
+.article blockquote a{background:none;color:var(--gold)}
+.article blockquote a:hover{text-decoration:underline}
+
+.article table{border-collapse:collapse;width:100%;margin:16px 0;font-size:14px}
+.article th,.article td{border:1px solid var(--border);padding:8px 12px;text-align:left}
+.article th{background:var(--bg2);font-weight:600;color:var(--navy)}
+.article strong{font-weight:700}
+.article hr{border:none;border-top:1px solid var(--border);margin:32px 0}
+.article code{
+  background:var(--bg2);
+  padding:2px 6px;
+  border-radius:3px;
+  font-size:13px;
+  font-family:'SF Mono',Menlo,Consolas,monospace;
+  color:#B06A00;
+}
+
+/* ===== KNOWLEDGE GRAPH PAGE ===== */
+.main.full-bleed{max-width:none;padding:0;margin-left:var(--sidebar-w)}
+.main.full-bleed::after{display:none}
+.graph-wrap{position:relative;width:100%;height:100vh;overflow:hidden;background:var(--bg)}
+.graph-wrap svg{width:100%;height:100%;display:block}
+.graph-toolbar{position:absolute;top:16px;right:16px;display:flex;gap:8px;z-index:10}
+.graph-toolbar button{
+  padding:6px 14px;background:var(--card);border:1px solid var(--border);
+  border-radius:8px;font-size:12px;color:var(--text);cursor:pointer;
+  font-family:var(--sans);transition:all .15s;font-weight:500;
+}
+.graph-toolbar button:hover{border-color:var(--gold);color:var(--gold)}
+.graph-title{position:absolute;top:16px;left:16px;z-index:10}
+.graph-title h1{font-family:var(--serif);font-size:20px;color:var(--navy);margin:0}
+.graph-title p{font-size:12px;color:var(--text2);margin:4px 0 0;font-family:var(--sans)}
+.graph-tooltip{
+  position:absolute;padding:8px 14px;background:var(--navy);color:#fff;
+  border-radius:8px;font-size:12px;pointer-events:none;opacity:0;transition:opacity .15s;
+  box-shadow:0 4px 16px rgba(0,0,0,.2);z-index:20;white-space:nowrap;font-family:var(--sans);
+}
+.graph-tooltip strong{display:block;font-size:13px;margin-bottom:2px}
+.graph-tooltip span{color:rgba(255,255,255,.6)}
+.graph-legend{
+  position:absolute;bottom:16px;left:16px;display:flex;gap:12px;z-index:10;
+  flex-wrap:wrap;max-width:calc(100% - 32px);
+  background:rgba(255,255,255,.92);padding:8px 14px;border-radius:8px;
+  border:1px solid var(--border);font-family:var(--sans);
+}
+.legend-item{display:flex;align-items:center;gap:5px;font-size:11px;color:var(--text2);cursor:pointer;user-select:none}
+.legend-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0}
+.legend-item.dimmed{opacity:.3}
+.nav-graph{
+  padding:14px 16px 6px;
+  font-size:12px;
+  color:rgba(255,255,255,.4);
+  border-top:1px solid rgba(255,255,255,.08);
+  margin-top:auto;
+}
+.nav-graph:hover{color:rgba(255,255,255,.7)}
+.nav-graph.active{color:var(--gold-light)}
+/* When graph link present, changelog should not push it to bottom */
+.nav-graph + .nav-changelog{margin-top:0;border-top:none;padding-top:6px;padding-bottom:14px}
+
+/* ===== BACKLINKS PANEL (right sidebar) ===== */
+.main.has-backlinks{
+  display:grid;
+  grid-template-columns:minmax(0,820px) 280px;
+  gap:0 24px;
+  max-width:1160px;
+}
+.main-content{min-width:0}
+
+.backlinks-panel{
+  grid-column:2;
+  grid-row:1/-1;
+  position:sticky;
+  top:24px;
+  max-height:calc(100vh - 48px);
+  overflow-y:auto;
+  padding:24px 0 24px 20px;
+  border-left:1px solid var(--border);
+  font-size:13px;
+  align-self:start;
+}
+.backlinks-panel::-webkit-scrollbar{width:3px}
+.backlinks-panel::-webkit-scrollbar-thumb{background:var(--border);border-radius:2px}
+
+.bl-panel-header{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  margin-bottom:12px;
+}
+.bl-panel-title{
+  font-family:var(--serif);
+  font-size:14px;
+  font-weight:700;
+  color:var(--navy);
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+.bl-count{
+  font-size:11px;
+  background:var(--bg2);
+  padding:1px 7px;
+  border-radius:10px;
+  color:var(--text2);
+  font-weight:600;
+}
+.bl-panel-actions{display:flex;gap:4px}
+.bl-action{
+  background:none;
+  border:1px solid var(--border);
+  border-radius:4px;
+  padding:2px 8px;
+  font-size:11px;
+  color:var(--text2);
+  cursor:pointer;
+  font-family:var(--sans);
+  transition:all .15s;
+}
+.bl-action:hover{border-color:var(--gold);color:var(--gold)}
+
+.bl-group{margin-bottom:4px}
+.bl-group-header{
+  display:flex;
+  align-items:center;
+  gap:6px;
+  background:none;
+  border:none;
+  cursor:pointer;
+  padding:5px 0;
+  width:100%;
+  text-align:left;
+  font-size:13px;
+  font-family:var(--sans);
+}
+.bl-group-header:hover{background:rgba(0,0,0,.02);border-radius:4px}
+
+.bl-caret{
+  display:inline-block;
+  width:0;height:0;
+  border:4px solid transparent;
+  border-left:5px solid var(--text2);
+  transition:transform .15s;
+  flex-shrink:0;
+}
+.bl-group.open .bl-caret{transform:rotate(90deg)}
+
+.bl-source-name{
+  color:var(--navy);
+  font-weight:600;
+  flex:1;
+  min-width:0;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
+.bl-mention-cat{
+  font-size:10px;
+  color:var(--text2);
+  background:var(--bg2);
+  padding:0 5px;
+  border-radius:8px;
+  flex-shrink:0;
+  margin-left:4px;
+}
+
+.bl-snippets{display:none;padding:4px 0 4px 14px}
+.bl-group.open .bl-snippets{display:block}
+
+.bl-snippet{
+  padding:6px 0;
+  border-bottom:1px solid var(--border);
+  line-height:1.6;
+  color:var(--text2);
+  font-size:12px;
+}
+.bl-snippet:last-child{border-bottom:none}
+.bl-go-link{
+  display:inline-block;
+  font-size:11px;
+  color:var(--link);
+  text-decoration:none;
+  padding:4px 0 2px;
+  font-weight:600;
+  transition:color .15s;
+}
+.bl-go-link:hover{color:var(--gold);text-decoration:underline}
+
+/* ===== HOMEPAGE ===== */
+.hero-section{
+  position:relative;
+  padding:72px 48px 56px;
+  max-width:900px;
+  margin:0 auto;
+}
+.hero-eyebrow{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  font-size:12px;
+  font-weight:600;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  color:var(--gold);
+  margin-bottom:20px;
+  opacity:0;
+  animation:fadeUp .6s ease forwards;
+}
+.hero-eyebrow::before{content:'';width:24px;height:1px;background:var(--gold)}
+.hero-title{
+  font-family:var(--serif);
+  font-size:clamp(32px,5vw,48px);
+  font-weight:900;
+  line-height:1.25;
+  letter-spacing:-1px;
+  color:var(--navy);
+  margin-bottom:6px;
+  opacity:0;
+  animation:fadeUp .6s ease .1s forwards;
+}
+.hero-title .gold{color:var(--gold)}
+.hero-sub{
+  font-size:17px;
+  color:var(--text2);
+  line-height:1.8;
+  margin-top:16px;
+  max-width:640px;
+  font-family:var(--serif);
+  font-weight:400;
+  opacity:0;
+  animation:fadeUp .6s ease .2s forwards;
+}
+.hero-sub b{color:var(--navy);font-weight:700}
+
+.stats-row{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:0;
+  max-width:900px;
+  margin:0 auto 48px;
+  padding:0 48px;
+  border-top:1px solid var(--border);
+  border-bottom:1px solid var(--border);
+  opacity:0;
+  animation:fadeUp .6s ease .3s forwards;
+}
+.stat-item{
+  text-align:center;
+  padding:28px 12px;
+  position:relative;
+  transition:background .3s;
+  text-decoration:none;
+  color:inherit;
+}
+.stat-item:not(:last-child)::after{
+  content:'';
+  position:absolute;
+  right:0;top:20%;
+  height:60%;
+  width:1px;
+  background:var(--border);
+}
+.stat-item:hover{background:var(--gold-glow)}
+.stat-num{
+  font-family:var(--serif);
+  font-size:42px;
+  font-weight:900;
+  color:var(--navy);
+  line-height:1;
+  margin-bottom:6px;
+  letter-spacing:-2px;
+}
+.stat-label{
+  font-size:13px;
+  color:var(--text2);
+  font-weight:500;
+  letter-spacing:.5px;
+}
+
+.main-inner{max-width:900px;padding:0 48px 80px;margin:0 auto}
+
+.nav-cards{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:16px;
+  margin-bottom:56px;
+  opacity:0;
+  animation:fadeUp .6s ease .4s forwards;
+}
+.nav-card{
+  position:relative;
+  padding:28px 20px 24px;
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:14px;
+  text-decoration:none;
+  transition:all .3s cubic-bezier(.4,0,.2,1);
+  overflow:hidden;
+  display:block;
+  color:inherit;
+}
+.nav-card::before{
+  content:'';
+  position:absolute;
+  top:0;left:0;right:0;
+  height:3px;
+  background:var(--gold);
+  opacity:0;
+  transition:opacity .3s;
+}
+.nav-card:hover{
+  transform:translateY(-4px);
+  box-shadow:0 12px 32px rgba(0,0,0,.08);
+  border-color:var(--gold-light);
+}
+.nav-card:hover::before{opacity:1}
+.nav-card-icon{font-size:32px;margin-bottom:14px;display:block;line-height:1}
+.nav-card-title{
+  font-family:var(--serif);
+  font-size:16px;
+  font-weight:700;
+  color:var(--navy);
+  margin-bottom:4px;
+}
+.nav-card-sub{font-size:13px;color:var(--text2)}
+.nav-card-arrow{
+  position:absolute;
+  bottom:20px;right:20px;
+  font-size:18px;
+  color:var(--border);
+  transition:all .3s;
+}
+.nav-card:hover .nav-card-arrow{color:var(--gold);transform:translateX(4px)}
+
+.section{margin-bottom:48px}
+.section-header{display:flex;align-items:center;gap:12px;margin-bottom:20px}
+.section-line{flex:1;height:1px;background:var(--border)}
+.section-title{
+  font-family:var(--serif);
+  font-size:22px;
+  font-weight:700;
+  color:var(--navy);
+  white-space:nowrap;
+}
+.section-count{
+  font-size:12px;
+  color:var(--gold);
+  font-weight:600;
+  background:var(--gold-glow);
+  padding:3px 10px;
+  border-radius:12px;
+  white-space:nowrap;
+}
+
+.tag-cloud{display:flex;flex-wrap:wrap;gap:10px}
+.tag{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  padding:8px 18px;
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:24px;
+  font-size:14px;
+  color:var(--text);
+  text-decoration:none;
+  transition:all .25s cubic-bezier(.4,0,.2,1);
+  font-weight:500;
+}
+.tag:hover{
+  border-color:var(--gold);
+  color:var(--navy);
+  box-shadow:0 4px 16px var(--gold-glow);
+  transform:translateY(-2px);
+}
+.tag-n{
+  font-size:11px;
+  font-weight:700;
+  color:#fff;
+  background:var(--gold);
+  padding:2px 8px;
+  border-radius:10px;
+  min-width:20px;
+  text-align:center;
+}
+.tag.tier-1{
+  font-size:16px;
+  padding:10px 22px;
+  font-weight:700;
+  border-color:var(--gold-light);
+  background:linear-gradient(135deg,#FFFDF5,#FFF8E7);
+}
+.tag.tier-1 .tag-n{font-size:12px;padding:3px 10px;background:var(--gold)}
+.tag.tier-2{font-size:15px;padding:9px 20px;font-weight:600}
+
+.people-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(180px,1fr));
+  gap:14px;
+}
+.person-card{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  padding:24px 16px 20px;
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:14px;
+  text-decoration:none;
+  transition:all .3s;
+  text-align:center;
+  color:inherit;
+}
+.person-card:hover{
+  transform:translateY(-3px);
+  box-shadow:0 8px 24px rgba(0,0,0,.06);
+  border-color:var(--gold-light);
+}
+.person-avatar{
+  width:56px;height:56px;
+  border-radius:50%;
+  background:linear-gradient(135deg,var(--navy),var(--navy-light));
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:22px;
+  margin-bottom:12px;
+  color:var(--gold-light);
+  font-family:var(--serif);
+  font-weight:700;
+  box-shadow:0 4px 12px rgba(26,35,50,.15);
+}
+.person-name{
+  font-family:var(--serif);
+  font-size:15px;
+  font-weight:700;
+  color:var(--navy);
+  margin-bottom:4px;
+}
+.person-refs{font-size:12px;color:var(--text2)}
+
+.gold-divider{display:flex;align-items:center;gap:16px;margin:56px 0}
+.gold-divider::before,.gold-divider::after{
+  content:'';
+  flex:1;
+  height:1px;
+  background:linear-gradient(to right,transparent,var(--border),transparent);
+}
+.gold-divider-diamond{
+  width:8px;height:8px;
+  background:var(--gold);
+  transform:rotate(45deg);
+  flex-shrink:0;
+}
+
+.footer-promo{
+  position:relative;
+  overflow:hidden;
+  padding:40px;
+  background:var(--navy);
+  border-radius:20px;
+  color:#fff;
+  display:flex;
+  gap:40px;
+  align-items:center;
+}
+.footer-promo::before{
+  content:'';
+  position:absolute;
+  top:-50%;right:-20%;
+  width:400px;height:400px;
+  border-radius:50%;
+  background:radial-gradient(circle,rgba(204,122,0,.15),transparent 70%);
+}
+.promo-story{flex:1;position:relative;z-index:1;min-width:0}
+.promo-story h3{
+  font-family:var(--serif);
+  font-size:20px;
+  font-weight:700;
+  margin-bottom:12px;
+  color:var(--gold-light);
+}
+.promo-story p{font-size:14px;color:rgba(255,255,255,.75);line-height:1.8;margin:8px 0}
+.promo-credit{
+  margin-top:16px !important;
+  padding-top:14px;
+  border-top:1px solid rgba(255,255,255,.12);
+  font-size:13px !important;
+}
+.promo-credit strong{color:var(--gold-light);font-weight:700}
+
+.promo-qr{
+  flex-shrink:0;
+  position:relative;
+  z-index:1;
+  text-align:center;
+}
+.qr-img{
+  display:block;
+  width:140px;
+  height:140px;
+  border-radius:12px;
+  border:3px solid rgba(255,255,255,.15);
+  box-shadow:0 8px 24px rgba(0,0,0,.25);
+  background:#fff;
+  padding:6px;
+}
+.qr-text{
+  font-size:12px;
+  color:rgba(255,255,255,.6);
+  margin-top:10px;
+  letter-spacing:.5px;
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes fadeUp{
+  from{opacity:0;transform:translateY(16px)}
+  to{opacity:1;transform:translateY(0)}
+}
+.section{opacity:0;animation:fadeUp .5s ease forwards}
+.section:nth-child(1){animation-delay:.45s}
+.section:nth-child(2){animation-delay:.55s}
+.section:nth-child(3){animation-delay:.65s}
+.section:nth-child(4){animation-delay:.75s}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:1024px){
+  .main.has-backlinks{display:block}
+  .backlinks-panel{
+    position:static;
+    max-height:none;
+    overflow-y:visible;
+    border-left:none;
+    border-top:1px solid var(--border);
+    padding:24px 16px;
+    margin-top:24px;
+    max-width:820px;
+  }
+}
+
+@media(max-width:768px){
+  .sidebar{transform:translateX(-100%);transition:transform .3s}
+  .sidebar.open{transform:translateX(0)}
+  .hamburger{display:block}
+  .main{margin-left:0;max-width:100%}
+  .main::after{left:0}
+  .main.has-backlinks{display:block}
+  .article{padding:48px 16px 60px}
+  .backlinks-panel{padding:16px 12px;margin-top:16px}
+  .hero-section{padding:44px 20px 20px}
+  .hero-eyebrow{font-size:10px;margin-bottom:12px}
+  .hero-title{font-size:26px}
+  .hero-sub{font-size:14px;line-height:1.6;margin-top:10px}
+  .stats-row{padding:0 16px;margin:0 0 20px}
+  .stat-item{padding:16px 4px}
+  .stat-num{font-size:28px;letter-spacing:-1px}
+  .stat-label{font-size:11px}
+  .main-inner{padding:0 20px 60px}
+  .nav-cards{grid-template-columns:1fr 1fr;gap:10px;margin-bottom:36px}
+  .nav-card{padding:20px 14px 18px}
+  .nav-card-icon{font-size:24px;margin-bottom:8px}
+  .nav-card-title{font-size:14px}
+  .nav-card-sub{font-size:12px}
+  .footer-promo{flex-direction:column;text-align:center;padding:28px 20px;gap:24px}
+  .people-grid{grid-template-columns:repeat(2,1fr)}
+}
+</style>
+</head>
+<body>
+<button class="hamburger" aria-label="菜单" onclick="document.querySelector('.sidebar').classList.toggle('open')">☰</button>
+<aside class="sidebar">
+  <div class="sidebar-header"><a href="/index.html" class="logo">纳瓦尔知识图谱</a></div>
+  <div class="sidebar-nav">
+    <a href="/index.html" class="nav-link nav-home">🏛 首页</a>
+<div class="nav-group open">
+  <div class="nav-group-title"><span class="caret"></span>索引<span class="badge">4</span></div>
+  <div class="nav-group-items">
+    <a href="/index-pages/人物索引.html" class="nav-link" title="人物索引">人物索引</a>
+    <a href="/index-pages/公司与产品索引.html" class="nav-link" title="公司与产品索引">公司与产品索引</a>
+    <a href="/index-pages/核心思想索引.html" class="nav-link" title="核心思想索引">核心思想索引</a>
+    <a href="/index-pages/素材总览.html" class="nav-link" title="素材总览">素材总览</a>
+  </div>
+</div>
+<div class="nav-group open">
+  <div class="nav-group-title"><span class="caret"></span>著作<span class="badge">10</span></div>
+  <div class="nav-group-items">
+    <a href="/book/01 理解财富的本质.html" class="nav-link" title="01 理解财富的本质">01 理解财富的本质</a>
+    <a href="/book/02 专属知识与长期博弈.html" class="nav-link" title="02 专属知识与长期博弈">02 专属知识与长期博弈</a>
+    <a href="/book/03 责任感与所有权.html" class="nav-link" title="03 责任感与所有权">03 责任感与所有权</a>
+    <a href="/book/04 杠杆.html" class="nav-link" title="04 杠杆">04 杠杆</a>
+    <a href="/book/05 专注、运气与耐心.html" class="nav-link active" title="05 专注、运气与耐心">05 专注、运气与耐心</a>
+    <a href="/book/06 建立判断力.html" class="nav-link" title="06 建立判断力">06 建立判断力</a>
+    <a href="/book/07 学习幸福.html" class="nav-link" title="07 学习幸福">07 学习幸福</a>
+    <a href="/book/08 拯救自己.html" class="nav-link" title="08 拯救自己">08 拯救自己</a>
+    <a href="/book/09 生命的意义.html" class="nav-link" title="09 生命的意义">09 生命的意义</a>
+    <a href="/book/10 推荐书单与写作.html" class="nav-link" title="10 推荐书单与写作">10 推荐书单与写作</a>
+  </div>
+</div>
+<div class="nav-group">
+  <div class="nav-group-title"><span class="caret"></span>访谈<span class="badge">5</span></div>
+  <div class="nav-group-items">
+    <a href="/podcasts/2015-08 Tim Ferriss 97 - 天使投资与人生算法.html" class="nav-link" title="2015-08 Tim Ferriss 97 - 天使投资与人生算法">2015-08 Tim Ferriss 97 - 天使投资与人生算法</a>
+    <a href="/podcasts/2017-02 Knowledge Project 18 - 清醒思考.html" class="nav-link" title="2017-02 Knowledge Project 18 - 清醒思考">2017-02 Knowledge Project 18 - 清醒思考</a>
+    <a href="/podcasts/2019-06 Joe Rogan 1309 - 财富与幸福.html" class="nav-link" title="2019-06 Joe Rogan 1309 - 财富与幸福">2019-06 Joe Rogan 1309 - 财富与幸福</a>
+    <a href="/podcasts/2020-05 Kapil Gupta - 征服心智.html" class="nav-link" title="2020-05 Kapil Gupta - 征服心智">2020-05 Kapil Gupta - 征服心智</a>
+    <a href="/podcasts/2020-10 Tim Ferriss 473 - 幸福的艺术.html" class="nav-link" title="2020-10 Tim Ferriss 473 - 幸福的艺术">2020-10 Tim Ferriss 473 - 幸福的艺术</a>
+  </div>
+</div>
+<div class="nav-group">
+  <div class="nav-group-title"><span class="caret"></span>文章<span class="badge">2</span></div>
+  <div class="nav-group-items">
+    <a href="/essays/2018 How to Get Rich 推文风暴.html" class="nav-link" title="2018 How to Get Rich 推文风暴">2018 How to Get Rich 推文风暴</a>
+    <a href="/essays/nav.al 精选文章合集.html" class="nav-link" title="nav.al 精选文章合集">nav.al 精选文章合集</a>
+  </div>
+</div>
+<div class="nav-group">
+  <div class="nav-group-title"><span class="caret"></span>概念<span class="badge">20</span></div>
+  <div class="nav-group-items">
+    <a href="/concepts/专属知识.html" class="nav-link" title="专属知识">专属知识</a>
+    <a href="/concepts/习惯.html" class="nav-link" title="习惯">习惯</a>
+    <a href="/concepts/产品化自己.html" class="nav-link" title="产品化自己">产品化自己</a>
+    <a href="/concepts/代码与媒体.html" class="nav-link" title="代码与媒体">代码与媒体</a>
+    <a href="/concepts/内心平静.html" class="nav-link" title="内心平静">内心平静</a>
+    <a href="/concepts/冥想.html" class="nav-link" title="冥想">冥想</a>
+    <a href="/concepts/判断力.html" class="nav-link" title="判断力">判断力</a>
+    <a href="/concepts/复利效应.html" class="nav-link" title="复利效应">复利效应</a>
+    <a href="/concepts/幸福是一种技能.html" class="nav-link" title="幸福是一种技能">幸福是一种技能</a>
+    <a href="/concepts/杠杆.html" class="nav-link" title="杠杆">杠杆</a>
+    <a href="/concepts/欲望是痛苦的契约.html" class="nav-link" title="欲望是痛苦的契约">欲望是痛苦的契约</a>
+    <a href="/concepts/活在当下.html" class="nav-link" title="活在当下">活在当下</a>
+    <a href="/concepts/第一性原理.html" class="nav-link" title="第一性原理">第一性原理</a>
+    <a href="/concepts/财富与金钱.html" class="nav-link" title="财富与金钱">财富与金钱</a>
+    <a href="/concepts/责任感.html" class="nav-link" title="责任感">责任感</a>
+    <a href="/concepts/运气的四种类型.html" class="nav-link" title="运气的四种类型">运气的四种类型</a>
+    <a href="/concepts/退休的定义.html" class="nav-link" title="退休的定义">退休的定义</a>
+    <a href="/concepts/选择的自由.html" class="nav-link" title="选择的自由">选择的自由</a>
+    <a href="/concepts/长期博弈.html" class="nav-link" title="长期博弈">长期博弈</a>
+    <a href="/concepts/阅读.html" class="nav-link" title="阅读">阅读</a>
+  </div>
+</div>
+<div class="nav-group">
+  <div class="nav-group-title"><span class="caret"></span>产品<span class="badge">7</span></div>
+  <div class="nav-group-items">
+    <a href="/companies/AngelList.html" class="nav-link" title="AngelList">AngelList</a>
+    <a href="/companies/Epinions.html" class="nav-link" title="Epinions">Epinions</a>
+    <a href="/companies/Rolling Fund.html" class="nav-link" title="Rolling Fund">Rolling Fund</a>
+    <a href="/companies/Twitter.html" class="nav-link" title="Twitter">Twitter</a>
+    <a href="/companies/Venture Hacks.html" class="nav-link" title="Venture Hacks">Venture Hacks</a>
+    <a href="/companies/nav.al.html" class="nav-link" title="nav.al">nav.al</a>
+    <a href="/companies/navalmanack.com.html" class="nav-link" title="navalmanack.com">navalmanack.com</a>
+  </div>
+</div>
+<div class="nav-group">
+  <div class="nav-group-title"><span class="caret"></span>人物<span class="badge">10</span></div>
+  <div class="nav-group-items">
+    <a href="/people/Babak Nivi.html" class="nav-link" title="Babak Nivi">Babak Nivi</a>
+    <a href="/people/Eric Jorgenson.html" class="nav-link" title="Eric Jorgenson">Eric Jorgenson</a>
+    <a href="/people/Joe Rogan.html" class="nav-link" title="Joe Rogan">Joe Rogan</a>
+    <a href="/people/Kapil Gupta.html" class="nav-link" title="Kapil Gupta">Kapil Gupta</a>
+    <a href="/people/Marc Andreessen.html" class="nav-link" title="Marc Andreessen">Marc Andreessen</a>
+    <a href="/people/Shane Parrish.html" class="nav-link" title="Shane Parrish">Shane Parrish</a>
+    <a href="/people/Tim Ferriss.html" class="nav-link" title="Tim Ferriss">Tim Ferriss</a>
+    <a href="/people/查理·芒格.html" class="nav-link" title="查理·芒格">查理·芒格</a>
+    <a href="/people/理查德·费曼.html" class="nav-link" title="理查德·费曼">理查德·费曼</a>
+    <a href="/people/纳瓦尔.html" class="nav-link" title="纳瓦尔">纳瓦尔</a>
+  </div>
+</div>
+<a href="/graph.html" class="nav-link nav-graph">🕸️ 知识图谱</a>
+<a href="/index-pages/更新日志.html" class="nav-link nav-changelog">📋 更新日志</a>
+
+  </div>
+</aside>
+<main class="main has-backlinks">
+<div class="main-content article"><div class="meta"><span class="type-badge type-著作">著作</span></div>
+<h1 id="_1">专注、运气与耐心</h1>
+<blockquote>
+<p>本章节来自《<a href="/companies/navalmanack.com.html">纳瓦尔宝典</a>》Part I: Wealth — Building Wealth</p>
+</blockquote>
+<h2 id="_2">优先排序与专注</h2>
+<p>我一路走来遇到了很多坏运气。我赚到的第一笔小财富，立刻就在股市里亏掉了。第二笔本该赚到的小财富，基本上被我的商业伙伴给骗走了。只有第三次才算成功。</p>
+<p>即便如此，也是缓慢而稳定的奋斗。我这辈子不是靠一次大支付赚到钱的。一直都是一大堆小事情堆积起来。更多是关于持续地创造财富——通过创建企业、创造机会、进行投资。它不是一次性的大事。我个人财富的增长不是来自某一个好年景。它只是一点一点堆积——更多期权、更多生意、更多投资、更多能做的事。</p>
+<p>多亏了互联网，机会极其丰富。事实上，我有太多赚钱的方式了。我没有足够的时间。我的机会多到从耳朵里溢出来，我一直在用尽时间。创造财富、创造产品、创建企业、作为副产品获得社会回报的方式太多了。我根本应付不过来。[78]</p>
+<blockquote>
+<p>"Value your time at an hourly rate, and ruthlessly spend to save time at that rate. You will never be worth more than you think you're worth."<br />
+"给你的时间定一个时薪，然后毫不留情地花钱来按这个时薪节省时间。你永远不会比你认为自己值的更多。"</p>
+</blockquote>
+<p>没有人会比你自己更看重你。你只需要设定一个非常高的个人时薪，然后坚持执行。即使在我年轻的时候，我就决定我比市场认为的更有价值，并开始这样对待自己。</p>
+<p>永远把你的时间纳入每个决策。需要多少时间？穿过城市去拿个东西需要一个小时。如果你给自己定的时薪是一百美元，那基本上等于从口袋里扔掉一百美元。你会这么做吗？[78]</p>
+<p>快进到你富有的自己，选一个中间时薪。对我来说，信不信由你，在你还能雇到我的时候——当然现在你显然不能了——但在你能雇到我的时候……十年前甚至二十年前就是这样，那时我还没有什么真正的钱。我的时薪，我过去反反复复对自己说的，是每小时 5000 美元。今天回头看，实际上大约是每小时 1000 美元。</p>
+<p>当然，我仍然会做一些蠢事，比如跟电工吵架或退回坏掉的音箱，但我不应该这样做，而且我比我任何朋友做的这类事都少得多。我会戏剧性地把东西扔进垃圾堆或送给救世军，而不是试图退货；把东西递给别人而不是试图修好它。</p>
+<p>我会和女朋友们争论——甚至到今天和我妻子也是——"我不做这些事。这不是我解决的问题。"我现在还跟我妈这么争论，当她给我一些小差事的时候。我就是不做。我宁愿给你雇一个助手。即使在我没钱的时候也是这样。[78]</p>
+<p>另一种思考方式是：如果你能花比你时薪更低的成本把一件事外包出去或不做它，那就外包或不做。如果你能用低于你时薪的价格雇人来做，那就雇人。这甚至包括做饭。你可能想吃自己做的健康家常饭，但如果你能把它外包出去，那就外包吧。[78]</p>
+<p>为自己设一个非常高的、有抱负的时薪并坚持执行。它应该看起来和感觉起来高得离谱。如果不是这样，那就不够高。无论你选了什么数字，我建议你再提高。就像我说的，即使在我还没有钱的时候，很长一段时间我用的是每小时 5000 美元。如果你把它换算成年薪，那是每年数百万美元。</p>
+<p>讽刺的是，我实际上觉得我已经超过了这个数字。我不是最努力的人——我实际上是个懒人。我通过一阵一阵的能量爆发工作，当我真正对某件事有动力的时候。如果我看看我实际投入的每小时赚了多少，可能比那个数字高不少。[78]</p>
+<h3 id="_3">不要暗自鄙视财富</h3>
+<p><strong>你能展开谈谈"如果你暗自鄙视财富，财富就会远离你"这句话吗？</strong></p>
+<p>如果你进入一种相对心态，你就会一直恨那些比你做得好的人，一直嫉妒或羡慕他们。当你试图和他们做生意时，他们会感受到这些情绪。当你试图和某人做生意时，如果你对他们有任何负面想法或评判，他们会感觉到。人类天生就能感知对方内心深处的感受。你必须走出相对心态。[10]</p>
+<p>从字面上说，反对财富的心态会阻止你变得富有。因为你不会有正确的心态、不会有正确的精神、也不会在正确的层面上与人打交道。保持乐观，保持积极。这很重要。乐观主义者在长期中确实做得更好。[10]</p>
+<blockquote>
+<p>"The business world has many people playing zero sum games and a few playing positive sum games searching for each other in the crowd."<br />
+"商业世界中有很多人在玩零和游戏，少数人在玩正和游戏，他们在人群中互相寻找。"</p>
+</blockquote>
+<p>人生中有两个根本性的大游戏。一个是金钱游戏。因为钱不会解决你所有的问题，但它会解决你所有的金钱问题。人们意识到了这一点，所以他们想赚钱。</p>
+<p>但同时，他们中的很多人内心深处相信自己赚不到钱。他们不希望任何财富创造发生。所以他们攻击整个事业，说："赚钱是邪恶的。你不应该做。"</p>
+<p>但他们实际上在玩另一个游戏——地位游戏。他们试图在旁观者眼中获得高地位，通过说："我不需要钱。我们不想要钱。"地位是你在社会等级中的排名。[78]</p>
+<blockquote>
+<p>"Wealth creation is an evolutionarily recent positive-sum game. Status is an old zero-sum game. Those attacking wealth creation are often just seeking status."<br />
+"财富创造是一种进化上较新的正和游戏。地位是一种古老的零和游戏。攻击财富创造的人，往往只是在追逐地位。"</p>
+</blockquote>
+<p>地位是零和游戏。它是一种非常古老的游戏。我们从猴群时代就开始玩了。它是等级制的。谁是第一？谁是第二？谁是第三？第三要升到第二，第二就必须让出位置。所以，地位是零和游戏。</p>
+<p>政治是地位游戏的一个例子。甚至体育也是地位游戏的一个例子。要有赢家，就必须有输家。我从根本上不喜欢地位游戏。它们在我们社会中发挥着重要作用，这样我们可以搞清楚谁在负责。但从根本上说，你玩它们是因为它们是必要的恶。[78]</p>
+<p>问题是，要在地位游戏中获胜，你必须把别人踩下去。这就是为什么你应该在生活中避免地位游戏——它们让你变成一个愤怒、好斗的人。你总是在试图把别人拉下来、把自己和你喜欢的人抬上去。</p>
+<p>地位游戏会一直存在。没有办法绕过它。但要认识到，大多数时候，当你在试图创造财富而被别人攻击时，他们是在以你为代价来提升自己的地位。他们在玩不同的游戏。而且是一个更差的游戏。一个零和游戏，而不是正和游戏。[78]</p>
+<blockquote>
+<p>"Play stupid games, win stupid prizes."<br />
+"玩愚蠢的游戏，赢愚蠢的奖品。"</p>
+</blockquote>
+<h3 id="_4">三个最重要的决定</h3>
+<p><strong>对刚起步的年轻人来说，最重要的事情是什么？</strong></p>
+<p>花更多时间做大决定。人生早期基本上有三个真正的大决定：你住在哪里、你和谁在一起、你做什么。</p>
+<p>我们花很少的时间决定进入哪段关系。我们花那么多时间在工作上，但花那么少的时间决定进入哪份工作。选择住在哪个城市几乎可以完全决定你人生的轨迹，但我们花那么少的时间去搞清楚住在哪个城市。</p>
+<blockquote>
+<p>"Advice to a young engineer considering moving to San Francisco: 'Do you want to leave your friends behind? Or be the one left behind?'"<br />
+"给一个考虑搬去旧金山的年轻工程师的建议：'你是想离开你的朋友？还是想成为被留下的那个？'"</p>
+</blockquote>
+<p>如果你要在一个城市住十年，在一份工作里干五年，在一段关系中待十年，你应该花一到两年来决定这些事。这些是高度主导性的决定。这三个决定真的很重要。</p>
+<p>你必须对一切说不，释放你的时间，这样你才能解决重要的问题。那三个大概是最大的三个。[1]</p>
+<h3 id="_5">围绕成功人士</h3>
+<p><strong>一两个让自己被成功人士包围的步骤是什么？</strong></p>
+<p>搞清楚你擅长什么，然后开始帮助别人做这件事。免费给出去。先付出。因果报应之所以有效，是因为人是一致的。在足够长的时间尺度上，你会吸引你投射出去的东西。但不要衡量——如果你数数，你的耐心会用完。[7]</p>
+<blockquote>
+<p>"An old boss once warned: 'You'll never be rich since you're obviously smart, and someone will always offer you a job that's just good enough.'"<br />
+"一位老板曾警告说：'你永远不会富有，因为你很聪明，总会有人给你一份刚好够好的工作。'"</p>
+</blockquote>
+<p><strong>你是怎么决定创办第一家公司的？</strong></p>
+<p>我当时在一家叫 @Home Network 的科技公司工作，我跟身边所有人说——我的老板、同事、朋友："在硅谷，那些人都在创业。看起来他们能做到。我要创业。我只是暂时在这里。我是个创业者。"</p>
+<p>……我其实不是故意要骗自己跳进去的。这不是一个刻意的、经过算计的事。</p>
+<p>我只是在发泄、大声说话、过度坦诚。但我其实没有真正创业。那是 1996 年，那时候创业是一件更可怕、更困难的事。果然，所有人都开始说"你怎么还在这里？我以为你要去创业了？"和"哇，你还在这里……"我真的是被羞辱着去创办了自己的公司。[5]</p>
+<p>是的，我知道有些人可能还没准备好做创业者。但长期来看，我们从哪里得来的这个想法——每个人都该为别人工作才是正确合理的事？这是一个非常等级化的模式。[14]</p>
+<hr />
+<h2 id="_6">找到像玩一样的工作</h2>
+<p>人类作为猎人和采集者进化，我们都是为自己工作的。只有在农业的开端我们才变得更等级化。工业革命和工厂使我们变得极度等级化，因为一个人不一定能拥有或建造一座工厂。但现在，多亏了互联网，我们正在回到一个越来越多人可以为自己工作的时代。我宁愿做一个失败的创业者，也不愿做一个从未尝试过的人。因为即使是一个失败的创业者，也拥有独立生存的技能。[14]</p>
+<blockquote>
+<p>"There are almost 7 billion people on this planet. Someday, I hope, there will be almost 7 billion companies."<br />
+"这个星球上有将近 70 亿人。我希望有一天，会有将近 70 亿家公司。"</p>
+</blockquote>
+<p>我学会了赚钱，因为那是一种必需。当它不再是必需后，我就不再在意了。至少对我来说，工作是达到目的的手段。赚钱是达到目的的手段。比起赚钱，我对解决问题更感兴趣。</p>
+<p>任何终极目标都只会通向下一个目标、再下一个目标。我们在人生中只是在玩游戏。当你长大时，你在玩学校游戏，或者社交游戏。然后你在玩金钱游戏，然后在玩地位游戏。这些游戏只是有越来越长的时间跨度。在某个点上，至少我相信，这些都只是游戏。一旦你看透了游戏，结果就不再那么重要了。</p>
+<p>然后你就厌倦了游戏。我会说我现在就处在这个阶段——我只是厌倦了游戏。我不认为有什么终极目标或目的。我只是按我想要的方式生活。我真的只是活在当下。</p>
+<blockquote>
+<p>"I want to be off the hedonic treadmill."<br />
+"我想从享乐跑步机上下来。"</p>
+</blockquote>
+<p>你真正想要的是自由。你想从金钱问题中获得自由，对吗？我觉得这没问题。一旦你能解决你的金钱问题——不管是降低你的生活水平还是赚到足够的钱——你就想退休。不是六十五岁坐在养老院里领支票的退休——那是一个不同的定义。</p>
+<h3 id="_7">退休的定义</h3>
+<p><strong>你对退休的定义是什么？</strong></p>
+<blockquote>
+<p>"Retirement is when you stop sacrificing today for an imaginary tomorrow. When today is complete, in and of itself, you're retired."<br />
+"<a href="/concepts/退休的定义.html">退休</a>就是你不再为了想象中的明天而牺牲今天。当今天本身就是完整的，你就退休了。"</p>
+</blockquote>
+<p><strong>你怎么达到那个状态？</strong></p>
+<p>一种方式是存够多的钱，让你的被动收入（不用动一根手指）覆盖你的花销。</p>
+<p>第二种方式是把你的花销降到零——你变成一个僧人。</p>
+<p>第三种方式是你在做你热爱的事。你太享受了，不是为了钱。所以通往退休有多条路。</p>
+<p>走出竞争陷阱的方式是做真实的自己，找到你比任何人都更懂的事。你更懂是因为你热爱它，没有人能跟你竞争。如果你热爱做这件事，做真实的自己，然后想出如何把它映射到社会真正想要的东西上。运用一些<a href="/concepts/杠杆.html">杠杆</a>，打上你的名字。你承担风险，但你获得回报、拥有所有权和股权，然后把它加速起来。[77]</p>
+<h3 id="_8">财务独立后的动力</h3>
+<p><strong>你在财务独立后赚钱的动力下降了吗？</strong></p>
+<p>是也不是。那种绝望感消失了。</p>
+<p>但如果说有什么变化的话，创建企业和赚钱现在更像是一种"艺术"。[74]</p>
+<blockquote>
+<p>"Whether in commerce, science, or politics—history remembers the artists."<br />
+"无论在商业、科学还是政治中——历史记住的是艺术家。"</p>
+</blockquote>
+<p>艺术就是创造力。艺术是任何为其本身而做的事。什么事是为其本身而做、背后没有其他目的的？爱一个人、创造一些东西、玩耍。对我来说，创建企业就是玩耍。我创建企业是因为好玩，因为我对产品感兴趣。[77]</p>
+<p>我能在三个月内创建一个新企业：融资、组建团队、发布。这对我来说很有趣。看看我能拼凑出什么，真的很酷。赚钱几乎是一个副作用。创建企业是我变得擅长的游戏。只是我的动机从以目标为导向变成了以艺术为导向。讽刺的是，我觉得我现在做得更好了。[74]</p>
+<p>即使是投资，也是因为我喜欢参与的人、喜欢和他们在一起、从他们身上学到东西、觉得产品真的很酷。现在，我会放弃很棒的投资机会，因为我觉得产品不有趣。</p>
+<p>这些不是百分之百或者零的事情。你可以在生活中开始越来越多地朝那个目标移动。那是一个目标。</p>
+<p>当我更年轻的时候，我曾经非常绝望地想赚钱，什么都愿意做。如果你过来说："嘿，我有一个污水运输公司，想干吗？"我会说："太好了，我想赚钱！"感谢上帝没人给我那个机会。我很高兴我走上了科技和科学的道路，那是我真正享受的。我把我的职业和爱好结合到了一起。</p>
+<p>我一直在"工作"。在别人看来像工作，但对我来说像玩耍。这就是为什么我知道没人能在这件事上跟我竞争。因为我只是在玩耍，每天十六个小时。如果别人想和我竞争，他们是在工作，他们会输，因为他们不会每天十六个小时、每周七天这么干。[77]</p>
+<h3 id="_9">关于金钱欲望</h3>
+<p><strong>你认为财务安全的数字是多少？</strong></p>
+<p>金钱不是万恶之源；它本身没有什么邪恶的。但对金钱的贪欲是坏事。对金钱的贪欲不是在社会意义上坏——不是说"你贪图金钱就是个坏人"。它对你自己不好。</p>
+<p>对金钱的贪欲对我们不好，因为它是个无底洞。它会一直占据你的头脑。如果你爱钱，你赚到了，但永远不够。永远不够，因为欲望是开着的，不会在某个数字上关闭。认为它会在某个数字上关闭是一种谬误。</p>
+<p>对金钱之爱的惩罚，与金钱同时到来。当你赚钱时，你只会想要更多，你变得偏执和恐惧，害怕失去你拥有的。天下没有免费的午餐。</p>
+<p>你赚钱是为了解决你的金钱和物质问题。我认为远离这种持续金钱之爱的最好方式是，在赚钱的同时不要升级你的生活方式。随着赚钱而不断升级生活方式很容易。但如果你能保持生活方式不变，并且希望能以大笔一次性收入而不是涓涓细流来赚钱，你就不会有时间升级你的生活方式。你可能会遥遥领先，真正实现财务自由。</p>
+<p>另一件有帮助的事：我把自由看得高于一切。所有类型的自由：做我想做的事的自由、不做我不想做的事的自由、从可能扰乱我内心平静的情绪或事情中解脱的自由。对我来说，自由是我的第一价值。</p>
+<p>在金钱能买到自由的程度上，它是伟大的。但在金钱让我更不自由的程度上——在某种程度上它确实如此——我就不喜欢它了。[74]</p>
+<blockquote>
+<p>"The winners of any game are the people who are so addicted they continue playing even as the marginal utility from winning declines."<br />
+"任何游戏的赢家，都是那些沉迷到即使赢的边际效用在下降，他们仍在继续玩的人。"</p>
+</blockquote>
+<h3 id="_10">一定要创业才能成功吗？</h3>
+<p><strong>我必须创办一家公司才能成功吗？</strong></p>
+<p>在硅谷，持续最成功的人群要么是风投（因为他们是分散化的，控制着曾经稀缺的资源），要么是非常善于识别刚刚达到产品/市场契合的公司的人。那些人有背景、专业知识和人脉，是那些公司真正需要的人来帮它们扩张。然后他们加入最新的 Dropbox 或最新的 Airbnb。</p>
+<p><strong>那些在 Google 工作过，然后在 Facebook 一百人时加入，再在 Stripe 一百人时加入的人？</strong></p>
+<p>当 Zuckerberg 刚开始扩张他的公司时陷入了恐慌，他说："我不知道怎么做这件事。"然后他打电话给 Jim Breyer（风投、Accel Partners 创始人）。Jim Breyer 说："我在另一家公司有一个非常棒的产品负责人，你需要这个人。"这些人在长期的风险调整基础上往往做得最好——除了风投自己以外。[30]</p>
+<p>我在硅谷见过的一些最成功的人，在职业生涯很早期就有了突破。他们很早就被提拔为副总裁、总监或 CEO，或者创办了一家很早就做得不错的公司。如果你在职级中没有得到提升，后来要追赶就困难得多了。早期在小公司里比较好，因为那里没有太多阻碍早期晋升的制度架构。[76]</p>
+<p>对于职业生涯早期的人来说（甚至后来也是），一家公司最重要的一件事是你将建立的校友网络。想想你会和谁一起工作，以及那些人将去做什么。[76]</p>
+<hr />
+<h2 id="_11">如何获得运气</h2>
+<p><strong>为什么你说"不靠运气致富"？</strong></p>
+<p>在 1000 个平行宇宙中，你想在 999 个里面都是富有的。你不想只在靠运气的那 50 个里富有。所以我们要把运气排除在外。</p>
+<p><strong>但走运会有帮助，对吧？</strong></p>
+<p>就在最近，<a href="/people/Babak Nivi.html">Babak Nivi</a>（我的联合创始人）和我在 <a href="/companies/Twitter.html">Twitter</a> 上讨论了人怎样获得运气。我们谈到了<a href="/concepts/运气的四种类型.html">运气的四种类型</a>：</p>
+<p><strong>第一种</strong>是盲目的运气——你只是因为完全超出你控制的事情而走运。这包括命运、天意等。</p>
+<p><strong>第二种</strong>是通过坚持、努力、勤奋和行动获得的运气。当你到处跑动、创造机会的时候。你在产生大量能量，做了大量事情来搅动局面。这就像在培养皿里搅拌，或者混合一堆试剂看什么会结合。你只是在产生足够的力量、勤奋和能量，让运气来找你。</p>
+<p><strong>第三种</strong>是你变得非常善于发现运气。如果你在某个领域非常有技能，你会注意到这个领域发生了一个幸运的机会，而其他不那么敏锐的人不会注意到。所以你变得对运气敏感。</p>
+<p><strong>第四种</strong>是最奇怪、最难的一种——你建立了一种独特的品格、独特的品牌、独特的心态，让运气主动来找你。</p>
+<p>比如说你是世界上最好的深海潜水员。你以敢于尝试别人都不敢的深海潜水而闻名。某天，碰巧有人在海岸外发现了一艘沉没的宝船，但他们到不了那里。他们的运气变成了你的运气——因为他们会来找你去取宝藏，你会因此获得报酬。</p>
+<p>这是一个极端的例子，但它展示了一个人有盲目运气发现了宝藏。他们来找你提取宝藏、给你一半，这不是盲目运气。你创造了自己的运气。你把自己放在了能够利用运气或吸引运气的位置上——别人没有为自己创造这个机会。要不靠运气致富，我们就要是确定性的。我们不想把它交给机会。[78]</p>
+<blockquote>
+<p>"Ways to get lucky:"<br />
+"获得运气的方式："</p>
+<p>"Hope luck finds you."<br />
+"希望运气找到你。"</p>
+<p>"Hustle until you stumble into it."<br />
+"拼命干直到你撞上它。"</p>
+<p>"Prepare the mind and be sensitive to chances others miss."<br />
+"准备好头脑，对别人错过的机会保持敏感。"</p>
+<p>"Become the best at what you do. Refine what you do until this is true. Opportunity will seek you out. Luck becomes your destiny."<br />
+"成为你所做之事的最佳。不断精炼你做的事直到这句话成立。机会会来找你。运气变成你的命运。"</p>
+</blockquote>
+<p>它开始变得如此确定性，以至于不再是运气了。定义从运气逐渐变成了命运。总结第四种：以某种方式构建你的品格，然后你的品格就成了你的命运。</p>
+<p>我认为赚钱的一个重要因素是拥有一种让人们通过你来做交易的声誉。记住那个深海潜水员的例子——宝藏猎人会过来给你一份宝藏来换取你的潜水技能。</p>
+<p>如果你是一个值得信赖的、可靠的、高诚信的、有长期思维的交易撮合者，当别人想做交易但不知道如何以值得信赖的方式和陌生人做时，他们会找你，仅仅因为你建立起来的诚信和声誉，就给你交易的一部分。</p>
+<p>沃伦·巴菲特被邀请收购公司、买认股权证、救助银行、做别人做不到的事——因为他的声誉。当然，他承担了<a href="/concepts/责任感.html">责任</a>，他把自己强大的品牌挂在了上面。</p>
+<blockquote>
+<p>"Your character and your reputation are things you can build, which will let you take advantage of opportunities other people may characterize as lucky, but you know it wasn't luck."<br />
+"你的品格和声誉是你可以构建的东西，它们能让你抓住别人可能称之为运气的机会——但你知道那不是运气。"</p>
+</blockquote>
+<p>我的联合创始人 <a href="/people/Babak Nivi.html">Babak Nivi</a> 说过：</p>
+<blockquote>
+<p>"In a long-term game, it seems that everybody is making each other rich. And in a short-term game, it seems like everybody is making themselves rich."<br />
+"在<a href="/concepts/长期博弈.html">长期博弈</a>中，看起来每个人都在让彼此变富。而在短期博弈中，看起来每个人都在让自己变富。"</p>
+</blockquote>
+<p>我认为这是一个精彩的表述。在<a href="/concepts/长期博弈.html">长期博弈</a>中，它是正和的。我们都在一起做大蛋糕。我们试图把它做到尽可能大。而在短期博弈中，我们在切分蛋糕。[78]</p>
+<h3 id="_12">社交网络重要吗？</h3>
+<p><strong>社交网络有多重要？</strong></p>
+<p>我认为商业社交完全是浪费时间。我知道有些人和公司在推广这个概念，因为它服务于他们和他们的商业模式。但现实是，如果你在构建一些有趣的东西，总会有更多人想认识你。在做生意之前就试图建立商业关系，完全是浪费时间。我有一个更舒适的哲学：</p>
+<blockquote>
+<p>"Be a maker who makes something interesting people want. Show your craft, practice your craft, and the right people will eventually find you."<br />
+"做一个制造者，制造有趣的、人们想要的东西。展示你的手艺，练习你的手艺，对的人最终会找到你。"</p>
+</blockquote>
+<h3 id="_13">如何判断是否信任一个人</h3>
+<p><strong>一旦你认识了某人，你怎么判断你能否信任他们？你关注什么信号？</strong></p>
+<p>如果某人总在大谈自己多么诚实，他们可能是不诚实的。这只是我学到的一个小信号。当某人花太多时间谈论自己的价值观或在自我吹嘘时，他们在掩饰什么。[4]</p>
+<blockquote>
+<p>"Sharks eat well but live a life surrounded by sharks."<br />
+"鲨鱼吃得好，但一辈子都被鲨鱼包围。"</p>
+</blockquote>
+<p>我生命中有些很棒的人，他们极其成功，非常受欢迎（每个人都想成为他们的朋友），非常聪明。然而，我见过他们对别人做了一两件稍微不太好的事。第一次，我会说："嘿，我觉得你不应该这样对那个人。不是因为你逃不掉。你能逃掉。而是因为最终它会伤害你自己。"</p>
+<p>不是什么宇宙的、因果报应式的方式，而是我相信在内心深处我们都知道自己是谁。你无法对自己隐藏任何东西。你自己的失败刻在你的心灵里，对你来说是显而易见的。如果你有太多这种道德缺陷，你就不会尊重自己。这个世界上最糟糕的结果就是没有自尊。如果你不爱自己，谁会爱你？</p>
+<p>我认为你必须非常小心不去做那些你从根本上不会为之骄傲的事情，因为它们会伤害你。第一次某人这样做时，我会警告他们。顺便说一句，没有人会改变。然后我就和他们保持距离。我把他们从我的生活中切除。我脑子里就有这么一句话：</p>
+<blockquote>
+<p>"The closer you want to get to me, the better your values have to be."<br />
+"你越想接近我，你的价值观就得越好。"</p>
+</blockquote>
+<hr />
+<h2 id="_14">保持耐心</h2>
+<p>我后来在人生中想通的一件事是：总的来说（至少在硅谷的科技行业中），优秀的人有优秀的结果。你只需要有耐心。二十年前我职业生涯开始时遇到的每一个人，当时我看着他们说"哇，那个人超级有能力——如此聪明和专注"……几乎无一例外，他们都变得极其成功。你只需要给他们足够长的时间尺度。它永远不会在你想要的或他们想要的时间尺度内发生，但它确实会发生。[4]</p>
+<blockquote>
+<p>"Apply specific knowledge with leverage and eventually, you will get what you deserve."<br />
+"运用<a href="/concepts/专属知识.html">专属知识</a>加<a href="/concepts/杠杆.html">杠杆</a>，最终你会得到你应得的。"</p>
+<p>"It takes time—even once you have all of these pieces in place, there is an indeterminate amount of time you have to put in. If you're counting, you'll run out of patience before success actually arrives."<br />
+"需要时间——即使你把所有这些棋子都摆好了，你仍然需要投入一段不确定的时间。如果你在数，你会在成功真正到来之前耗尽耐心。"</p>
+</blockquote>
+<p>每个人都想立即致富，但世界是一个高效的地方；立即不管用。你确实必须投入时间。你确实必须投入工时。所以我认为你必须让自己处于那个位置——带着<a href="/concepts/专属知识.html">专属知识</a>、<a href="/concepts/责任感.html">责任感</a>、<a href="/concepts/杠杆.html">杠杆</a>和你真正擅长的技能组合——成为你所做之事的世界第一。</p>
+<p>你必须享受它，不断做、不断做、不断做。不要追踪，不要计数。因为如果你这样做了，你会耗尽时间。[78]</p>
+<blockquote>
+<p>"The most common bad advice I hear is: 'You're too young.' Most of history was built by young people. They just got credit when they were older. The only way to truly learn something is by doing it. Yes, listen to guidance. But don't wait."<br />
+"我听到的最常见的坏建议是：'你太年轻了。'历史的大部分是由年轻人创造的。他们只是在老了以后才获得认可。真正学会一件事的唯一方式是去做。是的，听取指导。但不要等待。"</p>
+<p>"People are oddly consistent. Karma is just you, repeating your patterns, virtues, and flaws until you finally get what you deserve."<br />
+"人是奇妙地一致的。因果报应只是你，反复重复你的模式、美德和缺陷，直到你最终得到你应得的。"</p>
+<p>"Always pay it forward. And don't keep count."<br />
+"永远先付出。不要记账。"</p>
+</blockquote>
+<p>这不是说它很容易。它不容易。它真的太难了。它是你会做的最难的事。但它也是有回报的。看看那些出生就富有的孩子——他们的人生没有意义。</p>
+<p>你真正的简历只是你所有苦难的目录。如果我让你在临终时回顾你做过的有趣的事，那些全都是围绕着你做出的牺牲、你做过的艰难的事。</p>
+<p>然而，任何被给予你的东西都不重要。你的四肢、大脑、头、皮肤——这些都是理所当然的。你无论如何都必须做艰难的事来创造你自己的意义。赚钱是一件可以选择的好事。去奋斗吧。它很难。我不会说它容易。它真的很难，但工具都是现成的。一切都在那里。[77]</p>
+<p>金钱在物质世界为你买到自由。它不会让你快乐，不会解决你的健康问题，不会让你的家庭美满，不会让你健康，不会让你平静。但它会解决很多外部问题。去赚钱是合理的一步。[10]</p>
+<p>赚钱会做的事就是解决你的金钱问题。它会移除一系列可能阻碍你幸福的东西，但它不会让你幸福。我认识许多非常富有但不幸福的人。大多数时候，你为了赚钱而必须成为的那种人，是一个高焦虑、高压力、勤奋工作、充满竞争的人。当你这样做了二十、三十、四十、五十年，突然赚到了钱，你关不掉它。你已经把自己训练成了一个高焦虑的人。然后，你必须学习如何快乐。[11]</p>
+<p>让我们先让你变富。我对此很务实，因为你知道，佛陀是一个王子。他一开始就很富有，然后他才能去森林里。</p>
+<p>在过去，如果你想要内心平静，你会成为一个僧人。你放弃一切——放弃性、孩子、金钱、政治、科学、技术——所有的一切，你独自去森林。你必须放弃一切才能获得内在的自由。</p>
+<p>今天，有了这项叫做金钱的美妙发明，你可以把它存在银行账户里。你可以非常努力地工作，为社会做伟大的事，社会会为你想要但不知道怎么得到的东西给你钱。你可以存钱，可以生活得稍低于你的收入，你可以找到某种自由。</p>
+<p>那会给你时间和精力去追求你自己内在的平静与幸福。我相信让每个人都快乐的解决方案是给他们他们想要的。</p>
+<p>让他们都变富。</p>
+<p>让他们都变得健康。</p>
+<p>然后，让他们都变得快乐。[77]</p>
+<blockquote>
+<p>"Amazing how many people confuse wealth and wisdom."<br />
+"令人惊讶的是，有多少人混淆了财富与智慧。"</p>
+</blockquote>
+<hr />
+<p><strong>原文出处</strong>：《The Almanack of Naval Ravikant》by <a href="/people/Eric Jorgenson.html">Eric Jorgenson</a></p></div><aside class="backlinks-panel">
+  <div class="bl-panel-header">
+    <h3 class="bl-panel-title">链接到本页 <span class="bl-count">11</span></h3>
+    <div class="bl-panel-actions">
+      <button class="bl-action bl-expand-all">展开</button>
+      <button class="bl-action bl-collapse-all">折叠</button>
+    </div>
+  </div>
+  <div class="bl-group">
+  <button class="bl-group-header">
+    <span class="bl-caret"></span>
+    <span class="bl-source-name">复利效应（Compound Interest）</span>
+    <span class="bl-mention-cat">概念</span>
+  </button>
+  <div class="bl-snippets">
+    <div class="bl-snippet">…—即使你把所有这些棋子都摆好了，你仍然需要投入一段不确定的时间。如果你在数，你会在成功真正到来之前耗尽耐心。" &gt; ——05 专注、运气与耐心  第三，复利法则决定了你应该向短期痛苦倾斜。  因为长期收益是你应该追求的东西，而根据复利法则，那些伴随短期痛…</div>
+    <a href="/concepts/复利效应.html" class="bl-go-link">查看原文 →</a>
+  </div>
+</div>
+<div class="bl-group">
+  <button class="bl-group-header">
+    <span class="bl-caret"></span>
+    <span class="bl-source-name">财富与金钱（Wealth vs Money）</span>
+    <span class="bl-mention-cat">概念</span>
+  </button>
+  <div class="bl-snippets">
+    <div class="bl-snippet">…&gt; "财富创造是一种进化上较新的正和游戏。地位是一种古老的零和游戏。攻击财富创造的人，往往只是在追逐地位。" &gt; ——05 专注、运气与耐心  第三，道德地创造财富是完全可能的。  如果你暗地里鄙视财富，财富就会远离你——因为你不会有正确的心态，也无法…</div>
+    <a href="/concepts/财富与金钱.html" class="bl-go-link">查看原文 →</a>
+  </div>
+</div>
+<div class="bl-group">
+  <button class="bl-group-header">
+    <span class="bl-caret"></span>
+    <span class="bl-source-name">责任感（Accountability）</span>
+    <span class="bl-mention-cat">概念</span>
+  </button>
+  <div class="bl-snippets">
+    <div class="bl-snippet">…看起来每个人都在让彼此变富。而在短期博弈中，看起来每个人都在让自己变富。" &gt; ——Babak Nivi，引自 05 专注、运气与耐心  ### 实践应用  纳瓦尔以自己的亲身经历为例：直到 2013-2014 年，他的公众形象完全围绕创业和投资…</div>
+    <a href="/concepts/责任感.html" class="bl-go-link">查看原文 →</a>
+  </div>
+</div>
+<div class="bl-group">
+  <button class="bl-group-header">
+    <span class="bl-caret"></span>
+    <span class="bl-source-name">运气的四种类型（Four Kinds of Luck）</span>
+    <span class="bl-mention-cat">概念</span>
+  </button>
+  <div class="bl-snippets">
+    <div class="bl-snippet">…# 运气的四种类型（Four Kinds of Luck）  ## 概念解析  ### 定义与起源  纳瓦尔在 05 专注、运气与耐心 中详细阐述了运气的四种类型，这个框架最初来自 Marc Andreessen 引用的一本书，后来被[[纳瓦尔]…</div>
+    <a href="/concepts/运气的四种类型.html" class="bl-go-link">查看原文 →</a>
+  </div>
+</div>
+<div class="bl-group">
+  <button class="bl-group-header">
+    <span class="bl-caret"></span>
+    <span class="bl-source-name">退休的定义（Retirement）</span>
+    <span class="bl-mention-cat">概念</span>
+  </button>
+  <div class="bl-snippets">
+    <div class="bl-snippet"># 退休的定义（Retirement）  ## 概念解析  ### 定义与起源  纳瓦尔在 05 专注、运气与耐心、2019-06 Joe Rogan 1309 - 财富与幸福 和 nav.al 精选文章合集 中给出了…</div>
+    <a href="/concepts/退休的定义.html" class="bl-go-link">查看原文 →</a>
+  </div>
+</div>
+<div class="bl-group">
+  <button class="bl-group-header">
+    <span class="bl-caret"></span>
+    <span class="bl-source-name">长期博弈（Long-Term Games）</span>
+    <span class="bl-mention-cat">概念</span>
+  </button>
+  <div class="bl-snippets">
+    <div class="bl-snippet">…看起来每个人都在让彼此变富。而在短期博弈中，看起来每个人都在让自己变富。" &gt; ——Babak Nivi，引自 05 专注、运气与耐心  第三，99% 的努力是浪费的——关键是找到那 1%。  纳瓦尔的观点看似激进但极其深刻：大部分努力—…</div>
+    <a href="/concepts/长期博弈.html" class="bl-go-link">查看原文 →</a>
+  </div>
+</div>
+<div class="bl-group">
+  <button class="bl-group-header">
+    <span class="bl-caret"></span>
+    <span class="bl-source-name">Epinions</span>
+    <span class="bl-mention-cat">产品</span>
+  </button>
+  <div class="bl-snippets">
+    <div class="bl-snippet">…一笔小财富，立刻就在股市里亏掉了。第二笔本该赚到的小财富，基本上被我的商业伙伴给骗走了。只有第三次才算成功。" &gt; ——05 专注、运气与耐心  这段经历促使他起诉了相关人士。虽然结果对他有利，但他事后反思时最大的遗憾不是事件本身，而是过程中的愤怒和焦虑：  &gt;…</div>
+    <a href="/companies/Epinions.html" class="bl-go-link">查看原文 →</a>
+  </div>
+</div>
+<div class="bl-group">
+  <button class="bl-group-header">
+    <span class="bl-caret"></span>
+    <span class="bl-source-name">Venture Hacks</span>
+    <span class="bl-mention-cat">产品</span>
+  </button>
+  <div class="bl-snippets">
+    <div class="bl-snippet">…everybody is making themselves rich." &gt; ——Babak Nivi，引自 05 专注、运气与耐心  ## 纳瓦尔对它的评价  纳瓦尔在多次访谈中将 Venture Hacks 描述为 AngelList 的起…</div>
+    <a href="/companies/Venture Hacks.html" class="bl-go-link">查看原文 →</a>
+  </div>
+</div>
+<div class="bl-group">
+  <button class="bl-group-header">
+    <span class="bl-caret"></span>
+    <span class="bl-source-name">Babak Nivi</span>
+    <span class="bl-mention-cat">人物</span>
+  </button>
+  <div class="bl-snippets">
+    <div class="bl-snippet">…ture Hacks]] 联合创始人，长期合作伙伴 - 在素材中出现：5 篇  ## 在素材中的出现  - 05 专注、运气与耐心：与 纳瓦尔 在 Twitter 上共同讨论运气的四种类型，贡献了关于长期博弈的精彩论述 -…</div>
+    <a href="/people/Babak Nivi.html" class="bl-go-link">查看原文 →</a>
+  </div>
+</div>
+<div class="bl-group">
+  <button class="bl-group-header">
+    <span class="bl-caret"></span>
+    <span class="bl-source-name">纳瓦尔</span>
+    <span class="bl-mention-cat">人物</span>
+  </button>
+  <div class="bl-snippets">
+    <div class="bl-snippet">…96 年左右在 @Home Network 工作时，到处告诉身边的人"我要创业"，最终被同事的催问逼上了创业之路（参见 05 专注、运气与耐心）。  他的第一家公司是 Epinions（消费者评价网站，约 1999 年），有过惨痛教训——赚到的财富"基本…</div>
+    <a href="/people/纳瓦尔.html" class="bl-go-link">查看原文 →</a>
+  </div>
+</div>
+<div class="bl-group">
+  <button class="bl-group-header">
+    <span class="bl-caret"></span>
+    <span class="bl-source-name">素材总览</span>
+    <span class="bl-mention-cat">索引</span>
+  </button>
+  <div class="bl-snippets">
+    <div class="bl-snippet">…拥有 所有权 才能致富 - 04 杠杆 —— 三种 杠杆：劳动力、资本、代码与媒体 - 05 专注、运气与耐心 —— 运气的四种类型 / 找到像玩一样的工作 / 耐心 - 06 建立判断力 —— 判断力 /…</div>
+    <a href="/index-pages/素材总览.html" class="bl-go-link">查看原文 →</a>
+  </div>
+</div>
+
+</aside>
+
+</main>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Toggle sidebar nav groups
+  document.querySelectorAll('.nav-group-title').forEach(function(el) {
+    el.addEventListener('click', function() {
+      this.parentElement.classList.toggle('open');
+    });
+  });
+
+  // Backlinks: toggle individual groups
+  document.querySelectorAll('.bl-group-header').forEach(function(header) {
+    header.addEventListener('click', function() {
+      this.closest('.bl-group').classList.toggle('open');
+    });
+  });
+
+  // Favorite / bookmark popup
+  var favBtn = document.getElementById('fav-btn');
+  var favPop = document.getElementById('fav-pop');
+  if (favBtn && favPop) {
+    var isMac = /Mac|iPhone|iPad/.test(navigator.platform);
+    var key = isMac ? '⌘ + D' : 'Ctrl + D';
+    favPop.innerHTML =
+      '按 <kbd>' + key + '</kbd> 收藏本页到浏览器书签' +
+      '<button class="fav-pop-copy" id="fav-pop-copy">复制本页链接</button>';
+
+    favBtn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      favPop.classList.toggle('show');
+    });
+    document.addEventListener('click', function(e) {
+      if (!favPop.contains(e.target) && e.target !== favBtn) {
+        favPop.classList.remove('show');
+      }
+    });
+
+    var copyBtn = document.getElementById('fav-pop-copy');
+    if (copyBtn) {
+      copyBtn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        navigator.clipboard.writeText(window.location.href).then(function() {
+          copyBtn.textContent = '✓ 已复制';
+          copyBtn.classList.add('copied');
+          setTimeout(function() {
+            copyBtn.textContent = '复制本页链接';
+            copyBtn.classList.remove('copied');
+          }, 1500);
+        });
+      });
+    }
+  }
+
+  // Backlinks: expand/collapse all
+  document.querySelectorAll('.bl-expand-all').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      this.closest('.backlinks-panel').querySelectorAll('.bl-group').forEach(function(g) {
+        g.classList.add('open');
+      });
+    });
+  });
+  document.querySelectorAll('.bl-collapse-all').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      this.closest('.backlinks-panel').querySelectorAll('.bl-group').forEach(function(g) {
+        g.classList.remove('open');
+      });
+    });
+  });
+});
+</script>
+</body>
+</html>

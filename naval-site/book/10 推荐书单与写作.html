@@ -1,0 +1,1612 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>推荐书单与写作 - 纳瓦尔知识图谱</title>
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon-180.png">
+<link rel="shortcut icon" href="/assets/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700;900&family=Crimson+Pro:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-WLE88B2LL3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-WLE88B2LL3');
+</script>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+
+:root{
+  --bg:#FBF7F1;
+  --bg2:#F5EDE2;
+  --text:#1B1B18;
+  --text2:#5A6670;
+  --gold:#CC7A00;
+  --gold-light:#E09520;
+  --gold-glow:rgba(204,122,0,.12);
+  --navy:#1E1710;
+  --navy-light:#352C20;
+  --cream:#FFF9F0;
+  --border:#DEE2E6;
+  --card:#FFFFFF;
+  --link:#B06A00;
+  --serif:'Noto Serif SC','Crimson Pro',Georgia,'Times New Roman',serif;
+  --sans:'DM Sans',-apple-system,BlinkMacSystemFont,'PingFang SC','Microsoft YaHei',sans-serif;
+  --sidebar-w:260px;
+}
+
+html{font-size:15px;scroll-behavior:smooth}
+body{
+  font-family:var(--sans);
+  color:var(--text);
+  background:var(--bg);
+  display:flex;
+  min-height:100vh;
+  line-height:1.8;
+  -webkit-font-smoothing:antialiased;
+}
+
+/* ===== SIDEBAR ===== */
+.sidebar{
+  width:var(--sidebar-w);
+  background:var(--navy);
+  position:fixed;top:0;left:0;bottom:0;
+  overflow-y:auto;
+  z-index:100;
+  display:flex;
+  flex-direction:column;
+}
+.sidebar-header{padding:20px 16px 16px;border-bottom:1px solid rgba(255,255,255,.08)}
+.logo{
+  color:#fff;
+  font-size:17px;
+  font-weight:700;
+  text-decoration:none;
+  letter-spacing:.5px;
+  font-family:var(--serif);
+  display:block;
+}
+.logo:hover{color:var(--gold-light)}
+
+.sidebar-nav{flex:1;padding:8px 0;overflow-y:auto}
+.sidebar-nav::-webkit-scrollbar{width:4px}
+.sidebar-nav::-webkit-scrollbar-thumb{background:rgba(255,255,255,.15);border-radius:2px}
+
+.nav-link{
+  display:block;
+  padding:6px 16px;
+  color:#cbd5e1;
+  text-decoration:none;
+  font-size:13px;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  border-left:3px solid transparent;
+  transition:all .15s;
+}
+.nav-link:hover{background:rgba(255,255,255,.06);color:#fff}
+.nav-link.active{
+  color:#fff;
+  background:rgba(204,122,0,.15);
+  border-left-color:var(--gold);
+  font-weight:600;
+}
+.nav-home{font-size:14px;padding:10px 16px;font-weight:500;margin-bottom:4px}
+.nav-changelog{
+  margin-top:auto;
+  padding:14px 16px;
+  font-size:12px;
+  color:rgba(255,255,255,.4);
+  border-top:1px solid rgba(255,255,255,.08);
+}
+.nav-changelog:hover{color:rgba(255,255,255,.7)}
+.nav-changelog.active{color:var(--gold-light)}
+.sidebar-nav{display:flex;flex-direction:column;height:100%}
+
+.nav-group{margin-bottom:2px}
+.nav-group-title{
+  padding:8px 16px;
+  color:#cbd5e1;
+  font-size:12px;
+  font-weight:600;
+  text-transform:uppercase;
+  letter-spacing:.5px;
+  cursor:pointer;
+  display:flex;
+  align-items:center;
+  gap:6px;
+  user-select:none;
+  transition:color .15s;
+}
+.nav-group-title:hover{color:#fff}
+.caret{
+  display:inline-block;
+  width:0;height:0;
+  border-left:5px solid #cbd5e1;
+  border-top:4px solid transparent;
+  border-bottom:4px solid transparent;
+  transition:transform .2s;
+}
+.nav-group.open .nav-group-title .caret{transform:rotate(90deg);border-left-color:#fff}
+.nav-group-title .badge{
+  margin-left:auto;
+  background:rgba(255,255,255,.1);
+  color:#cbd5e1;
+  font-size:11px;
+  padding:1px 6px;
+  border-radius:8px;
+  font-weight:400;
+}
+.nav-group-items{display:none;padding-left:8px}
+.nav-group.open .nav-group-items{display:block}
+
+.hamburger{
+  display:none;
+  position:fixed;
+  top:12px;left:12px;
+  z-index:200;
+  background:var(--navy);
+  color:#fff;
+  border:none;
+  font-size:20px;
+  padding:6px 10px;
+  border-radius:6px;
+  cursor:pointer;
+}
+
+/* ===== MAIN ===== */
+.main{
+  margin-left:max(var(--sidebar-w), calc((100vw - 1160px) / 2));
+  flex:1;
+  position:relative;
+  max-width:1160px;
+  padding:0;
+}
+
+/* grain overlay */
+.main::after{
+  content:'';
+  position:fixed;
+  top:0;left:var(--sidebar-w);right:0;bottom:0;
+  pointer-events:none;
+  opacity:.03;
+  z-index:999;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* ===== FAV / BOOKMARK BUTTON ===== */
+.fav-wrap{
+  position:absolute;
+  top:24px;right:48px;
+  z-index:50;
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+.sister-link{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  padding:8px 16px;
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:24px;
+  color:var(--navy);
+  font-size:13px;
+  font-weight:600;
+  font-family:var(--sans);
+  text-decoration:none;
+  box-shadow:0 2px 8px rgba(0,0,0,.04);
+  transition:all .25s;
+  white-space:nowrap;
+}
+.sister-link:hover{
+  border-color:var(--gold);
+  color:var(--gold);
+  box-shadow:0 4px 16px var(--gold-glow);
+  transform:translateY(-1px);
+}
+.sister-link .arrow{
+  color:var(--gold);
+  font-weight:700;
+}
+.fav-btn{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  padding:8px 18px;
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:24px;
+  color:var(--gold);
+  font-size:16px;
+  cursor:pointer;
+  transition:all .25s;
+  font-family:var(--sans);
+  box-shadow:0 2px 8px rgba(0,0,0,.04);
+}
+.fav-btn:hover{
+  border-color:var(--gold);
+  box-shadow:0 4px 16px var(--gold-glow);
+  transform:translateY(-1px);
+}
+.fav-label{
+  font-size:13px;
+  color:var(--text2);
+  font-weight:500;
+}
+.fav-btn:hover .fav-label{color:var(--gold)}
+.fav-pop{
+  display:none;
+  position:absolute;
+  right:0;top:48px;
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:10px;
+  padding:14px 16px;
+  box-shadow:0 8px 32px rgba(0,0,0,.12);
+  font-size:13px;
+  min-width:240px;
+  z-index:51;
+  color:var(--text);
+  line-height:1.6;
+}
+.fav-pop.show{display:block}
+.fav-pop kbd{
+  background:var(--bg2);
+  padding:2px 7px;
+  border-radius:4px;
+  font-size:12px;
+  border:1px solid var(--border);
+  font-family:var(--sans);
+  color:var(--navy);
+  font-weight:600;
+}
+.fav-pop-copy{
+  display:block;
+  width:100%;
+  margin-top:10px;
+  padding:8px 0;
+  background:var(--bg);
+  border:1px solid var(--border);
+  border-radius:6px;
+  color:var(--text2);
+  font-size:12px;
+  cursor:pointer;
+  text-align:center;
+  transition:all .15s;
+  font-family:var(--sans);
+}
+.fav-pop-copy:hover{
+  border-color:var(--gold);
+  color:var(--gold);
+}
+.fav-pop-copy.copied{
+  background:#ecfdf5;
+  border-color:#6ee7b7;
+  color:#059669;
+}
+
+@media(max-width:768px){
+  .fav-wrap{right:16px;top:12px;gap:6px}
+  .sister-link{padding:6px 12px;font-size:11px}
+  .fav-btn{padding:6px 14px}
+  .fav-label{font-size:12px}
+}
+
+/* ===== CHANGELOG ===== */
+.article.changelog h2{
+  border-bottom-color:var(--gold);
+  display:flex;
+  align-items:center;
+  gap:10px;
+  flex-wrap:wrap;
+}
+.version{
+  display:inline-flex;
+  align-items:center;
+  background:var(--gold);
+  color:#fff;
+  font-size:13px;
+  font-weight:700;
+  padding:3px 11px;
+  border-radius:6px;
+  font-family:var(--sans);
+  letter-spacing:.3px;
+}
+.changelog-date{
+  font-size:14px;
+  color:var(--text2);
+  font-weight:500;
+  font-family:var(--sans);
+}
+.change-list{
+  list-style:none;
+  padding:0;
+  margin:16px 0;
+}
+.change-list li{
+  padding:10px 0 10px 18px;
+  position:relative;
+  border-bottom:1px solid var(--border);
+  font-size:14px;
+  line-height:1.75;
+}
+.change-list li:last-child{border-bottom:none}
+.change-list li::before{
+  content:"";
+  position:absolute;
+  left:0;
+  top:20px;
+  width:6px;
+  height:6px;
+  border-radius:50%;
+  background:var(--gold);
+}
+.change-type{
+  display:inline-block;
+  font-size:11px;
+  padding:2px 8px;
+  border-radius:4px;
+  color:#fff;
+  font-weight:600;
+  margin-right:8px;
+  font-family:var(--sans);
+  vertical-align:1px;
+  letter-spacing:.2px;
+}
+.change-type.feat{background:#059669}
+.change-type.fix{background:#dc2626}
+.change-type.plan{background:#3b82f6}
+.change-list li strong{color:var(--navy);font-weight:700}
+
+/* ===== ARTICLE (content pages) ===== */
+.article{max-width:820px;padding:48px 48px 80px}
+.meta{
+  font-size:13px;
+  color:var(--text2);
+  margin-bottom:16px;
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+.type-badge{
+  font-size:11px;
+  padding:2px 8px;
+  border-radius:4px;
+  color:#fff;
+  font-weight:600;
+}
+.type-概念{background:#7C5E2A}
+.type-方法{background:#5E4A8B}
+.type-产品{background:#1A6B7C}
+.type-人物{background:#8B2F2F}
+.type-著作{background:#2A6B4F}
+.type-文章{background:#7E6B30}
+.type-访谈{background:#3A5E8B}
+.type-财报会议{background:#4A6E2A}
+.type-索引{background:#6B6560}
+
+.article h1{
+  font-family:var(--serif);
+  font-size:28px;
+  line-height:1.3;
+  margin-bottom:24px;
+  font-weight:900;
+  color:var(--navy);
+  letter-spacing:-.5px;
+}
+.article h2{
+  font-family:var(--serif);
+  font-size:21px;
+  margin:36px 0 14px;
+  padding-bottom:8px;
+  border-bottom:2px solid var(--border);
+  font-weight:700;
+  color:var(--navy);
+}
+.article h3{
+  font-family:var(--serif);
+  font-size:17px;
+  margin:24px 0 10px;
+  font-weight:600;
+  color:var(--navy-light);
+}
+.article p{margin:10px 0}
+.article ul,.article ol{padding-left:24px;margin:10px 0}
+.article li{margin:4px 0}
+
+.article a{
+  color:var(--link);
+  text-decoration:none;
+  background:linear-gradient(to bottom,transparent 60%,var(--gold-glow) 60%);
+  transition:background .2s;
+}
+.article a:hover{background:linear-gradient(to bottom,transparent 40%,rgba(204,122,0,.2) 40%)}
+
+.article blockquote{
+  background:var(--cream);
+  border-left:4px solid var(--gold);
+  padding:14px 20px;
+  margin:16px 0;
+  border-radius:0 8px 8px 0;
+  font-style:italic;
+  color:#B06A00;
+  font-family:var(--serif);
+}
+.article blockquote p{margin:0}
+.article blockquote a{background:none;color:var(--gold)}
+.article blockquote a:hover{text-decoration:underline}
+
+.article table{border-collapse:collapse;width:100%;margin:16px 0;font-size:14px}
+.article th,.article td{border:1px solid var(--border);padding:8px 12px;text-align:left}
+.article th{background:var(--bg2);font-weight:600;color:var(--navy)}
+.article strong{font-weight:700}
+.article hr{border:none;border-top:1px solid var(--border);margin:32px 0}
+.article code{
+  background:var(--bg2);
+  padding:2px 6px;
+  border-radius:3px;
+  font-size:13px;
+  font-family:'SF Mono',Menlo,Consolas,monospace;
+  color:#B06A00;
+}
+
+/* ===== KNOWLEDGE GRAPH PAGE ===== */
+.main.full-bleed{max-width:none;padding:0;margin-left:var(--sidebar-w)}
+.main.full-bleed::after{display:none}
+.graph-wrap{position:relative;width:100%;height:100vh;overflow:hidden;background:var(--bg)}
+.graph-wrap svg{width:100%;height:100%;display:block}
+.graph-toolbar{position:absolute;top:16px;right:16px;display:flex;gap:8px;z-index:10}
+.graph-toolbar button{
+  padding:6px 14px;background:var(--card);border:1px solid var(--border);
+  border-radius:8px;font-size:12px;color:var(--text);cursor:pointer;
+  font-family:var(--sans);transition:all .15s;font-weight:500;
+}
+.graph-toolbar button:hover{border-color:var(--gold);color:var(--gold)}
+.graph-title{position:absolute;top:16px;left:16px;z-index:10}
+.graph-title h1{font-family:var(--serif);font-size:20px;color:var(--navy);margin:0}
+.graph-title p{font-size:12px;color:var(--text2);margin:4px 0 0;font-family:var(--sans)}
+.graph-tooltip{
+  position:absolute;padding:8px 14px;background:var(--navy);color:#fff;
+  border-radius:8px;font-size:12px;pointer-events:none;opacity:0;transition:opacity .15s;
+  box-shadow:0 4px 16px rgba(0,0,0,.2);z-index:20;white-space:nowrap;font-family:var(--sans);
+}
+.graph-tooltip strong{display:block;font-size:13px;margin-bottom:2px}
+.graph-tooltip span{color:rgba(255,255,255,.6)}
+.graph-legend{
+  position:absolute;bottom:16px;left:16px;display:flex;gap:12px;z-index:10;
+  flex-wrap:wrap;max-width:calc(100% - 32px);
+  background:rgba(255,255,255,.92);padding:8px 14px;border-radius:8px;
+  border:1px solid var(--border);font-family:var(--sans);
+}
+.legend-item{display:flex;align-items:center;gap:5px;font-size:11px;color:var(--text2);cursor:pointer;user-select:none}
+.legend-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0}
+.legend-item.dimmed{opacity:.3}
+.nav-graph{
+  padding:14px 16px 6px;
+  font-size:12px;
+  color:rgba(255,255,255,.4);
+  border-top:1px solid rgba(255,255,255,.08);
+  margin-top:auto;
+}
+.nav-graph:hover{color:rgba(255,255,255,.7)}
+.nav-graph.active{color:var(--gold-light)}
+/* When graph link present, changelog should not push it to bottom */
+.nav-graph + .nav-changelog{margin-top:0;border-top:none;padding-top:6px;padding-bottom:14px}
+
+/* ===== BACKLINKS PANEL (right sidebar) ===== */
+.main.has-backlinks{
+  display:grid;
+  grid-template-columns:minmax(0,820px) 280px;
+  gap:0 24px;
+  max-width:1160px;
+}
+.main-content{min-width:0}
+
+.backlinks-panel{
+  grid-column:2;
+  grid-row:1/-1;
+  position:sticky;
+  top:24px;
+  max-height:calc(100vh - 48px);
+  overflow-y:auto;
+  padding:24px 0 24px 20px;
+  border-left:1px solid var(--border);
+  font-size:13px;
+  align-self:start;
+}
+.backlinks-panel::-webkit-scrollbar{width:3px}
+.backlinks-panel::-webkit-scrollbar-thumb{background:var(--border);border-radius:2px}
+
+.bl-panel-header{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  margin-bottom:12px;
+}
+.bl-panel-title{
+  font-family:var(--serif);
+  font-size:14px;
+  font-weight:700;
+  color:var(--navy);
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+.bl-count{
+  font-size:11px;
+  background:var(--bg2);
+  padding:1px 7px;
+  border-radius:10px;
+  color:var(--text2);
+  font-weight:600;
+}
+.bl-panel-actions{display:flex;gap:4px}
+.bl-action{
+  background:none;
+  border:1px solid var(--border);
+  border-radius:4px;
+  padding:2px 8px;
+  font-size:11px;
+  color:var(--text2);
+  cursor:pointer;
+  font-family:var(--sans);
+  transition:all .15s;
+}
+.bl-action:hover{border-color:var(--gold);color:var(--gold)}
+
+.bl-group{margin-bottom:4px}
+.bl-group-header{
+  display:flex;
+  align-items:center;
+  gap:6px;
+  background:none;
+  border:none;
+  cursor:pointer;
+  padding:5px 0;
+  width:100%;
+  text-align:left;
+  font-size:13px;
+  font-family:var(--sans);
+}
+.bl-group-header:hover{background:rgba(0,0,0,.02);border-radius:4px}
+
+.bl-caret{
+  display:inline-block;
+  width:0;height:0;
+  border:4px solid transparent;
+  border-left:5px solid var(--text2);
+  transition:transform .15s;
+  flex-shrink:0;
+}
+.bl-group.open .bl-caret{transform:rotate(90deg)}
+
+.bl-source-name{
+  color:var(--navy);
+  font-weight:600;
+  flex:1;
+  min-width:0;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
+.bl-mention-cat{
+  font-size:10px;
+  color:var(--text2);
+  background:var(--bg2);
+  padding:0 5px;
+  border-radius:8px;
+  flex-shrink:0;
+  margin-left:4px;
+}
+
+.bl-snippets{display:none;padding:4px 0 4px 14px}
+.bl-group.open .bl-snippets{display:block}
+
+.bl-snippet{
+  padding:6px 0;
+  border-bottom:1px solid var(--border);
+  line-height:1.6;
+  color:var(--text2);
+  font-size:12px;
+}
+.bl-snippet:last-child{border-bottom:none}
+.bl-go-link{
+  display:inline-block;
+  font-size:11px;
+  color:var(--link);
+  text-decoration:none;
+  padding:4px 0 2px;
+  font-weight:600;
+  transition:color .15s;
+}
+.bl-go-link:hover{color:var(--gold);text-decoration:underline}
+
+/* ===== HOMEPAGE ===== */
+.hero-section{
+  position:relative;
+  padding:72px 48px 56px;
+  max-width:900px;
+  margin:0 auto;
+}
+.hero-eyebrow{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  font-size:12px;
+  font-weight:600;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  color:var(--gold);
+  margin-bottom:20px;
+  opacity:0;
+  animation:fadeUp .6s ease forwards;
+}
+.hero-eyebrow::before{content:'';width:24px;height:1px;background:var(--gold)}
+.hero-title{
+  font-family:var(--serif);
+  font-size:clamp(32px,5vw,48px);
+  font-weight:900;
+  line-height:1.25;
+  letter-spacing:-1px;
+  color:var(--navy);
+  margin-bottom:6px;
+  opacity:0;
+  animation:fadeUp .6s ease .1s forwards;
+}
+.hero-title .gold{color:var(--gold)}
+.hero-sub{
+  font-size:17px;
+  color:var(--text2);
+  line-height:1.8;
+  margin-top:16px;
+  max-width:640px;
+  font-family:var(--serif);
+  font-weight:400;
+  opacity:0;
+  animation:fadeUp .6s ease .2s forwards;
+}
+.hero-sub b{color:var(--navy);font-weight:700}
+
+.stats-row{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:0;
+  max-width:900px;
+  margin:0 auto 48px;
+  padding:0 48px;
+  border-top:1px solid var(--border);
+  border-bottom:1px solid var(--border);
+  opacity:0;
+  animation:fadeUp .6s ease .3s forwards;
+}
+.stat-item{
+  text-align:center;
+  padding:28px 12px;
+  position:relative;
+  transition:background .3s;
+  text-decoration:none;
+  color:inherit;
+}
+.stat-item:not(:last-child)::after{
+  content:'';
+  position:absolute;
+  right:0;top:20%;
+  height:60%;
+  width:1px;
+  background:var(--border);
+}
+.stat-item:hover{background:var(--gold-glow)}
+.stat-num{
+  font-family:var(--serif);
+  font-size:42px;
+  font-weight:900;
+  color:var(--navy);
+  line-height:1;
+  margin-bottom:6px;
+  letter-spacing:-2px;
+}
+.stat-label{
+  font-size:13px;
+  color:var(--text2);
+  font-weight:500;
+  letter-spacing:.5px;
+}
+
+.main-inner{max-width:900px;padding:0 48px 80px;margin:0 auto}
+
+.nav-cards{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:16px;
+  margin-bottom:56px;
+  opacity:0;
+  animation:fadeUp .6s ease .4s forwards;
+}
+.nav-card{
+  position:relative;
+  padding:28px 20px 24px;
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:14px;
+  text-decoration:none;
+  transition:all .3s cubic-bezier(.4,0,.2,1);
+  overflow:hidden;
+  display:block;
+  color:inherit;
+}
+.nav-card::before{
+  content:'';
+  position:absolute;
+  top:0;left:0;right:0;
+  height:3px;
+  background:var(--gold);
+  opacity:0;
+  transition:opacity .3s;
+}
+.nav-card:hover{
+  transform:translateY(-4px);
+  box-shadow:0 12px 32px rgba(0,0,0,.08);
+  border-color:var(--gold-light);
+}
+.nav-card:hover::before{opacity:1}
+.nav-card-icon{font-size:32px;margin-bottom:14px;display:block;line-height:1}
+.nav-card-title{
+  font-family:var(--serif);
+  font-size:16px;
+  font-weight:700;
+  color:var(--navy);
+  margin-bottom:4px;
+}
+.nav-card-sub{font-size:13px;color:var(--text2)}
+.nav-card-arrow{
+  position:absolute;
+  bottom:20px;right:20px;
+  font-size:18px;
+  color:var(--border);
+  transition:all .3s;
+}
+.nav-card:hover .nav-card-arrow{color:var(--gold);transform:translateX(4px)}
+
+.section{margin-bottom:48px}
+.section-header{display:flex;align-items:center;gap:12px;margin-bottom:20px}
+.section-line{flex:1;height:1px;background:var(--border)}
+.section-title{
+  font-family:var(--serif);
+  font-size:22px;
+  font-weight:700;
+  color:var(--navy);
+  white-space:nowrap;
+}
+.section-count{
+  font-size:12px;
+  color:var(--gold);
+  font-weight:600;
+  background:var(--gold-glow);
+  padding:3px 10px;
+  border-radius:12px;
+  white-space:nowrap;
+}
+
+.tag-cloud{display:flex;flex-wrap:wrap;gap:10px}
+.tag{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  padding:8px 18px;
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:24px;
+  font-size:14px;
+  color:var(--text);
+  text-decoration:none;
+  transition:all .25s cubic-bezier(.4,0,.2,1);
+  font-weight:500;
+}
+.tag:hover{
+  border-color:var(--gold);
+  color:var(--navy);
+  box-shadow:0 4px 16px var(--gold-glow);
+  transform:translateY(-2px);
+}
+.tag-n{
+  font-size:11px;
+  font-weight:700;
+  color:#fff;
+  background:var(--gold);
+  padding:2px 8px;
+  border-radius:10px;
+  min-width:20px;
+  text-align:center;
+}
+.tag.tier-1{
+  font-size:16px;
+  padding:10px 22px;
+  font-weight:700;
+  border-color:var(--gold-light);
+  background:linear-gradient(135deg,#FFFDF5,#FFF8E7);
+}
+.tag.tier-1 .tag-n{font-size:12px;padding:3px 10px;background:var(--gold)}
+.tag.tier-2{font-size:15px;padding:9px 20px;font-weight:600}
+
+.people-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(180px,1fr));
+  gap:14px;
+}
+.person-card{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  padding:24px 16px 20px;
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:14px;
+  text-decoration:none;
+  transition:all .3s;
+  text-align:center;
+  color:inherit;
+}
+.person-card:hover{
+  transform:translateY(-3px);
+  box-shadow:0 8px 24px rgba(0,0,0,.06);
+  border-color:var(--gold-light);
+}
+.person-avatar{
+  width:56px;height:56px;
+  border-radius:50%;
+  background:linear-gradient(135deg,var(--navy),var(--navy-light));
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:22px;
+  margin-bottom:12px;
+  color:var(--gold-light);
+  font-family:var(--serif);
+  font-weight:700;
+  box-shadow:0 4px 12px rgba(26,35,50,.15);
+}
+.person-name{
+  font-family:var(--serif);
+  font-size:15px;
+  font-weight:700;
+  color:var(--navy);
+  margin-bottom:4px;
+}
+.person-refs{font-size:12px;color:var(--text2)}
+
+.gold-divider{display:flex;align-items:center;gap:16px;margin:56px 0}
+.gold-divider::before,.gold-divider::after{
+  content:'';
+  flex:1;
+  height:1px;
+  background:linear-gradient(to right,transparent,var(--border),transparent);
+}
+.gold-divider-diamond{
+  width:8px;height:8px;
+  background:var(--gold);
+  transform:rotate(45deg);
+  flex-shrink:0;
+}
+
+.footer-promo{
+  position:relative;
+  overflow:hidden;
+  padding:40px;
+  background:var(--navy);
+  border-radius:20px;
+  color:#fff;
+  display:flex;
+  gap:40px;
+  align-items:center;
+}
+.footer-promo::before{
+  content:'';
+  position:absolute;
+  top:-50%;right:-20%;
+  width:400px;height:400px;
+  border-radius:50%;
+  background:radial-gradient(circle,rgba(204,122,0,.15),transparent 70%);
+}
+.promo-story{flex:1;position:relative;z-index:1;min-width:0}
+.promo-story h3{
+  font-family:var(--serif);
+  font-size:20px;
+  font-weight:700;
+  margin-bottom:12px;
+  color:var(--gold-light);
+}
+.promo-story p{font-size:14px;color:rgba(255,255,255,.75);line-height:1.8;margin:8px 0}
+.promo-credit{
+  margin-top:16px !important;
+  padding-top:14px;
+  border-top:1px solid rgba(255,255,255,.12);
+  font-size:13px !important;
+}
+.promo-credit strong{color:var(--gold-light);font-weight:700}
+
+.promo-qr{
+  flex-shrink:0;
+  position:relative;
+  z-index:1;
+  text-align:center;
+}
+.qr-img{
+  display:block;
+  width:140px;
+  height:140px;
+  border-radius:12px;
+  border:3px solid rgba(255,255,255,.15);
+  box-shadow:0 8px 24px rgba(0,0,0,.25);
+  background:#fff;
+  padding:6px;
+}
+.qr-text{
+  font-size:12px;
+  color:rgba(255,255,255,.6);
+  margin-top:10px;
+  letter-spacing:.5px;
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes fadeUp{
+  from{opacity:0;transform:translateY(16px)}
+  to{opacity:1;transform:translateY(0)}
+}
+.section{opacity:0;animation:fadeUp .5s ease forwards}
+.section:nth-child(1){animation-delay:.45s}
+.section:nth-child(2){animation-delay:.55s}
+.section:nth-child(3){animation-delay:.65s}
+.section:nth-child(4){animation-delay:.75s}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:1024px){
+  .main.has-backlinks{display:block}
+  .backlinks-panel{
+    position:static;
+    max-height:none;
+    overflow-y:visible;
+    border-left:none;
+    border-top:1px solid var(--border);
+    padding:24px 16px;
+    margin-top:24px;
+    max-width:820px;
+  }
+}
+
+@media(max-width:768px){
+  .sidebar{transform:translateX(-100%);transition:transform .3s}
+  .sidebar.open{transform:translateX(0)}
+  .hamburger{display:block}
+  .main{margin-left:0;max-width:100%}
+  .main::after{left:0}
+  .main.has-backlinks{display:block}
+  .article{padding:48px 16px 60px}
+  .backlinks-panel{padding:16px 12px;margin-top:16px}
+  .hero-section{padding:44px 20px 20px}
+  .hero-eyebrow{font-size:10px;margin-bottom:12px}
+  .hero-title{font-size:26px}
+  .hero-sub{font-size:14px;line-height:1.6;margin-top:10px}
+  .stats-row{padding:0 16px;margin:0 0 20px}
+  .stat-item{padding:16px 4px}
+  .stat-num{font-size:28px;letter-spacing:-1px}
+  .stat-label{font-size:11px}
+  .main-inner{padding:0 20px 60px}
+  .nav-cards{grid-template-columns:1fr 1fr;gap:10px;margin-bottom:36px}
+  .nav-card{padding:20px 14px 18px}
+  .nav-card-icon{font-size:24px;margin-bottom:8px}
+  .nav-card-title{font-size:14px}
+  .nav-card-sub{font-size:12px}
+  .footer-promo{flex-direction:column;text-align:center;padding:28px 20px;gap:24px}
+  .people-grid{grid-template-columns:repeat(2,1fr)}
+}
+</style>
+</head>
+<body>
+<button class="hamburger" aria-label="菜单" onclick="document.querySelector('.sidebar').classList.toggle('open')">☰</button>
+<aside class="sidebar">
+  <div class="sidebar-header"><a href="/index.html" class="logo">纳瓦尔知识图谱</a></div>
+  <div class="sidebar-nav">
+    <a href="/index.html" class="nav-link nav-home">🏛 首页</a>
+<div class="nav-group open">
+  <div class="nav-group-title"><span class="caret"></span>索引<span class="badge">4</span></div>
+  <div class="nav-group-items">
+    <a href="/index-pages/人物索引.html" class="nav-link" title="人物索引">人物索引</a>
+    <a href="/index-pages/公司与产品索引.html" class="nav-link" title="公司与产品索引">公司与产品索引</a>
+    <a href="/index-pages/核心思想索引.html" class="nav-link" title="核心思想索引">核心思想索引</a>
+    <a href="/index-pages/素材总览.html" class="nav-link" title="素材总览">素材总览</a>
+  </div>
+</div>
+<div class="nav-group open">
+  <div class="nav-group-title"><span class="caret"></span>著作<span class="badge">10</span></div>
+  <div class="nav-group-items">
+    <a href="/book/01 理解财富的本质.html" class="nav-link" title="01 理解财富的本质">01 理解财富的本质</a>
+    <a href="/book/02 专属知识与长期博弈.html" class="nav-link" title="02 专属知识与长期博弈">02 专属知识与长期博弈</a>
+    <a href="/book/03 责任感与所有权.html" class="nav-link" title="03 责任感与所有权">03 责任感与所有权</a>
+    <a href="/book/04 杠杆.html" class="nav-link" title="04 杠杆">04 杠杆</a>
+    <a href="/book/05 专注、运气与耐心.html" class="nav-link" title="05 专注、运气与耐心">05 专注、运气与耐心</a>
+    <a href="/book/06 建立判断力.html" class="nav-link" title="06 建立判断力">06 建立判断力</a>
+    <a href="/book/07 学习幸福.html" class="nav-link" title="07 学习幸福">07 学习幸福</a>
+    <a href="/book/08 拯救自己.html" class="nav-link" title="08 拯救自己">08 拯救自己</a>
+    <a href="/book/09 生命的意义.html" class="nav-link" title="09 生命的意义">09 生命的意义</a>
+    <a href="/book/10 推荐书单与写作.html" class="nav-link active" title="10 推荐书单与写作">10 推荐书单与写作</a>
+  </div>
+</div>
+<div class="nav-group">
+  <div class="nav-group-title"><span class="caret"></span>访谈<span class="badge">5</span></div>
+  <div class="nav-group-items">
+    <a href="/podcasts/2015-08 Tim Ferriss 97 - 天使投资与人生算法.html" class="nav-link" title="2015-08 Tim Ferriss 97 - 天使投资与人生算法">2015-08 Tim Ferriss 97 - 天使投资与人生算法</a>
+    <a href="/podcasts/2017-02 Knowledge Project 18 - 清醒思考.html" class="nav-link" title="2017-02 Knowledge Project 18 - 清醒思考">2017-02 Knowledge Project 18 - 清醒思考</a>
+    <a href="/podcasts/2019-06 Joe Rogan 1309 - 财富与幸福.html" class="nav-link" title="2019-06 Joe Rogan 1309 - 财富与幸福">2019-06 Joe Rogan 1309 - 财富与幸福</a>
+    <a href="/podcasts/2020-05 Kapil Gupta - 征服心智.html" class="nav-link" title="2020-05 Kapil Gupta - 征服心智">2020-05 Kapil Gupta - 征服心智</a>
+    <a href="/podcasts/2020-10 Tim Ferriss 473 - 幸福的艺术.html" class="nav-link" title="2020-10 Tim Ferriss 473 - 幸福的艺术">2020-10 Tim Ferriss 473 - 幸福的艺术</a>
+  </div>
+</div>
+<div class="nav-group">
+  <div class="nav-group-title"><span class="caret"></span>文章<span class="badge">2</span></div>
+  <div class="nav-group-items">
+    <a href="/essays/2018 How to Get Rich 推文风暴.html" class="nav-link" title="2018 How to Get Rich 推文风暴">2018 How to Get Rich 推文风暴</a>
+    <a href="/essays/nav.al 精选文章合集.html" class="nav-link" title="nav.al 精选文章合集">nav.al 精选文章合集</a>
+  </div>
+</div>
+<div class="nav-group">
+  <div class="nav-group-title"><span class="caret"></span>概念<span class="badge">20</span></div>
+  <div class="nav-group-items">
+    <a href="/concepts/专属知识.html" class="nav-link" title="专属知识">专属知识</a>
+    <a href="/concepts/习惯.html" class="nav-link" title="习惯">习惯</a>
+    <a href="/concepts/产品化自己.html" class="nav-link" title="产品化自己">产品化自己</a>
+    <a href="/concepts/代码与媒体.html" class="nav-link" title="代码与媒体">代码与媒体</a>
+    <a href="/concepts/内心平静.html" class="nav-link" title="内心平静">内心平静</a>
+    <a href="/concepts/冥想.html" class="nav-link" title="冥想">冥想</a>
+    <a href="/concepts/判断力.html" class="nav-link" title="判断力">判断力</a>
+    <a href="/concepts/复利效应.html" class="nav-link" title="复利效应">复利效应</a>
+    <a href="/concepts/幸福是一种技能.html" class="nav-link" title="幸福是一种技能">幸福是一种技能</a>
+    <a href="/concepts/杠杆.html" class="nav-link" title="杠杆">杠杆</a>
+    <a href="/concepts/欲望是痛苦的契约.html" class="nav-link" title="欲望是痛苦的契约">欲望是痛苦的契约</a>
+    <a href="/concepts/活在当下.html" class="nav-link" title="活在当下">活在当下</a>
+    <a href="/concepts/第一性原理.html" class="nav-link" title="第一性原理">第一性原理</a>
+    <a href="/concepts/财富与金钱.html" class="nav-link" title="财富与金钱">财富与金钱</a>
+    <a href="/concepts/责任感.html" class="nav-link" title="责任感">责任感</a>
+    <a href="/concepts/运气的四种类型.html" class="nav-link" title="运气的四种类型">运气的四种类型</a>
+    <a href="/concepts/退休的定义.html" class="nav-link" title="退休的定义">退休的定义</a>
+    <a href="/concepts/选择的自由.html" class="nav-link" title="选择的自由">选择的自由</a>
+    <a href="/concepts/长期博弈.html" class="nav-link" title="长期博弈">长期博弈</a>
+    <a href="/concepts/阅读.html" class="nav-link" title="阅读">阅读</a>
+  </div>
+</div>
+<div class="nav-group">
+  <div class="nav-group-title"><span class="caret"></span>产品<span class="badge">7</span></div>
+  <div class="nav-group-items">
+    <a href="/companies/AngelList.html" class="nav-link" title="AngelList">AngelList</a>
+    <a href="/companies/Epinions.html" class="nav-link" title="Epinions">Epinions</a>
+    <a href="/companies/Rolling Fund.html" class="nav-link" title="Rolling Fund">Rolling Fund</a>
+    <a href="/companies/Twitter.html" class="nav-link" title="Twitter">Twitter</a>
+    <a href="/companies/Venture Hacks.html" class="nav-link" title="Venture Hacks">Venture Hacks</a>
+    <a href="/companies/nav.al.html" class="nav-link" title="nav.al">nav.al</a>
+    <a href="/companies/navalmanack.com.html" class="nav-link" title="navalmanack.com">navalmanack.com</a>
+  </div>
+</div>
+<div class="nav-group">
+  <div class="nav-group-title"><span class="caret"></span>人物<span class="badge">10</span></div>
+  <div class="nav-group-items">
+    <a href="/people/Babak Nivi.html" class="nav-link" title="Babak Nivi">Babak Nivi</a>
+    <a href="/people/Eric Jorgenson.html" class="nav-link" title="Eric Jorgenson">Eric Jorgenson</a>
+    <a href="/people/Joe Rogan.html" class="nav-link" title="Joe Rogan">Joe Rogan</a>
+    <a href="/people/Kapil Gupta.html" class="nav-link" title="Kapil Gupta">Kapil Gupta</a>
+    <a href="/people/Marc Andreessen.html" class="nav-link" title="Marc Andreessen">Marc Andreessen</a>
+    <a href="/people/Shane Parrish.html" class="nav-link" title="Shane Parrish">Shane Parrish</a>
+    <a href="/people/Tim Ferriss.html" class="nav-link" title="Tim Ferriss">Tim Ferriss</a>
+    <a href="/people/查理·芒格.html" class="nav-link" title="查理·芒格">查理·芒格</a>
+    <a href="/people/理查德·费曼.html" class="nav-link" title="理查德·费曼">理查德·费曼</a>
+    <a href="/people/纳瓦尔.html" class="nav-link" title="纳瓦尔">纳瓦尔</a>
+  </div>
+</div>
+<a href="/graph.html" class="nav-link nav-graph">🕸️ 知识图谱</a>
+<a href="/index-pages/更新日志.html" class="nav-link nav-changelog">📋 更新日志</a>
+
+  </div>
+</aside>
+<main class="main has-backlinks">
+<div class="main-content article"><div class="meta"><span class="type-badge type-著作">著作</span></div>
+<h1 id="_1"><a href="/people/纳瓦尔.html">纳瓦尔</a>的推荐<a href="/concepts/阅读.html">阅读</a></h1>
+<blockquote>
+<p>The truth is, I don't read for self-improvement. I read out of curiosity and interest. The best book is the one you'll devour.</p>
+<p>实话说，我读书不是为了自我提升。我出于好奇和兴趣而读。最好的书是你会一口气吞下的那本。</p>
+</blockquote>
+<h3 id="_2">书籍</h3>
+<blockquote>
+<p>Read enough, and you become a connoisseur. Then you naturally gravitate more toward theory, concepts, nonfiction.</p>
+<p>读够了，你就成了鉴赏家。然后你自然会更倾向于理论、概念和非虚构。</p>
+</blockquote>
+<h3 id="_3">非虚构</h3>
+<p><strong>The Beginning of Infinity: Explanations That Transform the World</strong> —— David Deutsch<br />
+不是最容易读的书，但让我变得更聪明。</p>
+<p><strong>Sapiens: A Brief History of Humankind</strong> —— Yuval Noah Harari<br />
+人类物种的历史。其中的观察、框架和心智模型会让你以不同的方式看待历史和你的同胞。</p>
+<p><em>Sapiens</em> 是我过去十年读过的最好的书。他花了几十年来写。里面全是伟大的想法，每一页都密密麻麻。</p>
+<p><strong>The Rational Optimist: How Prosperity Evolves</strong> —— Matt Ridley<br />
+多年来我读过的最精彩、最启发的书。我的前二十本书中他写了四本。</p>
+<p>Matt Ridley 写的所有其他书。Matt 是科学家、乐观主义者和前瞻思考者。我最喜欢的作者之一。他所有的书我都读过，而且重读过。</p>
+<ul>
+<li><em>Genome: The Autobiography of a Species in 23 Chapters</em></li>
+<li><em>The Red Queen: Sex and the Evolution of Human Nature</em></li>
+<li><em>The Origins of Virtue: Human Instincts and the Evolution of Cooperation</em></li>
+<li><em>The Evolution of Everything: How New Ideas Emerge</em></li>
+</ul>
+<p><strong>Skin in the Game</strong> —— Nassim Taleb<br />
+2018年我读过的最好的书，强烈推荐。里面有大量好想法、好心智模型和好构架。他有点态度，但那是因为他很聪明。看穿态度去读书、学概念。这是我读过的最好的商业书之一——幸运的是它没把自己伪装成商业书。</p>
+<p><strong>The Bed of Procrustes: Philosophical and Practical Aphorisms</strong> —— Nassim Taleb<br />
+这是他的古老智慧合集。他还以 <em>The Black Swan</em>（黑天鹅）、<em>Antifragile</em>（反脆弱）和 <em>Fooled by Randomness</em>（随机漫步的傻瓜）闻名，全都值得读。</p>
+<p><strong>Six Easy Pieces: Essentials of Physics Explained by Its Most Brilliant Teacher</strong> —— <a href="/people/理查德·费曼.html">理查德·费曼</a><br />
+我会给我的孩子一本费曼的 <em>Six Easy Pieces</em> 和 <em>Six Not-So-Easy Pieces</em>。费曼是一位著名物理学家。我既爱他的风范，也爱他对物理的理解。</p>
+<p>我也在读费曼的 <em>Perfectly Reasonable Deviations from the Beaten Track</em>，并在重读关于他的传记 <em>Genius: The Life and Science of Richard Feynman</em>。</p>
+<p><strong>The Thing Explainer: Complicated Stuff in Simple Words</strong> —— Randall Munroe<br />
+Randall Munroe（<em>xkcd</em> 的创作者）的一本好书。他解释非常复杂的概念——从气候变化到物理系统到潜艇——只用英语中最常见的一千个词。他把土星五号火箭叫"Up Goer Five"（上去的东西五号）。你不能把火箭定义为太空船或火箭——那是自我引用。他说"上去的东西"。小孩子立刻就懂。</p>
+<p><strong>Thinking Physics: Understandable Practical Reality</strong> —— Lewis Carroll Epstein<br />
+后封面上有个很棒的宣传语："唯一一本同时用于小学和研究生院的书。"确实如此。全是简单的物理谜题，能向十二岁的孩子解释，也能向二十五岁的物理研究生解释。都有物理学的基本洞见，都有点刁钻，但任何人都能通过纯逻辑推理得出答案。</p>
+<p><strong>The Lessons of History</strong> —— Will and Ariel Durant<br />
+一本我非常喜欢的好书，总结了历史的一些宏大主题。非常犀利。与大多数历史书不同，它真的很薄，但涵盖了很多内容。</p>
+<p><strong>The Sovereign Individual: Mastering the Transition to the Information Age</strong> —— James Dale Davidson and Lord William Rees-Mogg<br />
+这是我自 <em>Sapiens</em> 以来读过的最好的书（远不如 Sapiens 主流）。</p>
+<p><strong>Poor Charlie's Almanack: The Wit and Wisdom of Charles T. Munger</strong> —— <a href="/people/查理·芒格.html">查理·芒格</a>（Peter Kaufman 编辑）<br />
+这本书伪装成商业书，但其实只是<a href="/people/查理·芒格.html">查理·芒格</a>关于克服自我、过上成功且有德行的人生的建议。</p>
+<p><strong>Reality Is Not What It Seems: The Journey to Quantum Gravity</strong> —— Carlo Rovelli<br />
+去年我读过的最好的书。物理、诗歌、哲学和历史以非常易懂的形式包装在一起。</p>
+<p><strong>Seven Brief Lessons in Physics</strong> —— Carlo Rovelli<br />
+这本我至少读了两遍。</p>
+<p>关于博弈论，除了玩策略游戏，你可以试试 <em>The Compleat Strategyst</em> (J.D. Williams) 和 <em>The Evolution of Cooperation</em> (Robert Axelrod)。</p>
+<h3 id="_4">哲学与灵性</h3>
+<p><strong>Jed McKenna 的所有作品</strong><br />
+Jed 吐露原始真相。他的风格可能让人不适，但对真理的执着无与伦比。</p>
+<ul>
+<li><em>Theory of Everything (The Enlightened Perspective) - Dreamstate Trilogy</em></li>
+<li><em>Jed McKenna's Notebook</em></li>
+<li><em>Jed Talks #1</em> 和 <em>#2</em></li>
+</ul>
+<p><strong><a href="/people/Kapil Gupta.html">Kapil Gupta</a> 的所有作品</strong><br />
+Kapil 最近成为了我的私人顾问和教练——这可是出自一个不信教练的人之口。</p>
+<ul>
+<li><em>A Master's Secret Whispers</em></li>
+<li><em>Direct Truth</em></li>
+<li><em>Atmamun</em></li>
+</ul>
+<p><strong>The Book of Life</strong> —— Jiddu Krishnamurti<br />
+Krishnamurti 知名度不如前者，是一位印度哲学家，生活在上世纪之交，对我影响极深。他是一个毫不妥协、非常直接的人，基本上告诉你时刻审视自己的心智。我深受他影响。最好的书大概是 <em>The Book of Life</em>，从他的各种演讲和著作中摘录汇编而成。</p>
+<p>我会给我的孩子一本 <em>The Book of Life</em>，告诉他们年纪大些再看——年轻时不太有感觉。</p>
+<p><strong>Total Freedom: The Essential Krishnamurti</strong> —— Jiddu Krishnamurti<br />
+对更进阶的人推荐这本。理性主义者的人类心智危险指南。我不断重温的"灵性"书。</p>
+<p><strong>Siddhartha</strong>（《悉达多》）—— Herman Hesse<br />
+我非常喜欢这本经典哲学书——入门的好选择。我送出去的这本书比任何其他书都多。</p>
+<blockquote>
+<p>I'm pretty much always rereading something by either Krishnamurti or Osho. Those are my favorite philosophers.</p>
+<p>我基本上一直在重读 Krishnamurti 或奥修的某些东西。他们是我最喜欢的哲学家。</p>
+</blockquote>
+<p>[更新：我现在会加上 Jed McKenna、<a href="/people/Kapil Gupta.html">Kapil Gupta</a>、<em>Vashistha Yoga</em> 和叔本华。]</p>
+<p><strong>The Book of Secrets: 112 Meditations to Discover the Mystery Within</strong> —— Osho<br />
+大多数<a href="/concepts/冥想.html">冥想</a>技巧是专注法，冥想技巧非常多。如果你想快速过一遍，可以找奥修的 <em>The Book of Secrets</em>。它其实是一本古梵文典籍的翻译，包含112种不同的冥想。你可以逐个尝试，看哪个对你管用。</p>
+<p><strong>The Great Challenge: Exploring the World Within</strong> —— Osho</p>
+<p><strong>The Way to Love: The Last Meditations of Anthony DeMello</strong> —— Anthony DeMello</p>
+<p><strong>The Untethered Soul: The Journey Beyond Yourself</strong> —— Michael Singer</p>
+<p><strong>Meditations</strong>（《沉思录》）—— Marcus Aurelius<br />
+马可·奥勒留绝对改变了我的人生。这是罗马皇帝的个人日记。一个当时可能是地球上最有权力的人写的日记——从不打算出版。当你打开这本书，你意识到他和我们有一模一样的问题、一模一样的精神挣扎；他在努力成为一个更好的人。就在那里，你明白了——成功和权力并不能改善你的内在状态，你仍然得去修炼它。</p>
+<p><strong>Love Yourself Like Your Life Depends on It</strong> —— Kamal Ravikant<br />
+我一直在读我弟弟的书。我觉得写得非常精炼。（显然是为我弟打个广告。）</p>
+<p>他是家里的哲学家——我只是业余的。他书里有一句很棒的话：</p>
+<blockquote>
+<p>I once asked a monk how he found peace. "I say 'yes,'" he'd said. "To all that happens, I say 'yes.'"</p>
+<p>我曾问一个僧人他是怎么找到平静的。"我说'是'，"他说。"对发生的一切，我说'是'。"</p>
+</blockquote>
+<p><strong>The Tao of Seneca: Practical Letters from a Stoic Master</strong><br />
+我听得最多的有声书。我听过的最重要的有声书。</p>
+<p><strong>How to Change Your Mind</strong> —— Michael Pollan<br />
+一本精彩的书，我认为每个人都应该读。这本书讨论迷幻剂。迷幻剂有点像自我观察的作弊码。我不推荐任何人用药——你完全可以通过纯冥想做到。如果你想加速前进，迷幻剂对此有帮助。</p>
+<p><strong>Striking Thoughts: Bruce Lee's Wisdom for Daily Living</strong> —— Bruce Lee<br />
+说来奇怪，李小龙写了一些很棒的哲学。<em>Striking Thoughts</em> 是他哲学的一个好总结。</p>
+<p><strong>The Prophet</strong>（《先知》）—— Kahlil Gibran<br />
+这本书读起来像一部现代诗意的宗教经典。它和《薄伽梵歌》、《道德经》、《圣经》、《古兰经》并列。它以一种带有宗教感和真理感的风格写成，但非常平易近人、优美、非教派和非宗派。我爱这本书。</p>
+<p>他对孩子是什么样的、恋人是什么样的、婚姻应该怎样、你应该怎样对待敌人和朋友、怎样对待金钱、每次你必须杀死什么来吃时该想些什么——都有诗意的描述。我觉得它像那些伟大的宗教书籍一样，对如何面对人生的重大问题给出了非常深刻、非常哲学、但非常真实的答案。无论你信不信教、是基督徒、印度教徒、犹太教徒还是无神论者，我都推荐 <em>The Prophet</em>。</p>
+<p><strong>The Tao of Philosophy</strong> —— Alan Watts</p>
+<h3 id="_5">科幻</h3>
+<blockquote>
+<p>I started with comic books and sci-fi. Then I was into history and news. Then into psychology, popular science, technology.</p>
+<p>我从漫画和科幻开始。然后迷上了历史和新闻。然后是心理学、科普、技术。</p>
+</blockquote>
+<p><strong>Ficciones</strong> —— Jorge Luis Borges<br />
+我爱博尔赫斯，阿根廷作家。他的短篇小说集 <em>Ficciones</em>（或 <em>Labyrinths</em>）令人惊叹。博尔赫斯大概仍是我读过的最有力量的作者——如果不算直接写哲学的话。在科幻里面有哲学。</p>
+<p><strong>Stories of Your Life and Others</strong> —— Ted Chiang<br />
+我目前最喜欢的科幻短篇大概是 Ted Chiang 的 "Understand"。收录在 <em>Stories of Your Life and Others</em> 中。其中"你一生的故事"被改编成电影《降临》（Arrival）。</p>
+<p><strong>Exhalation: Stories</strong> —— Ted Chiang<br />
+来自我们这个时代最好的科幻短篇作家，对热力学奇迹的沉思。</p>
+<p><strong>The Lifecycle of Software Objects</strong> —— Ted Chiang<br />
+Ted Chiang 的又一杰作。</p>
+<p><strong>Snow Crash</strong> —— Neal Stephenson<br />
+<em>Snow Crash</em> 是一本令人惊叹的书。没有什么东西能和 <em>Snow Crash</em> 相提并论。它自成一档。Stephenson 还写了 <em>The Diamond Age</em>。</p>
+<p><strong>The Last Question</strong> —— Isaac Asimov<br />
+我一直引用 <em>The Last Question</em>。小时候就爱上了。</p>
+<p><strong>你现在在重读什么书？</strong></p>
+<p>好问题。我一边说一边打开 Kindle。通常我总是在重读一些科学书。</p>
+<p>我在读一本关于 Rene Girard 的模仿理论的概述书——因为我读不下去他的原著。我在读 <a href="/people/Tim Ferriss.html">Tim Ferriss</a> 的 <em>Tools of Titans</em>——他从很多顶尖人士身上学到的东西。</p>
+<p>我在读 <em>Thermoinfocomplexity</em>——我朋友 Behzad Mohit 写的。我刚读完——应该说刚翻完—— Robert Cialdini 的 <em>Pre-Suasion</em>。不觉得需要读完整本才能抓到重点。还有 <em>The Story of Philosophy: The Lives and Opinions of the Great Philosophers</em>，也是 Will Durant 写的。</p>
+<p>我现在有了小孩，所以有一堆育儿书当参考资料。最近读了一些爱默生和切斯特菲尔德。这里有一本托尔斯泰的书。</p>
+<p>Alan Watts。Scott Adams。最近重读了 <em>God's Debris</em>。《道德经》——一个朋友在重读，所以我也拿起来了。还有很多。尼采的书在这里。<em>The Undercover Economist</em>。Richard Bach 的书（<em>Illusions: The Adventures of a Reluctant Messiah</em>）。一些 Jed McKenna 的书。</p>
+<p>一些 Dale Carnegie 的书。<em>The Three-Body Problem</em>（《三体》）[Cixin Liu]。<em>Man's Search for Meaning</em>（《活出生命的意义》）[Victor E. Frankl]。很多很多。<em>Sex at Dawn</em> [Christopher Ryan]。书太多了。</p>
+<p>顺便说，当我告诉别人我在读什么时，我会跳过三分之二的书。原因是它们很尴尬——听起来不像好书。谁在乎？我不必告诉每个人我读的所有书。我读各种别人认为是垃圾甚至令人厌恶的东西。我读各种我不同意的东西——因为它们令人脑洞大开。</p>
+<blockquote>
+<p>I always spent money on books. I never viewed that as an expense. That's an investment to me.</p>
+<p>我花在书上的钱从不觉得是开支。对我来说那是投资。</p>
+</blockquote>
+<h3 id="_6">博客</h3>
+<p>一些出色的博客：</p>
+<ul>
+<li>@KevinSimler — Melting Asphalt, meltingasphalt.com</li>
+<li>@farnamstreet — Farnam Street, fs.blog</li>
+<li>@benthompson — Stratechery, stratechery.com</li>
+<li>@baconmeteor — Idle Words, idlewords.com</li>
+</ul>
+<p><strong>The Munger Operating System: A Life That Really Works</strong> —— @FarnamStreet<br />
+值得依此生活和兴旺的规则。</p>
+<p><strong>The Day You Became A Better Writer</strong> —— Scott Adams<br />
+尽管我写作很好、从小就大量写作，我每次写重要东西时仍然会打开这篇博文放在背景里。它就是那么好。我把它当作我写作好文的基础模板。想想这个标题——"你成为更好的写作者的那一天"——多么强大。他在一篇小博文中教你惊喜的重要性、标题的重要性、简洁和有方向性的重要性、不用某些形容词和副词、用主动语态不用被动语态等。只要你放下自我好好吸收，这一篇博文就能永远改变你的写作风格。</p>
+<p>还有更多推荐：</p>
+<ul>
+<li><strong>Crony Beliefs</strong> (meltingasphalt.com) — 想在十分钟内变聪明？吸收这篇。</li>
+<li><strong>Career Decisions</strong> by @eladgil — 我读过的关于（硅谷/科技行业）职业决策最好的文章。</li>
+<li>Harari 的 <em>Sapiens</em> 在 YouTube 上有讲座/课程形式。</li>
+<li>每所商学院都应该有一门关于 <strong>Aggregation Theory</strong> 的课。或者直接向大师 @benthompson 学习——科技行业最好的分析师。</li>
+<li><strong>Think Like Reality</strong> (lesswrong.com) — "量子物理不'奇怪'。是你奇怪。"</li>
+<li><strong>Lazy Leadership</strong> by @Awilkinson — 必读。</li>
+<li>@EdLatimore 网站上的一切都值得高成就者阅读。</li>
+</ul>
+<blockquote>
+<p>If you eat, invest, and think according to what the "news" advocates, you'll end up nutritionally, financially, and morally bankrupt.</p>
+<p>如果你按照"新闻"鼓吹的方式来吃、投资和思考，你最终会在营养、财务和道德上破产。</p>
+</blockquote>
+<h3 id="_7">其他推荐</h3>
+<p>Twitter 账号：</p>
+<ul>
+<li>@AmuseChimp（我有史以来最喜欢的 Twitter 账号）</li>
+<li>@mmay3r</li>
+<li>@nntaleb</li>
+<li>Art DeVany（在 Facebook 上）</li>
+</ul>
+<p>天才就在这里，只是分布不均。</p>
+<p>还有一些很好的图像小说。如果你能接受卡通元素——<em>Transmetropolitan</em>、<em>The Boys</em>、<em>Planetary</em>、<em>The Sandman</em>……我认为这些是我们这个时代最精彩的艺术作品之一。我也是一个从小读漫画的男孩，所以我可能非常偏向它们。</p>
+<p><strong>Rick and Morty</strong>（电视剧 + 漫画）<br />
+Rick and Morty 是电视上最好的节目（恕我直言）。看第一集就够了。它是《回到未来》遇上《银河系漫游指南》。</p>
+<p><em>Rick and Morty</em> 的漫画（Zac Gorman 著）和剧一样聪明。</p>
+<p><strong>"You and Your Research"</strong> —— Richard Hamming<br />
+一篇漂亮的文章，我强烈推荐。表面上是为做科学研究的人写的，但我认为它适用于所有领域。它是一个老前辈关于如何做伟大工作的文章。它让我想起了<a href="/people/理查德·费曼.html">理查德·费曼</a>说过的很多话——虽然我认为 Hamming 表达得比我在其他任何地方见过的都更优雅。</p>
+<hr />
+<h1 id="_8"><a href="/people/纳瓦尔.html">纳瓦尔</a>的写作</h1>
+<h3 id="i2008">人生公式 I（2008）</h3>
+<p>这些是给我自己的笔记。你的参考框架和计算方式可能不同。这些不是定义——这些是成功的算法。欢迎补充。</p>
+<ul>
+<li>幸福 = 健康 + 财富 + 良好的关系</li>
+<li>健康 = 运动 + 饮食 + 睡眠</li>
+<li>运动 = 高强度抗阻训练 + 运动 + 休息</li>
+<li>饮食 = 天然食物 + 间歇性断食 + 植物</li>
+<li>睡眠 = 不用闹钟 + 8-9小时 + 昼夜节律</li>
+<li><a href="/concepts/财富与金钱.html">财富</a> = 收入 + 财富 × 投资回报率</li>
+<li>收入 = <a href="/concepts/责任感.html">责任感</a> + <a href="/concepts/杠杆.html">杠杆</a> + <a href="/concepts/专属知识.html">专属知识</a></li>
+<li><a href="/concepts/责任感.html">责任感</a> = 个人品牌 + 个人平台 + 承担风险？</li>
+<li><a href="/concepts/杠杆.html">杠杆</a> = 资本 + 人力 + 知识产权</li>
+<li><a href="/concepts/专属知识.html">专属知识</a> = 知道怎么做社会尚无法轻易培训他人去做的事</li>
+<li>投资回报率 = "买入持有" + 估值 + 安全边际</li>
+</ul>
+<h3 id="2016"><a href="/people/纳瓦尔.html">纳瓦尔</a>的规则（2016）</h3>
+<ul>
+<li>活在当下，高于一切。</li>
+<li>欲望即痛苦。（佛陀）</li>
+<li>愤怒是你手中的炭火，等着扔向别人。（佛陀）</li>
+<li>如果你无法想象和某人共事一辈子，那一天也别合作。</li>
+<li><a href="/concepts/阅读.html">阅读</a>（学习）是终极元技能，可以换取任何其他东西。</li>
+<li>人生中所有真正的收益都来自<a href="/concepts/复利效应.html">复利效应</a>。</li>
+<li>用心智赚钱，而非用时间。</li>
+<li>99%的努力都是浪费的。</li>
+<li>时刻完全诚实。几乎总是可以既诚实又积极。</li>
+<li>表扬要具体，批评要笼统。（沃伦·巴菲特）</li>
+<li>真理是有预测力的东西。</li>
+<li>观察每一个念头。（问"我为什么有这个念头？"）</li>
+<li>一切伟大都源于痛苦。</li>
+<li>爱是给予的，不是获取的。</li>
+<li>开悟是你念头之间的空隙。（Eckhart Tolle）</li>
+<li>数学是自然的语言。</li>
+<li>每一个时刻都必须本身完整。</li>
+</ul>
+<blockquote>
+<p>Health, love, and your mission, in that order. Nothing else matters.</p>
+<p>健康、爱和你的使命——按这个顺序。其他都不重要。</p>
+</blockquote>
+<hr />
+<h1 id="naval">更多 Naval</h1>
+<p>如果你喜欢这本书，有很多方式深入了解 <a href="/people/纳瓦尔.html">纳瓦尔</a>。作者在 <a href="/companies/navalmanack.com.html">navalmanack.com</a> 上发布了"Navalmanack 短篇"——从这本书（巨大的）原始手稿中编辑出来的部分。包括 <a href="/people/纳瓦尔.html">纳瓦尔</a> 在以下主题上的更具体洞见：</p>
+<ul>
+<li>教育</li>
+<li><a href="/companies/AngelList.html">AngelList</a> 的故事</li>
+<li>投资</li>
+<li>创业</li>
+<li>加密货币</li>
+<li>关系</li>
+</ul>
+<p><a href="/people/纳瓦尔.html">纳瓦尔</a>继续创作和分享伟大的洞见：</p>
+<ul>
+<li>Twitter: Twitter.com/Naval</li>
+<li>播客: <em>Naval</em></li>
+<li>网站: <a href="/companies/nav.al.html">nav.al</a></li>
+</ul>
+<p>写作时最受欢迎的 Naval 内容：</p>
+<ul>
+<li><em>Naval</em> 播客合集: How to Get Rich</li>
+<li>Knowledge Project 访谈（<a href="/people/Shane Parrish.html">Shane Parrish</a>）</li>
+<li><a href="/people/Joe Rogan.html">Joe Rogan</a> Experience 访谈</li>
+</ul>
+<hr />
+<h1 id="_9">致谢</h1>
+<p>有太多值得感恩的事，太多值得感恩的人。当我想到所有为这本书贡献了自己一部分的人们时，我被幸福淹没了。</p>
+<p>感谢 <a href="/people/纳瓦尔.html">纳瓦尔</a> 信任一个网上的陌生人用他的话语创作一本书。这一切始于一条随意的推文，因为你的信任和支持变成了伟大的东西。</p>
+<p>感谢 <a href="/people/Babak Nivi.html">Nivi</a> 给了我收到过的最简洁精确的写作建议。你慷慨地花时间让这本书更好。</p>
+<p>感谢 <a href="/people/Tim Ferriss.html">Tim Ferriss</a> 打破你的铁律为这本书写了前言。你在这个项目中的参与对我意义重大，也一定会帮助更多人找到 <a href="/people/纳瓦尔.html">纳瓦尔</a> 的智慧。</p>
+<p>这本书的构建模块来自 <a href="/people/Shane Parrish.html">Shane Parrish</a>、<a href="/people/Joe Rogan.html">Joe Rogan</a>、Sarah Lacy 和 <a href="/people/Tim Ferriss.html">Tim Ferriss</a> 等创作者的精彩访谈。我非常感谢你们投入访谈的所有心血。</p>
+<p>感谢 Jack Butcher 主动联系并贡献他的巨大才华来创作本书的插图。他在 Visualize Value 的作品一直给我简洁天才的感觉。</p>
+<p>感谢我的父母——每一份礼物、每一份努力和牺牲，让我有能力创作这本书。你们建造了我所做一切的基础。</p>
+<p>感谢 Jeannine Seidl 成为一人支持系统——爱与鼓励的源泉。你是无尽的积极、耐心和好建议之泉。</p>
+<p>感谢 Kathleen Martin 作为出色的文字编辑在这个项目上付出了最大的努力。</p>
+<p>感谢 Kusal Kularatne 的诸多贡献。你是早期的信仰者、早期的读者，在这个项目年轻而脆弱时给予了巨大帮助。</p>
+<p>感谢 Max Olson、Emily Holdman 和 Taylor Pearson。你们都是极好的朋友，在整个编书和出版过程中成为了非常有用的顾问。没有你们，我到现在还在谷歌搜索和嘟囔咒骂。</p>
+<p>感谢我的一众早期读者——Andrew Farah、Tristan Homsi、Daniel Doyon、Jessie Jacob、Sean O'Connor、Adam Waxman、Kaylan Perry、Chris Quintero、George Mack、Brent Beshore、<a href="/people/Shane Parrish.html">Shane Parrish</a>、Taylor Pearson、Ben Crane、Candace Wu、Shane Mac、Jesse Powers、Trevor McKendrick、David Perell、Natala Constantine、Ben Jackson、Noah Madden、Chris Gillett、Megan Darnell、Zach Anderson Pettet——感谢你们的时间、编辑和明智的建议。</p>
+<p>感谢启发这本书的作者和创作者。我创作和分享这本书的动力直接来自于类似书籍对我人生的改变性影响：</p>
+<ul>
+<li><em>Poor Charlie's Almanack</em>，Peter Kaufman 编辑（<a href="/people/查理·芒格.html">查理·芒格</a>的作品）</li>
+<li><em>Zero to One</em>，Blake Masters 著（Peter Thiel 的作品）</li>
+<li><em>Seeking Wisdom</em>，Peter Bevelin 著（巴菲特和芒格的作品）</li>
+<li><em>Berkshire Hathaway Letters to Shareholders</em>，Max Olson 编辑（巴菲特的作品）</li>
+<li><em>Principles</em>，Ray Dalio 著</li>
+</ul>
+<p>感谢 Scribe 团队作为这本书的早期和真诚的支持者。</p>
+<p>感谢 Tucker Max 创建了 Scribe，雇了一支出色的团队，并在这个项目上给予了非常私人的关注和努力。感谢你愿意为了追求卓越的产品而伤害我的感情。更感谢你信任我能做好这件工作。</p>
+<p>感谢 Bo 和 Zaarly 的整个团队，对我痴迷于这本书的耐心和宽容。</p>
+<p>感谢网上众多朋友和陌生人在整个项目中的支持和鼓励。你们的能量帮我度过了创作这本书所需的一千个小时。</p>
+<hr />
+<h1 id="_10">来源</h1>
+<p>[1] Ravikant, Naval. "Naval Ravikant Was Live." <em>Periscope</em>, January 20, 2018.</p>
+<p>[2] Ravikant, Naval. "Naval Ravikant Was Live." <em>Periscope</em>, February 11, 2018.</p>
+<p>[3] Ferriss, Tim. <em>Tribe of Mentors.</em> 2017.</p>
+<p>[4] Ravikant, Naval and <a href="/people/Shane Parrish.html">Shane Parrish</a>. "Naval Ravikant: The Angel Philosopher." <em>Farnam Street</em>, 2019.</p>
+<p>[5] Ferriss, Tim. <em>Tools of Titans.</em> 2016.</p>
+<p>[6] Ferriss, Tim. "The Person I Call Most Often for Startup Advice (#97)." <em>The Tim Ferriss Show</em>, August 18, 2015.</p>
+<p>[7] Ferriss, Tim. "Naval Ravikant on the Tim Ferriss Show — Transcript." 2019.</p>
+<p>[8] <em>Killing Buddha</em> Interviews. "Chief Executive Philosopher: Naval Ravikant." 2016.</p>
+<p>[9] DeSena, Joe. "155: It's All About Your Desires, Says AngelList Founder Naval Ravikant." <em>Spartan Up!</em>, 2019.</p>
+<p>[10] "Naval Ravikant was live." <em>Periscope</em>, April 29, 2018.</p>
+<p>[11] Ravikant, Naval. <a href="/companies/Twitter.html">Twitter</a>, Twitter.com/Naval.</p>
+<p>[74] @Naval. "Naval Ravikant was live." <em>Periscope</em>, February 2019.</p>
+<p>[77] PowerfulJRE. "<a href="/people/Joe Rogan.html">Joe Rogan</a> Experience #1309 — Naval Ravikant." June 4, 2019.</p>
+<p>[78] Ravikant, Naval. "How to Get Rich: Every Episode." <em>Naval</em>, June 3, 2019.</p>
+<p>[79] Ravikant, Naval. Original content created for this book, September 2019.</p>
+<p>[80] Jorgenson, <a href="/people/Eric Jorgenson.html">Eric</a>. Original content written for this book, June 2019.</p>
+<hr />
+<h1 id="_11">关于作者</h1>
+<p><strong><a href="/people/Eric Jorgenson.html">ERIC JORGENSON</a></strong> 是一名产品策略师和作家。2011年他加入了 Zaarly 的创始团队——一家致力于帮助房主找到值得信赖的服务商的公司。他的商业博客 <em>Evergreen</em> 教育并娱乐了超过一百万读者。</p>
+<p>Eric 正在追寻创造——并吃掉——完美三明治的使命。他和 Jeannine——世界上最美好的女人——住在堪萨斯城。关注他的 Twitter @ericjorgenson，或在 ejorgenson.com 上查看他的新项目。</p></div><aside class="backlinks-panel">
+  <div class="bl-panel-header">
+    <h3 class="bl-panel-title">链接到本页 <span class="bl-count">12</span></h3>
+    <div class="bl-panel-actions">
+      <button class="bl-action bl-expand-all">展开</button>
+      <button class="bl-action bl-collapse-all">折叠</button>
+    </div>
+  </div>
+  <div class="bl-group">
+  <button class="bl-group-header">
+    <span class="bl-caret"></span>
+    <span class="bl-source-name">阅读（Reading）</span>
+    <span class="bl-mention-cat">概念</span>
+  </button>
+  <div class="bl-snippets">
+    <div class="bl-snippet">…# 概念解析  ### 定义与起源  阅读是纳瓦尔公开承认的"初恋"和"超能力"。在 06 建立判断力、10 推荐书单与写作、2015-08 Tim Ferriss 97 - 天使投资与人生算法 和 [[2017-02 Knowledg…</div>
+    <a href="/concepts/阅读.html" class="bl-go-link">查看原文 →</a>
+  </div>
+</div>
+<div class="bl-group">
+  <button class="bl-group-header">
+    <span class="bl-caret"></span>
+    <span class="bl-source-name">AngelList</span>
+    <span class="bl-mention-cat">产品</span>
+  </button>
+  <div class="bl-snippets">
+    <div class="bl-snippet">…genson]] 提到 navalmanack.com 上发布了关于 AngelList 故事的更多洞见（参见 10 推荐书单与写作）。  ## 纳瓦尔对它的评价  纳瓦尔作为 AngelList 的 CEO，以此为实践场来验证他的财富哲学——…</div>
+    <a href="/companies/AngelList.html" class="bl-go-link">查看原文 →</a>
+  </div>
+</div>
+<div class="bl-group">
+  <button class="bl-group-header">
+    <span class="bl-caret"></span>
+    <span class="bl-source-name">navalmanack.com</span>
+    <span class="bl-mention-cat">产品</span>
+  </button>
+  <div class="bl-snippets">
+    <div class="bl-snippet">…"感谢 Naval 信任一个网上的陌生人用他的话语创作一本书。" &gt; ——Eric Jorgenson，引自 10 推荐书单与写作  ## 体现的核心概念 - 代码与媒体 - 产品化自己 - 阅读  ## 相关产品 - [[n…</div>
+    <a href="/companies/navalmanack.com.html" class="bl-go-link">查看原文 →</a>
+  </div>
+</div>
+<div class="bl-group">
+  <button class="bl-group-header">
+    <span class="bl-caret"></span>
+    <span class="bl-source-name">Babak Nivi</span>
+    <span class="bl-mention-cat">人物</span>
+  </button>
+  <div class="bl-snippets">
+    <div class="bl-snippet">…合创始人 - 08 拯救自己：引用 Nivi 的话——"灵感是易逝的。当你有灵感时，立刻行动" - 10 推荐书单与写作：在致谢中被感谢"给了我收到过的最简洁精确的写作建议"，慷慨地花时间让这本书更好 - **[[nav.al 精选文章…</div>
+    <a href="/people/Babak Nivi.html" class="bl-go-link">查看原文 →</a>
+  </div>
+</div>
+<div class="bl-group">
+  <button class="bl-group-header">
+    <span class="bl-caret"></span>
+    <span class="bl-source-name">Eric Jorgenson</span>
+    <span class="bl-mention-cat">人物</span>
+  </button>
+  <div class="bl-snippets">
+    <div class="bl-snippet">…出自他编纂的著作，另在致谢和关于作者部分详细出现）  ## 在素材中的出现  - 01 理解财富的本质 至 10 推荐书单与写作：全部 10 篇书籍章节均标注"原文出处：《The Almanack of Naval Ravikant》by Er…</div>
+    <a href="/people/Eric Jorgenson.html" class="bl-go-link">查看原文 →</a>
+  </div>
+</div>
+<div class="bl-group">
+  <button class="bl-group-header">
+    <span class="bl-caret"></span>
+    <span class="bl-source-name">Joe Rogan</span>
+    <span class="bl-mention-cat">人物</span>
+  </button>
+  <div class="bl-snippets">
+    <div class="bl-snippet">…到"Joe Rogan 每年从他的播客中赚 5000 万到 1 亿美元"，作为代码与媒体杠杆的典型案例 - 10 推荐书单与写作：在来源引用中标注 JRE #1309，在致谢中感谢他的精彩访谈 - **[[2019-06 Joe Rogan 1…</div>
+    <a href="/people/Joe Rogan.html" class="bl-go-link">查看原文 →</a>
+  </div>
+</div>
+<div class="bl-group">
+  <button class="bl-group-header">
+    <span class="bl-caret"></span>
+    <span class="bl-source-name">Kapil Gupta</span>
+    <span class="bl-mention-cat">人物</span>
+  </button>
+  <div class="bl-snippets">
+    <div class="bl-snippet">…的陷阱、真理、自由、心智、焦虑的源头。纳瓦尔 坦言这次谈话让他紧张——"因为所有想问的问题都极其私人" - 10 推荐书单与写作：Kapil Gupta 的所有作品被列入推荐书单，并特别标注"Kapil 最近成为了我的私人顾问和教练——这可是出…</div>
+    <a href="/people/Kapil Gupta.html" class="bl-go-link">查看原文 →</a>
+  </div>
+</div>
+<div class="bl-group">
+  <button class="bl-group-header">
+    <span class="bl-caret"></span>
+    <span class="bl-source-name">Shane Parrish</span>
+    <span class="bl-mention-cat">人物</span>
+  </button>
+  <div class="bl-snippets">
+    <div class="bl-snippet">…尔]] 在刷牙时发现自己在幻想 Shane Parrish 问他问题——这成为他觉察"猴子心智"的一个练习场景 - 10 推荐书单与写作：Shane Parrish 出现在致谢名单中（既是早期读者也是访谈的贡献者），知名播客被列为"写作时最受欢迎的 N…</div>
+    <a href="/people/Shane Parrish.html" class="bl-go-link">查看原文 →</a>
+  </div>
+</div>
+<div class="bl-group">
+  <button class="bl-group-header">
+    <span class="bl-caret"></span>
+    <span class="bl-source-name">Tim Ferriss</span>
+    <span class="bl-mention-cat">人物</span>
+  </button>
+  <div class="bl-snippets">
+    <div class="bl-snippet">…救自己]]：纳瓦尔 推荐听 Tim Ferriss 播客中 Wim Hof 那期——"他激励了我" - 10 推荐书单与写作**：纳瓦尔 在读 Tim 的 *Tools of Titans*；在致谢中感谢 Tim "打破你的铁律为这本书…</div>
+    <a href="/people/Tim Ferriss.html" class="bl-go-link">查看原文 →</a>
+  </div>
+</div>
+<div class="bl-group">
+  <button class="bl-group-header">
+    <span class="bl-caret"></span>
+    <span class="bl-source-name">查理·芒格</span>
+    <span class="bl-mention-cat">人物</span>
+  </button>
+  <div class="bl-snippets">
+    <div class="bl-snippet">…-02 Knowledge Project 18 - 清醒思考]]：强调要读查理·芒格的演讲集而非二手转述 - 10 推荐书单与写作**：*Poor Charlie's Almanack* 被推荐为"伪装成商业书，但其实只是查理·芒格关于克服自我、过上…</div>
+    <a href="/people/查理·芒格.html" class="bl-go-link">查看原文 →</a>
+  </div>
+</div>
+<div class="bl-group">
+  <button class="bl-group-header">
+    <span class="bl-caret"></span>
+    <span class="bl-source-name">理查德·费曼</span>
+    <span class="bl-mention-cat">人物</span>
+  </button>
+  <div class="bl-snippets">
+    <div class="bl-snippet">…309 - 财富与幸福]]：引用费曼——"我很早就学会了区分'知道一个东西的名字'和'真正理解这个东西'" - 10 推荐书单与写作**：推荐费曼的 *Six Easy Pieces* 和 *Six Not-So-Easy Pieces*——"我会给我…</div>
+    <a href="/people/理查德·费曼.html" class="bl-go-link">查看原文 →</a>
+  </div>
+</div>
+<div class="bl-group">
+  <button class="bl-group-header">
+    <span class="bl-caret"></span>
+    <span class="bl-source-name">素材总览</span>
+    <span class="bl-mention-cat">索引</span>
+  </button>
+  <div class="bl-snippets">
+    <div class="bl-snippet">…/ 成长 / 选择的自由 - 09 生命的意义 —— 价值观 / 理性佛教 / 活在当下 - 10 推荐书单与写作 —— Naval 的推荐书单 / 写作精选 / 鸣谢  ---  ## 🎙️ 长访谈（5 场）  - [[2019-0…</div>
+    <a href="/index-pages/素材总览.html" class="bl-go-link">查看原文 →</a>
+  </div>
+</div>
+
+</aside>
+
+</main>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Toggle sidebar nav groups
+  document.querySelectorAll('.nav-group-title').forEach(function(el) {
+    el.addEventListener('click', function() {
+      this.parentElement.classList.toggle('open');
+    });
+  });
+
+  // Backlinks: toggle individual groups
+  document.querySelectorAll('.bl-group-header').forEach(function(header) {
+    header.addEventListener('click', function() {
+      this.closest('.bl-group').classList.toggle('open');
+    });
+  });
+
+  // Favorite / bookmark popup
+  var favBtn = document.getElementById('fav-btn');
+  var favPop = document.getElementById('fav-pop');
+  if (favBtn && favPop) {
+    var isMac = /Mac|iPhone|iPad/.test(navigator.platform);
+    var key = isMac ? '⌘ + D' : 'Ctrl + D';
+    favPop.innerHTML =
+      '按 <kbd>' + key + '</kbd> 收藏本页到浏览器书签' +
+      '<button class="fav-pop-copy" id="fav-pop-copy">复制本页链接</button>';
+
+    favBtn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      favPop.classList.toggle('show');
+    });
+    document.addEventListener('click', function(e) {
+      if (!favPop.contains(e.target) && e.target !== favBtn) {
+        favPop.classList.remove('show');
+      }
+    });
+
+    var copyBtn = document.getElementById('fav-pop-copy');
+    if (copyBtn) {
+      copyBtn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        navigator.clipboard.writeText(window.location.href).then(function() {
+          copyBtn.textContent = '✓ 已复制';
+          copyBtn.classList.add('copied');
+          setTimeout(function() {
+            copyBtn.textContent = '复制本页链接';
+            copyBtn.classList.remove('copied');
+          }, 1500);
+        });
+      });
+    }
+  }
+
+  // Backlinks: expand/collapse all
+  document.querySelectorAll('.bl-expand-all').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      this.closest('.backlinks-panel').querySelectorAll('.bl-group').forEach(function(g) {
+        g.classList.add('open');
+      });
+    });
+  });
+  document.querySelectorAll('.bl-collapse-all').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      this.closest('.backlinks-panel').querySelectorAll('.bl-group').forEach(function(g) {
+        g.classList.remove('open');
+      });
+    });
+  });
+});
+</script>
+</body>
+</html>
